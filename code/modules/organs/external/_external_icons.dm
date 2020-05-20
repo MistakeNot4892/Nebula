@@ -82,7 +82,7 @@ var/list/limb_icon_cache = list()
 	icon_state = "[icon_name][gender]"
 	if(species.base_skin_colours && !isnull(species.base_skin_colours[skin_base]))
 		icon_state += species.base_skin_colours[skin_base]
-	icon_cache_key = "[icon_state]_[species ? species.name : "unknown"]"
+	icon_cache_key = "[icon_state]_[species ? species.name : "unknown"][render_alpha]"
 	if(model)
 		icon_cache_key += "_model_[model]"
 
@@ -112,6 +112,10 @@ var/list/limb_icon_cache = list()
 			icon_cache_key += "[M][markings[M]["color"]]"
 
 	set_dir(EAST, TRUE)
+
+	if(render_alpha < 255)
+		mob_icon += rgb(,,,render_alpha)
+
 	icon = mob_icon
 
 /obj/item/organ/external/proc/get_icon()

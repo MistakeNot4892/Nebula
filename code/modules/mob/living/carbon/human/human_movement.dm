@@ -135,7 +135,7 @@
 	if(.) //We moved
 		species.handle_exertion(src)
 		handle_leg_damage()
-
+		species.handle_post_move(src)
 		if(client)
 			var/turf/B = GetAbove(src)
 			up_hint.icon_state = "uphint[(B ? B.is_open() : 0)]"

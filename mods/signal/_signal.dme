@@ -1,0 +1,10 @@
+#ifndef CONTENT_PACK_SIGNALVERSE
+#define CONTENT_PACK_SIGNALVERSE
+#include "signal.dm"
+#include "signal_overrides.dm"
+#include "datum/lore/culture.dm"
+#include "datum/lore/factions.dm"
+#include "datum/lore/languages.dm"
+#include "datum/lore/locations.dm"
+#include "datum/species/octopus.dm"
+#endif
