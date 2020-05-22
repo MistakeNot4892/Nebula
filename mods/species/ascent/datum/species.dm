@@ -79,7 +79,7 @@
 
 	force_cultural_info = list(
 		TAG_CULTURE =   /decl/cultural_info/culture/ascent,
-		TAG_HOMEWORLD = /decl/cultural_info/location/kharmaani,
+		TAG_LOCATION = /decl/cultural_info/location/kharmaani,
 		TAG_FACTION =   /decl/cultural_info/faction/ascent_alate,
 		TAG_RELIGION =  /decl/cultural_info/religion/kharmaani
 	)
@@ -126,7 +126,7 @@
 
 	force_cultural_info = list(
 		TAG_CULTURE =   /decl/cultural_info/culture/ascent,
-		TAG_HOMEWORLD = /decl/cultural_info/location/kharmaani,
+		TAG_LOCATION = /decl/cultural_info/location/kharmaani,
 		TAG_FACTION =   /decl/cultural_info/faction/ascent_gyne,
 		TAG_RELIGION =  /decl/cultural_info/religion/kharmaani
 	)

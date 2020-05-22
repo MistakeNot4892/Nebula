@@ -61,7 +61,7 @@
 		TAG_CULTURE = list(
 			/decl/cultural_info/culture/adherent
 		),
-		TAG_HOMEWORLD = list(
+		TAG_LOCATION = list(
 			/decl/cultural_info/location/adherent,
 			/decl/cultural_info/location/adherent/monument
 		),

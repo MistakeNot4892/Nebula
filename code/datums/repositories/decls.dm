@@ -120,6 +120,22 @@ var/global/repository/decls/decls_repository = new
 		. = get_decls(typesof(decl_prototype))
 		fetched_decl_types[decl_prototype] = .
 
+/repository/decls/proc/get_decls_of_type_by_var(var/decl_prototype, var/var_name)
+	. = list()
+	var/decl/prototype = get_decl(decl_prototype)
+	if(var_name in prototype?.vars)
+		var/list/prototypes = get_decls_of_type(decl_prototype)
+		for(var/decl_type in prototypes)
+			prototype = prototypes[decl_type]
+			if(!isnull(prototype.vars[var_name]))
+				.[prototype.vars[var_name]] = prototype
+
+/repository/decls/proc/get_decls_of_subtype_by_var(var/decl_prototype, var/var_name)
+	. = get_decls_of_type_by_var(decl_prototype, var_name)
+	if(length(.))
+		var/decl/prototype = get_decl(decl_prototype)
+		. -= prototype.vars[var_name]
+
 /repository/decls/proc/get_decls_of_subtype(var/decl_prototype)
 	. = fetched_decl_subtypes[decl_prototype]
 	if(!.)

@@ -127,14 +127,14 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/default_species = SPECIES_HUMAN
 
 	var/list/available_cultural_info = list(
-		TAG_HOMEWORLD = list(/decl/cultural_info/location/other),
+		TAG_LOCATION = list(/decl/cultural_info/location/other),
 		TAG_FACTION =   list(/decl/cultural_info/faction/other),
 		TAG_CULTURE =   list(/decl/cultural_info/culture/other),
 		TAG_RELIGION =  list(/decl/cultural_info/religion/other)
 	)
 
 	var/list/default_cultural_info = list(
-		TAG_HOMEWORLD = /decl/cultural_info/location/other,
+		TAG_LOCATION = /decl/cultural_info/location/other,
 		TAG_FACTION =   /decl/cultural_info/faction/other,
 		TAG_CULTURE =   /decl/cultural_info/culture/other,
 		TAG_RELIGION =  /decl/cultural_info/religion/other

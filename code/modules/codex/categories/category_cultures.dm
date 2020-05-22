@@ -9,6 +9,7 @@
 		if(culture.name && !culture.hidden_from_codex)
 			var/datum/codex_entry/entry = new(
 				_display_name = "[culture.name] ([lowertext(culture.desc_type)])",
+				_associated_strings = list(culture.name),
 				_lore_text = culture.description
 			)
 			items |= entry.name

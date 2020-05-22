@@ -19,7 +19,7 @@
 	if(!istype(H))
 		return
 
-	var/decl/cultural_info/culture = H.get_cultural_value(TAG_HOMEWORLD)
+	var/decl/cultural_info/culture = H.get_cultural_value(TAG_LOCATION)
 	var/pob = culture ? culture.name : "Unset"
 
 	culture = H.get_cultural_value(TAG_RELIGION)

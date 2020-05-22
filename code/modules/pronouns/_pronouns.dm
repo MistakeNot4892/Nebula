@@ -1,6 +1,7 @@
 /decl/pronouns
 	var/name = PLURAL
 	var/bureaucratic_term  = "other"
+	var/assigned_term
 	var/informal_term = "hoopy frood"
 	var/pronoun_string
 
@@ -19,6 +20,10 @@
 /decl/pronouns/Initialize()
 	pronoun_string = "[He]/[him]/[his]"
 	. = ..()
+	if(!bureaucratic_term)
+		bureaucratic_term = name
+	if(!assigned_term)
+		assigned_term = bureaucratic_term
 
 // I regret having to refactor this, but someone put it in unarmed attacks and here we are.
 /decl/pronouns/proc/get_message_for_being_kicked_in_the_dick()

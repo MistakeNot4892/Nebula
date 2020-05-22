@@ -100,3 +100,6 @@
 
 /decl/cultural_info/proc/get_possible_personal_goals(var/department_types)
 	return
+
+/decl/cultural_info/proc/is_available_for_life_event(var/decl/life_event/event, var/datum/preferences/pref)
+	return TRUE

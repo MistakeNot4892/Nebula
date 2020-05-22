@@ -107,7 +107,7 @@
 			/decl/cultural_info/culture/vox/salvager,
 			/decl/cultural_info/culture/vox/raider
 		),
-		TAG_HOMEWORLD = list(
+		TAG_LOCATION = list(
 			/decl/cultural_info/location/vox,
 			/decl/cultural_info/location/vox/shroud,
 			/decl/cultural_info/location/vox/ship

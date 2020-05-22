@@ -1,7 +1,7 @@
 /decl/cultural_info/location
 	abstract_type = /decl/cultural_info/location
-	desc_type = "Home System"
-	category = TAG_HOMEWORLD
+	desc_type = "Location"
+	category = TAG_LOCATION
 	var/distance = 0
 	var/ruling_body = "Other Faction"
 	var/capital
