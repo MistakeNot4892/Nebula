@@ -1,0 +1,25 @@
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+// BEGIN_INCLUDE
+#include "_event_flags.dm"
+#include "_life_track.dm"
+#include "events.dm"
+#include "events_birth.dm"
+#include "events_career.dm"
+#include "events_career_academia.dm"
+#include "events_career_blue_collar.dm"
+#include "events_career_criminal.dm"
+#include "events_career_engineering.dm"
+#include "events_career_medicine.dm"
+#include "events_career_military.dm"
+#include "events_career_spacer.dm"
+#include "events_career_white_collar.dm"
+#include "events_early_childhood.dm"
+#include "events_late_childhood.dm"
+#include "events_young_adulthood.dm"
+// END_INCLUDE

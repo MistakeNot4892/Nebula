@@ -1,0 +1,18 @@
+#define LE_ILLEGITIMATE "illegitimate"
+#define LE_PRIVILEGED         "privileged"
+#define LE_UNDERCLASS         "underclass"
+#define LE_OCTOPUS            "octopus"
+#define LE_CORVID             "neocorvid"
+#define LE_SYNTHETIC          "synthetic"
+#define LE_PSIONIC            "psionic"
+#define LE_CRIMINAL_RECORD    "criminal record"
+#define LE_PRIMARY_SCHOOL     "primary school"
+#define LE_SECONDARY_SCHOOL   "secondary school"
+#define LE_TERTIARY_EDUCATION "undergraduate"
+#define LE_OPERANT            "operant"
+#define LE_ILLNESS            "illness"
+#define LE_WANTED             "wanted"
+#define LE_DISCHARGED         "discharged"
+#define LE_GENEMOD            "genemodded"
+
+#define INFINITY 1.#INF
