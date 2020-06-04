@@ -15,6 +15,19 @@ var/global/list/plant_seed_sprites = list()
 	update_seed()
 	. = ..()
 
+/obj/item/seeds/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	if(has_extension(target, /datum/extension/plantable))
+		if(locate(/obj/effect/plant) in target)
+			to_chat(user, SPAN_WARNING("\The [target] already has something planted in it."))
+		else
+			to_chat(user, SPAN_NOTICE("You plant \the [src] in \the [target]."))
+			user.drop_from_inventory(src)
+			new /obj/effect/plant(src, seed)
+			target.update_icon()
+			qdel(src)
+		return TRUE
+	. = ..()
+
 //Grabs the appropriate seed datum from the global list.
 /obj/item/seeds/proc/update_seed()
 	if(!seed && seed_type && !isnull(SSplants.seeds) && SSplants.seeds[seed_type])

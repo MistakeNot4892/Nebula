@@ -144,53 +144,11 @@
 /mob/living/bot/farmbot/UnarmedAttack(var/atom/A, var/proximity)
 	if(!..())
 		return
+
 	if(busy)
 		return
 
-	if(istype(A, /obj/machinery/portable_atmospherics/hydroponics))
-		var/obj/machinery/portable_atmospherics/hydroponics/T = A
-		var/t = confirmTarget(T)
-		switch(t)
-			if(0)
-				return
-			if(FARMBOT_COLLECT)
-				action = "water" // Needs a better one
-				update_icons()
-				visible_message("<span class='notice'>[src] starts [T.dead? "removing the plant from" : "harvesting"] \the [A].</span>")
-				busy = 1
-				if(do_after(src, 30, A))
-					visible_message("<span class='notice'>[src] [T.dead? "removes the plant from" : "harvests"] \the [A].</span>")
-					T.physical_attack_hand(src)
-			if(FARMBOT_WATER)
-				action = "water"
-				update_icons()
-				visible_message("<span class='notice'>[src] starts watering \the [A].</span>")
-				busy = 1
-				if(do_after(src, 30, A))
-					playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
-					visible_message("<span class='notice'>[src] waters \the [A].</span>")
-					tank.reagents.trans_to(T, 100 - T.waterlevel)
-			if(FARMBOT_UPROOT)
-				action = "hoe"
-				update_icons()
-				visible_message("<span class='notice'>[src] starts uprooting the weeds in \the [A].</span>")
-				busy = 1
-				if(do_after(src, 30, A))
-					visible_message("<span class='notice'>[src] uproots the weeds in \the [A].</span>")
-					T.weedlevel = 0
-			if(FARMBOT_NUTRIMENT)
-				action = "fertile"
-				update_icons()
-				visible_message("<span class='notice'>[src] starts fertilizing \the [A].</span>")
-				busy = 1
-				if(do_after(src, 30, A))
-					visible_message("<span class='notice'>[src] fertilizes \the [A].</span>")
-					T.reagents.add_reagent(/decl/material/gas/ammonia, 10)
-		busy = 0
-		action = ""
-		update_icons()
-		T.update_icon()
-	else if(istype(A, /obj/structure/hygiene/sink))
+	if(istype(A, /obj/structure/hygiene/sink))
 		if(!tank || tank.reagents.total_volume >= tank.reagents.maximum_volume)
 			return
 		action = "water"
@@ -258,24 +216,5 @@
 		if(!tank || tank.reagents.total_volume >= tank.reagents.maximum_volume)
 			return 0
 		return 1
-
-	var/obj/machinery/portable_atmospherics/hydroponics/tray = targ
-	if(!istype(tray))
-		return 0
-
-	if(tray.closed_system || !tray.seed)
-		return 0
-
-	if(tray.dead && removes_dead || tray.harvest && collects_produce)
-		return FARMBOT_COLLECT
-
-	else if(refills_water && tray.waterlevel < 40 && !tray.reagents.has_reagent(/decl/material/liquid/water))
-		return FARMBOT_WATER
-
-	else if(uproots_weeds && tray.weedlevel > 3)
-		return FARMBOT_UPROOT
-
-	else if(replaces_nutriment && tray.nutrilevel < 1 && tray.reagents.total_volume < 1)
-		return FARMBOT_NUTRIMENT
 
 	return 0

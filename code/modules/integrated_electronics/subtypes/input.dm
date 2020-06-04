@@ -292,29 +292,28 @@
 	power_draw_per_use = 10
 
 /obj/item/integrated_circuit/input/plant_scanner/do_work()
-	var/obj/machinery/portable_atmospherics/hydroponics/H = get_pin_data_as_type(IC_INPUT, 1, /obj/machinery/portable_atmospherics/hydroponics)
+	var/atom/H = get_pin_data_as_type(IC_INPUT, 1, /atom)
 	if(!istype(H)) //Invalid input
 		return
 	for(var/i=1, i<=outputs.len, i++)
 		set_pin_data(IC_OUTPUT, i, null)
 	if(H in view(get_turf(src))) // Like medbot's analyzer it can be used in range..
-		if(H.seed)
-			set_pin_data(IC_OUTPUT, 1, H.seed.seed_name)
-			set_pin_data(IC_OUTPUT, 2, H.age)
-			set_pin_data(IC_OUTPUT, 3, H.seed.get_trait(TRAIT_POTENCY))
-			set_pin_data(IC_OUTPUT, 4, H.seed.get_trait(TRAIT_YIELD))
-			set_pin_data(IC_OUTPUT, 5, H.seed.get_trait(TRAIT_MATURATION))
-			set_pin_data(IC_OUTPUT, 6, H.seed.get_trait(TRAIT_PRODUCTION))
-			set_pin_data(IC_OUTPUT, 7, H.seed.get_trait(TRAIT_ENDURANCE))
-			set_pin_data(IC_OUTPUT, 8, !!H.seed.get_trait(TRAIT_HARVEST_REPEAT))
-			set_pin_data(IC_OUTPUT, 9, H.seed.get_trait(TRAIT_WEED_TOLERANCE))
-		set_pin_data(IC_OUTPUT, 10, H.weedlevel)
-		set_pin_data(IC_OUTPUT, 11, H.pestlevel)
-		set_pin_data(IC_OUTPUT, 12, H.waterlevel)
-		set_pin_data(IC_OUTPUT, 13, H.nutrilevel)
-		set_pin_data(IC_OUTPUT, 14, H.harvest)
-		set_pin_data(IC_OUTPUT, 15, H.dead)
-		set_pin_data(IC_OUTPUT, 16, H.health)
+		var/obj/effect/plant/plant = locate() in H
+		if(!plant && istype(plant, /obj/effect/plant))
+			plant = H		
+		if(plant)
+			set_pin_data(IC_OUTPUT, 1, plant.plant_type.seed_name)
+			set_pin_data(IC_OUTPUT, 2, plant.age)
+			set_pin_data(IC_OUTPUT, 3, plant.plant_type.get_trait(TRAIT_POTENCY))
+			set_pin_data(IC_OUTPUT, 4, plant.plant_type.get_trait(TRAIT_YIELD))
+			set_pin_data(IC_OUTPUT, 5, plant.plant_type.get_trait(TRAIT_MATURATION))
+			set_pin_data(IC_OUTPUT, 6, plant.plant_type.get_trait(TRAIT_PRODUCTION))
+			set_pin_data(IC_OUTPUT, 7, plant.plant_type.get_trait(TRAIT_ENDURANCE))
+			set_pin_data(IC_OUTPUT, 8, !!plant.plant_type.get_trait(TRAIT_HARVEST_REPEAT))
+			set_pin_data(IC_OUTPUT, 9, plant.plant_type.get_trait(TRAIT_WEED_TOLERANCE))
+			set_pin_data(IC_OUTPUT, 14, plant.plant_ready_for_harvest)
+			set_pin_data(IC_OUTPUT, 15, plant.plant_is_dead)
+			set_pin_data(IC_OUTPUT, 16, plant.health)
 	push_data()
 	activate_pin(2)
 
@@ -341,8 +340,11 @@
 	for(var/i=1, i<=outputs.len, i++)
 		set_pin_data(IC_OUTPUT, i, null)
 	if(H in view(get_turf(src))) // Like medbot's analyzer it can be used in range..
-		if(H.seed)
-			for(var/chem_path in H.seed.chems)
+		var/obj/effect/plant/plant = locate() in H
+		if(!plant && istype(H, /obj/effect/plant))
+			plant = H
+		if(istype(plant))
+			for(var/chem_path in plant.plant_type.chems)
 				var/decl/material/R = chem_path
 				greagents.Add(initial(R.name))
 

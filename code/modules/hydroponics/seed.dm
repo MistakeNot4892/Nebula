@@ -167,7 +167,7 @@
 		else
 			to_chat(target, "<span class='danger'>Sharp spines scrape against your armour!</span>")
 
-/datum/seed/proc/do_photosynthesis(var/turf/current_turf, var/datum/gas_mixture/environment, var/light_supplied)
+/datum/seed/proc/do_photosynthesis(var/atom/current_loc, var/datum/gas_mixture/environment, var/light_supplied)
 	// Photosynthesis - *very* simplified process.
 	// For now, only light-dependent reactions are available (no Calvin cycle).
 	// It's active only for those plants which doesn't consume nor exude gasses.
@@ -185,8 +185,8 @@
 
 //Splatter a turf.
 /datum/seed/proc/splatter(var/turf/T,var/obj/item/thrown)
-	if(splat_type && !(locate(/obj/effect/vine) in T))
-		var/obj/effect/vine/splat = new splat_type(T, src)
+	if(splat_type && !(locate(/obj/effect/plant) in T))
+		var/obj/effect/plant/splat = new splat_type(T, src)
 		if(!istype(splat)) // Plants handle their own stuff.
 			splat.SetName("[thrown.name] [pick("smear","smudge","splatter")]")
 			if(get_trait(TRAIT_BIOLUM))
@@ -284,8 +284,12 @@
 			origin_turf.visible_message("<span class='danger'>The [thrown.name] splatters against [target]!</span>")
 		qdel(thrown)
 
-/datum/seed/proc/handle_environment(var/turf/current_turf, var/datum/gas_mixture/environment, var/light_supplied, var/check_only)
+/datum/seed/proc/handle_plant_environment(var/atom/current_loc, var/check_only)
 
+	if(!current_loc)
+		return
+
+	var/datum/gas_mixture/environment = current_loc.return_air()
 	var/health_change = 0
 	// Handle gas consumption.
 	if(consume_gasses && consume_gasses.len)
@@ -326,13 +330,12 @@
 			environment.merge(removed)
 
 	// Handle light requirements.
-	if(!light_supplied)
-		light_supplied = current_turf.get_lumcount() * 5
+	var/light_supplied = current_loc.get_lumcount() * 5
 	if(light_supplied)
 		if(abs(light_supplied - get_trait(TRAIT_IDEAL_LIGHT)) > get_trait(TRAIT_LIGHT_TOLERANCE))
 			health_change += rand(1,3) * HYDRO_SPEED_MULTIPLIER
 
-	for(var/obj/effect/effect/smoke/chem/smoke in range(1, current_turf))
+	for(var/obj/effect/effect/smoke/chem/smoke in range(1, get_turf(current_loc)))
 		if(smoke.reagents.has_reagent(/decl/material/liquid/weedkiller))
 			return 100
 
@@ -340,7 +343,7 @@
 	// If any of the previous environment checks has failed
 	// the photosynthesis cannot be triggered.
 	if(health_change == 0)
-		do_photosynthesis(current_turf, environment, light_supplied)
+		do_photosynthesis(current_loc, environment, light_supplied)
 
 	return health_change
 
@@ -544,11 +547,11 @@
 	return pick(mutants)
 
 //Mutates the plant overall (randomly).
-/datum/seed/proc/mutate(var/degree,var/turf/source_turf)
+/datum/seed/proc/mutate(var/degree,var/atom/current_loc)
 
-	if(!degree || get_trait(TRAIT_IMMUTABLE) > 0) return
+	if(!current_loc|| !degree || get_trait(TRAIT_IMMUTABLE) > 0) return
 
-	source_turf.visible_message("<span class='notice'>\The [display_name] quivers!</span>")
+	current_loc.visible_message("<span class='notice'>\The [display_name] quivers!</span>")
 
 	//This looks like shit, but it's a lot easier to read/change this way.
 	var/total_mutations = rand(1,1+degree)
@@ -556,7 +559,7 @@
 		switch(rand(0,11))
 			if(0) //Plant cancer!
 				set_trait(TRAIT_ENDURANCE,get_trait(TRAIT_ENDURANCE)-rand(10,20),null,0)
-				source_turf.visible_message("<span class='danger'>\The [display_name] withers rapidly!</span>")
+				current_loc.visible_message("<span class='danger'>\The [display_name] withers rapidly!</span>")
 			if(1)
 				set_trait(TRAIT_NUTRIENT_CONSUMPTION,get_trait(TRAIT_NUTRIENT_CONSUMPTION)+rand(-(degree*0.1),(degree*0.1)),5,0)
 				set_trait(TRAIT_WATER_CONSUMPTION,   get_trait(TRAIT_WATER_CONSUMPTION)   +rand(-degree,degree),50,0)
@@ -578,7 +581,7 @@
 				if(prob(degree*5))
 					set_trait(TRAIT_CARNIVOROUS,     get_trait(TRAIT_CARNIVOROUS)+rand(-degree,degree),2, 0)
 					if(get_trait(TRAIT_CARNIVOROUS))
-						source_turf.visible_message("<span class='notice'>\The [display_name] shudders hungrily.</span>")
+						current_loc.visible_message("<span class='notice'>\The [display_name] shudders hungrily.</span>")
 			if(6)
 				set_trait(TRAIT_WEED_TOLERANCE,      get_trait(TRAIT_WEED_TOLERANCE)+(rand(-2,2)*degree),10, 0)
 				if(prob(degree*5))
@@ -592,7 +595,7 @@
 				set_trait(TRAIT_POTENCY,             get_trait(TRAIT_POTENCY)+(rand(-20,20)*degree),200, 0)
 				if(prob(degree*5))
 					set_trait(TRAIT_SPREAD,          get_trait(TRAIT_SPREAD)+rand(-1,1),2, 0)
-					source_turf.visible_message("<span class='notice'>\The [display_name] spasms visibly, shifting in the tray.</span>")
+					current_loc.visible_message("<span class='notice'>\The [display_name] spasms visibly, shifting in the tray.</span>")
 			if(9)
 				set_trait(TRAIT_MATURATION,          get_trait(TRAIT_MATURATION)+(rand(-1,1)*degree),30, 0)
 				if(prob(degree*5))
@@ -601,12 +604,12 @@
 				if(prob(degree*2))
 					set_trait(TRAIT_BIOLUM,         !get_trait(TRAIT_BIOLUM))
 					if(get_trait(TRAIT_BIOLUM))
-						source_turf.visible_message("<span class='notice'>\The [display_name] begins to glow!</span>")
+						current_loc.visible_message("<span class='notice'>\The [display_name] begins to glow!</span>")
 						if(prob(degree*2))
 							set_trait(TRAIT_BIOLUM_COLOUR,get_random_colour(0,75,190))
-							source_turf.visible_message("<span class='notice'>\The [display_name]'s glow </span><font color='[get_trait(TRAIT_BIOLUM_COLOUR)]'>changes colour</font>!")
+							current_loc.visible_message("<span class='notice'>\The [display_name]'s glow </span><font color='[get_trait(TRAIT_BIOLUM_COLOUR)]'>changes colour</font>!")
 					else
-						source_turf.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
+						current_loc.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
 			if(11)
 				set_trait(TRAIT_TELEPORTING,1)
 
@@ -827,29 +830,9 @@
 				return GROWTH_VINES
 	return 0
 
-/datum/seed/proc/get_icon(growth_stage)
-	var/plant_icon = get_trait(TRAIT_PLANT_ICON)
-	var/image/res = image('icons/obj/hydroponics/hydroponics_growing.dmi', "[plant_icon]-[growth_stage]")
-	if(get_growth_type())
-		res.icon_state = "[get_growth_type()]-[growth_stage]"
+/datum/seed/proc/get_overlay_stage(var/obj/effect/plant/plant)
+	var/maturation = get_trait(TRAIT_MATURATION)
+	if(plant.age >= maturation)
+		. = growth_stages
 	else
-		res.icon_state = "[plant_icon]-[growth_stage]"
-
-	if(get_growth_type())
-		res.icon = 'icons/obj/hydroponics/hydroponics_vines.dmi'
-
-	res.color = get_trait(TRAIT_PLANT_COLOUR)
-
-	if(get_trait(TRAIT_LARGE))
-		res.icon = 'icons/obj/hydroponics/hydroponics_large.dmi'
-		res.pixel_x = -8
-		res.pixel_y = -16
-
-	var/leaves = get_trait(TRAIT_LEAVES_COLOUR)
-	if(leaves)
-		var/image/I = image(res.icon, "[plant_icon]-[growth_stage]-leaves")
-		I.color = leaves
-		I.appearance_flags = RESET_COLOR
-		res.overlays += I
-
-	return res
+		. = max(1, round(plant.age/max(maturation/growth_stages, 1)))

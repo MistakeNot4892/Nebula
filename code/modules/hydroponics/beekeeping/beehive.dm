@@ -157,10 +157,20 @@
 /obj/machinery/beehive/proc/pollinate_flowers()
 	var/coef = bee_count / 100
 	var/trays = 0
-	for(var/obj/machinery/portable_atmospherics/hydroponics/H in view(7, src))
-		if(H.seed && !H.dead)
-			H.health += 0.05 * coef
-			++trays
+	for(var/atom/A in view(7, src))
+		if(has_extension(A, /datum/extension/plantable))
+			var/found_plant = FALSE
+			for(var/obj/effect/plant/plant in A)
+				if(!plant.plant_is_dead && !plant.plant_is_uprooted)
+					plant.adjust_health(0.05 * coef)
+					found_plant = TRUE
+			if(found_plant)
+				trays++
+		else if(istype(A, /obj/effect/plant))
+			var/obj/effect/plant/plant = A
+			if(!plant.plant_is_dead && !plant.plant_is_uprooted)
+				plant.adjust_health(0.05 * coef)
+				trays++
 	honeycombs = min(honeycombs + 0.1 * coef * min(trays, 5), frames * 100)
 
 /obj/machinery/honey_extractor

@@ -27,9 +27,8 @@
 
 /spell/aoe_turf/conjure/grove/before_cast()
 	var/turf/T = get_turf(holder)
-	var/obj/effect/vine/P = new(T,seed)
-	P.spread_chance = spread
-
+	var/obj/effect/plant/P = new(T, seed)
+	P.vine_spread_chance = spread
 
 /spell/aoe_turf/conjure/grove/sanctuary
 	name = "Sanctuary"

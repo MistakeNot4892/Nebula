@@ -64,7 +64,11 @@
 				C.active = TRUE
 
 // Used to get a scaled lumcount.
-/turf/proc/get_lumcount(var/minlum = 0, var/maxlum = 1)
+/atom/proc/get_lumcount(var/minlum = 0, var/maxlum = 1)
+	var/turf/T = get_turf(src)
+	return T?.get_lumcount(minlum, maxlum)
+
+/turf/get_lumcount(var/minlum = 0, var/maxlum = 1)
 	if(!lighting_overlay)
 		var/area/A = loc
 		if(A.dynamic_lighting && dynamic_lighting)

@@ -123,12 +123,12 @@
 /turf/simulated/wall/proc/clear_plants()
 	for(var/obj/effect/overlay/wallrot/WR in src)
 		qdel(WR)
-	for(var/obj/effect/vine/plant in range(src, 1))
-		if(!plant.floor) //shrooms drop to the floor
-			plant.floor = 1
-			plant.update_icon()
+	for(var/obj/effect/plant/plant in range(src, 1))
+		if(plant.plant_is_on_wall)
+			plant.plant_is_on_wall = FALSE
 			plant.pixel_x = 0
 			plant.pixel_y = 0
+			plant.update_icon()
 
 /turf/simulated/wall/ChangeTurf(var/newtype)
 	clear_plants()

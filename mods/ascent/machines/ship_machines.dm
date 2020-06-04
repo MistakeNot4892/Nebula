@@ -19,19 +19,6 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 
 // No maintenance needed.
 /obj/machinery/portable_atmospherics/hydroponics/ascent/Process()
-	if(dead)
-		seed = null
-		update_icon()
-	if(!seed)
-		seed = SSplants.seeds["algae"]
-		update_icon()
-	waterlevel = 100
-	nutrilevel = 10
-	pestlevel = 0
-	weedlevel = 0
-	mutation_level = 0
-	health = 100
-	sampled = 0
 	. = ..()
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/Initialize()

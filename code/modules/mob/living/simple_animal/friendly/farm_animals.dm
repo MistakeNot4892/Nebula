@@ -51,21 +51,19 @@
 			if(udder && prob(5))
 				udder.add_reagent(/decl/material/liquid/drink/milk, rand(5, 10))
 
-		if(locate(/obj/effect/vine) in loc)
-			var/obj/effect/vine/SV = locate() in loc
+		var/plants = loc.get_plants()
+		if(length(plants))
+			var/obj/effect/plant/SV = pick(plants)
 			if(prob(60))
 				src.visible_message("<span class='notice'>\The [src] eats the plants.</span>")
-				SV.die_off(1)
-				if(locate(/obj/machinery/portable_atmospherics/hydroponics/soil/invisible) in loc)
-					var/obj/machinery/portable_atmospherics/hydroponics/soil/invisible/SP = locate() in loc
-					qdel(SP)
+				SV.die(TRUE)
 			else if(prob(20))
 				src.visible_message("<span class='notice'>\The [src] chews on the plants.</span>")
 			return
 
 		if(!LAZYLEN(grabbed_by))
-			var/obj/effect/vine/food
-			food = locate(/obj/effect/vine) in oview(5,loc)
+			var/obj/effect/plant/food
+			food = locate(/obj/effect/plant) in oview(5,loc)
 			if(food)
 				var/step = get_step_to(src, food, 0)
 				Move(step)

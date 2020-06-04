@@ -95,9 +95,9 @@
 			W.shatter()
 		else if(istype(A,/obj/structure/grille))
 			qdel(A)
-		else if(istype(A,/obj/effect/vine))
-			var/obj/effect/vine/P = A
-			P.die_off()
+		else if(istype(A,/obj/effect/plant))
+			var/obj/effect/plant/P = A
+			P.die(TRUE)
 
 /obj/item/twohanded/fireaxe/ishatchet()
 	return TRUE

@@ -1518,12 +1518,12 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "dT" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/vending/hydronutrients,
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "dU" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
@@ -1597,7 +1597,7 @@
 /turf/simulated/floor,
 /area/unishi/hydro)
 "eg" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/pipe/manifold/visible/green{
 	icon_state = "map";
 	dir = 8
@@ -1612,7 +1612,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "ei" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/pipe/manifold/visible/green{
 	icon_state = "map";
 	dir = 1
@@ -1621,7 +1621,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "ej" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/pipe/manifold/visible/green{
 	icon_state = "map";
 	dir = 1
@@ -1670,7 +1670,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "er" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/unary/freezer{
 	icon_state = "freezer";
 	dir = 8
@@ -1812,7 +1812,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "eJ" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/unary/heater{
 	icon_state = "heater_0";
 	dir = 8
@@ -1856,7 +1856,7 @@
 /turf/simulated/floor,
 /area/unishi/xenobio)
 "eQ" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8
 	},
@@ -1865,7 +1865,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "eR" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
@@ -1878,7 +1878,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "eS" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/item/seeds/random,
 /obj/item/seeds/random,
 /obj/item/seeds/random,
@@ -1947,7 +1947,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/unishi/common)
 "fb" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	icon_state = "intact";
 	dir = 5
@@ -1956,7 +1956,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "fc" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4
 	},
@@ -1964,7 +1964,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "fd" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
@@ -1983,7 +1983,7 @@
 /turf/simulated/floor/tiled,
 /area/unishi/hydro)
 "fe" = (
-/obj/effect/vine,
+/obj/effect/plant,
 /obj/item/seeds/random,
 /obj/item/seeds/random,
 /obj/item/seeds/random,

@@ -149,14 +149,16 @@
 		return
 	if(!proximity)
 		return
-	if(istype(target,/obj/machinery/portable_atmospherics/hydroponics))
-		var/obj/machinery/portable_atmospherics/hydroponics/T = target
-		if(T.harvest) //Try to harvest, assuming it's alive.
-			T.harvest(user)
-		else if(T.dead) //It's probably dead otherwise.
-			T.remove_dead(user)
+	var/obj/effect/plant/plant = target
+	if(!istype(plant) && has_extension(target, /datum/extension/plantable))
+		plant = locate(/obj/effect/plant) in target
+	if(istype(plant))
+		if(plant.plant_is_dead)
+			plant.attack_hand(user)
+		else
+			plant.harvest(user)
 	else
-		to_chat(user, "Harvesting \a [target] is not the purpose of this tool. \The [src] is for plants being grown.")
+		to_chat(user, SPAN_WARNING("You cannot locate a plant to harvest from."))
 
 // A special tray for the service droid. Allow droid to pick up and drop items as if they were using the tray normally
 // Click on table to unload, click on item to load. Otherwise works identically to a tray.

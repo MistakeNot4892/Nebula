@@ -353,7 +353,7 @@
 				affectedbook.dat = null
 				to_chat(usr, SPAN_NOTICE("The solution dissolves the ink on the book."))
 
-	if(solvent_power >= MAT_SOLVENT_STRONG && !O.unacidable && (istype(O, /obj/item) || istype(O, /obj/effect/vine)) && (REAGENT_VOLUME(holder, type) > solvent_melt_dose))
+	if(solvent_power >= MAT_SOLVENT_STRONG && !O.unacidable && (istype(O, /obj/item) || istype(O, /obj/effect/plant)) && (REAGENT_VOLUME(holder, type) > solvent_melt_dose))
 		var/obj/effect/decal/cleanable/molten_item/I = new(O.loc)
 		I.visible_message(SPAN_DANGER("\The [O] dissolves!"))
 		I.desc = "It looks like it was \a [O] some time ago."
@@ -367,7 +367,7 @@
 	if(dirtiness <= DIRTINESS_CLEAN)
 		O.clean_blood()
 
-	if(defoliant && istype(O, /obj/effect/vine))
+	if(defoliant && istype(O, /obj/effect/plant))
 		qdel(O)
 
 #define FLAMMABLE_LIQUID_DIVISOR 7
@@ -455,6 +455,15 @@
 			if(CHEM_TOUCH)
 				affect_touch(M, alien, effective, holder)
 	holder.remove_reagent(type, removed)
+
+// Called by plants when processing holder reagents, return is the amount of reagent actually used.
+/decl/material/proc/affect_plant(var/obj/effect/plant/plant, var/available, var/datum/reagents/holder)
+	. = REM
+	if(solvent_power > 0)
+		plant.adjust_chem_effect(/decl/plant_effect/poison, Floor(solvent_power * 0.25))
+		plant.adjust_chem_effect(/decl/plant_effect/yield_modifier, -(Floor(solvent_power * 0.5)))
+	if(toxicity > 0)
+		plant.adjust_chem_effect(/decl/plant_effect/poison, Floor(toxicity * 0.5))
 
 /decl/material/proc/affect_blood(var/mob/living/carbon/M, var/alien, var/removed, var/datum/reagents/holder)
 	if(radioactivity)
