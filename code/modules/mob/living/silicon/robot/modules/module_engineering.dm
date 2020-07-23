@@ -72,14 +72,12 @@
 
 /obj/item/robot_module/engineering/finalize_synths()
 
-	var/datum/matter_synth/metal/metal =       locate() in synths
-	var/datum/matter_synth/glass/glass =       locate() in synths
-	var/datum/matter_synth/plasteel/plasteel = locate() in synths
-	var/datum/matter_synth/wire/wire =         locate() in synths
+	var/datum/matter_synth/metal/metal =     locate() in synths
+	var/datum/matter_synth/glass/glass =     locate() in synths
 
 	var/obj/item/matter_decompiler/MD = locate() in equipment
-	MD.metal = metal
-	MD.glass = glass
+	LAZYSET(MD.can_decompile, /decl/material/solid/metal/steel, metal)
+	LAZYSET(MD.can_decompile, /decl/material/solid/glass,       glass)
 
 	for(var/thing in list(
 		 /obj/item/stack/material/cyborg/steel,
@@ -99,10 +97,10 @@
 		LAZYDISTINCTADD(stack.synths, glass)
 
 	var/obj/item/stack/cable_coil/cyborg/C = locate() in equipment
-	C.synths = list(wire)
+	C.synths = list(locate(/datum/matter_synth/wire) in synths)
 
 	var/obj/item/stack/material/cyborg/plasteel/PL = locate() in equipment
-	PL.synths = list(plasteel)
+	PL.synths = list(locate(/datum/matter_synth/plasteel) in synths)
 
 /obj/item/robot_module/engineering/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	var/obj/item/lightreplacer/LR = locate() in equipment

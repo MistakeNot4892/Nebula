@@ -67,17 +67,17 @@
 
 /obj/item/robot_module/drone/finalize_synths()
 	. = ..()
+	var/datum/matter_synth/wire/wire =       locate() in synths
 	var/datum/matter_synth/metal/metal =     locate() in synths
 	var/datum/matter_synth/glass/glass =     locate() in synths
 	var/datum/matter_synth/wood/wood =       locate() in synths
 	var/datum/matter_synth/plastic/plastic = locate() in synths
-	var/datum/matter_synth/wire/wire =       locate() in synths
 
 	var/obj/item/matter_decompiler/MD = locate() in equipment
-	MD.metal = metal
-	MD.glass = glass
-	MD.wood = wood
-	MD.plastic = plastic
+	LAZYSET(MD.can_decompile, /decl/material/solid/metal/steel, metal)
+	LAZYSET(MD.can_decompile, /decl/material/solid/glass,       glass)
+	LAZYSET(MD.can_decompile, /decl/material/solid/wood,        wood)
+	LAZYSET(MD.can_decompile, /decl/material/solid/plastic,     plastic)
 
 	for(var/thing in list(
 		 /obj/item/stack/material/cyborg/steel,

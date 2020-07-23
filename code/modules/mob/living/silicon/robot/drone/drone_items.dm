@@ -278,10 +278,7 @@
 	icon_state = "decompiler"
 
 	//Metal, glass, wood, plastic.
-	var/datum/matter_synth/metal = null
-	var/datum/matter_synth/glass = null
-	var/datum/matter_synth/wood = null
-	var/datum/matter_synth/plastic = null
+	var/list/can_decompile
 
 /obj/item/matter_decompiler/attack(mob/living/carbon/M, mob/living/carbon/user)
 	return
@@ -299,17 +296,18 @@
 	var/grabbed_something = 0
 
 	for(var/mob/M in T)
-		if(istype(M,/mob/living/simple_animal/lizard) || istype(M,/mob/living/simple_animal/mouse))
+
+		if(istype(M,/mob/living/simple_animal/lizard) || istype(M,/mob/living/simple_animal/mouse) || istype(M, /mob/living/simple_animal/spiderling))
 			src.loc.visible_message("<span class='danger'>[src.loc] sucks [M] into its decompiler. There's a horrible crunching noise.</span>","<span class='danger'>It's a bit of a struggle, but you manage to suck [M] into your decompiler. It makes a series of visceral crunching noises.</span>")
 			new/obj/effect/decal/cleanable/blood/splatter(get_turf(src))
 			qdel(M)
-			if(wood)
-				wood.add_charge(2000)
-			if(plastic)
-				plastic.add_charge(2000)
+			var/datum/matter_synth/wood = LAZYACCESS(can_decompile, /decl/material/solid/wood)
+			wood?.add_charge(2000)
+			var/datum/matter_synth/plastic = LAZYACCESS(can_decompile, /decl/material/solid/plastic)
+			plastic?.add_charge(2000)
 			return
 
-		else if(istype(M,/mob/living/silicon/robot/drone) && !M.client)
+		if(istype(M,/mob/living/silicon/robot/drone) && !M.client)
 
 			var/mob/living/silicon/robot/D = src.loc
 
@@ -328,73 +326,30 @@
 			qdel(M)
 			new/obj/effect/decal/cleanable/blood/oil(get_turf(src))
 
-			if(metal)
-				metal.add_charge(15000)
-			if(glass)
-				glass.add_charge(15000)
-			if(wood)
-				wood.add_charge(2000)
-			if(plastic)
-				plastic.add_charge(1000)
+			var/datum/matter_synth/metal =   LAZYACCESS(can_decompile, /decl/material/solid/metal/steel)
+			var/datum/matter_synth/glass =   LAZYACCESS(can_decompile, /decl/material/solid/glass)
+			var/datum/matter_synth/wood =    LAZYACCESS(can_decompile, /decl/material/solid/wood)
+			var/datum/matter_synth/plastic = LAZYACCESS(can_decompile, /decl/material/solid/plastic)
+			metal?.add_charge(15000)
+			glass?.add_charge(15000)
+			wood?.add_charge(2000)
+			plastic?.add_charge(1000)
 			return
 		else
 			continue
 
 	for(var/obj/W in T)
-		//Different classes of items give different commodities.
-		if(istype(W,/obj/item/trash/cigbutt))
-			if(plastic)
-				plastic.add_charge(500)
-		else if(istype(W,/obj/effect/spider/spiderling))
-			if(wood)
-				wood.add_charge(2000)
-			if(plastic)
-				plastic.add_charge(2000)
-		else if(istype(W,/obj/item/light))
-			var/obj/item/light/L = W
-			if(L.status >= 2)
-				if(metal)
-					metal.add_charge(250)
-				if(glass)
-					glass.add_charge(250)
-			else
-				continue
-		else if(istype(W,/obj/item/remains/robot))
-			if(metal)
-				metal.add_charge(2000)
-			if(plastic)
-				plastic.add_charge(2000)
-			if(glass)
-				glass.add_charge(1000)
-		else if(istype(W,/obj/item/trash))
-			if(metal)
-				metal.add_charge(1000)
-			if(plastic)
-				plastic.add_charge(3000)
-		else if(istype(W,/obj/effect/decal/cleanable/blood/gibs/robot))
-			if(metal)
-				metal.add_charge(2000)
-			if(glass)
-				glass.add_charge(2000)
-		else if(istype(W,/obj/item/ammo_casing))
-			if(metal)
-				metal.add_charge(1000)
-		else if(istype(W,/obj/item/shard/shrapnel))
-			if(metal)
-				metal.add_charge(1000)
-		else if(istype(W,/obj/item/shard))
-			if(glass)
-				glass.add_charge(1000)
-		else if(istype(W,/obj/item/chems/food/snacks/grown))
-			if(wood)
-				wood.add_charge(4000)
-		else if(istype(W,/obj/item/pipe))
-			// This allows drones and engiborgs to clear pipe assemblies from floors.
-		else
+		if(W.anchored || !W.simulated || W.w_class > ITEM_SIZE_SMALL)
 			continue
-
-		qdel(W)
-		grabbed_something = 1
+		var/ate_atom = FALSE
+		for(var/mat in W.matter)
+			var/datum/matter_synth/charging = can_decompile[mat]
+			if(charging)
+				charging.add_charge(W.matter[mat])
+				ate_atom = TRUE
+		if(ate_atom)
+			qdel(W)
+			grabbed_something = TRUE
 
 	if(grabbed_something)
 		to_chat(user, "<span class='notice'>You deploy your decompiler and clear out the contents of \the [T].</span>")
