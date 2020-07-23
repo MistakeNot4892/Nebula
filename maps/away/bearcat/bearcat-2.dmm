@@ -2974,7 +2974,7 @@
 /area/ship/scrap/cargo)
 "ff" = (
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/structure/cable{
 	d1 = 32;
 	d2 = 1;
@@ -3245,7 +3245,7 @@
 /turf/simulated/floor/usedup,
 /area/ship/scrap/unused)
 "fz" = (
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	icon_state = "intact";
 	dir = 10
@@ -3616,7 +3616,7 @@
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/fire)
 "go" = (
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 2;
 	level = 2

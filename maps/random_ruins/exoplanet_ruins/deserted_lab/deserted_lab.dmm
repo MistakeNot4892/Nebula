@@ -52,7 +52,7 @@
 /area/template_noop)
 "ak" = (
 /obj/structure/artifact,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/template_noop)
 "al" = (
@@ -207,7 +207,7 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/template_noop)
 "aQ" = (
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/structure/closet/cabinet,
 /turf/simulated/floor/carpet/blue2,
 /area/template_noop)

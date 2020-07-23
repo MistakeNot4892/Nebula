@@ -373,7 +373,7 @@
 /obj/machinery/fabricator/pipe,
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/effect/decal/cleanable/generic,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/crashed_pod)
 "aN" = (

@@ -1254,7 +1254,7 @@
 /turf/simulated/floor/tiled/airless,
 /area/outpost/abandoned)
 "eg" = (
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/item/ammo_magazine/pistol/small,
 /turf/simulated/floor/tiled/airless,
 /area/outpost/abandoned)
@@ -1941,7 +1941,7 @@
 /area/outpost/abandoned)
 "gg" = (
 /obj/machinery/computer/power_monitor,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/structure/cable,
 /turf/simulated/floor/plating,
 /area/outpost/abandoned)
@@ -2311,7 +2311,7 @@
 "hc" = (
 /obj/structure/table/steel,
 /obj/item/ashtray/glass,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 5

@@ -35,7 +35,7 @@
 /area/template_noop)
 "j" = (
 /obj/structure/closet/crate/freezer/rations,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /turf/simulated/floor/tiled/dark,
 /area/template_noop)
 "k" = (

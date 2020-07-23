@@ -5231,7 +5231,7 @@
 	level = 2
 	},
 /obj/item/stool/bar/padded,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
 	dir = 5

@@ -63,7 +63,7 @@
 /obj/structure/table/woodentable,
 /obj/item/chems/food/drinks/glass2/coffeecup,
 /obj/item/newspaper,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/energy,
 /obj/item/paper{
@@ -85,7 +85,7 @@
 /area/yacht/bridge)
 "ap" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/bridge)
@@ -97,7 +97,7 @@
 /obj/item/chems/pill/cyanide,
 /obj/item/rig/medical/equipped,
 /obj/item/gun/energy/captain,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/bridge)
@@ -302,7 +302,7 @@
 /area/yacht/living)
 "aT" = (
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/carpet/blue2,
 /area/yacht/living)
 "aU" = (
@@ -310,7 +310,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/drip,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /mob/living/simple_animal/hostile/giant_spider/hunter,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
@@ -322,7 +322,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/drip,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "aW" = (
@@ -393,11 +393,11 @@
 "bc" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/blue,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/carpet/blue2,
 /area/yacht/living)
 "bd" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "bf" = (
@@ -418,7 +418,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/yew,
 /area/yacht/living)
@@ -430,15 +430,15 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/beach/water/ocean,
 /area/yacht/living)
 "bm" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/beach/water/ocean,
 /area/yacht/living)
 "bn" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/freezer,
 /area/yacht/living)
@@ -466,7 +466,7 @@
 /area/yacht/living)
 "bs" = (
 /obj/item/inflatable_duck,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/beach/water/ocean,
 /area/yacht/living)
 "bt" = (
@@ -513,7 +513,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/yew,
 /area/yacht/living)
@@ -524,7 +524,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/yew,
 /area/yacht/living)
@@ -942,7 +942,7 @@
 /turf/simulated/floor/wood/yew,
 /area/yacht/living)
 "cE" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/yew,
 /area/yacht/living)
@@ -1249,7 +1249,7 @@
 /obj/item/clothing/ring/cti,
 /obj/item/clothing/under/lawyer/oldman,
 /obj/structure/table/woodentable,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/random/cash,
 /obj/random/cash,
 /obj/random/cash,

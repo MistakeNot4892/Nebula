@@ -85,11 +85,14 @@
 	if(istype(M))
 		for(var/obj/item/organ/external/E in M.organs)
 			if(LAZYLEN(E.implants))
-				for(var/obj/effect/spider/spider in E.implants)
-					if(prob(25))
-						E.implants -= spider
-						M.visible_message("<span class='notice'>The dying form of \a [spider] emerges from inside \the [M]'s [E.name].</span>")
-						qdel(spider)
+				for(var/obj/item/holder/possible_spider in E.implants)
+					var/mob/living/simple_animal/spiderling/actual_spider = locate() in possible_spider
+					if(actual_spider && prob(25))
+						M.visible_message(SPAN_NOTICE("The dying form of \a [actual_spider] emerges from inside \the [M]'s [E.name]."))
+						actual_spider.dropInto(get_turf(M))
+						actual_spider.death()
+						E.implants -= possible_spider
+						qdel(possible_spider)
 						break
 
 /decl/material/gas/nitrous_oxide

@@ -40,8 +40,11 @@
 	name = "cobweb"
 	desc = "Somebody should remove that."
 	layer = ABOVE_HUMAN_LAYER
-	icon = 'icons/effects/effects.dmi'
+	icon = 'icons/effects/spiders.dmi'
 	icon_state = "cobweb1"
+
+/obj/effect/decal/cleanable/cobweb/alt
+	icon_state = "cobweb2"
 
 /obj/effect/decal/cleanable/molten_item
 	name = "gooey grey mass"
@@ -50,13 +53,6 @@
 	icon_state = "molten"
 	persistent = TRUE
 	generic_filth = TRUE
-
-/obj/effect/decal/cleanable/cobweb2
-	name = "cobweb"
-	desc = "Somebody should remove that."
-	layer = ABOVE_HUMAN_LAYER
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "cobweb2"
 
 //Vomit (sorry)
 /obj/effect/decal/cleanable/vomit

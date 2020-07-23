@@ -33,7 +33,7 @@
 /obj/structure/table/standard{
 	flipped = 1
 	},
-/obj/effect/spider/cocoon,
+/obj/structure/cocoon,
 /obj/random/energy,
 /obj/random/trash,
 /turf/simulated/floor/lino,
@@ -44,7 +44,7 @@
 	},
 /obj/item/pen,
 /obj/random/junk,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/plating,
 /area/template_noop)
 "k" = (
@@ -55,7 +55,7 @@
 "l" = (
 /obj/structure/bed/chair/office/comfy/blue,
 /obj/item/pen,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/plating,
 /area/template_noop)
@@ -64,7 +64,7 @@
 /turf/template_noop,
 /area/template_noop)
 "n" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/lino,
@@ -98,7 +98,7 @@
 "r" = (
 /obj/item/paper_bin,
 /obj/random/trash,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/lino,
 /area/template_noop)
 "s" = (
@@ -110,13 +110,13 @@
 /turf/simulated/floor/lino,
 /area/template_noop)
 "u" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/item/paper,
 /turf/simulated/floor/lino,
 /area/template_noop)
 "v" = (
 /obj/random/junk,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/item/seeds/random,
 /turf/simulated/floor/lino,
 /area/template_noop)
@@ -128,7 +128,7 @@
 /area/template_noop)
 "x" = (
 /obj/structure/grille/broken,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/blood/drip,
 /mob/living/simple_animal/hostile/giant_spider/nurse,
@@ -136,7 +136,7 @@
 /area/template_noop)
 "y" = (
 /obj/random/trash,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/lino,
 /area/template_noop)
 "z" = (
@@ -164,12 +164,12 @@
 /area/template_noop)
 "D" = (
 /obj/structure/bookcase,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /turf/simulated/floor/lino,
 /area/template_noop)
 "E" = (
-/obj/effect/spider/stickyweb,
-/obj/effect/spider/cocoon,
+/obj/effect/stickyweb,
+/obj/structure/cocoon,
 /obj/random/loot,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
@@ -181,7 +181,7 @@
 /area/template_noop)
 "G" = (
 /obj/structure/grille/broken,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/plating,
 /area/template_noop)
@@ -199,7 +199,7 @@
 /turf/simulated/floor/lino,
 /area/template_noop)
 "J" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/machinery/door/airlock/external,
 /turf/simulated/floor/tiled/techfloor,
 /area/template_noop)
@@ -210,7 +210,7 @@
 /area/template_noop)
 "L" = (
 /obj/random/loot,
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/reinforced,
@@ -220,7 +220,7 @@
 /turf/template_noop,
 /area/template_noop)
 "N" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/lino,
 /area/template_noop)
@@ -239,7 +239,7 @@
 	},
 /area/template_noop)
 "W" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/random/voidsuit,
 /obj/random/loot,
 /obj/effect/decal/cleanable/vomit,
@@ -253,12 +253,12 @@
 /turf/simulated/floor/lino,
 /area/template_noop)
 "Y" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/reinforced,
 /area/template_noop)
 "Z" = (
-/obj/effect/spider/stickyweb,
+/obj/effect/stickyweb,
 /turf/simulated/floor/plating,
 /area/template_noop)
 

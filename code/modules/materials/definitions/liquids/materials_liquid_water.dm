@@ -33,7 +33,7 @@
 				if(prob(10))
 					GLOB.cult.offer_uncult(M)
 				if(prob(2))
-					var/obj/effect/spider/spiderling/S = new /obj/effect/spider/spiderling(M.loc)
+					var/mob/living/simple_animal/spiderling/S = new(M.loc)
 					M.visible_message("<span class='warning'>\The [M] coughs up \the [S]!</span>")
 			else if(M.mind && GLOB.godcult.is_antagonist(M.mind))
 				if(REAGENT_VOLUME(holder, type) > 5)

@@ -33,7 +33,7 @@
 		log_debug("Vermin infestation failed to find a viable spawn after 3 attempts. Aborting.")
 		kill()
 
-	var/list/spawn_types = list()
+	var/list/spawn_types
 	var/max_number
 	vermin = rand(0,2)
 	switch(vermin)
@@ -46,11 +46,11 @@
 			max_number = 6
 			vermstring = "lizards"
 		if(VERM_SPIDERS)
-			spawn_types = list(/obj/effect/spider/spiderling)
+			spawn_types = list(/mob/living/simple_animal/spiderling/dormant)
 			max_number = 3
 			vermstring = "spiders"
 
-	spawn(0)
+	if(length(spawn_types))
 		var/num = 0
 		for(var/i = 1 to severity)
 			num += rand(2,max_number)
@@ -58,12 +58,10 @@
 		while(vermin_turfs.len && num > 0)
 			var/turf/simulated/floor/T = pick(vermin_turfs)
 			vermin_turfs.Remove(T)
+			var/spawn_type = pick(spawn_types)
+			new spawn_type(T)
 			num--
 
-			var/spawn_type = pick(spawn_types)
-			var/obj/effect/spider/spiderling/S = new spawn_type(T)
-			if(istype(S))
-				S.amount_grown = -1
 
 /datum/event/infestation/announce()
 	command_announcement.Announce("Bioscans indicate that [vermstring] have been breeding in \the [location]. Further infestation is likely if left unchecked.", "[location_name()] Biologic Sensor Network", zlevels = affecting_z)

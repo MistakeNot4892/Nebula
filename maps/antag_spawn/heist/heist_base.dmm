@@ -480,7 +480,7 @@
 	},
 /area/map_template/syndicate_mothership/raider_base)
 "bi" = (
-/obj/effect/decal/cleanable/cobweb2{
+/obj/effect/decal/cleanable/cobweb/alt{
 	icon_state = "spiderling";
 	name = "dead spider"
 	},
@@ -659,7 +659,7 @@
 	},
 /area/map_template/syndicate_mothership/raider_base)
 "bC" = (
-/obj/effect/decal/cleanable/cobweb2{
+/obj/effect/decal/cleanable/cobweb/alt{
 	icon_state = "spiderling";
 	name = "dead spider"
 	},

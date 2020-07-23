@@ -430,7 +430,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -553,7 +553,7 @@
 /obj/structure/curtain/open/bed,
 /obj/structure/bed/padded,
 /obj/item/bedsheet/green,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /turf/simulated/floor/tiled/dark/airless,
 /area/ship/scrap/crew/dorms1)
 "bi" = (
@@ -1014,7 +1014,7 @@
 	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/lower)
 "cb" = (
@@ -1647,7 +1647,7 @@
 /obj/structure/curtain/open/bed,
 /obj/structure/bed/padded,
 /obj/item/bedsheet/green,
-/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb/alt,
 /obj/structure/sign/poster{
 	pixel_y = 32
 	},

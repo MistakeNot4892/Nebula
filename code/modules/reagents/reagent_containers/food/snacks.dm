@@ -1400,11 +1400,11 @@
 //Spider cubes, all that's left of the cube PR
 /obj/item/chems/food/snacks/monkeycube/spidercube
 	name = "spider cube"
-	monkey_type = /obj/effect/spider/spiderling
+	monkey_type = /mob/living/simple_animal/spiderling
 
 /obj/item/chems/food/snacks/monkeycube/wrapped/spidercube
 	name = "spider cube"
-	monkey_type = /obj/effect/spider/spiderling
+	monkey_type = /mob/living/simple_animal/spiderling
 
 /obj/item/chems/food/snacks/spellburger
 	name = "spell burger"

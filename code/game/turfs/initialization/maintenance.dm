@@ -65,9 +65,9 @@
 			if(dir == WEST)
 				new /obj/effect/decal/cleanable/cobweb(T)
 			if(dir == EAST)
-				new /obj/effect/decal/cleanable/cobweb2(T)
+				new /obj/effect/decal/cleanable/cobweb/alt(T)
 			if(prob(web_probability))
-				var/obj/effect/spider/spiderling/spiderling = new /obj/effect/spider/spiderling/mundane/dormant(T)
+				var/mob/living/simple_animal/spiderling/dormant/spiderling = new(T)
 				spiderling.pixel_y = spiderling.shift_range
 				spiderling.pixel_x = dir == WEST ? -spiderling.shift_range : spiderling.shift_range
 

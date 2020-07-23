@@ -98,8 +98,11 @@
 	var/mob/living/simple_animal/hostile/giant_spider/guard/paired_guard
 
 	//things we can't encase in a cocoon
-	var/list/cocoon_blacklist = list(/mob/living/simple_animal/hostile/giant_spider,
-									 /obj/structure/closet)
+	var/list/cocoon_blacklist = list(
+		/mob/living/simple_animal/hostile/giant_spider,
+		/mob/living/simple_animal/spiderling,
+		/obj/structure/closet
+	)
 
 //hunters - the most damage, fast, average health and the only caste tenacious enough to break out of nets
 /mob/living/simple_animal/hostile/giant_spider/hunter
@@ -304,7 +307,7 @@ Nurse caste procs
 		if(prob(infest_chance) && max_eggs)
 			var/obj/item/organ/external/O = pick(H.organs)
 			if(!BP_IS_PROSTHETIC(O) && !BP_IS_CRYSTAL(O) && (LAZYLEN(O.implants) < 2))
-				var/eggs = new /obj/effect/spider/eggcluster(O, src)
+				var/eggs = new /obj/effect/eggcluster(O, src)
 				O.implants += eggs
 				max_eggs--
 
@@ -337,19 +340,19 @@ Nurse caste procs
 					return
 
 			//second, spin a sticky spiderweb on this tile
-			var/obj/effect/spider/stickyweb/W = locate() in get_turf(src)
+			var/obj/effect/stickyweb/W = locate() in get_turf(src)
 			if(!W)
 				busy = SPINNING_WEB
 				src.visible_message("<span class='notice'>\The [src] begins to secrete a sticky substance.</span>")
 				stop_automated_movement = 1
 				spawn(40)
 					if(busy == SPINNING_WEB)
-						new /obj/effect/spider/stickyweb(src.loc)
+						new /obj/effect/stickyweb(src.loc)
 						busy = 0
 						stop_automated_movement = 0
 			else
 				//third, lay an egg cluster there
-				var/obj/effect/spider/eggcluster/E = locate() in get_turf(src)
+				var/obj/effect/eggcluster/E = locate() in get_turf(src)
 				if(!E && fed > 0 && max_eggs)
 					busy = LAYING_EGGS
 					src.visible_message("<span class='notice'>\The [src] begins to lay a cluster of eggs.</span>")
@@ -358,7 +361,7 @@ Nurse caste procs
 						if(busy == LAYING_EGGS)
 							E = locate() in get_turf(src)
 							if(!E)
-								new /obj/effect/spider/eggcluster(loc, src)
+								new /obj/effect/eggcluster(loc, src)
 								max_eggs--
 								fed--
 							busy = 0
@@ -384,35 +387,17 @@ Nurse caste procs
 		else if(busy == MOVING_TO_TARGET && cocoon_target)
 			if(get_dist(src, cocoon_target) <= 1)
 				busy = SPINNING_COCOON
-				src.visible_message("<span class='notice'>\The [src] begins to secrete a sticky substance around \the [cocoon_target].</span>")
+				src.visible_message(SPAN_NOTICE("\The [src] begins to secrete a sticky substance around \the [cocoon_target]."))
 				stop_automated_movement = 1
 				walk(src,0)
 				spawn(50)
 					if(busy == SPINNING_COCOON)
-						if(cocoon_target && istype(cocoon_target.loc, /turf) && get_dist(src,cocoon_target) <= 1)
-							var/obj/effect/spider/cocoon/C = new(cocoon_target.loc)
-							var/large_cocoon = 0
-							C.pixel_x = cocoon_target.pixel_x
-							C.pixel_y = cocoon_target.pixel_y
-							for(var/mob/living/M in C.loc)
-								large_cocoon = 1
+						if(cocoon_target && isturf(cocoon_target.loc) && get_dist(src,cocoon_target) <= 1)
+							var/obj/structure/cocoon/C = new(cocoon_target.loc, cocoon_target)
+							if(locate(/mob) in C)
 								fed++
 								max_eggs++
-								src.visible_message("<span class='warning'>\The [src] sticks a proboscis into \the [cocoon_target] and sucks a viscous substance out.</span>")
-								M.forceMove(C)
-								C.pixel_x = M.pixel_x
-								C.pixel_y = M.pixel_y
-								break
-							for(var/obj/item/I in C.loc)
-								I.forceMove(C)
-							for(var/obj/structure/S in C.loc)
-								if(!S.anchored)
-									S.forceMove(C)
-							for(var/obj/machinery/M in C.loc)
-								if(!M.anchored)
-									M.forceMove(C)
-							if(large_cocoon)
-								C.icon_state = pick("cocoon_large1","cocoon_large2","cocoon_large3")
+								visible_message(SPAN_WARNING("\The [src] sticks a proboscis into \the [C] and sucks a viscous substance out."))
 						busy = 0
 						stop_automated_movement = 0
 
