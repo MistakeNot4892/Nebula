@@ -12,6 +12,21 @@
 		S.add_to_stacks(user, 1)
 	return S
 
+/datum/stack_recipe/sheet
+	title = "sheet"
+	result_type = /obj/item/stack/material
+	res_amount = 1
+	req_amount = 2
+	max_res_amount = 60
+	time = 5
+	difficulty = 1
+
+/datum/stack_recipe/sheet/spawn_result(user, location, amount)
+	var/obj/item/stack/S = new result_type(location, amount, use_material)
+	if(user)
+		S.add_to_stacks(user, 1)
+	return S
+
 // Tiles 
 /datum/stack_recipe/tile
 	res_amount = 4

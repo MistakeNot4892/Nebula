@@ -1669,6 +1669,7 @@
 #include "code\modules\codex\entries\weapons.dm"
 #include "code\modules\crafting\_crafting_holder.dm"
 #include "code\modules\crafting\_crafting_stage.dm"
+#include "code\modules\crafting\tool_work.dm"
 #include "code\modules\crafting\crafting_recipes\bot_crafting\crafting_ed209.dm"
 #include "code\modules\crafting\crafting_recipes\bot_crafting\crafting_farmbot.dm"
 #include "code\modules\crafting\crafting_recipes\bot_crafting\crafting_floorbot.dm"
