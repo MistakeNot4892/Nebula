@@ -54,10 +54,10 @@
 	var/obj/item/organ/external/E = org
 	if(istype(E) && !BP_IS_PROSTHETIC(E))
 		E.robotize("Utility Frame")
-	var/obj/item/organ/external/head/head = H.organs_by_name[BP_HEAD]
+	var/obj/item/organ/external/head/head = org
 	if(istype(head))
 		head.glowing_eyes = TRUE
-	var/obj/item/organ/internal/eyes/eyes = H.internal_organs_by_name[vision_organ || BP_EYES]
+	var/obj/item/organ/internal/eyes/eyes = org
 	if(istype(eyes))
 		eyes.eye_icon = 'icons/mob/human_races/cyberlimbs/utility/eyes.dmi'
 	H.regenerate_icons()

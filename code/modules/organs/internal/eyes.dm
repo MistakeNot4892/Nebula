@@ -12,6 +12,7 @@
 	var/eye_colour = COLOR_BLACK
 	var/innate_flash_protection = FLASH_PROTECTION_NONE
 	var/eye_icon = 'icons/mob/human_races/species/default_eyes.dmi'
+	var/eye_blend = ICON_ADD
 	var/apply_eye_colour = TRUE
 	var/tmp/last_cached_eye_colour
 	var/tmp/last_eye_cache_key
@@ -29,7 +30,7 @@
 	if(!human_icon_cache[cache_key])
 		var/icon/eyes_icon = icon(icon = eye_icon, icon_state = "")
 		if(apply_eye_colour)
-			eyes_icon.Blend(last_cached_eye_colour, ICON_ADD)
+			eyes_icon.Blend(last_cached_eye_colour, eye_blend)
 		human_icon_cache[cache_key] = eyes_icon
 	return human_icon_cache[cache_key]
 

@@ -1,0 +1,7 @@
+#ifndef MODPACK_LITH
+#define MODPACK_LITH
+// BEGIN INCLUDE
+#include "lith.dm"
+#include "datum\lith.dm"
+#endif
+// END_INCLUDE
