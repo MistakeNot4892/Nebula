@@ -9,3 +9,7 @@
 	stat_immune = 0
 	base_type = /obj/machinery/network/relay
 	produces_heat = FALSE // for convenience
+
+/obj/machinery/network/relay/long_range
+	name = "quantum-entangled network relay"
+	network_device_type =  /datum/extension/network_device/broadcaster/relay/long_range

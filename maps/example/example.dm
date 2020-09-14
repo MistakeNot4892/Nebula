@@ -1,6 +1,7 @@
 #if !defined(USING_MAP_DATUM)
 
 	#include "example_areas.dm"
+	#include "example_comms.dm"
 	#include "example_shuttles.dm"
 	#include "example_unit_testing.dm"
 

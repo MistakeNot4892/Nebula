@@ -103,7 +103,8 @@
 
 /obj/item/implant/explosive/exposed()
 	if(warning_message)
-		GLOB.global_headset.autosay(warning_message, "Anti Tampering System")
+		var/obj/item/radio/announcer = get_announcer(src)
+		announcer.autosay(warning_message, "Anti Tampering System")
 
 /obj/item/implant/explosive/proc/sanitize_phrase(phrase)
 	var/list/replacechars = list("'" = "","\"" = "",">" = "","<" = "","(" = "",")" = "")

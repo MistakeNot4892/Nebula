@@ -20,8 +20,9 @@
 		log_and_message_admins("removed themselves from the round via Wipe Core")
 
 	// We warned you.
+	var/obj/item/radio/announcer = get_announcer(src)
+	announcer.autosay("[src] has been moved to intelligence storage.", "Artificial Intelligence Oversight")
 	empty_playable_ai_cores += new /obj/structure/aicore/deactivated(loc)
-	GLOB.global_announcer.autosay("[src] has been moved to intelligence storage.", "Artificial Intelligence Oversight")
 
 	//Handle job slot/tater cleanup.
 	clear_client()

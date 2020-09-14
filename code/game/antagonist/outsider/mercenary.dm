@@ -31,3 +31,18 @@
 	if(.)
 		var/obj/item/radio/uplink/U = new(get_turf(player), player.mind, DEFAULT_TELECRYSTAL_AMOUNT)
 		player.put_in_hands(U)
+
+/obj/item/encryptionkey/mercenary
+	icon_state = "cypherkey"
+	origin_tech = "{'esoteric':2}"
+	can_decrypt = list(access_mercenary)
+
+/obj/item/radio/headset/mercenary
+	origin_tech = "{'esoteric':2}"
+	encryption_keys = list(/obj/item/encryptionkey/mercenary)
+	peer_to_peer = TRUE
+	peer_to_peer_range = 100
+
+/obj/item/radio/headset/mercenary/Initialize()
+	peer_to_peer_password = get_initial_peer_to_peer_password(/decl/special_role/mercenary)
+	. = ..()

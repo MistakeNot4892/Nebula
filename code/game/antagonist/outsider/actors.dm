@@ -50,3 +50,12 @@
 		return
 
 	to_chat(usr, "You must be observing or be a new player to spawn as an actor.")
+
+/obj/item/encryptionkey/entertainment
+	name = "entertainment radio key"
+
+/obj/item/radio/headset/entertainment
+	name = "actor's radio headset"
+	desc = "Specially made to make you sound less cheesy."
+	icon = 'icons/obj/items/device/radio/headsets/headset_command.dmi'
+	encryption_keys = list(/obj/item/encryptionkey/entertainment)

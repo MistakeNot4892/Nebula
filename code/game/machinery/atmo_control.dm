@@ -137,7 +137,6 @@
 		return TOPIC_HANDLED
 		
 	var/datum/signal/signal = new
-	signal.transmission_method = 1 //radio signal
 	signal.source = src
 
 	if(href_list["in_refresh_status"])
@@ -294,7 +293,6 @@
 		automation = !automation
 
 		var/datum/signal/signal = new
-		signal.transmission_method = 1 //radio signal
 		signal.source = src
 		signal.data = list(
 			"tag" = device_tag,
@@ -317,7 +315,6 @@
 					injecting = 1
 
 		var/datum/signal/signal = new
-		signal.transmission_method = 1 //radio signal
 		signal.source = src
 
 		signal.data = list(

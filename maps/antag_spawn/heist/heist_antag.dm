@@ -81,4 +81,19 @@
 	default_outfit = LAZYACCESS(outfits_per_species, player.species.name) || initial(default_outfit)
 	. = ..()
 	if(.)
-		create_radio(RAID_FREQ, player)
+		create_radio(/obj/item/radio/headset/raider, player)
+
+/obj/item/encryptionkey/raider
+	icon_state = "cypherkey"
+	origin_tech = "{'esoteric':2}"
+	can_decrypt = list(access_raider)
+
+/obj/item/radio/headset/raider
+	origin_tech = "{'esoteric':2}"
+	encryption_keys = list(/obj/item/encryptionkey/raider)
+	peer_to_peer = TRUE
+	peer_to_peer_range = 100
+
+/obj/item/radio/headset/raider/Initialize()
+	peer_to_peer_password = get_initial_peer_to_peer_password(/decl/special_role/raider)
+	. = ..()

@@ -5,11 +5,26 @@
 	gloves = /obj/item/clothing/gloves/color/white
 	l_ear = /obj/item/radio/headset/heads/hop
 	glasses = /obj/item/clothing/glasses/sunglasses
-
 	id_slot = slot_wear_id_str
 	id_type = /obj/item/card/id/centcom/station
 	pda_slot = slot_r_store_str
 	pda_type = /obj/item/modular_computer/pda/heads
+
+/obj/item/radio/headset/heads/hop
+	name = "head of personnel's headset"
+	desc = "The headset of the guy who will one day be captain."
+	icon = 'icons/obj/items/device/radio/headsets/headset_command.dmi'
+	encryption_keys = list(/obj/item/encryptionkey/heads/hop)
+
+/obj/item/encryptionkey/heads/hop
+	name = "head of personnel's encryption key"
+	icon_state = "hop_cypherkey"
+	can_decrypt = list(
+		access_bar,
+		access_cargo,
+		access_bridge,
+		access_security
+	)
 
 /decl/hierarchy/outfit/nanotrasen/representative
 	name = "Corporate Representative"
@@ -44,6 +59,26 @@
 	l_pocket = /obj/item/flame/lighter/zippo
 	id_pda_assignment = "Corporate Commander"
 
+/obj/item/radio/headset/heads/captain
+	name = "captain's headset"
+	desc = "The headset of the boss."
+	icon_state = "com_headset"
+	icon = 'icons/obj/items/device/radio/headsets/headset_command.dmi'
+	encryption_keys = list(/obj/item/encryptionkey/heads/captain)
+
+/obj/item/encryptionkey/heads/captain
+	name = "captain's encryption key"
+	icon_state = "cap_cypherkey"
+	can_decrypt = list(
+		access_bridge,
+		access_security,
+		access_engine,
+		access_research,
+		access_medical,
+		access_cargo,
+		access_bar
+	)
+
 /decl/hierarchy/outfit/death_command
 	name = "Spec Ops - Death commando"
 
@@ -59,3 +94,4 @@
 	var/decl/special_role/commandos = GET_DECL(/decl/special_role/deathsquad/mercenary)
 	commandos.equip(H)
 	return 1
+

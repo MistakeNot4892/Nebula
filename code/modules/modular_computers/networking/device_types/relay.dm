@@ -3,6 +3,9 @@
 	expected_type = /obj/machinery
 	var/long_range  = 0 		// TRUE if relay can cross z-chunk boundaries.
 
+/datum/extension/network_device/broadcaster/relay/long_range
+	long_range = TRUE
+
 /datum/extension/network_device/broadcaster/relay/get_nearby_networks()
 	if(long_range)
 		return SSnetworking.networks

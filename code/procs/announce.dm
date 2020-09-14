@@ -137,11 +137,8 @@
 	var/rank = job.title
 	if(character.mind.role_alt_title)
 		rank = character.mind.role_alt_title
-
-	AnnounceArrivalSimple(character.real_name, rank, join_message, get_announcement_frequency(job))
-
-/proc/AnnounceArrivalSimple(var/name, var/rank = "visitor", var/join_message = "has arrived on the [station_name()]", var/frequency)
-	GLOB.global_announcer.autosay("[name], [rank], [join_message].", "Arrivals Announcement Computer", frequency)
+	var/obj/item/radio/announcer = get_announcer(character)
+	announcer.autosay("[character.real_name], [rank], [join_message].", "Arrivals Announcement Computer", get_announcement_frequency(job))
 
 /proc/get_announcement_frequency(var/datum/job/job)
 	// During red alert all jobs are announced on main frequency.
