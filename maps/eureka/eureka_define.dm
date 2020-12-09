@@ -22,8 +22,9 @@
 	emergency_shuttle_docked_message = "The evacuation convoy has arrived."
 	emergency_shuttle_leaving_dock =   "The evacuation convoy has departed from %dock_name%."
 	emergency_shuttle_called_message = "An evacuation convoy is being assembled and will set out shortly."
-	emergency_shuttle_recall_message = "The evaciation convoy has cancelled."
+	emergency_shuttle_recall_message = "The evacuation convoy has cancelled."
 
+	game_year = 2154
 	station_name  = "Port Eureka"
 	station_short = "Eureka"
 
@@ -44,29 +45,7 @@
 	msg = "has touched down on the Port Eureka landing pad"
 
 /datum/map/eureka/get_map_info()
-	return "Welcome to <b>[station_name]</b>, the smallest and dullest jewel in the Crown-Imperial; an isolated mining colony on the desolate backwater planet Nullius. Enjoy a canister of detoxified groundwater, admire the acid swamp, and relax under the radioactive glare of a monstrously swollen sun!"
-
-/datum/map/eureka/perform_map_generation()
-	. = ..()
-	new /datum/random_map/automata/cave_system(null, 1, 1, 1, 90, 90)
-	new /datum/random_map/noise/ore/rich(null, 1, 1, 1, 90, 90)
-	new /datum/random_map/noise/ore(null, 1, 1, 2, 90, 90)
-	for(var/turf/exterior/T in block(locate(1,1,1),locate(world.maxx, world.maxy, 1)))
-		T.set_light(0.5, 0.1, 2, l_color = COLOR_GREEN_GRAY)
-	for(var/turf/exterior/T in block(locate(1,1,2),locate(world.maxx, world.maxy, 2)))
-		T.set_light(0.5, 0.1, 2, l_color = COLOR_GREEN_GRAY)
+	return "Welcome to <b>[station_name]</b>, the smallest and dullest jewel in the Crown-Imperial; an isolated mining colony on the desolate backwater planet Nullius. Enjoy a canister of detoxified groundwater, admire the acid swamps, and relax under the radioactive glare of a monstrously swollen sun!"
 
 /decl/currency/trader/crown
 	name = "company scrip"
-
-/world
-	turf = /turf/exterior/sand
-	area = /area/eureka/outside
-
-/datum/map/eureka
-	exterior_atmos_temp = T0C - 4 
-	exterior_atmos_composition = list(
-		/decl/material/gas/oxygen =    MOLES_CELLSTANDARD * 0.16,
-		/decl/material/gas/nitrogen =  MOLES_CELLSTANDARD * 0.83,
-		/decl/material/gas/chlorine =  MOLES_CELLSTANDARD * 0.03
-	)
