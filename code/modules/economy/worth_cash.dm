@@ -159,7 +159,6 @@
 	currency = /decl/currency/trader
 	absolute_worth = 200
 
-
 /obj/item/cash/scavbucks
 	currency = /decl/currency/scav
 	absolute_worth = 10

@@ -9,6 +9,7 @@
 	#include "../../mods/content/modern_earth/_modern_earth.dme"
 	#include "../../mods/content/psionics/_psionics.dme"
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
+	#include "..\..\mods\eureka\_eureka.dme"
 
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 	#include "../../mods/mobs/borers/_borers.dme"

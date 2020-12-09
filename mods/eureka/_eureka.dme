@@ -1,0 +1,5 @@
+#ifndef MODPACK_EUREKA
+#define MODPACK_EUREKA
+#include "_eureka.dm"
+#include "clothing/eyes.dm"
+#endif
