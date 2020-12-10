@@ -6,6 +6,7 @@
 	thermal_conductivity = 0.040
 	heat_capacity = 10000
 	explosion_resistance = 1
+	height = -FLUID_SHALLOW / 2
 
 	// Damage to flooring.
 	var/broken
@@ -78,8 +79,10 @@
 		O.hide(O.hides_under_flooring() && src.flooring)
 
 	if(flooring)
+		height = flooring.height
 		layer = TURF_LAYER
 	else
+		height = initial(height)
 		layer = PLATING_LAYER
 
 /turf/simulated/floor/can_engrave()

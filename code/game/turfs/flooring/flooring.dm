@@ -46,6 +46,7 @@
 	//How we smooth with space and openspace tiles
 	var/space_smooth = SMOOTH_ALL
 	//There are no lists for spaces
+	var/height = 0
 
 /decl/flooring/proc/on_remove()
 	return

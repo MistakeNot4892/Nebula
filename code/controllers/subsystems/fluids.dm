@@ -98,7 +98,7 @@ SUBSYSTEM_DEF(fluids)
 			qdel(F)
 			continue
 
-		if(T.density || istype(T, /turf/space) || istype(T, /turf/exterior))
+		if(T.density || T.absorb_fluids)
 			F.reagents.remove_any(max(FLUID_EVAPORATION_POINT-1, round(F.reagents.total_volume * 0.5)))
 			if(F.reagents.total_volume <= FLUID_EVAPORATION_POINT)
 				qdel(F)
@@ -129,6 +129,9 @@ SUBSYSTEM_DEF(fluids)
 				UPDATE_FLUID_BLOCKED_DIRS(neighbor_turf)
 				if((neighbor_turf.fluid_blocked_dirs & coming_from) || checked[neighbor_turf] || !neighbor_turf.CanFluidPass(coming_from))
 					continue
+				world.log << "[F.reagents.total_volume] + [T.height] <= [neighbor_turf.height]"
+				if(F.reagents.total_volume + T.height <= neighbor_turf.height)
+					continue
 				checked[neighbor_turf] = TRUE
 				var/obj/effect/fluid/other = locate() in neighbor_turf.contents
 				if(!other)
@@ -154,10 +157,12 @@ SUBSYSTEM_DEF(fluids)
 		if(!length(F.neighbors) || F.reagents.total_volume <= FLUID_PUDDLE)
 			continue
 
+		var/turf/T = get_turf(F)
 		var/sufficient_delta = FALSE
 		for(var/thing in F.neighbors)
 			var/obj/effect/fluid/other = thing
-			if(abs(F.reagents.total_volume - other.reagents.total_volume) > FLUID_EVAPORATION_POINT)
+			var/turf/other_turf = get_turf(other)
+			if(abs((F.reagents.total_volume + T.height) - (other.reagents.total_volume + other_turf.height)) > FLUID_EVAPORATION_POINT)
 				sufficient_delta = TRUE
 				break
 
@@ -167,7 +172,8 @@ SUBSYSTEM_DEF(fluids)
 			equalizing_reagent_holder.reagents.clear_reagents()
 			for(var/thing in F.neighbors)
 				var/obj/effect/fluid/other = thing
-				var/flow_amount = F.reagents.total_volume - other.reagents.total_volume
+				var/turf/other_turf = get_turf(other)
+				var/flow_amount = (F.reagents.total_volume + T.height) - (other.reagents.total_volume + other_turf.height)
 				if(F.last_flow_strength < flow_amount && flow_amount >= FLUID_PUSH_THRESHOLD)
 					F.last_flow_strength = flow_amount
 					setting_dir = get_dir(F, other)

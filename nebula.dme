@@ -1247,6 +1247,7 @@
 #include "code\game\turfs\exterior\exterior_concrete.dm"
 #include "code\game\turfs\exterior\exterior_dirt.dm"
 #include "code\game\turfs\exterior\exterior_grass.dm"
+#include "code\game\turfs\exterior\exterior_hollow.dm"
 #include "code\game\turfs\exterior\exterior_ice.dm"
 #include "code\game\turfs\exterior\exterior_lava.dm"
 #include "code\game\turfs\exterior\exterior_mud.dm"

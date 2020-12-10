@@ -9,6 +9,7 @@
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
 	permit_ao = FALSE
 	z_eventually_space = TRUE
+	absorb_fluids = TRUE
 	var/static/list/dust_cache
 
 /turf/space/proc/build_dust_cache()
