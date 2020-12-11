@@ -6,18 +6,22 @@ SUBSYSTEM_DEF(fluids)
 	var/next_fluid_act = 0
 	var/fluid_act_delay = 15 // A bit longer than machines.
 
+	var/list/pipenets =      list()
 	var/list/active_fluids = list()
 	var/list/water_sources = list()
 	var/list/hygiene_props = list()
 
 	var/tmp/list/processing_sources
 	var/tmp/list/processing_fluids
+	var/tmp/list/processing_pipenets
 
 	var/obj/equalizing_reagent_holder
 	var/tmp/active_fluids_copied_yet = FALSE
 	var/tmp/fluid_sources_copied_yet = FALSE
+	var/tmp/pipenets_copied_yet =      FALSE
 	var/af_index = 1
 	var/fs_index = 1
+	var/pn_index = 1
 	var/list/fluid_images = list()
 
 	var/list/gurgles = list(
@@ -35,15 +39,17 @@ SUBSYSTEM_DEF(fluids)
 	..()
 
 /datum/controller/subsystem/fluids/stat_entry()
-	..("A:[active_fluids.len] S:[water_sources.len]")
+	..("P:[pipenets.len] A:[active_fluids.len] S:[water_sources.len]")
 
 /datum/controller/subsystem/fluids/fire(resumed = 0)
 
 	if (!resumed)
 		active_fluids_copied_yet = FALSE
 		fluid_sources_copied_yet = FALSE
+		pipenets_copied_yet =      FALSE
 		af_index = 1
 		fs_index = 1
+		pn_index = 1
 
 	if(!fluid_sources_copied_yet)
 		fluid_sources_copied_yet = TRUE
@@ -57,10 +63,10 @@ SUBSYSTEM_DEF(fluids)
 		var/flooded_a_neighbor
 		UPDATE_FLUID_BLOCKED_DIRS(T)
 		for(var/spread_dir in GLOB.cardinal)
-			if(T.fluid_blocked_dirs & spread_dir) 
+			if(T.fluid_blocked_dirs & spread_dir)
 				continue
 			var/turf/next = get_step(T, spread_dir)
-			if(!istype(next) || next.flooded) 
+			if(!istype(next) || next.flooded)
 				continue
 			UPDATE_FLUID_BLOCKED_DIRS(next)
 			if((next.fluid_blocked_dirs & GLOB.reverse_dir[spread_dir]) || !next.CanFluidPass(spread_dir) || checked[next])
@@ -117,7 +123,7 @@ SUBSYSTEM_DEF(fluids)
 					if(other && other.reagents.total_volume < FLUID_MAX_DEPTH)
 						F.reagents.trans_to_holder(other.reagents, min(Floor(F.reagents.total_volume*0.5), FLUID_MAX_DEPTH - other.reagents.total_volume))
 						continue
-		
+
 		if(F.reagents.total_volume > FLUID_PUDDLE)
 			for(var/spread_dir in GLOB.cardinal)
 				if(T.fluid_blocked_dirs & spread_dir)
@@ -173,7 +179,7 @@ SUBSYSTEM_DEF(fluids)
 					setting_dir = get_dir(F, other)
 				other.reagents.trans_to_holder(equalizing_reagent_holder.reagents, other.reagents.total_volume)
 			F.reagents.trans_to_holder(equalizing_reagent_holder.reagents, F.reagents.total_volume)
-			
+
 			var/equalize_amt = round(equalizing_reagent_holder.reagents.total_volume / (length(F.neighbors)+1))
 			for(var/thing in F.neighbors)
 				var/obj/effect/fluid/other = thing
@@ -183,7 +189,15 @@ SUBSYSTEM_DEF(fluids)
 		F.set_dir(setting_dir)
 
 		if (MC_TICK_CHECK)
-			return 
+			return
+
+	if(!pipenets_copied_yet)
+		pipenets_copied_yet = TRUE
+		processing_pipenets = pipenets.Copy()
+	pn_index = 1
+	while(pn_index <= processing_pipenets.len)
+		var/datum/graph/pipenet/pipes = processing_pipenets[pn_index]
+		pipes.ProcessFluids()
 
 /datum/controller/subsystem/fluids/StartLoadingMap()
 	suspend()

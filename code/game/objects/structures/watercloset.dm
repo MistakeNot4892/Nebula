@@ -80,18 +80,28 @@
 				F.reagents.add_reagent(/decl/material/liquid/water, adding)
 
 /obj/structure/hygiene/proc/drain()
-	if(!can_drain) return
+
+	if(!can_drain)
+		return
 	var/turf/T = get_turf(src)
-	if(!istype(T)) return
+	if(!istype(T))
+		return
 	var/fluid_here = T.get_fluid_depth()
 	if(fluid_here <= 0)
 		return
 
-	T.remove_fluid(ceil(fluid_here*drainage))
-	T.show_bubbles()
-	if(world.time > last_gurgle + 80)
-		last_gurgle = world.time
-		playsound(T, pick(SSfluids.gurgles), 50, 1)
+	for(var/obj/structure/reagent_pipe/pipe in T)
+		var/can_take = pipe.get_available_pipenet_capacity()
+		if(can_take <= 0)
+			continue
+		if(pipe.take_from_turf(T, min(ceil(fluid_here*drainage), can_take)))
+			T.show_bubbles()
+			if(world.time > last_gurgle + 80)
+				last_gurgle = world.time
+				playsound(T, pick(SSfluids.gurgles), 50, 1)
+		fluid_here = T.get_fluid_depth()
+		if(fluid_here <= 0)
+			return
 
 /obj/structure/hygiene/toilet
 	name = "toilet"

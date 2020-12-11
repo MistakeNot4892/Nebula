@@ -29,6 +29,8 @@
 #define LAZYCLEARLIST(L) if(L) { L.Cut(); L = null; }
 // Reads L or an empty list if L is not a list.  Note: Does NOT assign, L may be an expression.
 #define SANITIZE_LIST(L) ( islist(L) ? L : list() )
+// Copies L or returns null if L is null.
+#define LAZYCOPY(L) (islist(L) ? L.Copy() : null)
 
 // binary search sorted insert
 // IN: Object to be inserted
