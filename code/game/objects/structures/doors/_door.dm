@@ -197,3 +197,10 @@
 
 /obj/structure/door/shuttle
 	material = /decl/material/solid/metal/steel
+
+/obj/structure/door/plastic
+	material = /decl/material/solid/plastic
+
+/obj/structure/door/plastic/open
+	icon_state = "stoneopen"
+	density = FALSE

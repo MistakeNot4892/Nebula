@@ -105,3 +105,14 @@
 /obj/item/modular_computer/pda/cargo/install_default_programs()
 	default_programs |= /datum/computer_file/program/reports
 	. = ..()
+
+// compile stubs
+/obj/item/modular_computer/pda/heads/cmo
+/obj/item/modular_computer/pda/roboticist
+/obj/item/modular_computer/pda/ert
+/obj/item/modular_computer/pda/security
+/obj/item/modular_computer/pda/mining
+/obj/item/modular_computer/pda/heads/paperpusher
+/obj/item/modular_computer/pda/heads/hos
+/obj/item/modular_computer/pda/heads/rd
+/obj/item/modular_computer/pda/forensics

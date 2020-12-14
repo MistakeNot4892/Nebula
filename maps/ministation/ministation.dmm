@@ -3232,7 +3232,7 @@
 	pixel_x = -30;
 	pixel_y = 0
 	},
-/obj/machinery/forensic,
+/obj/machinery/forensic/microscope,
 /turf/simulated/floor/wood,
 /area/ministation/detective)
 "ic" = (

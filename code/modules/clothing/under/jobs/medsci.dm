@@ -216,17 +216,6 @@
 		bio = ARMOR_BIO_MINOR
 		)
 
-/obj/item/clothing/under/rank/scientist_new
-	desc = "Made of a special fiber that gives special protection against biohazards and small explosions."
-	name = "scientist's jumpsuit"
-	icon_state = "scientist_new"
-	item_state = "w_suit"
-	worn_state = "scientist_new"
-	permeability_coefficient = 0.50
-	armor = list(
-		bio = ARMOR_BIO_MINOR
-		)
-
 /obj/item/clothing/under/rank/virologist_new
 	desc = "Made of a special fiber that gives increased protection against biohazards."
 	name = "virologist's jumpsuit"

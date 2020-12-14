@@ -11,6 +11,10 @@
 	name = "CC BY 4.0"
 	url = "https://creativecommons.org/licenses/by/4.0/"
 
+/decl/license/cc_by_sa_3_0
+	name = "CC BY-SA 3.0"
+	url = "https://creativecommons.org/licenses/by-sa/3.0/"
+
 /decl/license/cc_by_sa_4_0
 	name = "CC BY-SA 4.0"
 	url = "https://creativecommons.org/licenses/by-sa/4.0/"
