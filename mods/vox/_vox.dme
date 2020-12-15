@@ -1,0 +1,14 @@
+#ifndef MODPACK_VOX
+#define MODPACK_VOX
+#include "_vox.dm"
+#include "organs_vox.dm"
+#include "away/voxship/voxship.dm"
+#include "datum/accessories.dm"
+#include "datum/antagonism.dm"
+#include "datum/species.dm"
+#include "datum/trader.dm"
+#include "gear/gear.dm"
+#include "gear/gun.dm"
+#include "gear/gun_slugsling.dm"
+#include "gear/gun_spikethrower.dm"
+#endif

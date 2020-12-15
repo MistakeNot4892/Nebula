@@ -26,19 +26,24 @@ Small, little HP, poisonous.
 	holder_type = /obj/item/holder/voxslug
 	faction = "Hostile Fauna"
 
+/mob/living/simple_animal/hostile/voxslug/proc/check_friendly_species(var/mob/living/carbon/human/H)
+	return FALSE
+
 /mob/living/simple_animal/hostile/voxslug/ListTargets(var/dist = 7)
 	var/list/L = list()
 	for(var/a in hearers(src, dist))
-		if(isliving(a))
+		if(isliving(a) && !check_friendly_species(a))
 			var/mob/living/M = a
 			if(M.faction == faction)
 				continue
 		L += a
-
 	return L
 
 /mob/living/simple_animal/hostile/voxslug/get_scooped(var/mob/living/carbon/grabber)
-	to_chat(grabber, "<span class='warning'>\The [src] wriggles out of your hands before you can pick it up!</span>")
+	if(check_friendly_species(grabber))
+		..()
+	else
+		to_chat(grabber, "<span class='warning'>\The [src] wriggles out of your hands before you can pick it up!</span>")
 
 /mob/living/simple_animal/hostile/voxslug/proc/attach(var/mob/living/carbon/human/H)
 	var/obj/item/clothing/suit/space/S = H.get_covering_equipped_item_by_zone(BP_CHEST)

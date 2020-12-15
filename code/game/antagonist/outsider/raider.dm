@@ -225,3 +225,6 @@ GLOBAL_DATUM_INIT(raiders, /datum/antagonist/raider, new)
 				new bullet_thrower.ammo_type(ammobox)
 			player.put_in_hands(ammobox)
 		return
+
+/datum/antagonist/raider/proc/check_special_species(var/mob/living/carbon/human/player)
+	return FALSE
