@@ -9,7 +9,7 @@
 	item_state = "flashlight"
 	w_class = ITEM_SIZE_SMALL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 
 	material = /decl/material/solid/plastic
 	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
@@ -184,7 +184,7 @@
 	attack_verb = list ("bludgeoned", "bashed", "whack")
 	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	material = /decl/material/solid/metal/steel
 	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 	flashlight_outer_range = 5

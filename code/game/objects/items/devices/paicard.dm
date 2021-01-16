@@ -3,7 +3,7 @@
 	icon = 'icons/obj/items/device/pai.dmi'
 	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_SMALL
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	origin_tech = "{'programming':2}"
 	material = /decl/material/solid/glass
 	matter = list(/decl/material/solid/metal/steel = MATTER_AMOUNT_REINFORCEMENT)

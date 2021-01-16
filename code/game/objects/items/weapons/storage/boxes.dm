@@ -352,7 +352,7 @@
 	icon_state = "matchbox"
 	item_state = "zippo"
 	w_class = ITEM_SIZE_TINY
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	can_hold = list(/obj/item/flame/match)
 	startswith = list(/obj/item/flame/match = 10)
 

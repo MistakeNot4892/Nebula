@@ -18,7 +18,7 @@
 	var/datum/wires/taperecorder/wires = null // Wires datum
 	var/maintenance = 0
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	throwforce = 2
 	throw_speed = 4
 	throw_range = 20

@@ -3,7 +3,7 @@
 	icon = 'icons/obj/items/device/pinpointer.dmi'
 	icon_state = ICON_STATE_WORLD
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	w_class = ITEM_SIZE_SMALL
 	material = /decl/material/solid/metal/steel
 	var/weakref/target

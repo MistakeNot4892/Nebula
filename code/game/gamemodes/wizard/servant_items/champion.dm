@@ -33,7 +33,7 @@
 	desc = "A royal blue tunic. Beautifully archaic."
 	icon = 'icons/clothing/under/tunic.dmi'
 	siemens_coefficient = 0.8
-	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY
+	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY|SLOT_WAIST
 	armor = list(
 		melee = ARMOR_MELEE_MINOR
 	)

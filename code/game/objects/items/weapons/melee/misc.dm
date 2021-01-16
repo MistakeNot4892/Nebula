@@ -5,7 +5,7 @@
 	icon_state = "chain"
 	item_state = "chain"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	force = 10
 	throwforce = 7
 	w_class = ITEM_SIZE_NORMAL
@@ -18,7 +18,7 @@
 	icon_state = "whip"
 	item_state = "whip"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	force = 16 //max hit with 60 strength and no equipment. Duel Arena no No forfeit - Snapshot
 	throwforce = 7
 	w_class = ITEM_SIZE_NORMAL
@@ -47,7 +47,7 @@
 	desc = "A polished sword issued to officers of the fleet."
 	icon = 'icons/obj/items/weapon/parade_sword.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	applies_material_colour = FALSE
 
 /obj/item/sword/replica/officersword/army

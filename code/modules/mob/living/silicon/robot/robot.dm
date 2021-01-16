@@ -898,6 +898,9 @@
 							if(cleaned_human.shoes)
 								cleaned_human.shoes.clean_blood()
 								cleaned_human.update_inv_shoes(0)
+							if(cleaned_human.pants)
+								cleaned_human.pants.clean_blood()
+								cleaned_human.update_inv_pants(0)
 							cleaned_human.clean_blood(1)
 							to_chat(cleaned_human, "<span class='warning'>[src] cleans your face!</span>")
 		return

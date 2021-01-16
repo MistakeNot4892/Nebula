@@ -5,7 +5,7 @@
 	icon_state = ICON_STATE_WORLD
 	item_state = null
 	w_class = ITEM_SIZE_LARGE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	var/channel = "General News Feed"
 	var/obj/machinery/camera/network/thunder/camera
 	var/obj/item/radio/radio

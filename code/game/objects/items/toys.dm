@@ -753,7 +753,7 @@
 	desc = "No bother to sink or swim when you can just float!"
 	icon = 'icons/clothing/belt/inflatable.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 
 /obj/item/marshalling_wand
 	name = "marshalling wand"
@@ -765,7 +765,7 @@
 		icon_l_hand = 'icons/mob/onmob/items/lefthand.dmi',
 		icon_r_hand = 'icons/mob/onmob/items/righthand.dmi',
 		)
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	w_class = ITEM_SIZE_SMALL
 	force = 1
 	attack_verb = list("attacked", "whacked", "jabbed", "poked", "marshalled")

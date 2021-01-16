@@ -137,7 +137,7 @@
 
 	if((slot_flags & SLOT_BACK) && M.get_equipped_item(slot_back_str) == src)
 		return 1
-	if((slot_flags & SLOT_LOWER_BODY) && M.get_equipped_item(slot_belt_str) == src)
+	if((slot_flags & SLOT_WAIST) && M.get_equipped_item(slot_belt_str) == src)
 		return 1
 
 	return 0
@@ -167,7 +167,7 @@
 	desc = "A belt-equipped defibrillator that can be rapidly deployed."
 	icon = 'icons/obj/defibrillator_compact.dmi'
 	w_class = ITEM_SIZE_NORMAL
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	origin_tech = "{'biotech':5,'powerstorage':3}"
 
 /obj/item/defibrillator/compact/loaded

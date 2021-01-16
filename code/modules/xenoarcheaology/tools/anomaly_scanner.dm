@@ -11,7 +11,7 @@
 		/decl/material/solid/glass = MATTER_AMOUNT_TRACE
 	)
 	w_class = ITEM_SIZE_SMALL
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 
 	var/last_scan_time = 0
 	var/scan_delay = 25

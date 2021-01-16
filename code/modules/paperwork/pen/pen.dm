@@ -3,7 +3,7 @@
 	name = "pen"
 	icon = 'icons/obj/items/pens/pen.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY | SLOT_EARS
+	slot_flags = SLOT_WAIST | SLOT_EARS
 	throwforce = 0
 	w_class = ITEM_SIZE_TINY
 	throw_speed = 7

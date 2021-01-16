@@ -3,7 +3,7 @@
 	name = "smoke bomb"
 	icon = 'icons/obj/items/grenades/flashbang.dmi'
 	det_time = 20
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	var/datum/effect/effect/system/smoke_spread/bad/smoke
 	var/smoke_times = 4
 

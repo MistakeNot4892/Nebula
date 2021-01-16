@@ -4,7 +4,7 @@
 	item_state = "buildpipe"
 	icon_state = "blank"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	material = /decl/material/solid/metal/steel
 
 	var/list/part = null // Order of args is important for installing robolimbs.

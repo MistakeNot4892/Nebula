@@ -5,7 +5,7 @@
 	gender = PLURAL
 	body_parts_covered = SLOT_LOWER_BODY|SLOT_LEGS
 	permeability_coefficient = 0.90
-	slot_flags = SLOT_UPPER_BODY // SLOT_LOWER_BODY when pants slot exists
+	slot_flags = SLOT_LOWER_BODY
 	w_class = ITEM_SIZE_NORMAL
 	force = 0
 	made_of_cloth = TRUE

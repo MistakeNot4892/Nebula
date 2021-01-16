@@ -4,7 +4,7 @@
 	icon = 'icons/obj/items/weapon/nullrod.dmi'
 	icon_state = "nullrod"
 	item_state = "nullrod"
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	force = 10
 	throw_speed = 1
 	throw_range = 4

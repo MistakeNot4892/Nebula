@@ -4,7 +4,7 @@
 	icon = 'mods/content/corporate/icons/obj/wristcomp.dmi'
 	screen_icon = 'mods/content/corporate/icons/obj/wristcomp_screens.dmi'
 
-	slot_flags = SLOT_ID | SLOT_LOWER_BODY
+	slot_flags = SLOT_ID | SLOT_WAIST
 	color = COLOR_GUNMETAL
 	light_color = LIGHT_COLOR_GREEN
 

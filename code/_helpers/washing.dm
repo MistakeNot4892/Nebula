@@ -60,9 +60,11 @@
 	if(H.wear_suit)
 		if(H.wear_suit.clean_blood())
 			H.update_inv_wear_suit(0)
-	else if(H.w_uniform)
-		if(H.w_uniform.clean_blood())
+	else
+		if(H.w_uniform && H.w_uniform.clean_blood())
 			H.update_inv_w_uniform(0)
+		if(H.pants && H.pants.clean_blood())
+			H.update_inv_pants(0)
 	if(H.gloves && washgloves)
 		if(H.gloves.clean_blood())
 			H.update_inv_gloves(0)

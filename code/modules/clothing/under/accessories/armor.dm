@@ -133,7 +133,7 @@
 	name = "\improper PRESS tag"
 	desc = "A tag with the word PRESS printed in white lettering on it."
 	icon_state = "smalltag"
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 
 /obj/item/clothing/accessory/armor/tag/warden
 	name = "\improper WARDEN tag"

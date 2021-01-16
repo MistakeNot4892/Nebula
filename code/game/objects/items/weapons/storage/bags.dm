@@ -5,7 +5,7 @@
 	allow_quick_gather = 1
 	allow_quick_empty = 1
 	use_to_pickup = 1
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 
 /obj/item/storage/bag/handle_item_insertion(obj/item/W, prevent_warning = 0)
 	. = ..()

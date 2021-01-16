@@ -49,7 +49,7 @@
 		/decl/material/solid/glass = MATTER_AMOUNT_TRACE
 	)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	origin_tech = "{'magnets':3,'materials':2}"
 
 	var/max_uses = 32

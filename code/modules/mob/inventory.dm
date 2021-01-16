@@ -48,22 +48,23 @@
 
 //The list of slots by priority. equip_to_appropriate_slot() uses this list. Doesn't matter if a mob type doesn't have a slot.
 var/list/slot_equipment_priority = list( \
-		slot_back_str,\
-		slot_wear_id_str,\
-		slot_w_uniform_str,\
-		slot_wear_suit_str,\
-		slot_wear_mask_str,\
-		slot_head_str,\
-		slot_shoes_str,\
-		slot_gloves_str,\
-		slot_l_ear_str,\
-		slot_r_ear_str,\
-		slot_glasses_str,\
-		slot_belt_str,\
-		slot_s_store_str,\
-		slot_tie_str,\
-		slot_l_store_str,\
-		slot_r_store_str\
+		slot_back_str,
+		slot_wear_id_str,
+		slot_pants_str,
+		slot_w_uniform_str,
+		slot_wear_suit_str,
+		slot_wear_mask_str,
+		slot_head_str,
+		slot_shoes_str,
+		slot_gloves_str,
+		slot_l_ear_str,
+		slot_r_ear_str,
+		slot_glasses_str,
+		slot_belt_str,
+		slot_s_store_str,
+		slot_tie_str,
+		slot_l_store_str,
+		slot_r_store_str
 	)
 
 //Checks if a given slot can be accessed at this time, either to equip or unequip I

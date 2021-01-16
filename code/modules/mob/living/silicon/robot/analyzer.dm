@@ -8,7 +8,7 @@
 	item_state = "analyzer"
 	desc = "A hand-held scanner able to diagnose robotic injuries."
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	throwforce = 3
 	w_class = ITEM_SIZE_SMALL
 	throw_speed = 5

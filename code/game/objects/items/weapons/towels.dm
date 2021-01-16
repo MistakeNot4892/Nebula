@@ -3,7 +3,7 @@
 	icon = 'icons/obj/items/towel.dmi'
 	icon_state = ICON_STATE_WORLD
 	item_flags = ITEM_FLAG_IS_BELT
-	slot_flags = SLOT_HEAD | SLOT_LOWER_BODY | SLOT_OVER_BODY
+	slot_flags = SLOT_HEAD | SLOT_WAIST | SLOT_LOWER_BODY | SLOT_OVER_BODY
 	force = 0.5
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("whipped")

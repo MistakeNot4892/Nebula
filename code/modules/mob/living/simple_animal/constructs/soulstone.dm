@@ -4,7 +4,7 @@
 	icon_state = ICON_STATE_WORLD
 	desc = "A strange, ridged chunk of some glassy red material. Achingly cold to the touch."
 	w_class = ITEM_SIZE_SMALL
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	origin_tech = "{'wormholes':4,'materials':4}"
 
 	var/full = SOULSTONE_EMPTY

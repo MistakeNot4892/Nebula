@@ -423,18 +423,19 @@
 //Defines which slots correspond to which slot flags
 var/list/slot_flags_enumeration = list(
 	"[slot_wear_mask_str]" = SLOT_FACE,
-	"[slot_back_str]" = SLOT_BACK,
+	"[slot_back_str]" =      SLOT_BACK,
 	"[slot_wear_suit_str]" = SLOT_OVER_BODY,
-	"[slot_gloves_str]" = SLOT_HANDS,
-	"[slot_shoes_str]" = SLOT_FEET,
-	"[slot_belt_str]" = SLOT_LOWER_BODY,
-	"[slot_glasses_str]" = SLOT_EYES,
-	"[slot_head_str]" = SLOT_HEAD,
-	"[slot_l_ear_str]" = SLOT_EARS,
-	"[slot_r_ear_str]" = SLOT_EARS,
+	"[slot_gloves_str]" =    SLOT_HANDS,
+	"[slot_shoes_str]" =     SLOT_FEET,
+	"[slot_belt_str]" =      SLOT_WAIST,
+	"[slot_glasses_str]" =   SLOT_EYES,
+	"[slot_head_str]" =      SLOT_HEAD,
+	"[slot_l_ear_str]" =     SLOT_EARS,
+	"[slot_r_ear_str]" =     SLOT_EARS,
+	"[slot_pants_str]" =     SLOT_LOWER_BODY,
 	"[slot_w_uniform_str]" = SLOT_UPPER_BODY,
-	"[slot_wear_id_str]" = SLOT_ID,
-	"[slot_tie_str]" = SLOT_TIE,
+	"[slot_wear_id_str]" =   SLOT_ID,
+	"[slot_tie_str]" =       SLOT_TIE
 	)
 
 //the mob M is attempting to equip this item into the slot passed through as 'slot'. Return 1 if it can do this and 0 if it can't.

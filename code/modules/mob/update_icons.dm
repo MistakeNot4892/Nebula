@@ -28,6 +28,9 @@
 /mob/proc/update_inv_w_uniform()
 	return
 
+/mob/proc/update_inv_pants()
+	return
+
 /mob/proc/update_inv_belt()
 	return
 

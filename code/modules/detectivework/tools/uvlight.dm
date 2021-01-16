@@ -3,7 +3,7 @@
 	desc = "A small handheld black light."
 	icon = 'icons/obj/items/device/ultraviolet.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	w_class = ITEM_SIZE_SMALL
 	action_button_name = "Toggle UV light"
 	material = /decl/material/solid/metal/steel

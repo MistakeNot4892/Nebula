@@ -12,7 +12,7 @@
 	desc = "A wooden truncheon for beating criminal scum."
 	icon = 'icons/obj/items/weapon/old_baton.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	force = 10
 
 /obj/item/classic_baton/attack(mob/M, mob/living/user)
@@ -33,7 +33,7 @@
 	desc = "A compact yet rebalanced personal defense weapon. Can be concealed when folded."
 	icon = 'icons/obj/items/weapon/telebaton.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	w_class = ITEM_SIZE_SMALL
 	force = 3
 	var/on = 0

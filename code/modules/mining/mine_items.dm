@@ -31,7 +31,7 @@
 	icon = 'icons/obj/items/tool/drills/drill.dmi'
 	icon_state = ICON_STATE_WORLD
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	force = 15.0
 	throwforce = 4.0
 	w_class = ITEM_SIZE_HUGE
@@ -152,7 +152,7 @@
 	icon = 'icons/obj/items/tool/shovels/shovel.dmi'
 	icon_state = ICON_STATE_WORLD
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	force = 8.0
 	throwforce = 4.0
 	w_class = ITEM_SIZE_HUGE

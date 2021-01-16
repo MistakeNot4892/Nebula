@@ -55,6 +55,7 @@ There are several things that need to be remembered:
 		update_inv_wear_suit()
 		update_inv_gloves()
 		update_inv_shoes()
+		update_inv_pants()
 		update_inv_w_uniform()
 		update_inv_glasse()
 		update_inv_hands()
@@ -114,27 +115,28 @@ Please contact me on #coderbus IRC. ~Carn x
 #define HO_DAMAGE_LAYER     3
 #define HO_SURGERY_LAYER    4 //bs12 specific.
 #define HO_UNDERWEAR_LAYER  5
-#define HO_UNIFORM_LAYER    6
-#define HO_ID_LAYER         7
-#define HO_SHOES_LAYER      8
-#define HO_GLOVES_LAYER     9
-#define HO_BELT_LAYER       10
-#define HO_SUIT_LAYER       11
-#define HO_TAIL_LAYER       12 //bs12 specific. this hack is probably gonna come back to haunt me
-#define HO_GLASSES_LAYER    13
-#define HO_BELT_LAYER_ALT   14
-#define HO_SUIT_STORE_LAYER 15
-#define HO_BACK_LAYER       16
-#define HO_HAIR_LAYER       17 //TODO: make part of head layer?
-#define HO_GOGGLES_LAYER    18
-#define HO_EARS_LAYER       19
-#define HO_FACEMASK_LAYER   20
-#define HO_HEAD_LAYER       21
-#define HO_COLLAR_LAYER     22
-#define HO_HANDCUFF_LAYER   23
-#define HO_INHAND_LAYER     24
-#define HO_FIRE_LAYER       25 //If you're on fire
-#define TOTAL_LAYERS        25
+#define HO_PANTS_LAYER      6
+#define HO_UNIFORM_LAYER    7
+#define HO_ID_LAYER         8
+#define HO_SHOES_LAYER      9
+#define HO_GLOVES_LAYER     10
+#define HO_BELT_LAYER       11
+#define HO_SUIT_LAYER       12
+#define HO_TAIL_LAYER       13 //bs12 specific. this hack is probably gonna come back to haunt me
+#define HO_GLASSES_LAYER    14
+#define HO_BELT_LAYER_ALT   15
+#define HO_SUIT_STORE_LAYER 16
+#define HO_BACK_LAYER       17
+#define HO_HAIR_LAYER       18 //TODO: make part of head layer?
+#define HO_GOGGLES_LAYER    19
+#define HO_EARS_LAYER       20
+#define HO_FACEMASK_LAYER   21
+#define HO_HEAD_LAYER       22
+#define HO_COLLAR_LAYER     23
+#define HO_HANDCUFF_LAYER   24
+#define HO_INHAND_LAYER     25
+#define HO_FIRE_LAYER       26 //If you're on fire
+#define TOTAL_LAYERS        26
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -466,6 +468,7 @@ var/global/list/damage_icon_parts = list()
 	update_skin(0)
 	update_underwear(0)
 	update_hair(0)
+	update_inv_pants(0)
 	update_inv_w_uniform(0)
 	update_inv_wear_id(0)
 	update_inv_gloves(0)
@@ -497,6 +500,14 @@ var/global/list/damage_icon_parts = list()
 	else
 		overlays_standing[HO_UNIFORM_LAYER]	= null
 
+	if(update_icons)
+		queue_icon_update()
+
+/mob/living/carbon/human/update_inv_pants(var/update_icons = TRUE)
+	if(pants)
+		overlays_standing[HO_PANTS_LAYER] = pants.get_mob_overlay(src,slot_pants_str)
+	else
+		overlays_standing[HO_PANTS_LAYER] = null
 	if(update_icons)
 		queue_icon_update()
 
@@ -611,6 +622,7 @@ var/global/list/damage_icon_parts = list()
 	else
 		overlays_standing[HO_SUIT_LAYER]	= null
 		update_tail_showing(0)
+		update_inv_pants(0)
 		update_inv_w_uniform(0)
 		update_inv_shoes(0)
 		update_inv_gloves(0)

@@ -61,6 +61,8 @@ This saves us from having to call add_fingerprint() any time something is put in
 			return has_organ(BP_L_FOOT) || has_organ(BP_R_FOOT)
 		if(slot_wear_suit_str)
 			return has_organ(BP_CHEST)
+		if(slot_pants_str)
+			return has_organ(BP_GROIN)
 		if(slot_w_uniform_str)
 			return has_organ(BP_CHEST)
 		if(slot_l_store_str)
@@ -271,6 +273,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 				update_inv_gloves(0)
 			if(wear_suit.flags_inv & HIDEJUMPSUIT)
 				update_inv_w_uniform(0)
+				update_inv_pants(0)
 			W.equipped(src, slot)
 			update_inv_wear_suit(redraw_mob)
 		if(slot_w_uniform_str)
@@ -279,6 +282,12 @@ This saves us from having to call add_fingerprint() any time something is put in
 				update_inv_shoes(0)
 			W.equipped(src, slot)
 			update_inv_w_uniform(redraw_mob)
+		if(slot_pants_str)
+			src.pants = W
+			if(pants.flags_inv & HIDESHOES)
+				update_inv_shoes(0)
+			W.equipped(src, slot)
+			update_inv_pants(redraw_mob)
 		if(slot_l_store_str)
 			src.l_store = W
 			W.equipped(src, slot)
@@ -359,6 +368,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(slot_s_store_str)    return s_store
 		if(slot_l_ear_str)      return l_ear
 		if(slot_r_ear_str)      return r_ear
+		if(slot_pants_str)      return pants
 	. = ..()
 
 /mob/living/carbon/human/get_equipped_items(var/include_carried = 0)

@@ -4,7 +4,7 @@
 	icon_state = ICON_STATE_WORLD
 	desc = "A portable welding gun with a port for attaching fuel tanks."
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	center_of_mass = @"{'x':14,'y':15}"
 	force = 5
 	throwforce = 5

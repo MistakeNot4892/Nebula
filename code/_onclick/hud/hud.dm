@@ -84,6 +84,8 @@
 						if(H.glasses)   H.glasses.screen_loc =   hud_data["loc"]
 					if(slot_w_uniform_str)
 						if(H.w_uniform) H.w_uniform.screen_loc = hud_data["loc"]
+					if(slot_pants_str)
+						if(H.pants)     H.pants.screen_loc =     hud_data["loc"]
 					if(slot_wear_suit_str)
 						if(H.wear_suit) H.wear_suit.screen_loc = hud_data["loc"]
 					if(slot_wear_mask_str)
@@ -108,7 +110,8 @@
 						if(H.wear_suit) H.wear_suit.screen_loc = null
 					if(slot_wear_mask_str)
 						if(H.wear_mask) H.wear_mask.screen_loc = null
-
+					if(slot_pants_str)
+						if(H.pants)     H.pants.screen_loc =     null
 
 /datum/hud/proc/persistant_inventory_update()
 	if(!mymob)
@@ -132,6 +135,9 @@
 						if(H.l_store) H.l_store.screen_loc = hud_data["loc"]
 					if(slot_r_store_str)
 						if(H.r_store) H.r_store.screen_loc = hud_data["loc"]
+					if(slot_pants_str)
+						if(H.pants)   H.pants.screen_loc =   hud_data["loc"]
+
 			else
 				switch(hud_data["slot"])
 					if(slot_s_store_str)
@@ -146,6 +152,8 @@
 						if(H.l_store) H.l_store.screen_loc = null
 					if(slot_r_store_str)
 						if(H.r_store) H.r_store.screen_loc = null
+					if(slot_pants_str)
+						if(H.pants)   H.pants.screen_loc =   null
 
 
 /datum/hud/proc/instantiate()

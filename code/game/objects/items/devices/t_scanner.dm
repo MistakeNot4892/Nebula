@@ -5,7 +5,7 @@
 	desc = "A terahertz-ray emitter and scanner, capable of penetrating conventional hull materials."
 	icon = 'icons/obj/items/device/t_ray_scanner.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	w_class = ITEM_SIZE_SMALL
 	material = /decl/material/solid/metal/aluminium
 	origin_tech = "{'magnets':1,'engineering':1}"

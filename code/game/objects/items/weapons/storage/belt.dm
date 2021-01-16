@@ -9,7 +9,7 @@
 	storage_slots = 7
 	item_flags = ITEM_FLAG_IS_BELT
 	max_w_class = ITEM_SIZE_NORMAL
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	var/overlay_flags
 	attack_verb = list("whipped", "lashed", "disciplined")
 
@@ -438,7 +438,7 @@
 	storage_slots = null
 	max_w_class = ITEM_SIZE_SMALL
 	max_storage_space = ITEM_SIZE_SMALL * 4
-	slot_flags = SLOT_LOWER_BODY | SLOT_BACK
+	slot_flags = SLOT_WAIST | SLOT_BACK
 
 /obj/item/storage/belt/waistpack/big
 	name = "large waist pack"

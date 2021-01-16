@@ -3,7 +3,7 @@
 	icon = 'icons/obj/items/device/chameleon_proj.dmi'
 	icon_state = ICON_STATE_WORLD
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	throwforce = 5.0
 	throw_speed = 1
 	throw_range = 5

@@ -4,7 +4,7 @@
 	desc = "A stun baton for incapacitating people with."
 	icon = 'icons/obj/items/weapon/stunbaton.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	force = 15
 	sharp = 0
 	edge = 0

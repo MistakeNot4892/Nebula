@@ -99,7 +99,7 @@
 	icon = 'icons/obj/items/remote_control.dmi'
 	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_SMALL
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	var/mob/living/bot/remotebot/bot
 
 /obj/item/bot_controller/attack_self(var/mob/user)

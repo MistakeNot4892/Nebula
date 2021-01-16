@@ -11,7 +11,7 @@
 		/decl/material/solid/metal/aluminium = MATTER_AMOUNT_TRACE
 	)
 	w_class = ITEM_SIZE_SMALL
-	slot_flags = SLOT_LOWER_BODY
+	slot_flags = SLOT_WAIST
 	var/list/positive_locations = list()
 	var/datum/depth_scan/current
 

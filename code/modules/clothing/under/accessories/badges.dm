@@ -9,7 +9,7 @@
 	desc = "A leather-backed badge, with gold trimmings."
 	icon = 'icons/clothing/accessories/detectivebadge.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot_flags = SLOT_LOWER_BODY | SLOT_TIE
+	slot_flags = SLOT_WAIST | SLOT_TIE
 	slot = ACCESSORY_SLOT_INSIGNIA
 	high_visibility = 1
 	accessory_icons = null
