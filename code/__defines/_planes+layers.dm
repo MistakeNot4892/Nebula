@@ -180,10 +180,13 @@ What is the naming convention for planes or layers?
 	#define FULLSCREEN_LAYER    0
 	#define DAMAGE_LAYER        1
 	#define IMPAIRED_LAYER      2
-	#define BLIND_LAYER         3
-	#define CRIT_LAYER          4
+	#define CRIT_LAYER          3
 
-#define HUD_PLANE                    5
+#define BLINDNESS_PLANE              5
+	#define BLIND_LAYER                  0
+	#define VISIBILITY_LAYER             1
+
+#define HUD_PLANE                    6
 	#define UNDER_HUD_LAYER              0
 	#define HUD_BASE_LAYER               2
 	#define HUD_ITEM_LAYER               3
@@ -204,26 +207,3 @@ What is the naming convention for planes or layers?
 /atom/proc/reset_plane_and_layer()
 	plane = initial(plane)
 	layer = initial(layer)
-
-/*
-  PLANE MASTERS
-*/
-
-/obj/screen/plane_master
-	appearance_flags = PLANE_MASTER
-	screen_loc = "CENTER,CENTER"
-	globalscreen = 1
-
-/obj/screen/plane_master/ghost_master
-	plane = OBSERVER_PLANE
-
-/obj/screen/plane_master/ghost_dummy
-	// this avoids a bug which means plane masters which have nothing to control get angry and mess with the other plane masters out of spite
-	alpha = 0
-	appearance_flags = 0
-	plane = OBSERVER_PLANE
-
-GLOBAL_LIST_INIT(ghost_master, list(
-	new /obj/screen/plane_master/ghost_master(),
-	new /obj/screen/plane_master/ghost_dummy()
-))

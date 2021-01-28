@@ -542,6 +542,11 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 			return 1
 	return 0
 
+/decl/species/proc/calculate_species_vision(var/mob/living/carbon/human/H)
+	if(H && GET_STATUS(H, STAT_BLIND) && !H.equipment_prescription)
+		return 1
+	return INFINITY
+
 /decl/species/proc/handle_vision(var/mob/living/carbon/human/H)
 	var/list/vision = H.get_accumulated_vision_handlers()
 	H.update_sight()
@@ -561,9 +566,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 
 	if(!H.client)//no client, no screen to update
 		return 1
-
-	H.set_fullscreen(GET_STATUS(H, STAT_BLIND) && !H.equipment_prescription, "blind", /obj/screen/fullscreen/blind)
-	H.set_fullscreen(H.stat == UNCONSCIOUS, "blackout", /obj/screen/fullscreen/blackout)
 
 	if(config.welder_vision)
 		H.set_fullscreen(H.equipment_tint_total, "welder", /obj/screen/fullscreen/impaired, H.equipment_tint_total)
