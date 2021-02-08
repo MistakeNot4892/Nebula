@@ -57,11 +57,6 @@
 	I.overlays += mutable_appearance(icon, "[I.icon_state]100", indicator_color)
 	return I
 
-/obj/item/gun/energy/floragun/resolve_attackby(atom/A)
-	if(istype(A,/obj/machinery/portable_atmospherics/hydroponics))
-		return FALSE // do afterattack, i.e. fire, at pointblank at trays.
-	return ..()
-
 /obj/item/gun/energy/floragun/afterattack(obj/target, mob/user, adjacent_flag)
 	//allow shooting into adjacent hydrotrays regardless of intent
 	if(adjacent_flag && istype(target,/obj/machinery/portable_atmospherics/hydroponics))
@@ -156,7 +151,7 @@
 				return 0
 		spark_system.start()
 		return 1
-	handle_click_empty(M)
+	handle_click_empty()
 	return 0
 
 /obj/item/gun/energy/plasmacutter/is_special_cutting_tool()
