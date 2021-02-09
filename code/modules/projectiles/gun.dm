@@ -72,7 +72,7 @@
 		verbs += /obj/item/gun/proc/scope
 
 /obj/item/gun/update_twohanding()
-	if(one_hand_penalty)
+	if(total_firearm_one_hand_penalty)
 		update_icon() // In case item_state is set somewhere else.
 	..()
 
@@ -266,9 +266,9 @@
 				"shot point blank (\a [type])"
 			)
 
-	if(one_hand_penalty)
+	if(total_firearm_one_hand_penalty)
 		if(!src.is_held_twohanded(user))
-			switch(one_hand_penalty)
+			switch(total_firearm_one_hand_penalty)
 				if(4 to 6)
 					if(prob(50)) //don't need to tell them every single time
 						to_chat(user, "<span class='warning'>Your aim wavers slightly.</span>")
@@ -277,7 +277,7 @@
 				if(8 to INFINITY)
 					to_chat(user, "<span class='warning'>You struggle to keep \the [src] on target with just one hand!</span>")
 		else if(!user.can_wield_item(src))
-			switch(one_hand_penalty)
+			switch(total_firearm_one_hand_penalty)
 				if(4 to 6)
 					if(prob(50)) //don't need to tell them every single time
 						to_chat(user, "<span class='warning'>Your aim wavers slightly.</span>")
@@ -286,10 +286,10 @@
 				if(8 to INFINITY)
 					to_chat(user, "<span class='warning'>You struggle to hold \the [src] steady!</span>")
 
-	if(screen_shake)
-		shake_camera(user, max(burst_delay*burst, fire_delay), screen_shake)
+	if(total_firearm_screen_shake)
+		shake_camera(user, max(burst_delay*burst, fire_delay), total_firearm_screen_shake)
 
-	if(combustion)
+	if(total_firearm_combustion)
 		var/turf/curloc = get_turf(src)
 		if(curloc)
 			curloc.hotspot_expose(700, 5)
@@ -301,7 +301,7 @@
 			for(var/obj/item/rig_module/stealth_field/S in R.installed_modules)
 				S.deactivate()
 
-	if(space_recoil)
+	if(total_firearm_space_recoil)
 		if(!user.check_space_footing())
 			var/old_dir = user.dir
 			user.inertia_ignore = projectile
@@ -349,11 +349,11 @@
 		acc_mod += min(max(3, accuracy), stood_still)
 	else
 		acc_mod -= w_class - ITEM_SIZE_NORMAL
-		acc_mod -= bulk
+		acc_mod -= total_firearm_bulk
 
-	if(one_hand_penalty >= 4 && !held_twohanded)
-		acc_mod -= one_hand_penalty/2
-		disp_mod += one_hand_penalty*0.5 //dispersion per point of two-handedness
+	if(total_firearm_one_hand_penalty >= 4 && !held_twohanded)
+		acc_mod -= total_firearm_one_hand_penalty/2
+		disp_mod += total_firearm_one_hand_penalty*0.5 //dispersion per point of two-handedness
 
 	if(burst > 1 && !user.skill_check(SKILL_WEAPONS, SKILL_ADEPT))
 		acc_mod -= 1
@@ -480,15 +480,15 @@
 		accuracy = scoped_accuracy
 		if(user.skill_check(SKILL_WEAPONS, SKILL_PROF))
 			accuracy += 2
-		if(screen_shake)
-			screen_shake = round(screen_shake*zoom_amount+1) //screen shake is worse when looking through a scope
+		if(total_firearm_screen_shake)
+			total_firearm_screen_shake = round(total_firearm_screen_shake*zoom_amount+1) //screen shake is worse when looking through a scope
 
 //make sure accuracy and screen_shake are reset regardless of how the item is unzoomed.
 /obj/item/gun/zoom()
 	..()
 	if(!zoom)
 		accuracy = initial(accuracy)
-		screen_shake = initial(screen_shake)
+		update_from_components()
 
 /obj/item/gun/CtrlClick(var/mob/user)
 	if(loc == user)
@@ -526,3 +526,10 @@
 		var/picked = pick(targets)
 		afterattack(picked, user)
 		return TRUE
+
+/client/verb/print_gun_subtypes()
+	set name = "Print Gun Subtypes"
+	set category = "Debug"
+	set src = usr
+	for(var/gtype in subtypesof(/obj/item/gun))
+		usr << gtype

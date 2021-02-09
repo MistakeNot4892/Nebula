@@ -2158,8 +2158,8 @@
 /area/map_template/merc_spawn)
 "kf" = (
 /obj/structure/table/rack,
-/obj/item/gun/energy/gun,
-/obj/item/gun/energy/gun,
+/obj/item/gun/egun,
+/obj/item/gun/egun,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
@@ -2217,8 +2217,8 @@
 /area/space)
 "lh" = (
 /obj/structure/table/rack,
-/obj/item/gun/energy/gun/small,
-/obj/item/gun/energy/gun/small,
+/obj/item/gun/egun/small,
+/obj/item/gun/egun/small,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
@@ -2632,8 +2632,8 @@
 /area/map_template/merc_spawn)
 "Hg" = (
 /obj/structure/table/rack,
-/obj/item/gun/energy/plasmacutter,
-/obj/item/gun/energy/plasmacutter,
+/obj/item/gun/plasmacutter,
+/obj/item/gun/plasmacutter,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -2690,7 +2690,7 @@
 /area/map_template/merc_spawn)
 "IB" = (
 /obj/structure/table/rack,
-/obj/item/gun/energy/ionrifle,
+/obj/item/gun/ionrifle,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
