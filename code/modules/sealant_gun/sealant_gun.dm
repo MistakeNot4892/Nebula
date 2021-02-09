@@ -4,7 +4,6 @@
 	icon =         'icons/obj/guns/sealant_gun.dmi'
 	icon_state =    ICON_STATE_WORLD
 	can_autofire =  TRUE
-	has_safety =    FALSE
 	waterproof =    TRUE
 	w_class =       ITEM_SIZE_NO_CONTAINER
 	slot_flags =    SLOT_BACK
@@ -12,7 +11,7 @@
 	screen_shake =  FALSE
 	release_force = 5
 	fire_delay =    1
-
+	receiver = /obj/item/firearm_component/receiver/launcher/sealantgun
 	var/foam_charges_per_shot = 1
 	var/obj/item/sealant_tank/loaded_tank
 

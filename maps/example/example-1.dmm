@@ -220,9 +220,9 @@
 /area/constructionsite)
 "Q" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/assault_rifle,
-/obj/item/gun/projectile/automatic/assault_rifle,
-/obj/item/gun/projectile/automatic/assault_rifle,
+/obj/item/gun/automatic/assault_rifle,
+/obj/item/gun/automatic/assault_rifle,
+/obj/item/gun/automatic/assault_rifle,
 /turf/simulated/floor/tiled,
 /area/constructionsite)
 "S" = (
@@ -234,16 +234,16 @@
 /area/constructionsite)
 "V" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/revolver,
-/obj/item/gun/projectile/revolver,
-/obj/item/gun/projectile/revolver,
+/obj/item/gun/revolver,
+/obj/item/gun/revolver,
+/obj/item/gun/revolver,
 /turf/simulated/floor/tiled,
 /area/constructionsite)
 "X" = (
 /obj/structure/table/rack,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
-/obj/item/gun/projectile/shotgun/pump,
+/obj/item/gun/shotgun/pump,
+/obj/item/gun/shotgun/pump,
+/obj/item/gun/shotgun/pump,
 /turf/simulated/floor/tiled,
 /area/constructionsite)
 "Z" = (
