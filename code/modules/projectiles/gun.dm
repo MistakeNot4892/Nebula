@@ -103,30 +103,8 @@
 	for(var/obj/O in contents)
 		O.emp_act(severity)
 
-/obj/item/gun/afterattack(atom/A, mob/living/user, adjacent, params)
-	if(!adjacent) return //A is adjacent, is the user, or is on the user's person
 
-	if(!user.aiming)
-		user.aiming = new(user)
 
-	if(user && user.client && user.aiming && user.aiming.active && user.aiming.aiming_at != A)
-		PreFire(A,user,params) //They're using the new gun system, locate what they're aiming at.
-		return
-
-	Fire(A,user,params) //Otherwise, fire normally.
-
-/obj/item/gun/attack(atom/A, mob/living/user, def_zone)
-	if (A == user && user.zone_sel.selecting == BP_MOUTH && !mouthshoot)
-		handle_suicide(user)
-	else if(user.a_intent != I_HURT && user.aiming && user.aiming.active) //if aim mode, don't pistol whip
-		if (user.aiming.aiming_at != A)
-			PreFire(A, user)
-		else
-			Fire(A, user, pointblank=1)
-	else if(user.a_intent == I_HURT) //point blank shooting
-		Fire(A, user, pointblank=1)
-	else
-		return ..() //Pistolwhippin'
 
 /obj/item/gun/dropped(var/mob/living/user)
 	check_accidents(user)
@@ -222,17 +200,13 @@
 	if(fire_anim)
 		flick(fire_anim, src)
 
-	if(!barrel.silenced && check_fire_message_spam("fire"))
+	if(barrel.silenced && barrel.silenced != SILENCER_INVALID && check_fire_message_spam("fire"))
 		var/user_message = SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!")
-		if(barrel.silenced)
-			to_chat(user, user_message)
-		else 
-			user.visible_message(
-				SPAN_DANGER("\The [user] fires \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"),
-				user_message,
-				SPAN_DANGER("You hear a [barrel.fire_sound_text]!")
-			)
-
+		user.visible_message(
+			SPAN_DANGER("\The [user] fires \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!"),
+			user_message,
+			SPAN_DANGER("You hear a [barrel.fire_sound_text]!")
+		)
 		if (pointblank)
 			admin_attack_log(user, target,
 				"shot point blank with \a [type]",
@@ -378,7 +352,7 @@
 	if((istype(P) && P.fire_sound))
 		shot_sound = P.fire_sound
 		shot_sound_vol = P.fire_sound_vol
-	if(barrel.silenced)
+	if(barrel.silenced && barrel.silenced != SILENCER_INVALID)
 		shot_sound_vol = 10
 
 	playsound(user, shot_sound, shot_sound_vol, 1)
@@ -407,7 +381,7 @@
 	if (istype(in_chamber))
 		user.visible_message("<span class = 'warning'>[user] pulls the trigger.</span>")
 		var/shot_sound = in_chamber.fire_sound? in_chamber.fire_sound : barrel.fire_sound
-		if(barrel.silenced)
+		if(barrel.silenced && barrel.silenced != SILENCER_INVALID)
 			playsound(user, shot_sound, 10, 1)
 		else
 			playsound(user, shot_sound, 50, 1)
