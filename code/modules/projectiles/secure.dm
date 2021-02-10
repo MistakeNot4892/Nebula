@@ -1,9 +1,3 @@
-/obj/item/gun/Destroy()
-	GLOB.registered_weapons -= src
-	. = ..()
-
-
-
 /obj/item/gun/proc/free_fire()
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	return security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level)
