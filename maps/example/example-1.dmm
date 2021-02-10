@@ -220,30 +220,30 @@
 /area/constructionsite)
 "Q" = (
 /obj/structure/table/rack,
-/obj/item/gun/automatic/assault_rifle,
-/obj/item/gun/automatic/assault_rifle,
-/obj/item/gun/automatic/assault_rifle,
+/obj/item/gun/long/assault_rifle,
+/obj/item/gun/long/assault_rifle,
+/obj/item/gun/long/assault_rifle,
 /turf/simulated/floor/tiled,
 /area/constructionsite)
 "S" = (
 /obj/structure/table/rack,
-/obj/item/gun/laser,
-/obj/item/gun/laser,
-/obj/item/gun/laser,
+/obj/item/gun/long/laser,
+/obj/item/gun/long/laser,
+/obj/item/gun/long/laser,
 /turf/simulated/floor/tiled,
 /area/constructionsite)
 "V" = (
 /obj/structure/table/rack,
-/obj/item/gun/revolver,
-/obj/item/gun/revolver,
-/obj/item/gun/revolver,
+/obj/item/gun/hand/revolver,
+/obj/item/gun/hand/revolver,
+/obj/item/gun/hand/revolver,
 /turf/simulated/floor/tiled,
 /area/constructionsite)
 "X" = (
 /obj/structure/table/rack,
-/obj/item/gun/shotgun/pump,
-/obj/item/gun/shotgun/pump,
-/obj/item/gun/shotgun/pump,
+/obj/item/gun/long/shotgun/pump,
+/obj/item/gun/long/shotgun/pump,
+/obj/item/gun/long/shotgun/pump,
 /turf/simulated/floor/tiled,
 /area/constructionsite)
 "Z" = (

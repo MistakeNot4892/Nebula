@@ -2070,8 +2070,8 @@
 /area/space)
 "hX" = (
 /obj/structure/table/rack,
-/obj/item/gun/revolver,
-/obj/item/gun/revolver,
+/obj/item/gun/hand/revolver,
+/obj/item/gun/hand/revolver,
 /obj/item/ammo_magazine/speedloader,
 /obj/item/ammo_magazine/speedloader,
 /obj/effect/landmark/delete_on_shuttle{
@@ -2086,8 +2086,8 @@
 /area/map_template/merc_spawn)
 "iB" = (
 /obj/structure/table/rack,
-/obj/item/gun/pistol,
-/obj/item/gun/pistol,
+/obj/item/gun/hand/pistol,
+/obj/item/gun/hand/pistol,
 /obj/item/ammo_magazine/pistol,
 /obj/item/ammo_magazine/pistol,
 /obj/item/ammo_magazine/pistol,
@@ -2158,8 +2158,8 @@
 /area/map_template/merc_spawn)
 "kf" = (
 /obj/structure/table/rack,
-/obj/item/gun/egun,
-/obj/item/gun/egun,
+/obj/item/gun/hand/egun,
+/obj/item/gun/hand/egun,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
@@ -2217,8 +2217,8 @@
 /area/space)
 "lh" = (
 /obj/structure/table/rack,
-/obj/item/gun/egun/small,
-/obj/item/gun/egun/small,
+/obj/item/gun/hand/egun/small,
+/obj/item/gun/hand/egun/small,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},
@@ -2632,8 +2632,8 @@
 /area/map_template/merc_spawn)
 "Hg" = (
 /obj/structure/table/rack,
-/obj/item/gun/plasmacutter,
-/obj/item/gun/plasmacutter,
+/obj/item/gun/hand/plasmacutter,
+/obj/item/gun/hand/plasmacutter,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -2690,7 +2690,7 @@
 /area/map_template/merc_spawn)
 "IB" = (
 /obj/structure/table/rack,
-/obj/item/gun/ionrifle,
+/obj/item/gun/long/ion,
 /obj/effect/landmark/delete_on_shuttle{
 	shuttle_name = "Desperado"
 	},

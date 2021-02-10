@@ -56,7 +56,7 @@
 	return list(
 		/obj/item/assembly/signaler,
 		/obj/item/radio/electropack = 3,
-		/obj/item/gun/syringe/rapid,
+		/obj/item/gun/long/syringe/rapid,
 		/obj/item/storage/box/syringegun,
 		/obj/item/storage/box/syringes,
 		/obj/item/chems/glass/bottle/sedatives

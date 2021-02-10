@@ -526,10 +526,3 @@
 		var/picked = pick(targets)
 		afterattack(picked, user)
 		return TRUE
-
-/client/verb/print_gun_subtypes()
-	set name = "Print Gun Subtypes"
-	set category = "Debug"
-	set src = usr
-	for(var/gtype in subtypesof(/obj/item/gun))
-		usr << gtype

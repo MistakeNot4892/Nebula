@@ -153,7 +153,7 @@
 /turf/simulated/wall,
 /area/map_template/colony/medbay)
 "aC" = (
-/obj/item/gun/egun/small,
+/obj/item/gun/hand/egun/small,
 /obj/item/flashlight/upgraded,
 /obj/item/crowbar,
 /obj/item/clothing/under/captain_fly,
@@ -1517,7 +1517,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/colony/atmospherics)
 "dj" = (
-/obj/item/gun/egun/small,
+/obj/item/gun/hand/egun/small,
 /obj/item/flashlight/upgraded,
 /obj/item/crowbar,
 /obj/item/clothing/under/captain_fly,
@@ -2549,7 +2549,7 @@
 "eX" = (
 /obj/effect/submap_landmark/spawnpoint/colonist_spawn,
 /obj/structure/bed/padded,
-/obj/item/gun/egun/small,
+/obj/item/gun/hand/egun/small,
 /obj/item/flashlight/upgraded,
 /obj/item/crowbar,
 /obj/item/clothing/under/color/blackjumpshorts,
@@ -3039,7 +3039,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/colony/engineering)
 "fM" = (
-/obj/item/gun/egun/small,
+/obj/item/gun/hand/egun/small,
 /obj/item/flashlight/upgraded,
 /obj/item/crowbar,
 /obj/item/clothing/under/captain_fly,
@@ -4559,9 +4559,9 @@
 /area/map_template/colony)
 "ii" = (
 /obj/structure/table/rack,
-/obj/item/gun/pistol/holdout,
-/obj/item/gun/pistol/holdout,
-/obj/item/gun/pistol,
+/obj/item/gun/hand/pistol/holdout,
+/obj/item/gun/hand/pistol/holdout,
+/obj/item/gun/hand/pistol,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
@@ -4768,7 +4768,7 @@
 /area/map_template/colony/jail)
 "iA" = (
 /obj/structure/table/rack,
-/obj/item/gun/shotgun/doublebarrel,
+/obj/item/gun/long/shotgun/doublebarrel,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
@@ -5931,7 +5931,7 @@
 /area/map_template/colony/mineralprocessing)
 "kp" = (
 /obj/structure/table/rack,
-/obj/item/gun/egun,
+/obj/item/gun/hand/egun,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
@@ -5957,9 +5957,9 @@
 /area/map_template/colony/airlock)
 "kr" = (
 /obj/structure/table/rack,
-/obj/item/gun/zipgun,
-/obj/item/gun/zipgun,
-/obj/item/gun/zipgun,
+/obj/item/gun/hand/zipgun,
+/obj/item/gun/hand/zipgun,
+/obj/item/gun/hand/zipgun,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -7318,8 +7318,8 @@
 /area/map_template/colony/hydroponics)
 "mI" = (
 /obj/structure/table/rack,
-/obj/item/gun/automatic/assault_rifle,
-/obj/item/gun/automatic/assault_rifle,
+/obj/item/gun/long/assault_rifle,
+/obj/item/gun/long/assault_rifle,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -8273,7 +8273,7 @@
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/structure/table/rack,
-/obj/item/gun/bolt_action{
+/obj/item/gun/long/rifle{
 	desc = "A large, unwieldy bolt-action rifle in shoddy condition. Chambered in small caliber, looks far scarier than it is. Vamoos ya varmint!";
 	name = "anti-varmint rifle"
 	},

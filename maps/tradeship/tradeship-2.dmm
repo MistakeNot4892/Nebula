@@ -59,7 +59,7 @@
 /area/ship/trade/command/captain)
 "ag" = (
 /obj/item/bedsheet/captain,
-/obj/item/gun/pistol/holdout,
+/obj/item/gun/hand/pistol/holdout,
 /obj/structure/bed/padded,
 /obj/effect/landmark{
 	name = "JoinLateCryoCaptain"
@@ -6177,7 +6177,7 @@
 	},
 /obj/item/handcuffs,
 /obj/item/telebaton,
-/obj/item/gun/electrolaser,
+/obj/item/gun/hand/electrolaser,
 /obj/structure/closet/secure_closet{
 	req_access = list("ACCESS_HEAD_OF_PERSONNEL")
 	},
@@ -7112,7 +7112,7 @@
 /turf/simulated/floor/plating,
 /area/ship/trade/shieldbay)
 "Pb" = (
-/obj/item/gun/shotgun/pump{
+/obj/item/gun/long/shotgun/pump{
 	desc = "When words don't strike hard enough.";
 	name = "Solid Argument"
 	},
