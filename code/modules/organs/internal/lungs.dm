@@ -9,6 +9,7 @@
 	min_broken_damage = 45
 	max_damage = 70
 	relative_size = 60
+	action_button_name = "Hold Breath"
 
 	var/active_breathing = 1
 	var/has_gills = FALSE
@@ -30,17 +31,50 @@
 	var/last_successful_breath
 	var/breath_fail_ratio // How badly they failed a breath. Higher is worse.
 
+	var/datum/gas_mixture/holding_breath
+
+/obj/item/organ/internal/lungs/refresh_action_button()
+	. = ..()
+	if(.)
+		if(action.button)
+			action.button_icon_state = "holding-breath-[!!holding_breath]"
+			action.button.UpdateIcon()
+
+/obj/item/organ/internal/lungs/attack_self(var/mob/user)
+	. = ..()
+	if(. && owner)
+		if(holding_breath)
+			release_breath()
+		else
+			var/athletics_mult = 4 * owner.get_skill_value(SKILL_HAULING)
+			holding_breath = owner.get_breath(athletics_mult)
+			to_chat(user, SPAN_NOTICE("You take a deep breath and hold it."))
+
+/obj/item/organ/internal/lungs/Destroy()
+	release_breath()
+	. = ..()
+
+/obj/item/organ/internal/lungs/proc/release_breath()
+	if(holding_breath)
+		if(holding_breath != global.vacuum)
+			var/datum/gas_mixture/environment = owner?.loc?.return_air()
+			if(environment)
+				environment.merge(holding_breath)
+		holding_breath = null
+		if(owner)
+			to_chat(owner, SPAN_NOTICE("You release the breath you were holding."))
+
 /obj/item/organ/internal/lungs/proc/can_drown()
 	return (is_broken() || !has_gills)
 
 /obj/item/organ/internal/lungs/proc/remove_oxygen_deprivation(var/amount)
 	var/last_suffocation = oxygen_deprivation
-	oxygen_deprivation = min(species.total_health,max(0,oxygen_deprivation - amount))
+	oxygen_deprivation = min(species.total_health,max(0, oxygen_deprivation - amount))
 	return -(oxygen_deprivation - last_suffocation)
 
 /obj/item/organ/internal/lungs/proc/add_oxygen_deprivation(var/amount)
 	var/last_suffocation = oxygen_deprivation
-	oxygen_deprivation = min(species.total_health,max(0,oxygen_deprivation + amount))
+	oxygen_deprivation = min(species.total_health,max(0, oxygen_deprivation + amount))
 	return (oxygen_deprivation - last_suffocation)
 
 // Returns a percentage value for use by GetOxyloss().
@@ -73,6 +107,10 @@
 
 /obj/item/organ/internal/lungs/Process()
 	..()
+
+	if(holding_breath && (!owner || owner.incapacitated(INCAPACITATION_UNRESISTING|INCAPACITATION_WEAKENED)))
+		release_breath()
+
 	if(!owner)
 		return
 
@@ -130,12 +168,12 @@
 /obj/item/organ/internal/lungs/proc/handle_breath(datum/gas_mixture/breath, var/forced)
 
 	if(!owner)
-		return 1
+		return TRUE
 
 	if(!breath || (max_damage <= 0))
 		breath_fail_ratio = 1
 		handle_failed_breath()
-		return 1
+		return TRUE
 
 	var/breath_pressure = breath.return_pressure()
 	check_rupturing(breath_pressure)
@@ -146,7 +184,7 @@
 	if(breath.total_moles == 0)
 		breath_fail_ratio = 1
 		handle_failed_breath()
-		return 1
+		return TRUE
 
 	var/safe_pressure_min = min_breath_pressure // Minimum safe partial pressure of breathable gas in kPa
 	// Lung damage increases the minimum safe pressure.
@@ -234,6 +272,7 @@
 
 /obj/item/organ/internal/lungs/proc/handle_failed_breath()
 	if(prob(15) && !owner.nervous_system_failure())
+		release_breath()
 		if(!owner.is_asystole())
 			if(active_breathing)
 				owner.emote("gasp")

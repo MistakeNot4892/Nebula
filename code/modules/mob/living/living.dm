@@ -912,3 +912,9 @@ default behaviour is:
 					to_chat(usr, SPAN_WARNING("You cannot pilot a exosuit of this size."))
 				return TRUE
 	. = ..()
+
+/mob/living/proc/handle_post_speech()
+	var/obj/item/organ/internal/lungs/L = get_internal_organ(BP_LUNGS)
+	if(istype(L) && L.holding_breath)
+		L.release_breath()
+

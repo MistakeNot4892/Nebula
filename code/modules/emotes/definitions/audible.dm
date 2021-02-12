@@ -9,6 +9,12 @@
 		// Snips the 'USER' from 3p emote messages for radio.
 		emote_message_radio = copytext(emote_message_3p, 6)
 
+/decl/emote/audible/do_extra(atom/user, atom/target)
+	var/mob/living/M = user
+	if(istype(M))
+		M.handle_post_speech()
+	. = ..()
+
 /decl/emote/audible/deathgasp_alien
 	key = "deathgasp"
 	emote_message_3p = "USER lets out a waning guttural screech, green blood bubbling from its maw."

@@ -1,4 +1,5 @@
 //Common breathing procs
+var/static/datum/gas_mixture/vacuum = new
 
 #define MOB_BREATH_DELAY 2
 
@@ -7,31 +8,35 @@
 	if((life_tick % MOB_BREATH_DELAY) == 0 || failed_last_breath || is_asystole()) //First, resolve location and get a breath
 		breathe()
 
+/mob/living/carbon/proc/get_breath(var/breath_volume_mult = 1)
+	// If we're holding our breath, use whatever datum our lungs are holding.
+	var/obj/item/organ/internal/lungs/L = get_internal_organ(BP_LUNGS)
+	if(istype(L) && L.holding_breath)
+		. = L.holding_breath
+	else
+		var/volume_needed = get_breath_volume() * breath_volume_mult
+		. = get_breath_from_internal(volume_needed) //First, check for air from internals
+		if(!.)
+			. = get_breath_from_environment(volume_needed) //No breath from internals so let's try to get air from our location
+	if(!.)
+		. = global.vacuum //still nothing? must be vacuum
+
 /mob/living/carbon/proc/breathe(var/active_breathe = 1)
 
 	if(!need_breathe()) return
-
-	var/datum/gas_mixture/breath = null
 
 	//First, check if we can breathe at all
 	if(handle_drowning() || (is_asystole() && !(CE_STABLE in chem_effects) && active_breathe)) //crit aka circulatory shock
 		losebreath = max(2, losebreath + 1)
 
+	//Okay, we can breathe, now check if we can get air
+	var/datum/gas_mixture/breath
 	if(losebreath>0) //Suffocating so do not take a breath
 		losebreath--
 		if (prob(10) && !is_asystole() && active_breathe) //Gasp per 10 ticks? Sounds about right.
 			INVOKE_ASYNC(src, .proc/emote, "gasp")
 	else
-		//Okay, we can breathe, now check if we can get air
-		var/volume_needed = get_breath_volume()
-		breath = get_breath_from_internal(volume_needed) //First, check for air from internals
-		if(!breath)
-			breath = get_breath_from_environment(volume_needed) //No breath from internals so let's try to get air from our location
-		if(!breath)
-			var/static/datum/gas_mixture/vacuum //avoid having to create a new gas mixture for each breath in space
-			if(!vacuum) vacuum = new
-
-			breath = vacuum //still nothing? must be vacuum
+		breath = get_breath()
 
 	handle_breath(breath)
 	handle_post_breath(breath)
@@ -94,5 +99,6 @@
 	return
 
 /mob/living/carbon/proc/handle_post_breath(datum/gas_mixture/breath)
-	if(breath)
+	var/obj/item/organ/internal/lungs/L = get_internal_organ(BP_LUNGS)
+	if(breath && (!istype(L) || breath != L.holding_breath))
 		loc.assume_air(breath) //by default, exhale

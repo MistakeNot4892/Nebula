@@ -319,6 +319,8 @@ proc/get_radio_key_from_channel(var/channel)
 	if(length(eavesdroppers))
 		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, stars(message), speaking, italics, eavesdroppers, 30)
 
+	handle_post_speech()
+
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")
 	else
