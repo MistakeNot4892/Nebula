@@ -93,7 +93,7 @@
 		w_class = ITEM_SIZE_SMALL
 	update_icon()
 
-/obj/item/cash/attack_self(var/mob/user)
+/obj/item/cash/attack_self(mob/user)
 
 	var/decl/currency/cur = GET_DECL(currency)
 	var/current_worth = get_worth()
@@ -254,7 +254,7 @@
 		return FALSE
 	.= lock.emag_act(remaining_charges, user, feedback)
 
-/obj/item/charge_stick/attack_self(var/mob/user)
+/obj/item/charge_stick/attack_self(mob/user)
 	var/datum/extension/lockable/lock = get_extension(src, /datum/extension/lockable)
 	lock.ui_interact(user)		
 

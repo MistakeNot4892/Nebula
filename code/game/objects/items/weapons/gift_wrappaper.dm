@@ -194,7 +194,7 @@
 	if(distance <= 1)
 		to_chat(user, text("There is about [] square units of paper left!", src.amount))
 
-/obj/item/wrapping_paper/attack(mob/target, mob/user)
+/obj/item/wrapping_paper/attack(mob/target, mob/living/user)
 	if (!istype(target, /mob/living/carbon/human)) return
 	var/mob/living/carbon/human/H = target
 

@@ -102,7 +102,7 @@
 	slot_flags = SLOT_LOWER_BODY
 	var/mob/living/bot/remotebot/bot
 
-/obj/item/bot_controller/attack_self(var/mob/user)
+/obj/item/bot_controller/attack_self(mob/user)
 	src.interact(user)
 
 /obj/item/bot_controller/interact(var/mob/user)

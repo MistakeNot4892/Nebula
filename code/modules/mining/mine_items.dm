@@ -217,7 +217,7 @@
 		return
 	return ..()
 
-/obj/item/stack/flag/attack_self(var/mob/user)
+/obj/item/stack/flag/attack_self(mob/user)
 	var/turf/T = get_turf(src)
 
 	if(!istype(T) || !T.is_open())

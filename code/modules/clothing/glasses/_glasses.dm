@@ -51,8 +51,8 @@
 			var/mob/living/carbon/human/M = src.loc
 			to_chat(M, SPAN_DANGER("Your [name] malfunction[gender != PLURAL ? "s":""], blinding you!"))
 			if(M.glasses == src)
-				M.eye_blind = 2
-				M.eye_blurry = 4
+				M.set_status(STAT_BLIND, 2)
+				M.set_status(STAT_BLURRY, 4)
 				// Don't cure being nearsighted
 				if(!(M.disabilities & NEARSIGHTED))
 					M.disabilities |= NEARSIGHTED

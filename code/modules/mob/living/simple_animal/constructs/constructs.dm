@@ -62,7 +62,7 @@
 	..()
 	add_glow()
 
-/mob/living/simple_animal/construct/attack_animal(var/mob/user)
+/mob/living/simple_animal/construct/attack_animal(var/mob/living/user)
 	if(istype(user, /mob/living/simple_animal/construct/builder))
 		if(health < maxHealth)
 			adjustBruteLoss(-5)
@@ -126,7 +126,7 @@
 	force = 30
 
 /mob/living/simple_animal/construct/armoured/Life()
-	weakened = 0
+	set_status(STAT_WEAK, 0)
 	if ((. = ..()))
 		return 
 

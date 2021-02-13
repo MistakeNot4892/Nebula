@@ -75,7 +75,7 @@ Small, little HP, poisonous.
 			var/datum/reagents/R = L.reagents
 			R.add_reagent(/decl/material/liquid/presyncopics, 0.5)
 
-/obj/item/holder/slug/attack(var/mob/target, var/mob/user)
+/obj/item/holder/slug/attack(var/mob/target, var/mob/living/user)
 	var/mob/living/simple_animal/hostile/slug/V = contents[1]
 	if(!V.stat && istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = target

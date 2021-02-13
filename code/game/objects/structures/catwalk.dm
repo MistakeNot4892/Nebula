@@ -79,7 +79,7 @@
 	if(!QDELETED(src) && severity != 3)
 		physically_destroyed()
 
-/obj/structure/catwalk/attack_robot(var/mob/user)
+/obj/structure/catwalk/attack_robot(var/mob/living/user)
 	if(Adjacent(user))
 		attack_hand(user)
 

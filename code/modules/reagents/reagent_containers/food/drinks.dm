@@ -35,7 +35,7 @@
 	to_chat(user, SPAN_NOTICE("You open \the [src] with an audible pop!"))
 	atom_flags |= ATOM_FLAG_OPEN_CONTAINER
 
-/obj/item/chems/food/drinks/attack(mob/M, mob/user, def_zone)
+/obj/item/chems/food/drinks/attack(mob/M, mob/living/user, def_zone)
 	if(force && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
 		return ..()
 	if(standard_feed_mob(user, M))

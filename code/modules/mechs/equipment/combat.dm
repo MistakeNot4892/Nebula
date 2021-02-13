@@ -71,7 +71,7 @@
 	QDEL_NULL(aura)
 	. = ..()
 
-/obj/item/mech_equipment/shields/attack_self(var/mob/user)
+/obj/item/mech_equipment/shields/attack_self(mob/user)
 	. = ..()
 	if(.)
 		toggle()

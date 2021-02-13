@@ -9,7 +9,7 @@
 	material = /decl/material/solid/metal/steel
 	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 
-/obj/item/stack/nanopaste/attack(mob/living/M, mob/user)
+/obj/item/stack/nanopaste/attack(mob/living/M, mob/living/user)
 	if (!istype(M) || !istype(user))
 		return 0
 	if (istype(M,/mob/living/silicon/robot))	//Repairing cyborgs

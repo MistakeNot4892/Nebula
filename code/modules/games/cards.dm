@@ -240,7 +240,7 @@
 
 	. = ..()
 
-/obj/item/deck/attack_self(var/mob/user)
+/obj/item/deck/attack_self(mob/user)
 
 	cards = shuffle(cards)
 	user.visible_message("\The [user] shuffles [src].")
@@ -261,7 +261,7 @@
 	var/list/cards = list()
 
 
-/obj/item/pack/attack_self(var/mob/user)
+/obj/item/pack/attack_self(mob/user)
 	user.visible_message("[user] rips open \the [src]!")
 	var/obj/item/hand/H = new()
 
@@ -282,7 +282,7 @@
 	var/concealed = 0
 	var/list/datum/playingcard/cards = list()
 
-/obj/item/hand/attack_self(var/mob/user)
+/obj/item/hand/attack_self(mob/user)
 	concealed = !concealed
 	update_icon()
 	user.visible_message("\The [user] [concealed ? "conceals" : "reveals"] their hand.")

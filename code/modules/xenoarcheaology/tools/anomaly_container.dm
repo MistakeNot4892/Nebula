@@ -17,7 +17,7 @@
 /obj/structure/anomaly_container/attack_hand(var/mob/user)
 	release()
 
-/obj/structure/anomaly_container/attack_robot(var/mob/user)
+/obj/structure/anomaly_container/attack_robot(var/mob/living/user)
 	if(Adjacent(user))
 		release()
 

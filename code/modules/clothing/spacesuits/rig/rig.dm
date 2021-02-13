@@ -814,9 +814,10 @@
 /obj/item/rig/proc/shock(mob/user)
 	if (electrocute_mob(user, cell, src)) //electrocute_mob() handles removing charge from the cell, no need to do that here.
 		spark_system.start()
-		if(user.stunned)
-			return 1
-	return 0
+		var/mob/living/M = user
+		if(istype(M) && HAS_STATUS(M, STAT_STUN))
+			return TRUE
+	return FALSE
 
 /obj/item/rig/proc/take_hit(damage, source, is_emp=0)
 

@@ -37,7 +37,7 @@
 		to_chat(user, SPAN_NOTICE("You twist \the [src] closed and replace the cap."))
 	update_icon()
 
-/obj/item/lipstick/attack(atom/A, mob/user, target_zone)
+/obj/item/lipstick/attack(atom/A, mob/living/user, target_zone)
 	if(!open)	return
 
 	if(ishuman(A))

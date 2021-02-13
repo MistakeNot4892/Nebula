@@ -65,7 +65,7 @@
 	to_chat(user, "The safety is [safety ? "on" : "off"].")
 	return
 
-/obj/item/extinguisher/attack(var/mob/living/M, var/mob/user)
+/obj/item/extinguisher/attack(var/mob/living/M, var/mob/living/user)
 	if(user.a_intent == I_HELP)
 		if(src.safety || (world.time < src.last_use + 20)) // We still catch help intent to not randomly attack people
 			return

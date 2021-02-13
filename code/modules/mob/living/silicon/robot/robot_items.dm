@@ -422,7 +422,7 @@
 		/obj/item/chems/food/snacks/fish = 1.5
 	)
 
-/obj/item/bioreactor/attack_self(var/mob/user)
+/obj/item/bioreactor/attack_self(mob/user)
 	if(contents.len >= 1)
 		var/obj/item/removing = contents[1]
 		user.put_in_hands(removing)

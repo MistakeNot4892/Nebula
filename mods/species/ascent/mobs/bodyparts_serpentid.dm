@@ -29,7 +29,7 @@
 		action.button_icon_state = "serpentid-shield-[eyes_shielded ? 1 : 0]"
 		if(action.button) action.button.UpdateIcon()
 
-/obj/item/organ/internal/eyes/insectoid/serpentid/attack_self(var/mob/user)
+/obj/item/organ/internal/eyes/insectoid/serpentid/attack_self(mob/user)
 	. = ..()
 	if(.)
 		eyes_shielded = !eyes_shielded
@@ -119,7 +119,7 @@
 			lowblood_tally = 10
 			if(prob(10))
 				to_chat(owner, "<span class='warning'>Your body is barely functioning and is starting to shut down.</span>")
-				owner.Paralyse(1)
+				SET_STATUS_MAX(owner, STAT_PARA, 1)
 				var/obj/item/organ/internal/I = pick(owner.internal_organs)
 				I.take_internal_damage(5)
 	..()
@@ -135,7 +135,7 @@
 		action.button_icon_state = "serpentid-threat"
 		if(action.button) action.button.UpdateIcon()
 
-/obj/item/organ/external/chest/insectoid/serpentid/attack_self(var/mob/user)
+/obj/item/organ/external/chest/insectoid/serpentid/attack_self(mob/user)
 	. = ..()
 	if(.)
 		if(owner.incapacitated())
@@ -181,7 +181,7 @@
 		action.button_icon_state = "serpentid-cloak-[owner && owner.is_cloaked_by(species) ? 1 : 0]"
 		if(action.button) action.button.UpdateIcon()
 
-/obj/item/organ/external/groin/insectoid/serpentid/attack_self(var/mob/user)
+/obj/item/organ/external/groin/insectoid/serpentid/attack_self(mob/user)
 	. = ..()
 	if(.)
 		if(owner.is_cloaked_by(species))

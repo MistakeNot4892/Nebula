@@ -36,7 +36,7 @@
 /obj/item/organ/proc/refresh_action_button()
 	return action
 
-/obj/item/organ/attack_self(var/mob/user)
+/obj/item/organ/attack_self(mob/user)
 	return (owner && loc == owner && owner == user)
 
 /obj/item/organ/proc/update_health()
@@ -320,7 +320,7 @@
 		ailment.begin_ailment_event()
 	return TRUE
 
-/obj/item/organ/attack(var/mob/target, var/mob/user)
+/obj/item/organ/attack(var/mob/target, var/mob/living/user)
 	if(status & ORGAN_PROSTHETIC || !istype(target) || !istype(user) || (user != target && user.a_intent == I_HELP))
 		return ..()
 

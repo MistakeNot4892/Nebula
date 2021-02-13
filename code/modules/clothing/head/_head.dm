@@ -56,11 +56,11 @@
 	update_icon(user)
 	user.update_action_buttons()
 
-/obj/item/clothing/head/attack_ai(var/mob/user)
+/obj/item/clothing/head/attack_ai(var/mob/living/user)
 	if(!mob_wear_hat(user))
 		return ..()
 
-/obj/item/clothing/head/attack_animal(var/mob/user)
+/obj/item/clothing/head/attack_animal(var/mob/living/user)
 	if(!mob_wear_hat(user))
 		return ..()
 

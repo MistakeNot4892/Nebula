@@ -102,7 +102,7 @@
 	. = ..()
 	set_extension(src, /datum/extension/eye/cameranet)
 
-/obj/item/clothing/mask/ai/attack_self(var/mob/user)
+/obj/item/clothing/mask/ai/attack_self(mob/user)
 	if(user.incapacitated())
 		return
 	if(user.get_equipped_item(slot_wear_mask_str) != src)

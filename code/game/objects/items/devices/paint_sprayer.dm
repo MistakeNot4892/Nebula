@@ -253,7 +253,7 @@
 	return choice
 
 
-/obj/item/paint_sprayer/attack_self(var/mob/user)
+/obj/item/paint_sprayer/attack_self(mob/user)
 	switch(input("What do you wish to change?") as null|anything in list("Decal","Direction", "Color", "Preset Color", "Mode"))
 		if("Decal")
 			choose_decal()

@@ -6,7 +6,7 @@
 	..()
 	filters_per_client = list()
 
-/datum/admin_secret_item/investigation/attack_logs/execute(var/mob/user)
+/datum/admin_secret_item/investigation/attack_logs/execute(var/mob/living/user)
 	. = ..()
 	if(!.)
 		return
@@ -60,7 +60,7 @@
 	if(.)
 		execute(usr)
 
-/datum/admin_secret_item/investigation/attack_logs/proc/get_user_filters(var/mob/user)
+/datum/admin_secret_item/investigation/attack_logs/proc/get_user_filters(var/mob/living/user)
 	if(!user.client)
 		return list()
 

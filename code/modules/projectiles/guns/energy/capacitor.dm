@@ -136,7 +136,7 @@ var/list/laser_wavelengths
 
 	. = ..()
 
-/obj/item/gun/energy/capacitor/attack_self(var/mob/user)
+/obj/item/gun/energy/capacitor/attack_self(mob/user)
 
 	if(charging)
 		for(var/obj/item/stock_parts/capacitor/capacitor in capacitors)

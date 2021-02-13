@@ -69,7 +69,7 @@
 	else
 		..()
 
-/obj/item/implanter/attack(mob/M, mob/user)
+/obj/item/implanter/attack(mob/M, mob/living/user)
 	if (!istype(M, /mob/living/carbon))
 		return
 	if (user && src.imp)

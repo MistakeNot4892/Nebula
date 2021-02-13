@@ -24,7 +24,7 @@
 		update_force()
 	return ..()
 
-/obj/item/stick/attack(mob/M, mob/user)
+/obj/item/stick/attack(mob/M, mob/living/user)
 	if(user != M && user.a_intent == I_HELP)
 		//Playful poking is its own thing
 		user.visible_message("<span class='notice'>[user] pokes [M] with [src].</span>", "<span class='notice'>You poke [M] with [src].</span>")

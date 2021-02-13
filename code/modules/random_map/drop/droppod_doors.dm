@@ -16,7 +16,7 @@
 		spawn(10 SECONDS)
 			deploy()
 
-/obj/structure/droppod_door/attack_ai(var/mob/user)
+/obj/structure/droppod_door/attack_ai(var/mob/living/user)
 	if(!user.Adjacent(src))
 		return
 	attack_hand(user)

@@ -98,5 +98,5 @@
 		T--
 	explode(get_turf(target))
 
-/obj/item/plastique/attack(mob/M, mob/user, def_zone)
+/obj/item/plastique/attack(mob/M, mob/living/user, def_zone)
 	return

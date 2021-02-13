@@ -61,7 +61,7 @@
 		if(response == "Yes")
 			assembly.turn_on(user)
 
-/obj/item/modular_computer/attack_ai(var/mob/user)
+/obj/item/modular_computer/attack_ai(var/mob/living/user)
 	return attack_self(user)
 
 /obj/item/modular_computer/attack_hand(var/mob/user)
@@ -70,7 +70,7 @@
 	return ..()
 
 // On-click handling. Turns on the computer if it's off and opens the GUI.
-/obj/item/modular_computer/attack_self(var/mob/user)
+/obj/item/modular_computer/attack_self(mob/user)
 	var/datum/extension/assembly/modular_computer/assembly = get_extension(src, /datum/extension/assembly)
 	if(assembly.enabled && assembly.screen_on)
 		ui_interact(user)

@@ -92,7 +92,7 @@
 			user.visible_message("\The [user] finishes wiping off the [A]!")
 			reagents.splash(A, FLUID_EVAPORATION_POINT)
 
-/obj/item/chems/glass/rag/attack(atom/target, mob/user , flag)
+/obj/item/chems/glass/rag/attack(atom/target, mob/living/user , flag)
 	if(isliving(target))
 		var/mob/living/M = target
 		if(on_fire)

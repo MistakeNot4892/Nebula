@@ -23,7 +23,7 @@
 /obj/structure/stasis_cage/attack_hand(var/mob/user)
 	try_release(user)
 
-/obj/structure/stasis_cage/attack_robot(var/mob/user)
+/obj/structure/stasis_cage/attack_robot(var/mob/living/user)
 	if(Adjacent(user))
 		try_release(user)
 

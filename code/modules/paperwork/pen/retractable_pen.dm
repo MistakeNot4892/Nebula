@@ -27,7 +27,7 @@
 	if(active)
 		icon_state = "[icon_state]-on"
 
-/obj/item/pen/retractable/attack(atom/A, mob/user, target_zone)
+/obj/item/pen/retractable/attack(atom/A, mob/living/user, target_zone)
 	if(!active)
 		toggle()
 	..()

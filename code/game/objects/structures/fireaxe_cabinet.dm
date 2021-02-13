@@ -26,7 +26,7 @@
 	fireaxe = new(src)
 	update_icon()
 
-/obj/structure/fireaxecabinet/attack_ai(var/mob/user)
+/obj/structure/fireaxecabinet/attack_ai(var/mob/living/user)
 	toggle_lock(user)
 
 /obj/structure/fireaxecabinet/attack_hand(var/mob/user)

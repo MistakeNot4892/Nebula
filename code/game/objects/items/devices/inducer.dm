@@ -137,7 +137,7 @@
 	else
 		return 0
 
-/obj/item/inducer/attack(mob/M, mob/user)
+/obj/item/inducer/attack(mob/M, mob/living/user)
 	return
 
 

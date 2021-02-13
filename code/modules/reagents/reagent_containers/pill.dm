@@ -37,7 +37,7 @@
 /obj/item/chems/pill/dragged_onto(var/mob/user)
 	attack(user, user)
 
-/obj/item/chems/pill/attack(mob/M, mob/user, def_zone)
+/obj/item/chems/pill/attack(mob/M, mob/living/user, def_zone)
 	//TODO: replace with standard_feed_mob() call.
 	if(M == user)
 		if(!M.can_eat(src))

@@ -31,7 +31,7 @@
 				break
 	..()
 
-/obj/item/forensics/sample/print/attack_self(var/mob/user)
+/obj/item/forensics/sample/print/attack_self(mob/user)
 	if(!can_take_print_from(user, user))
 		return
 	to_chat(user, SPAN_NOTICE("You firmly press your fingertips onto the card."))
@@ -65,7 +65,7 @@
 			return TRUE
 	to_chat(user, SPAN_WARNING("They don't have any hands."))
 
-/obj/item/forensics/sample/print/attack(var/mob/living/carbon/human/H, var/mob/user)
+/obj/item/forensics/sample/print/attack(var/mob/living/carbon/human/H, var/mob/living/user)
 	if(!istype(H))
 		return ..()
 

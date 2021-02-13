@@ -27,7 +27,7 @@
 	var/time = (1 SECONDS) / 1.9
 	var/single_use = TRUE // autoinjectors are not refillable (overriden for hypospray)
 
-/obj/item/chems/hypospray/attack(mob/living/M, mob/user)
+/obj/item/chems/hypospray/attack(mob/living/M, mob/living/user)
 	if(!reagents.total_volume)
 		to_chat(user, "<span class='warning'>[src] is empty.</span>")
 		return
@@ -162,7 +162,7 @@
 		reagents.add_reagent(T, starts_with[T])
 	update_icon()
 
-/obj/item/chems/hypospray/autoinjector/attack(mob/M as mob, mob/user as mob)
+/obj/item/chems/hypospray/autoinjector/attack(mob/M as mob, mob/living/user as mob)
 	..()
 	update_icon()
 

@@ -3,12 +3,12 @@ Holds the proc for backstabbing.
 
 usage:
 
-/obj/item/attack(mob/living/target, mob/user, var/target_zone)
+/obj/item/attack(mob/living/target, mob/living/user, var/target_zone)
 	backstab(target, user, 60, BRUTE, DAM_SHARP, target_zone)
 	..()
 May also be used as:
 
-/obj/item/attack(mob/living/target, mob/user, var/target_zone)
+/obj/item/attack(mob/living/target, mob/living/user, var/target_zone)
 	..()
 	if(backstab(target, user, 60, BRUTE, DAM_SHARP, target_zone))
 		[insert code here]

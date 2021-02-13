@@ -45,7 +45,7 @@
 		return
 	..()
 
-/obj/item/clothing/shoes/attack_self(var/mob/user)
+/obj/item/clothing/shoes/attack_self(mob/user)
 	remove_cuffs(user)
 	..()
 

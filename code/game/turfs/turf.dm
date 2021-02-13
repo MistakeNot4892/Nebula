@@ -127,7 +127,7 @@
 	if (THE)
 		return THE.OnHandInterception(user)
 
-/turf/attack_robot(var/mob/user)
+/turf/attack_robot(var/mob/living/user)
 	if(Adjacent(user))
 		attack_hand(user)
 

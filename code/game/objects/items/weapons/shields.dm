@@ -190,12 +190,13 @@
 		playsound(user, 'sound/weapons/saberoff.ogg', 50, 1)
 		to_chat(user, SPAN_NOTICE("\The [src] can now be concealed."))
 
-	if(istype(user,/mob/living/carbon/human))
-		var/mob/living/carbon/human/H = user
-		H.update_inv_hands()
+		if(istype(user,/mob/living/carbon/human))
+			var/mob/living/carbon/human/H = user
+			H.update_inv_hands()
 
-	add_fingerprint(user)
-	return
+		add_fingerprint(user)
+		return TRUE
+	. = ..()
 
 /obj/item/shield/energy/on_update_icon()
 	icon_state = "eshield[active]"

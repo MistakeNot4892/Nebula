@@ -130,7 +130,7 @@
 		action.button_icon_state = "egg-on"
 		if(action.button) action.button.UpdateIcon()
 
-/obj/item/organ/internal/egg_sac/insectoid/attack_self(var/mob/user)
+/obj/item/organ/internal/egg_sac/insectoid/attack_self(mob/user)
 	. = ..()
 	var/mob/living/carbon/H = user
 	if(.)

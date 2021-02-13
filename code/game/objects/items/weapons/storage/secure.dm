@@ -47,7 +47,7 @@
 		return
 	..()
 
-/obj/item/storage/secure/attack_self(var/mob/user)
+/obj/item/storage/secure/attack_self(mob/user)
 	var/datum/extension/lockable/lock = get_extension(src, /datum/extension/lockable)
 	lock.ui_interact(user)
 
@@ -93,7 +93,7 @@
 	max_storage_space = DEFAULT_BACKPACK_STORAGE
 	use_sound = 'sound/effects/storage/briefcase.ogg'
 
-/obj/item/storage/secure/briefcase/attack_hand(mob/user as mob)
+/obj/item/storage/secure/briefcase/attack_hand(mob/living/user as mob)
 	var/datum/extension/lockable/lock = get_extension(src, /datum/extension/lockable)
 	if (loc == user && lock.locked)
 		to_chat(user, SPAN_WARNING("[src] is locked and cannot be opened!"))

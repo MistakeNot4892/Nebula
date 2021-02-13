@@ -54,7 +54,7 @@
 		to_chat(user, "It looks like an antiquated minting of \a [denomination.name].")
 
 // "Coin Flipping, A.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
-/obj/item/coin/attack_self(var/mob/user)
+/obj/item/coin/attack_self(mob/user)
 	if(!can_flip)
 		to_chat(user, SPAN_WARNING("\The [src] is already being flipped!"))
 		return

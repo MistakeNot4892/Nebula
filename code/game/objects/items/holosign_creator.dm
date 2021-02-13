@@ -54,7 +54,7 @@
 				else
 					to_chat(user, "<span class='notice'>[src] is projecting at max capacity!</span>")
 
-/obj/item/holosign_creator/attack(mob/living/carbon/human/M, mob/user)
+/obj/item/holosign_creator/attack(mob/living/carbon/human/M, mob/living/user)
 	return
 
 /obj/item/holosign_creator/attack_self(mob/user)

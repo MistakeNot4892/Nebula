@@ -132,7 +132,7 @@
 				cur_dist = check_dist
 				. = weakref(R)
 
-/obj/item/pinpointer/radio/attack_self(var/mob/user)
+/obj/item/pinpointer/radio/attack_self(mob/user)
 	interact(user)
 
 /obj/item/pinpointer/radio/interact(var/mob/user)

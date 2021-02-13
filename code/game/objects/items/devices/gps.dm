@@ -17,7 +17,7 @@
 		/decl/material/solid/glass = MATTER_AMOUNT_TRACE
 	)
 
-/obj/item/gps/attack_self(var/mob/user)
+/obj/item/gps/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>[html_icon(src)] \The [src] flashes <i>[get_coordinates()]</i>.</span>")
 
 /obj/item/gps/examine(mob/user)

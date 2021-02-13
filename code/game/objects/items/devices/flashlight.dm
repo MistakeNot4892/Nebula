@@ -114,7 +114,7 @@
 			to_chat(user, "<span class='notice'>\The [H]'s pupils give an eerie glow!</span>")
 		if(vision.damage)
 			to_chat(user, "<span class='warning'>There's visible damage to [H]'s [vision.name]!</span>")
-		else if(H.eye_blurry)
+		else if(GET_STATUS(H, STAT_BLURRY))
 			to_chat(user, "<span class='notice'>\The [H]'s pupils react slower than normally.</span>")
 		if(H.getBrainLoss() > 15)
 			to_chat(user, "<span class='notice'>There's visible lag between left and right pupils' reactions.</span>")
@@ -282,7 +282,7 @@
 		update_icon()
 		STOP_PROCESSING(SSobj, src)
 
-/obj/item/flashlight/flare/attack_self(var/mob/user)
+/obj/item/flashlight/flare/attack_self(mob/user)
 	if(fuel <= 0)
 		to_chat(user,"<span class='notice'>\The [src] is spent.</span>")
 		return 0

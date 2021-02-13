@@ -11,7 +11,7 @@
 		/datum/forensics/blood_dna
 	)
 
-/obj/item/forensics/sample_kit/swabs/attack(var/mob/living/carbon/human/H, var/mob/user)
+/obj/item/forensics/sample_kit/swabs/attack(var/mob/living/carbon/human/H, var/mob/living/user)
 	if(!istype(H))
 		return ..()
 

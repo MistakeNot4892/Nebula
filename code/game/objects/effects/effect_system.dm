@@ -260,7 +260,7 @@ steam.start() -- spawns the effect
 		return 0
 
 	M.drop_held_items()
-	M:sleeping += 1
+	ADJ_STATUS(M, STAT_ASLEEP, 1)
 	if (M.coughedtime != 1)
 		M.coughedtime = 1
 		M.emote("cough")
@@ -465,13 +465,11 @@ steam.start() -- spawns the effect
 			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
 			s.set_up(2, 1, location)
 			s.start()
-
-			for(var/mob/M in viewers(5, location))
-				to_chat(M, "<span class='warning'>The solution violently explodes.</span>")
-			for(var/mob/M in viewers(1, location))
-				if (prob (50 * amount))
-					to_chat(M, "<span class='warning'>The explosion knocks you down.</span>")
-					M.Weaken(rand(1,5))
+			location.visible_message(SPAN_DANGER("The solution violently explodes!"))
+			for(var/mob/living/M in viewers(1, location))
+				if(prob (50 * amount))
+					to_chat(M, SPAN_DANGER("The explosion knocks you down!"))
+					SET_STATUS_MAX(M, STAT_WEAK, rand(1,5))
 			return
 		else
 			var/devst = -1
