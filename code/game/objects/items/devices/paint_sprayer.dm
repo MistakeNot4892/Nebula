@@ -120,6 +120,10 @@
 	else if (istype(A, /obj/structure/wall_frame))
 		. = paint_wall_frame(A, user)
 
+	else if(istype(A, /mob/living/silicon/robot/platform))
+		var/mob/living/silicon/robot/platform/robot = A
+		. = robot.try_paint(src, user)
+
 	else if (istype(A, /turf/simulated/floor))
 		. = paint_floor(A, user, params)
 

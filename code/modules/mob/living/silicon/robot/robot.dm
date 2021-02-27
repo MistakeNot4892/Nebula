@@ -274,10 +274,7 @@
 	if(prefix)
 		modtype = prefix
 
-	if(istype(central_processor))
-		braintype = central_processor.get_synthetic_owner_name()
-	else
-		braintype = "Robot"
+	update_braintype()
 
 	var/changed_name = ""
 	if(custom_name)
@@ -304,6 +301,12 @@
 			flavor_text = module_flavour
 		else
 			flavor_text = client.prefs.flavour_texts_robot["Default"]
+
+/mob/living/silicon/robot/proc/update_braintype()
+	if(istype(central_processor))
+		braintype = central_processor.get_synthetic_owner_name()
+	else
+		braintype = "Robot"
 
 /mob/living/silicon/robot/verb/Namepick()
 	set category = "Silicon Commands"
