@@ -114,6 +114,10 @@
 		A.set_color(paint_color)
 		. = TRUE
 
+	else if(istype(A, /mob/living/silicon/robot/platform))
+		var/mob/living/silicon/robot/platform/robot = A
+		. = robot.try_paint(src, user)
+
 	else if (istype(A, /turf/simulated/floor))
 		. = paint_floor(A, user, params)
 
@@ -132,6 +136,10 @@
 		playsound(get_turf(src), 'sound/effects/spray3.ogg', 30, 1, -6)
 	return .
 
+/obj/item/paint_sprayer/proc/get_decal_path()
+	var/list/decal_data = decals[decal]
+	if(islist(decal_data) && ispath(decal_data["path"]))
+		. = decal_data["path"]
 
 /obj/item/paint_sprayer/proc/paint_floor(var/turf/simulated/floor/F, var/mob/user, var/params)
 	if(!F.flooring)
@@ -142,20 +150,12 @@
 		to_chat(user, SPAN_WARNING("\The [src] cannot paint \the [F.name]."))
 		return FALSE
 
-	var/list/decal_data = decals[decal]
-	var/config_error
-	if(!islist(decal_data))
-		config_error = 1
-	var/painting_decal
-	if(!config_error)
-		painting_decal = decal_data["path"]
-		if(!ispath(painting_decal))
-			config_error = 1
-
-	if(config_error)
+	var/painting_decal = get_decal_path()
+	if(!painting_decal)
 		to_chat(user, SPAN_WARNING("\The [src] flashes an error light. You might need to reconfigure it."))
 		return FALSE
 
+	var/list/decal_data = decals[decal]
 	if(F.decals && F.decals.len > 5 && painting_decal != /obj/effect/floor_decal/reset)
 		to_chat(user, SPAN_WARNING("\The [F] has been painted too much; you need to clear it off."))
 		return FALSE

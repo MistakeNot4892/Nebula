@@ -544,6 +544,11 @@ default behaviour is:
 		escape_inventory(src.loc)
 		return
 
+	if(istype(src.loc, /mob/living/silicon/robot/platform))
+		var/mob/living/silicon/robot/platform/R = src.loc
+		R.drop_stored_atom(src, src)
+		return TRUE
+
 	//unbuckling yourself
 	if(buckled)
 		spawn() escape_buckle()

@@ -308,16 +308,19 @@
 /mob/living/silicon/robot/get_cell()
 	return cell
 
-/mob/living/silicon/robot/proc/updatename(var/prefix as text)
-	if(prefix)
-		modtype = prefix
-
+/mob/living/silicon/robot/proc/update_braintype()
 	if(istype(mmi, /obj/item/organ/internal/posibrain))
 		braintype = "Robot"
 	else if(istype(mmi, /obj/item/mmi/digital/robot))
 		braintype = "Drone"
 	else
 		braintype = "Cyborg"
+
+/mob/living/silicon/robot/proc/updatename(var/prefix as text)
+	if(prefix)
+		modtype = prefix
+
+	update_braintype()
 
 	var/changed_name = ""
 	if(custom_name)
