@@ -287,7 +287,7 @@
 	update_icon()
 	user.visible_message("\The [user] [concealed ? "conceals" : "reveals"] their hand.")
 
-/obj/item/hand/attack_hand(mob/user)
+/obj/item/hand/attack_hand(var/mob/user)
 	if(src.loc == user)
 		// build the list of cards in the hand
 		var/list/to_discard = list()

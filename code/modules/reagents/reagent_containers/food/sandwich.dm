@@ -83,7 +83,7 @@
 	var/obj/item/O = pick(contents)
 	to_chat(user, "<span class='warning'>You think you can see [O.name] in there.</span>")
 
-/obj/item/chems/food/snacks/csandwich/attack(mob/M, mob/user, def_zone)
+/obj/item/chems/food/snacks/csandwich/attack(mob/M, mob/living/user, def_zone)
 
 	var/obj/item/shard
 	for(var/obj/item/O in contents)

@@ -14,7 +14,7 @@
 	. = ..()
 	set_extension(src, /datum/extension/interactive/multitool/store)
 
-/obj/item/ship_tracker/attack_self(var/mob/user)
+/obj/item/ship_tracker/attack_self(mob/user)
 	enabled = !enabled
 	to_chat(user, SPAN_NOTICE("You [enabled ? "enable" : "disable"] \the [src]"))
 	update_icon()

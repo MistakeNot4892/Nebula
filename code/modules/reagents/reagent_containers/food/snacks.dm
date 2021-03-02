@@ -70,7 +70,7 @@
 		bitecount++
 		On_Consume(target)
 
-/obj/item/chems/food/snacks/attack(mob/M, mob/user, def_zone)
+/obj/item/chems/food/snacks/attack(mob/M, mob/living/user, def_zone)
 	if(!reagents || !reagents.total_volume)
 		to_chat(user, "<span class='danger'>None of [src] left!</span>")
 		qdel(src)
@@ -1374,7 +1374,7 @@
 	.=..()
 	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 10)
 
-/obj/item/chems/food/snacks/monkeycube/attack_self(var/mob/user)
+/obj/item/chems/food/snacks/monkeycube/attack_self(mob/user)
 	if(wrapped)
 		Unwrap(user)
 
@@ -3109,7 +3109,7 @@
 	sealed = FALSE
 	update_icon()
 
-/obj/item/chems/food/snacks/canned/attack_self(var/mob/user)
+/obj/item/chems/food/snacks/canned/attack_self(mob/user)
 	if(sealed)
 		playsound(loc,'sound/effects/canopen.ogg', rand(10,50), 1)
 		to_chat(user, "<span class='notice'>You unseal \the [src] with a crack of metal.</span>")

@@ -41,7 +41,7 @@
 	colour = "white"
 	color_description = "transluscent ink"
 
-/obj/item/pen/attack(atom/A, mob/user, target_zone)
+/obj/item/pen/attack(atom/A, mob/living/user, target_zone)
 	if(ismob(A))
 		var/mob/M = A
 		if(ishuman(A) && user.a_intent == I_HELP && target_zone == BP_HEAD)

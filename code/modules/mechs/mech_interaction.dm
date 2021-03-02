@@ -441,7 +441,7 @@
 	queue_icon_update()
 	return TRUE
 
-/mob/living/exosuit/proc/attack_self(var/mob/user)
+/mob/living/exosuit/proc/attack_self(mob/user)
 	return visible_message("\The [src] pokes itself.")
 
 /mob/living/exosuit/proc/rename(var/mob/user)

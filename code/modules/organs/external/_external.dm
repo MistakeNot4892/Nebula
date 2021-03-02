@@ -164,8 +164,8 @@
 		return
 
 	if(owner && BP_IS_CRYSTAL(src)) // Crystalline robotics == piezoelectrics.
-		owner.Weaken(4 - severity)
-		owner.confused = max(owner.confused, 6 - (severity * 2))
+		SET_STATUS_MAX(owner, STAT_WEAK, 4 - severity)
+		SET_STATUS_MAX(owner, STAT_CONFUSE, 6 - (severity * 2))
 		return
 
 	var/burn_damage = 0
@@ -193,7 +193,7 @@
 	if(owner && (limb_flags & ORGAN_FLAG_CAN_STAND))
 		owner.stance_damage_prone(src)
 
-/obj/item/organ/external/attack_self(var/mob/user)
+/obj/item/organ/external/attack_self(mob/user)
 	if((owner && loc == owner) || !contents.len)
 		return ..()
 	var/list/removable_objects = list()

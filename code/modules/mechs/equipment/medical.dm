@@ -24,7 +24,7 @@
 	. = ..()
 	sleeper.go_out()
 
-/obj/item/mech_equipment/sleeper/attack_self(var/mob/user)
+/obj/item/mech_equipment/sleeper/attack_self(mob/user)
 	. = ..()
 	if(.)
 		sleeper.ui_interact(user)

@@ -45,7 +45,7 @@
 	overlays += I
 	return TRUE
 
-/obj/item/psychic_power/telekinesis/attack_self(var/mob/user)
+/obj/item/psychic_power/telekinesis/attack_self(mob/user)
 	user.visible_message(SPAN_NOTICE("\The [user] makes a strange gesture."))
 	sparkle()
 	return focus.do_simple_ranged_interaction(user)

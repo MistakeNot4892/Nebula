@@ -55,7 +55,7 @@
 	else
 		return ..()
 
-/obj/item/anodevice/attack_self(var/mob/user)
+/obj/item/anodevice/attack_self(mob/user)
 	ui_interact(user)
 	return TRUE
 

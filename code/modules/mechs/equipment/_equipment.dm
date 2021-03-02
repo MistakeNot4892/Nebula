@@ -38,7 +38,7 @@
 	else 
 		return 0
 
-/obj/item/mech_equipment/attack_self(var/mob/user)
+/obj/item/mech_equipment/attack_self(mob/user)
 	if (owner && loc == owner && ((user in owner.pilots) || user == owner))
 		if(!(owner.get_cell()?.check_charge(active_power_use * CELLRATE)))
 			to_chat(user, SPAN_WARNING("The power indicator flashes briefly as you attempt to use \the [src]"))
@@ -84,7 +84,7 @@
 	var/holding_type
 	var/obj/item/holding
 
-/obj/item/mech_equipment/mounted_system/attack_self(var/mob/user)
+/obj/item/mech_equipment/mounted_system/attack_self(mob/user)
 	. = ..()
 	if(. && holding)
 		return holding.attack_self(user)

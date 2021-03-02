@@ -76,8 +76,8 @@
 	flash_pain()
 
 	if (stun_amount)
-		Stun(stun_amount)
-		Weaken(stun_amount)
+		SET_STATUS_MAX(src, STAT_STUN, stun_amount)
+		SET_STATUS_MAX(src, STAT_WEAK, stun_amount)
 		apply_effect(stun_amount, STUTTER)
 		apply_effect(stun_amount, EYE_BLUR)
 
@@ -137,9 +137,9 @@
 		var/mob/living/M = AM
 		playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 		if(skill_fail_prob(SKILL_COMBAT, 75))
-			Weaken(rand(3,5))
+			SET_STATUS_MAX(src, STAT_WEAK, rand(3,5))
 		if(M.skill_fail_prob(SKILL_HAULING, 100))
-			M.Weaken(rand(4,8))
+			SET_STATUS_MAX(M, STAT_WEAK, rand(4,8))
 		M.visible_message(SPAN_DANGER("\The [M] collides with \the [src]!"))
 
 	if(!aura_check(AURA_TYPE_THROWN, AM, TT.speed))
@@ -225,7 +225,7 @@
 
 // End BS12 momentum-transfer code.
 
-/mob/living/attack_generic(var/mob/user, var/damage, var/attack_message)
+/mob/living/attack_generic(var/mob/living/user, var/damage, var/attack_message)
 
 	if(!damage || !istype(user))
 		return

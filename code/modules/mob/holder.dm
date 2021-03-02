@@ -83,7 +83,7 @@ var/list/holder_mob_icon_cache = list()
 	for(var/mob/M in contents)
 		M.show_inv(usr)
 
-/obj/item/holder/attack(mob/target, mob/user)
+/obj/item/holder/attack(mob/target, mob/living/user)
 	// Devour on click on self with holder
 	if(target == user && istype(user,/mob/living/carbon))
 		var/mob/living/carbon/M = user

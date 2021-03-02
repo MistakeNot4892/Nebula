@@ -34,7 +34,7 @@
 	. = ..(mapload)
 	lift = _lift
 
-/obj/structure/lift/attack_ai(var/mob/user)
+/obj/structure/lift/attack_ai(var/mob/living/user)
 	return attack_hand(user)
 
 /obj/structure/lift/attack_hand(var/mob/user)

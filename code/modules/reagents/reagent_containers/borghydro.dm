@@ -53,7 +53,7 @@
 					reagent_volumes[T] = min(reagent_volumes[T] + 5, volume)
 	return 1
 
-/obj/item/chems/borghypo/attack(var/mob/living/M, var/mob/user, var/target_zone)
+/obj/item/chems/borghypo/attack(var/mob/living/M, var/mob/living/user, var/target_zone)
 	if(!istype(M))
 		return
 
@@ -154,7 +154,7 @@
 		/decl/material/liquid/ethanol/coffee/kahlua
 		)
 
-/obj/item/chems/borghypo/service/attack(var/mob/M, var/mob/user)
+/obj/item/chems/borghypo/service/attack(var/mob/M, var/mob/living/user)
 	return
 
 /obj/item/chems/borghypo/service/afterattack(var/obj/target, var/mob/user, var/proximity)

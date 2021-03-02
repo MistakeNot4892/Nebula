@@ -50,10 +50,10 @@
 
 
 
-/obj/item/chems/food/condiment/attack_self(var/mob/user)
+/obj/item/chems/food/condiment/attack_self(mob/user)
 	return
 
-/obj/item/chems/food/condiment/attack(var/mob/M, var/mob/user, var/def_zone)
+/obj/item/chems/food/condiment/attack(var/mob/M, var/mob/living/user, var/def_zone)
 	if(standard_feed_mob(user, M))
 		return
 

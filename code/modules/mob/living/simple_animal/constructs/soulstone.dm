@@ -59,7 +59,7 @@
 			user.visible_message("<span class='danger'>\The [user] shatters \the [src] with \the [I]!</span>")
 			shatter()
 
-/obj/item/soulstone/attack(var/mob/living/simple_animal/M, var/mob/user)
+/obj/item/soulstone/attack(var/mob/living/simple_animal/M, var/mob/living/user)
 	if(M == shade)
 		to_chat(user, "<span class='notice'>You recapture \the [M].</span>")
 		M.forceMove(src)
@@ -75,7 +75,7 @@
 	M.dust()
 	set_full(SOULSTONE_ESSENCE)
 
-/obj/item/soulstone/attack_self(var/mob/user)
+/obj/item/soulstone/attack_self(mob/user)
 	if(full != SOULSTONE_ESSENCE) // No essence - no shade
 		to_chat(user, "<span class='notice'>This [src] has no life essence.</span>")
 		return
