@@ -103,7 +103,7 @@
 	//dead already, no need for more processing
 	if(status & ORGAN_DEAD)
 		return
-	// Don't process if we're in a freezer, an MMI or a stasis bag.or a freezer or something I dunno
+	// Don't process if we're in a freezer, an interface or a stasis bag.
 	if(is_preserved())
 		return
 	//Process infections
@@ -157,7 +157,7 @@
 		var/obj/item/organ/O = loc
 		return O.is_preserved()
 	else
-		return (istype(loc,/obj/item/mmi) || istype(loc,/obj/structure/closet/body_bag/cryobag) || istype(loc,/obj/structure/closet/crate/freezer) || istype(loc,/obj/item/storage/box/freezer))
+		return (istype(loc,/obj/item/brain_interface) || istype(loc,/obj/structure/closet/body_bag/cryobag) || istype(loc,/obj/structure/closet/crate/freezer) || istype(loc,/obj/item/storage/box/freezer))
 
 /obj/item/organ/examine(mob/user)
 	. = ..(user)
