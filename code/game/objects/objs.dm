@@ -113,16 +113,10 @@
 /obj/proc/hides_under_flooring()
 	return level == 1
 
-/obj/proc/hear_talk(mob/M, text, verb, decl/language/speaking)
+/obj/proc/hear_talk(mob/speaker, list/phrases, verb = "says")
 	if(talking_atom)
-		talking_atom.catchMessage(text, M)
-/*
-	var/mob/mo = locate(/mob) in src
-	if(mo)
-		var/rendered = "<span class='game say'><span class='name'>[M.name]: </span> <span class='message'>[text]</span></span>"
-		mo.show_message(rendered, 2)
-		*/
-	return
+		for(var/list/phrase in phrases)
+			talking_atom.catchMessage(phrase[2], speaker)
 
 /obj/proc/see_emote(mob/M, text, var/emote_type)
 	return

@@ -24,7 +24,7 @@
 	var/warning = ""
 	var/hidden_from_codex			  // If it should not show up in Codex
 	var/category = /decl/language    // Used to point at root language types that shouldn't be visible
-	var/list/scramble_cache = list()
+	var/list/scramble_cache
 	var/list/speech_sounds
 	var/allow_repeated_syllables = TRUE
 
@@ -59,42 +59,22 @@
 	. = "[trim(jointext(., " "))]"
 
 /decl/language/proc/scramble(var/input, var/list/known_languages)
-
 	var/understand_chance = 0
 	for(var/decl/language/L in known_languages)
 		if(LAZYACCESS(partial_understanding, L.name))
 			understand_chance += partial_understanding[L.name]
-
-	var/list/words = splittext(input, " ")
-	var/list/scrambled_text = list()
-	var/new_sentence = 0
-	for(var/w in words)
-		var/nword = "[w] "
-		var/input_ending = copytext(w, length(w))
-		var/ends_sentence = findtext(".?!",input_ending)
+	for(var/w in splittext(input, " "))
 		if(!prob(understand_chance))
-			nword = scramble_word(w)
-			if(new_sentence)
-				nword = capitalize(nword)
-				new_sentence = FALSE
-			if(ends_sentence)
-				nword = trim(nword)
-				nword = "[nword][input_ending] "
-
-		if(ends_sentence)
-			new_sentence = TRUE
-
-		scrambled_text += nword
-
-	. = jointext(scrambled_text, null)
-	. = capitalize(.)
-	. = trim(.)
+			w = scramble_word(w)
+		LAZYADD(., w)
+	. = format_speech(trim(jointext(., " ")))
 
 /decl/language/proc/scramble_word(var/input)
+
 	if(!syllables || !syllables.len)
 		return stars(input)
 
-	// If the input is cached already, move it to the end of the cache and return it
+	// If the input is cached already, move it to the end of the cache (refresh) and return it
 	if(input in scramble_cache)
 		var/n = scramble_cache[input]
 		scramble_cache -= input
@@ -102,37 +82,28 @@
 		return n
 
 	var/input_size = length(input)
-	var/scrambled_text = ""
-	var/capitalize = 0
-
-	while(length(scrambled_text) < input_size)
-		var/next = pick(syllables)
-		if(capitalize)
-			next = capitalize(next)
-			capitalize = 0
-		scrambled_text += next
-		var/chance = rand(100)
-		if(chance <= 5)
-			scrambled_text += ". "
-			capitalize = 1
-		else if(chance > 5 && chance <= space_chance)
-			scrambled_text += " "
+	while(length(.) < input_size)
+		. += pick(syllables)
+		if(prob(space_chance))
+			. += " "
+	. = trim(.)
 
 	// Add it to cache, cutting old entries if the list is too long
-	scramble_cache[input] = scrambled_text
-	if(scramble_cache.len > SCRAMBLE_CACHE_LEN)
-		scramble_cache.Cut(1, scramble_cache.len-SCRAMBLE_CACHE_LEN-1)
-	
-	return scrambled_text
+	LAZYSET(scramble_cache, input, .)
+	if(LAZYLEN(scramble_cache) > SCRAMBLE_CACHE_LEN)
+		scramble_cache.Cut(1, length(scramble_cache)-SCRAMBLE_CACHE_LEN-1)
+
+/decl/language/proc/colourize_message(message)
+	return "<span class='[colour]'>[message]</span>"
 
 /decl/language/proc/format_message(message, verb)
-	return "[verb], <span class='message'><span class='[colour]'>\"[capitalize(filter_modify_message(message))]\"</span></span>"
+	return "[verb], <span class='message'>\"[colourize_message(message)]\"</span>"
 
 /decl/language/proc/format_message_plain(message, verb)
-	return "[verb], \"[capitalize(filter_modify_message(message))]\""
+	return "[verb], \"[capitalize(message)]\""
 
 /decl/language/proc/format_message_radio(message, verb)
-	return "[verb], <span class='[colour]'>\"[capitalize(filter_modify_message(message))]\"</span>"
+	return "[verb], \"[colourize_message(message)]\"</span>"
 
 /decl/language/proc/get_talkinto_msg_range(message)
 	// if you yell, you'll be heard from two tiles over instead of one

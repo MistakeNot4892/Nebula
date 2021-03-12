@@ -30,10 +30,12 @@
 		var/mob/living/M = src.loc
 		M.say(pick(heard_talk))
 
-/obj/item/clothing/mask/gas/poltergeist/hear_talk(mob/M, text)
+/obj/item/clothing/mask/gas/poltergeist/hear_talk(mob/speaker, list/phrases, verb = "says")
 	..()
-	if(heard_talk.len > max_stored_messages)
-		heard_talk.Remove(pick(heard_talk))
-	heard_talk.Add(text)
-	if(istype(src.loc, /mob/living) && world.time - last_twitch > 50)
-		last_twitch = world.time
+	for(var/list/phrase in phrases)
+		var/text = phrases[2]
+		if(heard_talk.len > max_stored_messages)
+			heard_talk.Remove(pick(heard_talk))
+		heard_talk.Add(text)
+		if(istype(loc, /mob/living) && world.time - last_twitch > 50)
+			last_twitch = world.time

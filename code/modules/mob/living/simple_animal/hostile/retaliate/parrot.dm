@@ -707,9 +707,7 @@
 	if(message_mode)
 		if(message_mode in radiochannels)
 			if(ears && istype(ears,/obj/item/radio))
-				ears.talk_into(src,sanitize(message), message_mode, verb, null)
-
-
+				ears.talk_into(src, list(get_default_language(), sanitize(message)), message_mode, verb)
 	..(message)
 
 

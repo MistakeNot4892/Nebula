@@ -19,7 +19,16 @@
 	GLOB.listening_objects -= src
 	return ..()
 
-/obj/item/assembly/voice/hear_talk(mob/living/M, msg)
+/obj/item/assembly/voice/hear_talk(mob/speaker, list/phrases, verb = "says")
+
+	var/list/phrase_strings = list()
+	for(var/list/phrase in phrases)
+		phrase_strings += phrase[2]
+
+	var/msg = trim(jointext(phrase_strings, " "))
+	if(!msg)
+		return
+
 	if(listening)
 		recorded = msg
 		listening = 0

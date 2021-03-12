@@ -1,3 +1,32 @@
+var/list/speech_endings = list(".", "?", "!", "-", "~")
+var/list/speech_uppercase = list("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+/proc/format_speech(var/input)
+	. = html_decode(input)
+	if(.)
+		var/ending = copytext(., -1)
+		if(ending in global.speech_endings)
+			. += ending
+		var/starting = copytext(., 1, 2)
+		if(starting in global.speech_uppercase)
+			. = capitalize(.)
+	. = html_encode(.)
+
+var/list/escape_language_prefixes = list(
+	//@"\",
+	@"^",
+	@"$",
+	@".",
+	@"|",
+	@"?",
+	@"*",
+	@"+",
+	@"(",
+	@")",
+	//@"["
+	//@"{",
+	//@"}"
+) 
+
 var/list/department_radio_keys = list(
 	  ":r" = "right ear",	".r" = "right ear",
 	  ":l" = "left ear",	".l" = "left ear",
@@ -120,10 +149,10 @@ var/list/channel_to_radio_key = new
 	message_data[1] = message
 	message_data[2] = verb
 
-/mob/living/proc/handle_message_mode(message_mode, message, verb, speaking, used_radios, alt_name)
-	if(message_mode == "intercom")
+/mob/living/proc/handle_message_mode(mob/speaker, list/phrases, channel, verb = "says", used_radios, alt_name)
+	if(channel == "intercom")
 		for(var/obj/item/radio/intercom/I in view(1, null))
-			I.talk_into(src, message, verb, speaking)
+			I.talk_into(src, phrases, channel, verb)
 			used_radios += I
 	return 0
 
@@ -139,18 +168,6 @@ var/list/channel_to_radio_key = new
 	if(ending=="?")
 		return "asks"
 	return verb
-
-/mob/living/proc/format_say_message(var/message = null)
-	if(!message)
-		return
-
-	message = html_decode(message)
-
-	var/end_char = copytext_char(message, -1)
-	if(!(end_char in list(".", "?", "!", "-", "~")))
-		message += "."
-
-	return html_encode(message)
 
 /mob/living/say(var/message, var/decl/language/speaking = null, var/verb="says", var/alt_name="", whispering)
 	set waitfor = FALSE
@@ -188,17 +205,26 @@ var/list/channel_to_radio_key = new
 		else
 			speaking = get_default_language()
 
-	// This is broadcast to all mobs with the language,
-	// irrespective of distance or anything else.
-	if(speaking && (speaking.flags & HIVEMIND))
-		speaking.broadcast(src,trim(message))
-		return 1
-
-	if((is_muzzled()) && !(speaking && (speaking.flags & SIGNLANG)))
-		to_chat(src, "<span class='danger'>You're muzzled and cannot speak!</span>")
+	if(is_muzzled() && (!speaking || !(speaking.flags & SIGNLANG)))
+		to_chat(src, SPAN_WARNING("You're muzzled and cannot speak!"))
 		return
 
-	if (speaking)
+	if(speaking)
+
+		if((speaking.flags & NONVERBAL) && prob(30))
+			custom_emote(1, "[pick(speaking.signlang_verb)].")
+
+		// This is broadcast to all mobs with the language,
+		// irrespective of distance or anything else.
+		if(speaking.flags & HIVEMIND)
+			speaking.broadcast(src,trim(message))
+			return 1
+
+		//handle nonverbal and sign languages here
+		if(speaking.flags & SIGNLANG)
+			log_say("[name]/[key] : SIGN: [message]")
+			return say_signlang(message, pick(speaking.signlang_verb), speaking)
+
 		if(whispering)
 			verb = speaking.whisper_verb ? speaking.whisper_verb : speaking.speech_verb
 		else
@@ -206,22 +232,64 @@ var/list/channel_to_radio_key = new
 
 	message = trim_left(message)
 	message = handle_autohiss(message, speaking)
-	message = format_say_message(message)
 
-	if(speaking && !speaking.can_be_spoken_properly_by(src))
-		message = speaking.muddle(message)
+	// BEGIN DEBUG OF NEW SAYCODE
+	var/list/phrases
+	if(length(languages) > 1)
 
-	if(!(speaking && (speaking.flags & NO_STUTTER)))
-		var/list/message_data = list(message, verb, 0)
-		if(handle_speech_problems(message_data))
-			message = message_data[1]
-			verb = message_data[2]
+		var/list/my_languages = list()
+		for(var/decl/language/L in languages)
+			my_languages[L.key] = L
 
-	if(!message || message == "")
-		return 0
+		var/lang_prefix = get_prefix_key(/decl/prefix/language)
+		var/lang_regex_string = "[lang_prefix](\[[jointext(my_languages, null)]\])"
+		var/regex/lang_prefix_regex = regex(lang_regex_string)
 
-	var/list/obj/item/used_radios = new
-	if(handle_message_mode(message_mode, message, verb, speaking, used_radios, alt_name))
+		if(copytext(message, 1, 2) != lang_prefix)
+			if(speaking)
+				message = "[lang_prefix][speaking.key] [message]"
+			else
+				message = "[lang_prefix][my_languages[1]] [message]"
+
+		var/list/substrings = splittext(message, lang_prefix_regex)
+		// splittext() with a regex seems to sometimes insert empty strings.
+		for(var/substring in substrings)
+			if(!substring || !istext(substring))
+				substrings -= substring
+
+		if(!length(substrings))
+			substrings = list(null, message)
+
+		for(var/i = 1; i <= length(substrings); i += 2)
+
+			if(length(substrings) < i+1)
+				break
+
+			var/decl/language/L = my_languages[substrings[i]]
+			if(istype(L) && !speaking)
+				speaking = L
+
+			var/phrase_string = trim(substrings[i+1])
+
+			if(L && !L.can_be_spoken_properly_by(src))
+				phrase_string = L.muddle(phrase_string)
+
+			if(!L || !(L.flags & NO_STUTTER))
+				var/list/message_data = list(phrase_string, verb, 0)
+				if(handle_speech_problems(message_data))
+					phrase_string = message_data[1]
+					verb = message_data[2]
+
+			if(phrase_string)
+				LAZYADD(phrases, list(list(L, phrase_string)))
+
+	if(!length(phrases))
+		phrases = list(list(speaking || get_default_language(), message))
+
+	// END DEBUG OF NEW SAYCODE
+
+	var/list/used_radios = list()
+	if(handle_message_mode(message_mode, phrases, null, verb, used_radios, alt_name))
 		return 1
 
 	var/list/handle_v = (istype(speaking) && speaking.get_spoken_sound()) || handle_speech_sound()
@@ -254,16 +322,6 @@ var/list/channel_to_radio_key = new
 	var/list/listening_obj = list()
 	var/turf/T = get_turf(src)
 
-	//handle nonverbal and sign languages here
-	if (speaking)
-		if (speaking.flags & NONVERBAL)
-			if (prob(30))
-				src.custom_emote(1, "[pick(speaking.signlang_verb)].")
-
-		if (speaking.flags & SIGNLANG)
-			log_say("[name]/[key] : SIGN: [message]")
-			return say_signlang(message, pick(speaking.signlang_verb), speaking)
-
 	if(T)
 		//make sure the air can transmit speech - speaker's side
 		var/datum/gas_mixture/environment = T.return_air()
@@ -293,7 +351,7 @@ var/list/channel_to_radio_key = new
 	for(var/obj/O in listening_obj)
 		spawn(0)
 			if(O) //It's possible that it could be deleted in the meantime.
-				O.hear_talk(src, message, verb, speaking)
+				O.hear_talk(src, phrases, verb)
 
 	var/list/eavesdroppers = list()
 	if(whispering)
@@ -312,7 +370,7 @@ var/list/channel_to_radio_key = new
 		for(var/obj/O in eavesdroping)
 			spawn(0)
 				if(O) //It's possible that it could be deleted in the meantime.
-					O.hear_talk(src, stars(message), verb, speaking)
+					O.hear_talk(src, phrases, verb)
 
 	INVOKE_ASYNC(GLOBAL_PROC, .proc/animate_speech_bubble, speech_bubble, speech_bubble_recipients | eavesdroppers, 30)
 	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 30)

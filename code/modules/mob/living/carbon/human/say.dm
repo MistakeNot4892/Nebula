@@ -160,22 +160,22 @@
 	else
 		. = ..(message_data)
 
-/mob/living/carbon/human/handle_message_mode(message_mode, message, verb, speaking, used_radios, alt_name)
-	switch(message_mode)
+/mob/living/carbon/human/handle_message_mode(mob/speaker, list/phrases, channel, verb = "says", used_radios, alt_name)
+	switch(channel)
 		if("intercom")
 			if(!src.restrained())
 				for(var/obj/item/radio/intercom/I in view(1))
-					I.talk_into(src, message, null, verb, speaking)
+					I.talk_into(src, phrases, null, verb)
 					I.add_fingerprint(src)
 					used_radios += I
 		if("headset")
 			if(l_ear && istype(l_ear,/obj/item/radio))
 				var/obj/item/radio/R = l_ear
-				R.talk_into(src,message,null,verb,speaking)
+				R.talk_into(src, phrases, null, verb)
 				used_radios += l_ear
 			else if(r_ear && istype(r_ear,/obj/item/radio))
 				var/obj/item/radio/R = r_ear
-				R.talk_into(src,message,null,verb,speaking)
+				R.talk_into(src, phrases, null, verb)
 				used_radios += r_ear
 		if("right ear")
 			var/obj/item/radio/R
@@ -188,7 +188,7 @@
 				R = inv_slot.holding
 				has_radio = 1
 			if(has_radio)
-				R.talk_into(src,message,null,verb,speaking)
+				R.talk_into(src, phrases, null, verb)
 				used_radios += R
 		if("left ear")
 			var/obj/item/radio/R
@@ -201,18 +201,18 @@
 				R = inv_slot.holding
 				has_radio = 1
 			if(has_radio)
-				R.talk_into(src,message,null,verb,speaking)
+				R.talk_into(src, phrases, null, verb)
 				used_radios += R
 		if("whisper") //It's going to get sanitized again immediately, so decode.
-			whisper_say(html_decode(message), speaking, alt_name)
+			whisper_say(phrases, alt_name)
 			return 1
 		else
-			if(message_mode)
+			if(channel)
 				if(l_ear && istype(l_ear,/obj/item/radio))
-					l_ear.talk_into(src,message, message_mode, verb, speaking)
+					l_ear.talk_into(src, phrases, channel, verb)
 					used_radios += l_ear
 				else if(r_ear && istype(r_ear,/obj/item/radio))
-					r_ear.talk_into(src,message, message_mode, verb, speaking)
+					r_ear.talk_into(src, phrases, channel, verb)
 					used_radios += r_ear
 
 /mob/living/carbon/human/handle_speech_sound()

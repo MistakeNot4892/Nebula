@@ -101,15 +101,17 @@
 	if(distance <= 1 && maintenance)
 		to_chat(user, "<span class='notice'>The wires are exposed.</span>")
 
-/obj/item/taperecorder/hear_talk(mob/living/M, msg, var/verb="says", decl/language/speaking=null)
+/obj/item/taperecorder/hear_talk(mob/speaker, list/phrases, var/verb)
 	if(mytape && recording)
-
-		if(speaking)
-			if(!speaking.machine_understands)
-				msg = speaking.scramble(msg)
-			mytape.record_speech("[M.name] [speaking.format_message_plain(msg, verb)]")
-		else
-			mytape.record_speech("[M.name] [verb], \"[msg]\"")
+		for(var/list/phrase in phrases)
+			var/decl/language/speaking = phrase[1]
+			var/msg = phrase[2]
+			if(speaking)
+				if(!speaking.machine_understands)
+					msg = speaking.scramble(msg)
+				mytape.record_speech("[speaker.name] [speaking.format_message_plain(msg, verb)]")
+			else
+				mytape.record_speech("[speaker.name] [verb], \"[msg]\"")
 
 
 /obj/item/taperecorder/see_emote(mob/M, text, var/emote_type)

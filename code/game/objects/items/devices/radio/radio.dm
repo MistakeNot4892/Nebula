@@ -240,46 +240,43 @@
 		return
 	var/mob/living/silicon/ai/A = new /mob/living/silicon/ai(src, null, null, 1)
 	A.fully_replace_character_name(from)
-	talk_into(A, message, channel, sayverb)
+	talk_into(A, list(A.get_default_language(), message), channel, sayverb)
 	qdel(A)
 
 // Interprets the message mode when talking into a radio, possibly returning a connection datum
-/obj/item/radio/proc/handle_message_mode(mob/living/M, message, message_mode)
+/obj/item/radio/proc/handle_message_mode(mob/speaker, list/phrases, channel, verb = "says", used_radios, alt_name)
 	// If a channel isn't specified, send to common.
-	if(!message_mode || message_mode == "headset")
+	if(!channel || channel == "headset")
 		return radio_connection
 
 	// Otherwise, if a channel is specified, look for it.
 	if(channels && channels.len > 0)
-		if (message_mode == "department") // Department radio shortcut
-			message_mode = channels[1]
+		if (channel == "department") // Department radio shortcut
+			channel = channels[1]
 
-		if (channels[message_mode]) // only broadcast if the channel is set on
-			return secure_radio_connections[message_mode]
+		if (channels[channel]) // only broadcast if the channel is set on
+			return secure_radio_connections[channel]
 
-	// If we were to send to a channel we don't have, drop it.
-	return null
-
-/obj/item/radio/talk_into(mob/living/M, message, channel, var/verb = "says", var/decl/language/speaking = null)
+/obj/item/radio/talk_into(mob/speaker, list/phrases, channel, var/verb = "says")
 	set waitfor = FALSE
 	if(!on) return 0 // the device has to be on
 	//  Fix for permacell radios, but kinda eh about actually fixing them.
-	if(!M || !message) return 0
+	if(!speaker)
+		return 0
 
-	if(speaking && (speaking.flags & (NONVERBAL|SIGNLANG))) return 0
-
-	if (!broadcasting)
+	if(!broadcasting)
 		// Sedation chemical effect should prevent radio use.
-		var/mob/living/carbon/C = M
+		var/mob/living/carbon/C = speaker
 		if(istype(C) && (C.has_chemical_effect(CE_SEDATE, 1) || C.incapacitated(INCAPACITATION_DISRUPTED)))
-			to_chat(M, SPAN_WARNING("You're unable to reach \the [src]."))
+			to_chat(speaker, SPAN_WARNING("You're unable to reach \the [src]."))
 			return 0
 
 		if((istype(C)) && C.radio_interrupt_cooldown > world.time)
-			to_chat(M, SPAN_WARNING("You're disrupted as you reach for \the [src]."))
+			to_chat(speaker, SPAN_WARNING("You're disrupted as you reach for \the [src]."))
 			return 0
 
-		if(istype(M)) M.trigger_aiming(TARGET_CAN_RADIO)
+		if(istype(speaker))
+			speaker.trigger_aiming(TARGET_CAN_RADIO)
 
 	//  Uncommenting this. To the above comment:
 	// 	The permacell radios aren't suppose to be able to transmit, this isn't a bug and this "fix" is just making radio wires useless. -Giacom
@@ -289,7 +286,6 @@
 	if(!radio_connection)
 		set_frequency(frequency)
 
-
 	if(power_usage)
 		var/obj/item/cell/has_cell = get_cell()
 		if(!has_cell)
@@ -297,7 +293,7 @@
 		if(!has_cell.checked_use(power_usage * CELLRATE))
 			return 0
 
-	if(loc == M)
+	if(loc == speaker)
 		playsound(loc, 'sound/effects/walkietalkie.ogg', 20, 0, -1)
 
 
@@ -313,7 +309,7 @@
 	*/
 
 	//#### Grab the connection datum ####//
-	var/datum/radio_frequency/connection = handle_message_mode(M, message, channel)
+	var/datum/radio_frequency/connection = handle_message_mode(speaker, phrases, channel)
 	if (!istype(connection))
 		return 0
 
@@ -322,35 +318,35 @@
 	//#### Tagging the signal with all appropriate identity values ####//
 
 	// ||-- The mob's name identity --||
-	var/displayname = M.name	// grab the display name (name you get when you hover over someone's icon)
-	var/real_name = M.real_name // mob's real name
+	var/displayname = speaker.name	// grab the display name (name you get when you hover over someone's icon)
+	var/real_name = speaker.real_name // mob's real name
 	var/mobkey = "none" // player key associated with mob
 	var/voicemask = 0 // the speaker is wearing a voice mask
-	if(M.client)
-		mobkey = M.key // assign the mob's key
+	if(speaker.client)
+		mobkey = speaker.key // assign the mob's key
 
 
 	var/jobname // the mob's "job"
 
 	// --- Human: use their actual job ---
-	if (ishuman(M))
-		var/mob/living/carbon/human/H = M
+	if (ishuman(speaker))
+		var/mob/living/carbon/human/H = speaker
 		jobname = H.get_assignment()
 
 	// --- Carbon Nonhuman ---
-	else if (iscarbon(M)) // Nonhuman carbon mob
+	else if (iscarbon(speaker)) // Nonhuman carbon mob
 		jobname = "No id"
 
 	// --- AI ---
-	else if (isAI(M))
+	else if (isAI(speaker))
 		jobname = "AI"
 
 	// --- Cyborg ---
-	else if (isrobot(M))
+	else if (isrobot(speaker))
 		jobname = "Robot"
 
 	// --- Personal AI (pAI) ---
-	else if (istype(M, /mob/living/silicon/pai))
+	else if (ispAI(speaker))
 		jobname = "Personal AI"
 
 	// --- Unidentifiable mob ---
@@ -361,12 +357,12 @@
 	// --- Modifications to the mob's identity ---
 
 	// The mob is disguising their identity:
-	if (ishuman(M) && M.GetVoice() != real_name)
-		displayname = M.GetVoice()
-		jobname = "Unknown"
-		voicemask = 1
-
-
+	if (ishuman(speaker))
+		var/mob/living/carbon/human/H = speaker
+		if(H.GetVoice() != real_name)
+			displayname = H.GetVoice()
+			jobname = "Unknown"
+			voicemask = 1
 
   /* ###### Radio headsets can only broadcast through subspace ###### */
 	if(subspace_transmission)
@@ -378,14 +374,14 @@
 		// --- Finally, tag the actual signal with the appropriate values ---
 		signal.data = list(
 		  // Identity-associated tags:
-			"mob" = M, // store a reference to the mob
-			"mobtype" = M.type, 	// the mob's type
+			"mob" = speaker, // store a reference to the mob
+			"mobtype" = speaker.type, 	// the mob's type
 			"realname" = real_name, // the mob's real name
 			"name" = displayname,	// the mob's display name
 			"job" = jobname,		// the mob's job
 			"key" = mobkey,			// the mob's key
-			"vmessage" = pick(M.speak_emote), // the message to display if the voice wasn't understood
-			"vname" = M.voice_name, // the name to display if the voice wasn't understood
+			"vmessage" = pick(speaker.speak_emote), // the message to display if the voice wasn't understood
+			"vname" = speaker.voice_name, // the name to display if the voice wasn't understood
 			"vmask" = voicemask,	// 1 if the mob is using a voice gas mask
 
 			// We store things that would otherwise be kept in the actual mob
@@ -393,7 +389,7 @@
 
 		  // Other tags:
 			"compression" = rand(45,50), // compressed radio signal
-			"message" = message, // the actual sent message
+			"message" = phrases, // the actual sent message
 			"connection" = connection, // the radio connection to use
 			"radio" = src, // stores the radio used for transmission
 			"slow" = 0, // how much to sleep() before broadcasting - simulates net lag
@@ -404,7 +400,6 @@
 			"level" = position.z, // The source's z level
 			"channel_tag" = "[connection.frequency]", // channel tag for the message
 			"channel_color" = channel_color_presets["Menacing Maroon"], // radio message color
-			"language" = speaking,
 			"verb" = verb
 		)
 		signal.frequency = connection.frequency // Quick frequency set
@@ -425,7 +420,7 @@
 		else //Less huzzah, we have to fallback
 			for(var/obj/item/radio/R in loc)
 				if(!R.subspace_transmission)
-					return R.talk_into(M, message, channel, verb, speaking)
+					return R.talk_into(speaker, phrases, channel, verb)
 			return FALSE
 
   /* ###### Intercoms and station-bounced radios ###### */
@@ -445,18 +440,18 @@
 
 	signal.data = list(
 
-		"mob" = M, // store a reference to the mob
-		"mobtype" = M.type, 	// the mob's type
+		"mob" = speaker, // store a reference to the mob
+		"mobtype" = speaker.type, 	// the mob's type
 		"realname" = real_name, // the mob's real name
 		"name" = displayname,	// the mob's display name
 		"job" = jobname,		// the mob's job
 		"key" = mobkey,			// the mob's key
-		"vmessage" = pick(M.speak_emote), // the message to display if the voice wasn't understood
-		"vname" = M.voice_name, // the name to display if the voice wasn't understood
+		"vmessage" = pick(speaker.speak_emote), // the message to display if the voice wasn't understood
+		"vname" = speaker.voice_name, // the name to display if the voice wasn't understood
 		"vmask" = voicemask,	// 1 if the mob is using a voice gas mas
 
 		"compression" = 0, // uncompressed radio signal
-		"message" = message, // the actual sent message
+		"message" = phrases, // the actual sent message
 		"connection" = connection, // the radio connection to use
 		"radio" = src, // stores the radio used for transmission
 		"slow" = 0,
@@ -467,7 +462,6 @@
 		"level" = position.z,
 		"channel_tag" = "#unkn",
 		"channel_color" = channel_color_presets["Menacing Maroon"],
-		"language" = speaking,
 		"verb" = verb
 	)
 	signal.frequency = connection.frequency // Quick frequency set
@@ -488,31 +482,14 @@
 
 	//THIS IS TEMPORARY. YEAH RIGHT
 	if(!connection)	return 0	//~Carn
-	return Broadcast_Message(connection, M, voicemask, pick(M.speak_emote),
-					  src, message, displayname, jobname, real_name, M.voice_name,
-					  filter_type, signal.data["compression"], GetConnectedZlevels(position.z), connection.frequency, verb, speaking,
+	return Broadcast_Message(connection, speaker, voicemask, pick(speaker.speak_emote),
+					  src, phrases, displayname, jobname, real_name, speaker.voice_name,
+					  filter_type, signal.data["compression"], GetConnectedZlevels(position.z), connection.frequency, verb,
 					  "[connection.frequency]", channel_color_presets["Menacing Maroon"])
 
-
-/obj/item/radio/hear_talk(mob/M, msg, var/verb = "says", var/decl/language/speaking = null)
-
-	if (broadcasting)
-		if(get_dist(src, M) <= canhear_range)
-			talk_into(M, msg,null,verb,speaking)
-
-
-/*
-/obj/item/radio/proc/accept_rad(obj/item/radio/R, message)
-
-	if ((R.frequency == frequency && message))
-		return 1
-	else if
-
-	else
-		return null
-	return
-*/
-
+/obj/item/radio/hear_talk(mob/speaker, list/phrases, verb = "says")
+	if(broadcasting && get_dist(src, speaker) <= canhear_range)
+		talk_into(speaker, phrases, null, verb)
 
 /obj/item/radio/proc/receive_range(freq, level)
 	// check if this radio can receive on the given frequency, and if so,
@@ -631,7 +608,7 @@
 /obj/item/radio/borg/list_channels(var/mob/user)
 	return list_secure_channels(user)
 
-/obj/item/radio/borg/talk_into()
+/obj/item/radio/borg/talk_into(mob/speaker, list/phrases, channel, var/verb = "says")
 	. = ..()
 	if (isrobot(src.loc))
 		var/mob/living/silicon/robot/R = src.loc
@@ -639,7 +616,7 @@
 		R.cell_use_power(C.active_usage)
 
 /obj/item/radio/borg/attackby(obj/item/W, mob/user)
-//	..()
+
 	user.set_machine(src)
 	if (!( isScrewdriver(W) || (istype(W, /obj/item/encryptionkey/ ))))
 		return

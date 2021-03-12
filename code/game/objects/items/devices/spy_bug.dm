@@ -47,9 +47,8 @@
 	else
 		..()
 
-/obj/item/spy_bug/hear_talk(mob/M, var/msg, verb, decl/language/speaking)
-	radio.hear_talk(M, msg, speaking)
-
+/obj/item/spy_bug/hear_talk(mob/speaker, list/phrases, verb = "says")
+	radio.hear_talk(speaker, phrases, verb)
 
 /obj/item/spy_monitor
 	name = "\improper PDA"
@@ -142,9 +141,8 @@
 
 	return 1
 
-/obj/item/spy_monitor/hear_talk(mob/M, var/msg, verb, decl/language/speaking)
-	return radio.hear_talk(M, msg, speaking)
-
+/obj/item/spy_monitor/hear_talk(mob/speaker, list/phrases, verb = "says")
+	return radio.hear_talk(speaker, phrases, verb)
 
 /obj/machinery/camera/spy
 	// These cheap toys are accessible from the mercenary camera console as well

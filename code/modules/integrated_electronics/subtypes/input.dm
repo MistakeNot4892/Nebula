@@ -833,19 +833,24 @@
 	GLOB.listening_objects -= src
 	. = ..()
 
-/obj/item/integrated_circuit/input/microphone/hear_talk(var/mob/living/M, text, verb, decl/language/speaking)
-	var/translated = TRUE
-	if(M && text)
-		if(speaking && !speaking.machine_understands)
+/obj/item/integrated_circuit/input/microphone/hear_talk(mob/speaker, list/phrases, verb = "says")
+	for(var/list/phrase in phrases)
+		var/decl/language/speaking = phrase[1]
+		var/text = phrase[2]
+		var/translated = TRUE
+		if(istype(speaking) && !speaking.machine_understands)
 			text = speaking.scramble(text)
 			translated = FALSE
-		set_pin_data(IC_OUTPUT, 1, M.GetVoice())
-		set_pin_data(IC_OUTPUT, 2, text)
-
-	push_data()
-	activate_pin(1)
-	if(translated && !(speaking.type == /decl/language/human/common))
-		activate_pin(2)
+		if(isliving(speaker) && text)
+			var/mob/living/L = speaker
+			set_pin_data(IC_OUTPUT, 1, L.GetVoice())
+			set_pin_data(IC_OUTPUT, 2, text)
+		push_data()
+		activate_pin(1)
+		if(translated && !(speaking.type == /decl/language/human/common))
+			activate_pin(2)
+			return
+	..()
 
 /obj/item/integrated_circuit/input/sensor
 	name = "sensor"

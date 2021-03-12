@@ -10,22 +10,24 @@
 		/decl/material/liquid/nutriment = 100
 	)
 
-/obj/machinery/fabricator/replicator/hear_talk(var/mob/M, var/text, var/verb, var/decl/language/speaking)
-	if(speaking && !speaking.machine_understands)
-		return ..()
-	var/true_text = lowertext(html_decode(text))
-	if(findtext(true_text, "status"))
-		addtimer(CALLBACK(src, /obj/machinery/fabricator/replicator/proc/state_status), 2 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
-	else if(findtext(true_text, "menu"))
-		addtimer(CALLBACK(src, /obj/machinery/fabricator/replicator/proc/state_menu), 2 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
-	else 
-		for(var/datum/fabricator_recipe/recipe in design_cache)
-			if(recipe.hidden && !(fab_status_flags & FAB_HACKED))
-				continue
-			if(findtext(true_text, lowertext(recipe.name)))
-				addtimer(CALLBACK(src, /obj/machinery/fabricator/proc/try_queue_build, recipe, 1), 2 SECONDS)
-				break
+/obj/machinery/fabricator/replicator/hear_talk(mob/speaker, list/phrases, verb = "says")
 	..()
+	for(var/list/phrase in phrases)
+		var/decl/language/speaking = phrase[1]
+		if(!istype(speaking) || !speaking.machine_understands)
+			continue
+		var/true_text = lowertext(html_decode(phrase[2]))
+		if(findtext(true_text, "status"))
+			addtimer(CALLBACK(src, /obj/machinery/fabricator/replicator/proc/state_status), 2 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+		else if(findtext(true_text, "menu"))
+			addtimer(CALLBACK(src, /obj/machinery/fabricator/replicator/proc/state_menu), 2 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+		else 
+			for(var/datum/fabricator_recipe/recipe in design_cache)
+				if(recipe.hidden && !(fab_status_flags & FAB_HACKED))
+					continue
+				if(findtext(true_text, lowertext(recipe.name)))
+					addtimer(CALLBACK(src, /obj/machinery/fabricator/proc/try_queue_build, recipe, 1), 2 SECONDS)
+					break
 
 /obj/machinery/fabricator/replicator/proc/state_status()
 	for(var/thing in storage_capacity)

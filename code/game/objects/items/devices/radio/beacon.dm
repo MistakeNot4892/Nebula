@@ -11,7 +11,7 @@
 	var/code = "electronic"
 	var/functioning = TRUE
 
-/obj/item/radio/beacon/hear_talk()
+/obj/item/radio/beacon/hear_talk(mob/speaker, list/phrases, verb = "says")
 	return
 
 /obj/item/radio/beacon/send_hear()

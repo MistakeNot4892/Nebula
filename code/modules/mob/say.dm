@@ -28,7 +28,7 @@
 /mob/proc/say_dead(var/message)
 	communicate(/decl/communication_channel/dsay, client, message)
 
-/mob/proc/say_understands(var/mob/other,var/decl/language/speaking = null)
+/mob/proc/say_understands(var/mob/other, var/decl/language/speaking)
 
 	if (src.stat == 2)		//Dead
 		return 1
@@ -59,7 +59,7 @@
 
 	return 0
 
-/mob/proc/say_quote(var/message, var/decl/language/speaking = null)
+/mob/proc/say_quote(var/message, var/decl/language/speaking)
 	var/ending = copytext(message, length(message))
 	if(speaking)
 		return speaking.get_spoken_verb(ending)

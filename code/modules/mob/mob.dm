@@ -155,7 +155,7 @@
 	for(var/o in objs)
 		var/obj/O = o
 		if(radio_message)
-			O.hear_talk(src, radio_message, null, GET_DECL(/decl/language/noise))
+			O.hear_talk(src, list(GET_DECL(/decl/language/noise), radio_message), null)
 		else
 			O.show_message(message, AUDIBLE_MESSAGE, deaf_message, VISIBLE_MESSAGE)
 
