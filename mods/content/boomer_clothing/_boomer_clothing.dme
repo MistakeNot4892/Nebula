@@ -1,0 +1,18 @@
+#ifndef MODPACK_CORPORATE
+#define MODPACK_CORPORATE
+// BEGIN_INCLUDE
+#include "items\badges.dm"
+#include "items\clutter.dm"
+#include "items\cups.dm"
+#include "items\documents.dm"
+#include "items\medals.dm"
+#include "items\wristcomp.dm"
+// END_INCLUDE
+#endif
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
