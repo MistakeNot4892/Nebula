@@ -5,12 +5,18 @@
 	alt_titles = list()
 
 /datum/job/assistant
-	title = "Deck Hand"
+	title = "Assistant"
 	event_categories = list("Janitor", "Gardener")
-	supervisors = "literally everyone, you bottom feeder"
-	outfit_type = /decl/hierarchy/outfit/job/tradeship/hand
+	supervisors = "the First Mate, if they ever asked"
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/hand
 	alt_titles = list(
-		"Cook" = /decl/hierarchy/outfit/job/tradeship/hand/cook,
-		"Cargo Hand",
-		"Passenger")
+		"Cook" = /decl/hierarchy/outfit/job/wyrm/hand/cook,
+		"Librarian" = /decl/hierarchy/outfit/job/wyrm/librarian,
+		"Journalist" = /decl/hierarchy/outfit/job/wyrm/journalist,
+		"Clown",
+		"Mime")
 	hud_icon = "hudcargotechnician"
+	access = list(
+		access_eva,
+		access_maint_tunnels
+	)

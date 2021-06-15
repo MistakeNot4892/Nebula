@@ -4,12 +4,9 @@
 	total_positions = 2
 	spawn_positions = 2
 	hud_icon = "hudengineer"
-	outfit_type = /decl/hierarchy/outfit/job/tradeship/hand/engine
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/hand/engine
 	department_types = list(/decl/department/engineering)
-	total_positions = 8
-	spawn_positions = 7
 	selection_color = "#5b4d20"
-	economic_power = 5
 	minimal_player_age = 7
 	access = list(
 		access_eva,
@@ -51,7 +48,10 @@
 		SKILL_ENGINES      = SKILL_MAX
 	)
 	skill_points = 20
-	alt_titles = list()
+	alt_titles = list(
+		"Engine Specialist",
+		"Atmospherics Technician"
+	)
 
 /datum/job/engineer/head
 	title = "Head Engineer"
@@ -62,6 +62,7 @@
 	)
 	total_positions = 1
 	spawn_positions = 1
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/chief_engineer
 	selection_color = "#7f6e2c"
 	req_admin_notify = 1
 	economic_power = 10
@@ -109,7 +110,6 @@
 	)
 	minimal_player_age = 14
 	supervisors = "the Captain"
-	outfit_type = /decl/hierarchy/outfit/job/tradeship/chief_engineer
 	min_skill = list(
 		SKILL_LITERACY     = SKILL_ADEPT,
 		SKILL_COMPUTER     = SKILL_ADEPT,

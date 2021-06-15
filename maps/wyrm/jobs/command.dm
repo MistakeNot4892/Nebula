@@ -1,7 +1,7 @@
 /datum/job/captain
 	title = "Captain"
-	supervisors = "your profit margin, your conscience, and the Trademaster"
-	outfit_type = /decl/hierarchy/outfit/job/tradeship/captain
+	supervisors = "the Benefactor, not that you're seeing them anytime soon"
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/captain
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_WEAPONS  = SKILL_ADEPT,
@@ -23,8 +23,8 @@
 	access = list()
 	minimal_access = list()
 	minimal_player_age = 14
-	economic_power = 20
-	ideal_character_age = 70
+	economic_power = 10
+	ideal_character_age = 50
 	guestbanned = 1
 	must_fill = 1
 	not_random_selectable = 1
@@ -36,12 +36,12 @@
 /datum/job/hop
 	title = "First Mate"
 	supervisors = "the Captain"
-	outfit_type = /decl/hierarchy/outfit/job/tradeship/mate
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/mate
 	hud_icon = "hudheadofpersonnel"
 	head_position = 1
 	department_types = list(
 		/decl/department/command,
-		/decl/department/civilian
+		/decl/department/supply
 	)
 	total_positions = 1
 	spawn_positions = 1
@@ -49,7 +49,7 @@
 	req_admin_notify = 1
 	minimal_player_age = 14
 	economic_power = 10
-	ideal_character_age = 50
+	ideal_character_age = 40
 	guestbanned = 1
 	not_random_selectable = 1
 	access = list(
@@ -139,3 +139,77 @@
 	)
 	skill_points = 30
 	alt_titles = list()
+
+/datum/job/hos
+	title = "Security Officer"
+	supervisors = "the Captain"
+	total_positions = 1
+	spawn_positions = 1
+	selection_color = "#2f2f7f"
+	hud_icon = "hudheadofsecurity"
+	head_position = 1
+	req_admin_notify = 1
+	minimal_player_age = 14
+	economic_power = 10
+	ideal_character_age = 40
+	guestbanned = 1
+	not_random_selectable = 1
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/hos
+	department_types = list(/decl/department/command)
+	min_skill = list(
+		SKILL_LITERACY = SKILL_ADEPT,
+		SKILL_WEAPONS  = SKILL_ADEPT,
+		SKILL_COMBAT   = SKILL_ADEPT,
+		SKILL_HAULING  = SKILL_EXPERT,
+		SKILL_EVA      = SKILL_ADEPT
+	)
+	max_skill = list(
+		SKILL_WEAPONS = SKILL_MAX,
+		SKILL_COMBAT  = SKILL_MAX
+	)
+	access = list(
+		access_security,
+		access_sec_doors,
+		access_forensics_lockers,
+		access_medical,
+		access_engine,
+		access_ai_upload,
+		access_eva,
+		access_heads,
+		access_all_personal_lockers,
+		access_maint_tunnels,
+		access_construction,
+		access_morgue,
+		access_cargo,
+		access_mailsorting,
+		access_qm,
+		access_research,
+		access_RC_announce,
+		access_keycard_auth
+	)
+
+/datum/job/blueshield
+	title = "Bodyguard"
+	department_types = list(
+		/decl/department/command
+	)
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Captain, and only the Captain"
+	selection_color = "#004a7f"
+	req_admin_notify = 1
+	minimal_player_age = 8
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/bodyguard
+	department_types = list(/decl/department/command)
+	access = list(access_security, access_sec_doors, access_forensics_lockers,
+			            access_medical, access_engine, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_maint_tunnels, access_construction, access_morgue,
+			            access_cargo, access_mailsorting, access_qm, access_lawyer,
+			            access_research, access_mining, access_mining_station,
+			            access_RC_announce, access_keycard_auth, access_blueshield)
+	minimal_access = list(access_security, access_sec_doors, access_forensics_lockers,
+			            access_medical, access_engine, access_eva, access_heads,
+			            access_all_personal_lockers, access_maint_tunnels, access_construction, access_morgue,
+			            access_cargo, access_mailsorting, access_qm, access_lawyer,
+			            access_research, access_mining, access_mining_station,
+			            access_RC_announce, access_keycard_auth, access_blueshield)

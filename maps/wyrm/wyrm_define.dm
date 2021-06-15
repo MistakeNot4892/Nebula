@@ -14,7 +14,7 @@
 	overmap_size = 30
 	overmap_event_areas = 25
 
-	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
+	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage", "Captain Compartment")
 	default_spawn = "Cryogenic Storage"
 
 	station_name  = "ISC Wyrm"

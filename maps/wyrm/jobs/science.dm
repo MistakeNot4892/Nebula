@@ -1,10 +1,13 @@
 /datum/job/scientist
-	title = "Junior Researcher"
-	supervisors = "the Head Researcher and the Captain"
+	title = "Researcher"
+	supervisors = "the Captain and the Head of Security's tolerance"
 	total_positions = 2
-	spawn_positions = 1
-	alt_titles = list()
-	outfit_type = /decl/hierarchy/outfit/job/tradeship/hand/researcher/junior
+	spawn_positions = 2
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/researcher
+	alt_titles = list(
+		"Biologist" = /decl/hierarchy/outfit/job/wyrm/researcher/biologist,
+		"Network Admin" = /decl/hierarchy/outfit/job/wyrm/researcher/netadmin
+	)
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_COMPUTER = SKILL_BASIC,
@@ -24,100 +27,74 @@
 	economic_power = 7
 	minimal_player_age = 7
 	access = list(
+		access_maint_tunnels,
 		access_robotics,
 		access_tox,
 		access_tox_storage,
 		access_research,
 		access_xenobiology,
-		access_xenoarch
+		access_xenoarch,
+		access_tcomsat
 	)
 	minimal_access = list(
+		access_maint_tunnels,
 		access_robotics,
 		access_tox,
 		access_tox_storage,
 		access_research,
 		access_xenobiology,
-		access_xenoarch
+		access_xenoarch,
+		access_tcomsat
 	)
 
-
-
-/datum/job/scientist/head
-	title = "Head Researcher"
-	supervisors = "the Captain"
-	spawn_positions = 1
+/datum/job/scientist/roboticist
+	title = "Roboticist"
+	supervisors = "the Surgeon and the researchers"
+	hud_icon = "hudroboticist"
 	total_positions = 1
-	alt_titles = list()
-	outfit_type = /decl/hierarchy/outfit/job/tradeship/hand/researcher
+	spawn_positions = 1
+	outfit_type = /decl/hierarchy/outfit/job/wyrm/researcher/roboticist
+	department_types = list(
+		/decl/department/science,
+		/decl/department/medical
+	)
+	selection_color = "#4f3d63"
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
-		SKILL_COMPUTER = SKILL_BASIC,
-		SKILL_FINANCE  = SKILL_ADEPT,
-		SKILL_BOTANY   = SKILL_BASIC,
-		SKILL_ANATOMY  = SKILL_BASIC,
 		SKILL_DEVICES  = SKILL_BASIC,
-		SKILL_SCIENCE  = SKILL_ADEPT,
+		SKILL_COMPUTER = SKILL_ADEPT,
+		SKILL_MEDICAL  = SKILL_ADEPT,
 		SKILL_WEAPONS  = SKILL_ADEPT,
 		SKILL_COMBAT   = SKILL_ADEPT
 	)
 	max_skill = list(
 		SKILL_ANATOMY  = SKILL_MAX,
+		SKILL_MEDICAL  = SKILL_MAX,
 		SKILL_DEVICES  = SKILL_MAX,
-		SKILL_SCIENCE  = SKILL_MAX
+		SKILL_COMPUTER = SKILL_MAX
 	)
-	skill_points = 30
-	head_position = 1
-	department_types = list(
-		/decl/department/science,
-		/decl/department/command
-	)
-	selection_color = "#ad6bad"
-	req_admin_notify = 1
-	economic_power = 15
 	access = list(
-		access_rd,
-		access_bridge,
-		access_tox,
-		access_morgue,
-		access_tox_storage,
-		access_teleporter,
-		access_sec_doors,
-		access_heads,
-		access_research,
+		access_maint_tunnels,
 		access_robotics,
-		access_xenobiology,
-		access_ai_upload,
-		access_tech_storage,
-		access_RC_announce,
-		access_keycard_auth,
-		access_tcomsat,
-		access_gateway,
-		access_xenoarch,
-		access_network
+		access_tox,
+		access_tox_storage,
+		access_research,
+		access_medical,
+		access_medical_equip,
+		access_surgery,
+		access_morgue,
+		access_chemistry
 	)
 	minimal_access = list(
-		access_rd,
-		access_bridge,
-		access_tox,
-		access_morgue,
-		access_tox_storage,
-		access_teleporter,
-		access_sec_doors,
-		access_heads,
-		access_research,
+		access_maint_tunnels,
 		access_robotics,
-		access_xenobiology,
-		access_ai_upload,
-		access_tech_storage,
-		access_RC_announce,
-		access_keycard_auth,
-		access_tcomsat,
-		access_gateway,
-		access_xenoarch,
-		access_network
+		access_tox,
+		access_tox_storage,
+		access_research,
+		access_medical,
+		access_medical_equip,
+		access_surgery,
+		access_morgue,
+		access_chemistry
 	)
-	minimal_player_age = 14
-	ideal_character_age = 50
-	guestbanned = 1
-	must_fill = 1
-	not_random_selectable = 1
+	alt_titles = list()
