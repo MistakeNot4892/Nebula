@@ -11,8 +11,8 @@
 	button_type = /obj/structure/lift/button/standalone
 	panel_type =  /obj/structure/lift/panel/standalone
 	areas_to_use = list(
-		/area/turbolift/freightmain,
-		/area/turbolift/freightsub
+		/area/turbolift/freightsub,
+		/area/turbolift/freightmain
 	)
 	floor_departure_sound = 'sound/effects/lift_heavy_start.ogg'
 	floor_arrival_sound =   'sound/effects/lift_heavy_stop.ogg'
@@ -48,7 +48,7 @@
 /obj/effect/shuttle_landmark/supply/station
 	name = "Hangar"
 	landmark_tag = "nav_cargo_station"
-	base_area = /area/logistics/loading
+	base_area = /area/supply/external
 	base_turf = /turf/simulated/floor/reinforced
 
 /area/shuttle/merchant/home

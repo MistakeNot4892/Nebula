@@ -30,7 +30,7 @@
 
 /turf/simulated/floor/tiled/old_cargo/hallway
 	color = "#8b9497"
-	initial_flooring = /decl/flooring/tiling/new_tile/hallway
+	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/hallway
 
 
 //Dark Blue
@@ -46,7 +46,7 @@
 
 /turf/simulated/floor/tiled/old_cargo/dblue
 	color = "#565D61"
-	initial_flooring = /decl/flooring/tiling/new_tile/dblue
+	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/dblue
 
 /decl/flooring/tiling/new_tile/med
 	color = "#CCCCCC"
@@ -62,7 +62,7 @@
 
 /turf/simulated/floor/tiled/old_cargo/med
 	color = "#CCCCCC"
-	initial_flooring = /decl/flooring/tiling/new_tile/med
+	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/med
 
 
 //Dark Grey
@@ -78,9 +78,12 @@
 
 /turf/simulated/floor/tiled/old_cargo/dgrey
 	color = "#666666"
-	initial_flooring = /decl/flooring/tiling/new_tile/dgrey
+	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/dgrey
 
 //Engineering
+
+/obj/effect/paint/biege
+	color = COLOR_BEIGE
 
 /obj/effect/floor_decal/borderfloorbiege
 	name = "border floor"
