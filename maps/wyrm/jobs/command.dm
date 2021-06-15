@@ -143,9 +143,9 @@
 /datum/job/hos
 	title = "Security Officer"
 	supervisors = "the Captain"
-	total_positions = 1
-	spawn_positions = 1
-	selection_color = "#2f2f7f"
+	total_positions = 2
+	spawn_positions = 2
+	selection_color = "#372f7f"
 	hud_icon = "hudheadofsecurity"
 	head_position = 1
 	req_admin_notify = 1
@@ -160,16 +160,19 @@
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_WEAPONS  = SKILL_ADEPT,
 		SKILL_COMBAT   = SKILL_ADEPT,
-		SKILL_HAULING  = SKILL_EXPERT,
+		SKILL_FORENSICS= SKILL_ADEPT,
+		SKILL_HAULING  = SKILL_ADEPT,
 		SKILL_EVA      = SKILL_ADEPT
 	)
 	max_skill = list(
-		SKILL_WEAPONS = SKILL_MAX,
-		SKILL_COMBAT  = SKILL_MAX
+		SKILL_WEAPONS   = SKILL_MAX,
+		SKILL_COMBAT    = SKILL_MAX,
+		SKILL_FORENSICS = SKILL_MAX
 	)
 	access = list(
 		access_security,
 		access_sec_doors,
+		access_hos,
 		access_forensics_lockers,
 		access_medical,
 		access_engine,
