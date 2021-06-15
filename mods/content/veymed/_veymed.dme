@@ -1,0 +1,8 @@
+#ifndef MODPACK_VEYMED
+#define MODPACK_VEYMED
+#include "_veymed.dm"
+#include "branding.dm"
+#include "labcoat.dm"
+#include "medicines.dm"
+#include "reactions.dm"
+#endif
