@@ -10,6 +10,7 @@
 	#include "../../mods/species/utility_frames/_utility_frames.dme"
 	#include "../../mods/species/neoavians/_neoavians.dme"
 	#include "../../mods/species/lizard/_lizard.dme"
+	#include "../../mods/species/skrell/_skrell.dme"
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 
 	#include "wyrm_areas.dm"
