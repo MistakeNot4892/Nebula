@@ -198,6 +198,8 @@
 		LAZYADD(pinned, O)
 		if(!LAZYISIN(embedded,O))
 			embed(O)
+		if(!LAZYISIN(embedded,O))
+			embed(O)
 
 /mob/living/proc/embed(var/obj/O, var/def_zone=null, var/datum/wound/supplied_wound)
 	O.forceMove(src)
