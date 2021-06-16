@@ -3620,12 +3620,12 @@
 /obj/structure/table/rack,
 /obj/item/stack/material/pane/mapped/glass/fifty,
 /obj/item/stack/material/pane/mapped/glass/fifty,
-/obj/item/stack/material/pane/mapped/glass/fifty,
 /obj/item/stack/material/pane/mapped/rborosilicate/fifty,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/item/stack/material/reinforced/mapped/fiberglass/fifty,
 /turf/simulated/floor/tiled,
 /area/engineering/locker)
 "iz" = (
@@ -18474,6 +18474,7 @@
 /obj/structure/table/rack,
 /obj/item/stack/material/pane/mapped/glass/fifty,
 /obj/item/stack/material/sheet/mapped/steel/fifty,
+/obj/item/stack/material/reinforced/mapped/fiberglass/fifty,
 /turf/simulated/floor/plating,
 /area/science/rnd)
 "Tk" = (

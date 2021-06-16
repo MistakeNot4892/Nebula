@@ -9,7 +9,7 @@
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
 	shoes = /obj/item/clothing/shoes/color/white
 	belt = /obj/item/scanner/health
-	l_pocket = /obj/item/sutures
+	r_pocket = /obj/item/sutures
 
 /decl/hierarchy/outfit/job/wyrm/doc
 	name = WYRM_OUTFIT_JOB_NAME("Junior Doctor")
@@ -17,7 +17,7 @@
 	shoes = /obj/item/clothing/shoes/dress
 	pda_type = /obj/item/modular_computer/pda/medical
 	id_type = /obj/item/card/id/wyrm/medical
-	hands = list(/obj/item/storage/firstaid/adv)
+	backpack_contents = list(/obj/item/storage/firstaid/adv)
 	l_ear = /obj/item/radio/headset/headset_med
 
 /decl/hierarchy/outfit/job/wyrm/doc/chemist

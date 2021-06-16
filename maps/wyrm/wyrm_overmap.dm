@@ -29,11 +29,9 @@
 		"wyrm_sub_fore",
 		"wyrm_sub_star",
 		"wyrm_sub_port",
-		"wyrm_sub_aft"
-	)
-	initial_restricted_waypoints = list(
-		"Hatchling" = list("wyrm_docked_hatchling"),
-		"Rescue Pod" = list("wyrm_docked_rescue")
+		"wyrm_sub_aft",
+		"wyrm_docked_hatchling",
+		"wyrm_docked_rescue"
 	)
 
 /obj/effect/shuttle_landmark/wyrm/primary/fore
@@ -72,10 +70,6 @@
 	name = "Hatchling Control Console"
 	shuttle_tag = "Hatchling"
 
-/obj/machinery/computer/shuttle_control/explore/lanius
-	name = "Aura Control Console"
-	shuttle_tag = "Aura"
-
 /obj/machinery/computer/shuttle_control/explore/escape
 	name = "Pod Control"
 	shuttle_tag = "Escape Pod"
@@ -84,17 +78,12 @@
 	name = "Rescue Pod Control"
 	shuttle_tag = "Rescue Pod"
 
-/obj/machinery/computer/shuttle_control/explore/admin
-	shuttle_tag = "CHANGE_ME"
-
 /datum/shuttle/autodock/overmap/hatchling
 	name = "Hatchling"
 	move_time = 90
 	shuttle_area = /area/hatchling/start
 	dock_target = "hatchling_dock"
 	current_location = "wyrm_docked_hatchling"
-	//landmark_transition = "nav_transit_hatchling"
-	//logging_home_tag = "wyrm_docked_hatchling"
 
 /datum/shuttle/autodock/ferry/escape_pod/pod
 	name = "Escape Pod"
@@ -113,16 +102,16 @@
 	landmark_transition = "nav_transit_rescue"
 
 /obj/effect/shuttle_landmark/pod/docked
-	name = "Docking Port"
+	name = "Escape Pod Dock"
 	landmark_tag = "nav_docked_pod"
 
 /obj/effect/shuttle_landmark/wyrm/docked/hatchling
-	name = "Docking Port"
+	name = "Large Docking Port"
 	landmark_tag = "wyrm_docked_hatchling"
 	docking_controller = "wyrm_docking_hatch"
 
 /obj/effect/shuttle_landmark/wyrm/docked/rescue
-	name = "Docking Port"
+	name = "Small Docking Port"
 	landmark_tag = "wyrm_docked_rescue"
 
 /obj/effect/shuttle_landmark/pod/transit
