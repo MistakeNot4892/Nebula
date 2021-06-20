@@ -9,6 +9,10 @@
 	if(length(bodytype_restricted) && !("exclude" in bodytype_restricted))
 		bodytype_restricted |= BODYTYPE_SKRELL
 
+/obj/machinery/suit_cycler/Initialize(mapload, d, populate_parts)
+	. = ..()
+	available_bodytypes |= BODYTYPE_SKRELL
+
 /decl/modpack/skrell
 	name = "Skrell"
 

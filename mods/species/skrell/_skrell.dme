@@ -1,6 +1,7 @@
 #ifndef MODPACK_SKRELL
 #define MODPACK_SKRELL
 #include "_skrell.dm"
+#include "clothing.dm"
 #include "datum\culture.dm"
 #include "datum\descriptors.dm"
 #include "datum\language.dm"

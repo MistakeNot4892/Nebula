@@ -2,6 +2,7 @@
 #define MODPACK_VEYMED
 #include "_veymed.dm"
 #include "branding.dm"
+#include "cloning.dm"
 #include "labcoat.dm"
 #include "medicines.dm"
 #include "reactions.dm"
