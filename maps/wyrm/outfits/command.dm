@@ -44,10 +44,16 @@
 
 /decl/hierarchy/outfit/job/wyrm/hos
 	name = WYRM_OUTFIT_JOB_NAME("Security Officer")
-	uniform = /obj/item/clothing/under/tactical
+	uniform = /obj/item/clothing/under/guard/wyrm
 	shoes = /obj/item/clothing/shoes/jackboots
-	belt = /obj/item/storage/belt/holster/security
-	glasses = /obj/item/clothing/glasses/sunglasses/sechud/toggle
+	belt = /obj/item/storage/belt/security
+	glasses = /obj/item/clothing/glasses/sunglasses
 	l_ear = /obj/item/radio/headset/headset_com
+	r_pocket = /obj/item/flash
+
+/obj/item/clothing/under/guard/wyrm
+	name = "blue security guard uniform"
+	desc = "A durable uniform worn by the Wyrm's security crew."
+	icon = 'maps/wyrm/icons/clothing/guard.dmi'
 
 /decl/hierarchy/outfit/job/wyrm/bodyguard

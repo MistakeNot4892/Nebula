@@ -145,7 +145,7 @@
 	supervisors = "the Captain"
 	total_positions = 2
 	spawn_positions = 2
-	selection_color = "#372f7f"
+	selection_color = "#2f45c4"
 	hud_icon = "hudheadofsecurity"
 	head_position = 1
 	req_admin_notify = 1

@@ -920,6 +920,7 @@
 "cm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/ladder,
 /turf/simulated/floor/plating,
 /area/maintenance/sub/fore)
 "cn" = (
@@ -3572,7 +3573,6 @@
 /turf/simulated/floor/tiled/old_tile/hallway,
 /area/logistics/loading)
 "hL" = (
-/obj/structure/closet/secure_closet/quartermaster,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -3580,6 +3580,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/secure_closet/wyrmmate,
 /turf/simulated/floor/tiled/old_tile/hallway,
 /area/logistics/loading)
 "hM" = (
@@ -6613,7 +6614,7 @@
 	},
 /obj/item/storage/box/gloves,
 /obj/item/storage/box/masks,
-/turf/simulated/floor/tiled/old_tile/hallway,
+/turf/simulated/floor/tiled/old_cargo/hallway,
 /area/science/prep)
 "nq" = (
 /obj/structure/closet/wardrobe/robotics_black,
@@ -6621,13 +6622,12 @@
 	c_tag = "Research Lockers"
 	},
 /obj/item/clothing/glasses/welding,
-/turf/simulated/floor/tiled/old_tile/hallway,
+/turf/simulated/floor/tiled/old_cargo/hallway,
 /area/science/prep)
 "nr" = (
-/obj/structure/closet/secure_closet/RD,
-/obj/item/clothing/glasses/welding/superior,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/old_tile/hallway,
+/obj/structure/closet/secure_closet/wyrmresearcher,
+/turf/simulated/floor/tiled/old_cargo/hallway,
 /area/science/prep)
 "ns" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -7698,12 +7698,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/suit_cycler/mining{
-	boots = /obj/item/clothing/shoes/magboots;
-	buildable = 0;
-	helmet = /obj/item/clothing/head/helmet/space/void/engineering/salvage;
-	suit = /obj/item/clothing/suit/space/void/engineering/salvage
-	},
+/obj/machinery/suit_cycler/mining,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/science/shuttleprep)
 "pt" = (
@@ -7719,12 +7714,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor,
-/obj/machinery/suit_cycler/mining{
-	boots = /obj/item/clothing/shoes/magboots;
-	buildable = 0;
-	helmet = /obj/item/clothing/head/helmet/space/void/engineering/salvage;
-	suit = /obj/item/clothing/suit/space/void/engineering/salvage
-	},
+/obj/machinery/suit_cycler/mining,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/science/shuttleprep)
 "pv" = (
@@ -9615,13 +9605,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/structure/table/rack,
-/obj/machinery/door/window/brigdoor/northleft{
-	req_access = list("ACCESS_TELECOMS")
-	},
-/obj/item/tank/oxygen/yellow,
-/obj/item/clothing/suit/space/void/engineering/salvage,
-/obj/item/clothing/head/helmet/space/void/engineering/salvage,
+/obj/machinery/suit_cycler/salvage,
 /turf/simulated/floor/tiled/old_cargo,
 /area/engineering/tcommsmon)
 "sT" = (
