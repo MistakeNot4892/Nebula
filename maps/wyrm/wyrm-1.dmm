@@ -1322,8 +1322,7 @@
 /area/engineering/subsmes)
 "cX" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
-	dir = 1;
-	icon_state = "intact"
+	dir = 1
 	},
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -1913,16 +1912,14 @@
 	icon_state = "1-2";
 	tag = ""
 	},
-/obj/machinery/atmospherics/valve/digital{
-	dir = 4;
-	id_tag = "fore_airsupply";
-	name = "valve omicron"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/sub/fore)
@@ -11296,9 +11293,6 @@
 /turf/space,
 /area/engineering/extsubmaint)
 "ER" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/structure/cable/orange{
@@ -11868,7 +11862,10 @@
 /turf/simulated/floor/plating,
 /area/supply/external)
 "KS" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/obj/machinery/atmospherics/valve/digital{
+	id_tag = "fore_airsupply";
+	name = "valve omicron"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/sub/fore)
 "Lc" = (
