@@ -1136,3 +1136,5 @@
 		return A.is_open() && neighbor.Adjacent(A)
 
 	return FALSE
+
+
