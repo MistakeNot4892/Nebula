@@ -7,6 +7,7 @@
 	#include "../../mods/content/corporate/away_sites/lar_maria/lar_maria.dm"
 	#include "../../mods/content/generic_shuttles/_generic_shuttles.dme"
 	#include "../../mods/content/modern_earth/_modern_earth.dme"
+	#include "../../mods/content/nyx_aways/_nyx_aways.dme"
 	#include "../../mods/content/veymed/_veymed.dme"
 	#include "../../mods/species/utility_frames/_utility_frames.dme"
 	#include "../../mods/species/neoavians/_neoavians.dme"
