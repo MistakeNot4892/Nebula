@@ -24,6 +24,21 @@
         else
             I.damage = max(I.damage - 2 * removed, 0)
 
+/obj/item/chems/pill/organ_meds
+	name = "peridaxon (10u)"
+	desc = "Used to treat internal damage."
+	icon_state = "pill2"
+
+/obj/item/chems/pill/organ_meds/initialize_reagents()
+	reagents.add_reagent(/decl/material/liquid/organ_meds, 10)
+
+/obj/item/storage/pill_bottle/organ_meds
+	name = "pill bottle (peridaxon)"
+	desc = "Contains pills used to heal internal damage."
+
+	startswith = list(/obj/item/chems/pill/organ_meds = 14)
+	wrapper_color = COLOR_PURPLE
+
 /decl/material/liquid/painkillers/oxycodone
 	name = "oxycodone"
 	lore_text = "An effective and very addictive painkiller. Don't mix with alcohol."
@@ -91,7 +106,7 @@
 	scannable = 1
 	flags = IGNORE_MOB_SIZE
 	heating_products = list(/decl/material/liquid/water = 0.8, /decl/material/liquid/nutriment/sugar = 0.2)
-	heating_point = 15 CELSIUS
+	heating_point = 10 CELSIUS
 	heating_message = "turns back to sludge."
 	value = 10
 
@@ -111,6 +126,14 @@
 	value = 10
 
 /obj/item/chems/glass/beaker/insulated/cyro/Initialize()
+	. = ..()
+	reagents.add_reagent(/decl/material/liquid/cyro_precursor, 60)
+	update_icon()
+
+/obj/item/storage/fancy/vials/cyro
+	startswith = list(/obj/item/chems/glass/beaker/vial/cyro = 12)
+
+/obj/item/chems/glass/beaker/vial/cyro/Initialize()
 	. = ..()
 	reagents.add_reagent(/decl/material/liquid/cyro_precursor, 30)
 	update_icon()

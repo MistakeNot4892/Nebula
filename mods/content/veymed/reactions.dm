@@ -23,11 +23,11 @@
 	result = /decl/material/liquid/cyro_fluid
 	required_reagents = list(/decl/material/liquid/cyro_precursor = 1, /decl/material/liquid/water = 1)
 	inhibitors = list(/decl/material/solid/sodium)
-	maximum_temperature = 15 CELSIUS
+	maximum_temperature = 10 CELSIUS
 	result_amount = 1
 
 /datum/chemical_reaction/cyro_fluid
 	name = "Cryogenic Precursor"
 	result = /decl/material/liquid/cyro_precursor
-	required_reagents = list(/decl/material/liquid/acetone = 1, /decl/material/liquid/oxy_meds = 1, /decl/material/gas/hydrogen/tritium = 0.1)
+	required_reagents = list(/decl/material/liquid/acetone = 1, /decl/material/liquid/oxy_meds = 1, /decl/material/solid/exotic_matter = 0.1)
 	result_amount = 2
