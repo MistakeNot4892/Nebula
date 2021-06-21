@@ -17,6 +17,7 @@
 	frame_type = /obj/item/pipe
 	uncreated_component_parts = null // No apc connection
 	construct_state = /decl/machine_construction/pipe
+	matter = list()
 
 	var/datum/gas_mixture/air_temporary    // used when reconstructing a pipeline that broke
 	var/datum/reagents/liquid_temporary // used when reconstructing a pipeline that broke

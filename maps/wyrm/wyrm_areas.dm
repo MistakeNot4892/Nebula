@@ -211,6 +211,8 @@
 /area/engineering/externalmaint
 	name = "\improper External Engine Maintenance"
 	icon_state = "engine"
+	has_gravity = 0
+	area_flags = AREA_FLAG_EXTERNAL
 
 /area/engineering/smes
 	name = "\improper SMES Room"
@@ -235,6 +237,8 @@
 
 /area/engineering/extsubmaint
 	name = "\improper External Sub Deck Engine Maintenance"
+	has_gravity = 0
+	area_flags = AREA_FLAG_EXTERNAL
 
 /area/engineering/teg
 	name = "\improper TEG Room"
@@ -293,10 +297,12 @@
 	requires_power = 0
 
 /area/supply/external
-	name = "\improper External Docking"
+	name = "\improper Supply Gantry"
+	has_gravity = 0
+	area_flags = AREA_FLAG_EXTERNAL
 
 /area/supply/bsa
-	name = "\improper BSA Control"
+	name = "\improper Field Disperser Control"
 
 //////////////////////////////////////
 //			MAINTENANCE				//

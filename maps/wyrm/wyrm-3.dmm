@@ -3678,16 +3678,8 @@
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "iN" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/shuttle/engine/propulsion/burst/right{
-	dir = 4;
-	name = "propulsion";
-	tag = "icon-burst_r (EAST)"
-	},
-/turf/simulated/floor/plating,
-/area/supply/dock)
+/turf/simulated/wall/r_wall/prepainted,
+/area/space)
 "iO" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -3913,16 +3905,8 @@
 /turf/simulated/floor/tiled,
 /area/merchant_station)
 "js" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/shuttle/engine/propulsion/burst/left{
-	dir = 4;
-	name = "propulsion";
-	tag = "icon-burst_l (EAST)"
-	},
-/turf/simulated/floor/plating,
-/area/supply/dock)
+/turf/simulated/floor/tiled/dark,
+/area/space)
 "jv" = (
 /obj/effect/floor_decal/corner/green/three_quarters{
 	dir = 1
@@ -6615,7 +6599,8 @@
 	},
 /area/wizard)
 "pJ" = (
-/turf/simulated/floor/tiled,
+/obj/machinery/door/airlock/hatch,
+/turf/simulated/floor/tiled/dark,
 /area/space)
 "pK" = (
 /turf/simulated/floor/holofloor/beach/water{
@@ -6654,13 +6639,12 @@
 	},
 /area/wizard)
 "pP" = (
-/obj/effect/landmark/test/space_turf,
-/turf/space,
+/turf/simulated/floor/tiled/dark/airless,
 /area/space)
 "pQ" = (
-/obj/effect/landmark/test/safe_turf,
-/turf/simulated/floor/tiled,
-/area/space)
+/obj/effect/paint/silver,
+/turf/simulated/wall/titanium,
+/area/supply/dock)
 "pR" = (
 /turf/simulated/floor/holofloor/beach/water{
 	dir = 1;
@@ -6844,8 +6828,15 @@
 	},
 /area/wizard)
 "qp" = (
-/turf/simulated/floor/tiled/dark,
-/area/space)
+/obj/machinery/door/blast/shutters/open{
+	dir = 2;
+	icon_state = "shutter1";
+	tag = "icon-shutter1"
+	},
+/turf/simulated/floor/tiled/white/monotile{
+	initial_gas = null
+	},
+/area/supply/dock)
 "qq" = (
 /obj/structure/table/woodentable,
 /obj/structure/table/woodentable,
@@ -6874,10 +6865,9 @@
 /turf/unsimulated/wall/fakeglass,
 /area/wizard)
 "qw" = (
-/obj/machinery/door/blast/shutters/open{
-	dir = 2;
-	icon_state = "shutter1";
-	tag = "icon-shutter1"
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/white/airless,
 /area/supply/dock)
@@ -6898,6 +6888,9 @@
 	},
 /area/wizard)
 "qB" = (
+/turf/simulated/floor/tiled/white/airless,
+/area/supply/dock)
+"qC" = (
 /obj/machinery/light{
 	dir = 1;
 	icon_state = "tube1";
@@ -6905,18 +6898,16 @@
 	},
 /turf/simulated/floor/tiled/white/airless,
 /area/supply/dock)
-"qC" = (
-/turf/simulated/floor/tiled/white/airless,
-/area/supply/dock)
 "qD" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 4;
-	tag = "icon-propulsion (EAST)"
-	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/obj/structure/shuttle/engine/propulsion/burst/right{
+	dir = 4;
+	name = "propulsion";
+	tag = "icon-burst_r (EAST)"
+	},
+/turf/simulated/floor/airless,
 /area/supply/dock)
 "qE" = (
 /turf/simulated/floor/holofloor/reinforced,
@@ -6959,28 +6950,39 @@
 	},
 /area/wizard)
 "qK" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/machinery/network/relay/long_range,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white/monotile{
+	initial_gas = null
+	},
 /area/supply/dock)
 "qL" = (
 /obj/effect/shuttle_landmark/supply/centcom,
 /turf/simulated/floor/tiled/white/airless,
 /area/supply/dock)
 "qM" = (
-/obj/effect/paint/silver,
-/turf/simulated/wall/titanium,
+/obj/structure/shuttle/engine/propulsion{
+	dir = 4;
+	tag = "icon-propulsion (EAST)"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/airless,
 /area/supply/dock)
 "qN" = (
-/obj/effect/paint/silver,
-/turf/simulated/wall/titanium,
-/turf/space,
-/area/supply/dock)
-"qO" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white/airless,
+/area/supply/dock)
+"qO" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/shuttle/engine/propulsion/burst/left{
+	dir = 4;
+	name = "propulsion";
+	tag = "icon-burst_l (EAST)"
+	},
+/turf/simulated/floor/airless,
 /area/supply/dock)
 "qP" = (
 /obj/machinery/optable,
@@ -7386,19 +7388,19 @@ aa
 aa
 aa
 aa
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (2,1,1) = {"
 aa
@@ -7643,19 +7645,19 @@ aa
 aa
 aa
 aa
-al
 aa
 aa
 aa
-al
-qp
-qp
-qp
-qp
-qp
-qp
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (3,1,1) = {"
 aa
@@ -7900,19 +7902,19 @@ aa
 aa
 aa
 aa
-al
 aa
-pP
 aa
-al
-qp
-qp
-qM
-qM
-qM
-qp
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (4,1,1) = {"
 aa
@@ -8157,19 +8159,19 @@ aa
 aa
 aa
 aa
-al
 aa
 aa
 aa
-al
-qp
-qM
-qN
-qK
-qN
-qM
-qp
-al
+aa
+aa
+aa
+aa
+jX
+aa
+jX
+aa
+aa
+aa
 "}
 (5,1,1) = {"
 aa
@@ -8414,19 +8416,19 @@ aa
 aa
 aa
 aa
-al
-al
-al
-al
-al
-qp
-qM
-qB
-qC
-qO
-qM
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (6,1,1) = {"
 aa
@@ -8671,19 +8673,19 @@ aa
 aa
 aa
 aa
-al
-pJ
-pJ
-pJ
-al
-qp
-qw
-qC
-qC
-qC
-qw
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (7,1,1) = {"
 aa
@@ -8928,19 +8930,19 @@ aa
 aa
 aa
 aa
-al
-pJ
-pQ
-pJ
-al
-qp
-qw
-qC
-qL
-qC
-qw
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (8,1,1) = {"
 aa
@@ -9185,19 +9187,19 @@ aa
 aa
 aa
 aa
-al
-pJ
-pJ
-pJ
-al
-qp
-qw
-qC
-qC
-qC
-qw
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (9,1,1) = {"
 aa
@@ -9442,19 +9444,19 @@ aa
 aa
 aa
 aa
-al
-al
-al
-al
-al
-qp
-qM
-qB
-qC
-qO
-qM
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (10,1,1) = {"
 aa
@@ -9703,15 +9705,15 @@ aa
 aa
 aa
 aa
-al
-qp
-qM
-iN
-qD
-js
-qM
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (11,1,1) = {"
 aa
@@ -9960,15 +9962,15 @@ aa
 aa
 aa
 aa
-al
-qp
-qp
-qp
-qp
-qp
-qp
-qp
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (12,1,1) = {"
 aa
@@ -10217,15 +10219,15 @@ aa
 aa
 aa
 aa
-al
-al
-al
-al
-al
-al
-al
-al
-al
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (13,1,1) = {"
 aa
@@ -19724,15 +19726,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+iN
+iN
+iN
+iN
+iN
+iN
+iN
+iN
 aa
 aa
 "}
@@ -19981,15 +19983,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+iN
 aa
 aa
 "}
@@ -20238,15 +20240,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+pP
+pP
+pQ
+pQ
+pQ
+pP
+pP
+iN
 aa
 aa
 "}
@@ -20495,15 +20497,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+pP
+pQ
+pQ
+qK
+pQ
+pQ
+pP
+iN
 aa
 aa
 "}
@@ -20747,20 +20749,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+iN
+iN
+iN
+iN
+iN
+pP
+pQ
+qw
+qB
+qw
+pQ
+pP
+iN
 aa
 aa
 "}
@@ -21004,20 +21006,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+js
+iN
+pP
+pP
+pP
+pP
+qp
+qB
+qB
+qB
+qp
+pP
+iN
 aa
 aa
 "}
@@ -21261,20 +21263,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+js
+pJ
+pP
+pP
+pP
+pP
+qp
+qB
+qL
+qB
+qp
+pP
+iN
 aa
 aa
 "}
@@ -21518,20 +21520,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+js
+iN
+pP
+pP
+pP
+pP
+qp
+qB
+qB
+qB
+qp
+pP
+iN
 aa
 aa
 "}
@@ -21775,20 +21777,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+iN
+iN
+iN
+iN
+iN
+pP
+pQ
+qC
+qB
+qN
+pQ
+pP
+iN
 aa
 aa
 "}
@@ -22037,15 +22039,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+pP
+pQ
+qD
+qM
+qO
+pQ
+pP
+iN
 aa
 aa
 "}
@@ -22294,15 +22296,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+iN
 aa
 aa
 "}
@@ -22551,15 +22553,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iN
+iN
+iN
+iN
+iN
+iN
+iN
+iN
+iN
 aa
 aa
 "}
