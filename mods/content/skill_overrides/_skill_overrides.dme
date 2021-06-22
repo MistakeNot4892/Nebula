@@ -1,0 +1,4 @@
+#ifndef MODPACK_SKILL_OVERRIDE
+#define MODPACK_SKILL_OVERRIDE
+#include "_skill_overrides.dm"
+#endif
