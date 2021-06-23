@@ -18201,6 +18201,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/ebony,
 /area/command/captain)
+"Oa" = (
+/turf/simulated/floor/plating/airless,
+/area/engineering/externalmaint)
 "Ob" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -60324,8 +60327,8 @@ rm
 rm
 rm
 rm
-ae
-ae
+aL
+aL
 GN
 Hi
 GN
@@ -60581,7 +60584,7 @@ rp
 aa
 aa
 aa
-ae
+aL
 aa
 MQ
 Hj
@@ -60838,7 +60841,7 @@ rp
 aa
 aa
 aa
-ae
+aL
 aa
 aa
 Fm
@@ -61092,7 +61095,7 @@ DE
 DJ
 DN
 rp
-ae
+aL
 Em
 mG
 mG
@@ -61352,10 +61355,10 @@ rp
 aa
 Fm
 aa
-ae
+aL
 aa
 aa
-ae
+aL
 aa
 aa
 aa
@@ -61609,10 +61612,10 @@ rp
 Sy
 Fn
 aa
-ae
-ae
-ae
-ae
+aL
+aL
+aL
+aL
 aa
 aa
 aa
@@ -61866,10 +61869,10 @@ CB
 Ej
 Fo
 Gd
-ae
-YY
-YY
-ae
+aL
+Oa
+Oa
+aL
 aa
 aa
 aa
@@ -62123,10 +62126,10 @@ CC
 Ek
 Fp
 aa
-ae
-YY
-YY
-ae
+aL
+Oa
+Oa
+aL
 aa
 aa
 aa
@@ -62381,9 +62384,9 @@ ZW
 Fq
 aa
 aa
-ae
 aa
-ae
+aa
+aL
 aa
 aa
 aa
@@ -62636,11 +62639,11 @@ Bi
 ZW
 jT
 Fm
+aL
+aL
+aL
 aa
-aa
-aa
-aa
-ae
+aL
 aa
 aa
 aa
@@ -63148,11 +63151,11 @@ mu
 zv
 Bk
 ZW
-aL
+aa
 Fm
-ae
-ae
-ae
+aa
+aa
+aa
 aa
 aa
 aa
@@ -64178,8 +64181,8 @@ Bo
 ZW
 El
 Fr
-ae
-ae
+aL
+aL
 aa
 aa
 aa
@@ -65447,7 +65450,7 @@ ae
 aa
 ae
 aa
-ae
+aL
 aa
 aa
 aa
@@ -65459,7 +65462,7 @@ ae
 aa
 aa
 aa
-ae
+aL
 aa
 Eo
 Fu
@@ -65703,7 +65706,7 @@ aa
 Ol
 Ol
 Ol
-zw
+aa
 aL
 xO
 kM
@@ -65716,7 +65719,7 @@ xO
 kM
 kM
 xO
-zw
+aL
 jS
 CD
 Fm
@@ -65978,7 +65981,7 @@ nU
 Ep
 Fv
 aL
-ae
+aL
 aa
 aa
 aa
@@ -66217,8 +66220,8 @@ aa
 bx
 cY
 by
-zw
-zw
+aa
+aa
 jh
 kO
 mE
@@ -66474,7 +66477,7 @@ aa
 by
 cZ
 by
-zw
+aa
 hv
 ji
 kP
@@ -66492,7 +66495,7 @@ CG
 Er
 Eq
 aL
-ae
+aL
 aa
 aa
 aa
@@ -66731,7 +66734,7 @@ aa
 Ol
 Ol
 Ol
-zw
+aa
 hw
 xO
 kM
@@ -66744,8 +66747,8 @@ nT
 kM
 kM
 xO
-zw
-zw
+aa
+aa
 Es
 aa
 aa
@@ -66985,7 +66988,7 @@ aa
 aa
 aa
 aa
-ae
+aL
 aa
 aL
 fJ
@@ -67245,7 +67248,7 @@ aa
 aa
 aa
 aa
-ae
+aL
 aa
 jk
 kR
@@ -67260,7 +67263,7 @@ sk
 ts
 aL
 aa
-ae
+aL
 aa
 aa
 aa
@@ -67517,7 +67520,7 @@ jl
 jl
 zw
 aa
-ae
+aL
 aa
 aa
 aa

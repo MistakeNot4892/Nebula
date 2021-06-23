@@ -17,68 +17,146 @@
 
 //General tiles, they need to be separate types to survive shuttle use
 
+/obj/item/stack/tile/new_tile
+	icon_state = "tile"
+	material = /decl/material/solid/metal/steel
+	obj_flags = OBJ_FLAG_CONDUCTIBLE
+
+/datum/stack_recipe/tile/metal/hallway
+	title = "old hallway tile"
+	result_type = /obj/item/stack/tile/new_tile/hallway
+
+/datum/stack_recipe/tile/metal/hallway/mono
+	title = "old hallway mono tile"
+	result_type = /obj/item/stack/tile/new_tile/hallway/mono
+
+/datum/stack_recipe/tile/metal/dblue
+	title = "old dark blue tile"
+	result_type = /obj/item/stack/tile/new_tile/dblue
+
+/datum/stack_recipe/tile/metal/dblue/mono
+	title = "old dark blue mono tile"
+	result_type = /obj/item/stack/tile/new_tile/dblue/mono
+
+/datum/stack_recipe/tile/metal/med
+	title = "old sterile tile"
+	result_type = /obj/item/stack/tile/new_tile/med
+
+/datum/stack_recipe/tile/metal/med/mono
+	title = "old sterile mono tile"
+	result_type = /obj/item/stack/tile/new_tile/med/mono
+
+/datum/stack_recipe/tile/metal/dgrey
+	title = "old dark grey tile"
+	result_type = /obj/item/stack/tile/new_tile/dgrey
+
+/datum/stack_recipe/tile/metal/dgrey/mono
+	title = "old dark grey mono tile"
+	result_type = /obj/item/stack/tile/new_tile/dgrey/mono
+
 //Hallway
 /decl/flooring/tiling/new_tile/hallway
 	color = "#8b9497"
+	build_type = /obj/item/stack/tile/new_tile/hallway
 
 /turf/simulated/floor/tiled/old_tile/hallway
 	color = "#8b9497"
 	initial_flooring = /decl/flooring/tiling/new_tile/hallway
 
+/obj/item/stack/tile/new_tile/hallway
+	name = "old hallway tile"
+	singular_name = "old hallway tile"
+
 /decl/flooring/tiling/new_tile/cargo_one/hallway
 	color = "#8b9497"
+	build_type = /obj/item/stack/tile/new_tile/hallway/mono
 
 /turf/simulated/floor/tiled/old_cargo/hallway
 	color = "#8b9497"
 	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/hallway
 
+/obj/item/stack/tile/new_tile/hallway/mono
+	name = "old hallway mono tile"
+	singular_name = "old hallway mono tile"
+
 
 //Dark Blue
 /decl/flooring/tiling/new_tile/dblue
 	color = "#565D61"
+	build_type = /obj/item/stack/tile/new_tile/dblue
 
 /turf/simulated/floor/tiled/old_tile/dblue
 	color = "#565D61"
 	initial_flooring = /decl/flooring/tiling/new_tile/dblue
 
+/obj/item/stack/tile/new_tile/dblue
+	name = "old dark blue tile"
+	singular_name = "old dark blue tile"
+
 /decl/flooring/tiling/new_tile/cargo_one/dblue
 	color = "#565D61"
+	build_type = /obj/item/stack/tile/new_tile/dblue/mono
 
 /turf/simulated/floor/tiled/old_cargo/dblue
 	color = "#565D61"
 	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/dblue
 
-/decl/flooring/tiling/new_tile/med
-	color = "#CCCCCC"
+/obj/item/stack/tile/new_tile/dblue/mono
+	name = "old dark blue mono tile"
+	singular_name = "old dark blue mono tile"
 
 
 //Medical/Research
+/decl/flooring/tiling/new_tile/med
+	color = "#CCCCCC"
+	build_type = /obj/item/stack/tile/new_tile/med
+
 /turf/simulated/floor/tiled/old_tile/med
 	color = "#CCCCCC"
 	initial_flooring = /decl/flooring/tiling/new_tile/med
 
+/obj/item/stack/tile/new_tile/med
+	name = "old sterile tile"
+	singular_name = "old sterile tile"
+
 /decl/flooring/tiling/new_tile/cargo_one/med
 	color = "#CCCCCC"
+	build_type = /obj/item/stack/tile/new_tile/med/mono
 
 /turf/simulated/floor/tiled/old_cargo/med
 	color = "#CCCCCC"
 	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/med
 
+/obj/item/stack/tile/new_tile/med/mono
+	name = "old sterile mono tile"
+	singular_name = "old sterile mono tile"
+
 
 //Dark Grey
 /decl/flooring/tiling/new_tile/dgrey
 	color = "#666666"
+	build_type = /obj/item/stack/tile/new_tile/dgrey
 
 /turf/simulated/floor/tiled/old_tile/dgrey
 	color = "#666666"
 	initial_flooring = /decl/flooring/tiling/new_tile/dgrey
 
+/obj/item/stack/tile/new_tile/dgrey
+	name = "old dark grey tile"
+	singular_name = "old sterile tile"
+
 /decl/flooring/tiling/new_tile/cargo_one/dgrey
 	color = "#666666"
+	build_type = /obj/item/stack/tile/new_tile/dgrey/mono
 
 /turf/simulated/floor/tiled/old_cargo/dgrey
 	color = "#666666"
 	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/dgrey
+
+/obj/item/stack/tile/new_tile/dgrey/mono
+	name = "old dark grey mono tile"
+	singular_name = "old sterile mono tile"
+
 
 //Engineering
 

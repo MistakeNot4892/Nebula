@@ -1859,9 +1859,8 @@
 	c_tag = "External Maintenance Sub - Starboard";
 	dir = 4
 	},
-/obj/structure/lattice,
 /turf/space,
-/area/engineering/extsubmaint)
+/area/space)
 "ee" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/zpipe/up/fuel,
@@ -6406,6 +6405,7 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1
 	},
+/obj/structure/handrail,
 /turf/simulated/floor/tiled/old_tile/hallway,
 /area/hatchling/start)
 "mU" = (
@@ -9533,8 +9533,9 @@
 /obj/machinery/camera/network/engineering{
 	c_tag = "External Maintenance Sub - Port"
 	},
+/obj/structure/lattice,
 /turf/space,
-/area/space)
+/area/engineering/extsubmaint)
 "sJ" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -10488,6 +10489,13 @@
 	},
 /turf/simulated/floor/plating/airless,
 /area/supply/external)
+"xx" = (
+/obj/structure/lattice,
+/obj/structure/railing/mapped{
+	color = "#FF7900"
+	},
+/turf/space,
+/area/engineering/extsubmaint)
 "xy" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/cable{
@@ -11901,6 +11909,17 @@
 /obj/structure/ship_munition/md_slug,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/sub/aft)
+"Lk" = (
+/obj/structure/lattice,
+/obj/structure/railing/mapped{
+	color = "#FF7900";
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	color = "#FF7900"
+	},
+/turf/space,
+/area/engineering/extsubmaint)
 "Lo" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/old_tile/hallway,
@@ -11911,6 +11930,17 @@
 /obj/item/storage/toolbox/repairs,
 /turf/simulated/floor/tiled/old_tile/dgrey,
 /area/engineering/tcommsmon)
+"Ls" = (
+/obj/structure/railing/mapped{
+	color = "#FF7900";
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	color = "#FF7900";
+	dir = 8
+	},
+/turf/space,
+/area/space)
 "Lu" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11994,7 +12024,7 @@
 /obj/structure/catwalk,
 /obj/structure/ladder,
 /turf/space,
-/area/space)
+/area/engineering/extsubmaint)
 "MH" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
@@ -12239,6 +12269,17 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/supply/external)
+"QT" = (
+/obj/structure/railing/mapped{
+	color = "#FF7900";
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	color = "#FF7900";
+	dir = 1
+	},
+/turf/space,
+/area/space)
 "Rc" = (
 /obj/structure/cable/orange{
 	d1 = 1;
@@ -12401,6 +12442,14 @@
 	},
 /turf/simulated/floor/plating/airless,
 /area/logistics/loading)
+"SH" = (
+/obj/structure/lattice,
+/obj/structure/railing/mapped{
+	color = "#FF7900";
+	dir = 4
+	},
+/turf/space,
+/area/engineering/extsubmaint)
 "SK" = (
 /obj/structure/railing/mapped{
 	color = "#FF7900";
@@ -12525,6 +12574,24 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating/airless,
+/area/engineering/extsubmaint)
+"UB" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	color = "#FF7900"
+	},
+/turf/space,
+/area/engineering/extsubmaint)
+"UC" = (
+/obj/structure/lattice,
+/obj/structure/railing/mapped{
+	color = "#FF7900";
+	dir = 8
+	},
+/turf/space,
 /area/engineering/extsubmaint)
 "UD" = (
 /obj/machinery/door/airlock/external/glass/bolted{
@@ -12774,6 +12841,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/civilian/cryo1)
+"Xo" = (
+/obj/structure/catwalk,
+/obj/structure/handrail,
+/turf/simulated/floor/plating/airless,
+/area/engineering/extsubmaint)
 "Xs" = (
 /turf/exterior/wall,
 /area/space)
@@ -54525,9 +54597,9 @@ KL
 aa
 aa
 da
-da
-da
-da
+aa
+aa
+aa
 da
 aa
 aa
@@ -55297,8 +55369,8 @@ da
 da
 ec
 sI
-aa
-aa
+da
+da
 da
 aa
 aa
@@ -55552,7 +55624,7 @@ da
 aa
 aa
 aa
-da
+aa
 aa
 aa
 aa
@@ -55809,12 +55881,12 @@ da
 aa
 aa
 aa
-da
-da
-da
+aa
+aa
+aa
 tU
 tV
-aa
+Ie
 aa
 aa
 aa
@@ -56066,11 +56138,11 @@ da
 aa
 aa
 aa
-da
 aa
 aa
+Dz
 XE
-aa
+Ls
 aa
 aa
 aa
@@ -56320,14 +56392,14 @@ Xv
 aa
 aa
 da
-aa
-Xf
-Xf
-EI
-Xf
+Dz
+kk
+kk
+kk
+kk
 MC
 XE
-aa
+Ie
 aa
 aa
 aa
@@ -56577,14 +56649,14 @@ da
 da
 da
 JD
+Dz
+kk
+Ls
 aa
-Xf
 aa
-da
-aa
-aa
+Dz
 XE
-aa
+Ie
 aa
 aa
 aa
@@ -56831,13 +56903,13 @@ cY
 aa
 da
 aa
+bA
+aa
+da
+aa
+kk
 aa
 aa
-da
-da
-EI
-da
-da
 ec
 tC
 tV
@@ -57086,13 +57158,13 @@ fi
 gj
 cY
 aa
-da
+xx
 kk
 kk
 kk
 EI
-Xf
-Xf
+kk
+kk
 aa
 aa
 da
@@ -57344,9 +57416,9 @@ gk
 cY
 aa
 da
-Xf
-aa
-aa
+kk
+QT
+Pq
 da
 aa
 aa
@@ -57601,7 +57673,7 @@ gl
 cY
 aa
 JD
-Xf
+kk
 aa
 aa
 JD
@@ -58372,7 +58444,7 @@ Gb
 aa
 aa
 yo
-Bk
+Xo
 Bk
 AB
 Dh
@@ -58626,7 +58698,7 @@ aa
 aa
 aa
 Uv
-Xf
+kk
 aa
 yo
 UW
@@ -59139,14 +59211,14 @@ bV
 aa
 ed
 aa
-gn
-Xf
+UB
+kk
 aa
 da
-Xf
-aa
-aa
-da
+kk
+bA
+bA
+SH
 aa
 go
 qT
@@ -59394,21 +59466,21 @@ ak
 ak
 ak
 aa
-da
 aa
-gn
-Xf
-Xf
+aa
+UB
+kk
+kk
 EI
-Xf
-Xf
-Xf
+kk
+kk
+kk
 EI
-Xf
+kk
 AS
-Xf
-Xf
-Xf
+kk
+kk
+kk
 tH
 uc
 aa
@@ -59651,7 +59723,7 @@ aa
 aa
 aa
 aa
-da
+aa
 aa
 gp
 Er
@@ -59664,8 +59736,8 @@ nL
 fl
 pV
 EI
-da
-da
+UC
+Lk
 tI
 ud
 aa
@@ -59908,11 +59980,11 @@ aa
 aa
 aa
 aa
-da
 aa
-gn
-Xf
 aa
+UB
+kk
+Ie
 iW
 aa
 lA
@@ -59920,9 +59992,9 @@ aa
 iW
 aa
 gn
-Xf
+kk
 aa
-aa
+Dz
 AS
 aa
 aa
@@ -60165,11 +60237,11 @@ aa
 aa
 aa
 aa
-da
+aa
 aa
 gq
-Xf
-aa
+kk
+Ie
 da
 aa
 lB
@@ -60177,7 +60249,7 @@ aa
 nM
 oO
 pW
-Xf
+kk
 aa
 sM
 tJ
@@ -60422,11 +60494,11 @@ aa
 aa
 aa
 aa
-da
 aa
-gn
-Xf
 aa
+UB
+kk
+Ie
 da
 aa
 lC
@@ -60434,9 +60506,9 @@ aa
 nN
 aa
 pX
-Xf
+kk
 aa
-da
+aa
 tK
 aa
 aa
@@ -60695,7 +60767,7 @@ id
 id
 id
 tL
-aa
+Ie
 aa
 aa
 aa
@@ -60950,8 +61022,8 @@ gs
 hk
 ie
 aa
-aa
-aa
+Pq
+Pq
 aa
 aa
 aa

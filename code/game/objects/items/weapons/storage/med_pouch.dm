@@ -193,6 +193,7 @@ Single Use Emergency Pouches
 
 /obj/item/chems/pill/pouch_pill/organ_meds
 	chem_type = /decl/material/liquid/organ_meds
+	chem_amount = 5
 
 /obj/item/chems/pill/pouch_pill/initialize_reagents()
 	reagents.add_reagent(chem_type, chem_amount)

@@ -34,6 +34,26 @@
 	. = ..()
 	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/syndicate.dmi')
 
+/datum/gear/uniform/skrell
+	sort_category = "Xenowear"
+	category = /datum/gear/uniform/skrell
+	whitelisted = list(SPECIES_SKRELL)
+
+/datum/gear/uniform/skrell/metal
+	display_name = "metalic headtail accessories (Skrell)"
+	path = /obj/item/clothing/ears/skrell/metal
+	flags = GEAR_HAS_TYPE_SELECTION
+
+/datum/gear/uniform/skrell/cloth_female
+	display_name = "female headtail cloth (Skrell)"
+	path = /obj/item/clothing/ears/skrell/cloth_female
+	flags = GEAR_HAS_COLOR_SELECTION
+
+/datum/gear/uniform/skrell/cloth_male
+	display_name = "male headtail cloth (Skrell)"
+	path = /obj/item/clothing/ears/skrell/cloth_male
+	flags = GEAR_HAS_COLOR_SELECTION
+
 //Skrellessories
 /obj/item/clothing/ears/skrell
 	name = "skrell headtail wear"
@@ -42,9 +62,9 @@
 	bodytype_restricted = list(BODYTYPE_SKRELL)
 
 /obj/item/clothing/ears/skrell/metal
-	name = "headtail chains"
+	name = "gold headtail chains"
 	icon_state = "skrell_chain"
-	applies_material_name = TRUE
+	//applies_material_name = TRUE
 	applies_material_colour = TRUE
 	material = /decl/material/solid/metal/gold
 	var/jewel_color
@@ -66,22 +86,24 @@
 	return ret
 
 /obj/item/clothing/ears/skrell/metal/silver
+	name = "silver headtail chains"
 	material = /decl/material/solid/metal/silver
 
 /obj/item/clothing/ears/skrell/metal/ceremonial
+	name = "ceremonial headtail chains"
 	material = /decl/material/solid/metal/blackbronze
 
 /obj/item/clothing/ears/skrell/metal/bluejewels
-	name = "and sapphire headtail chains"
+	name = "gold and sapphire headtail chains"
 	jewel_color = "#0000CA"
 
 /obj/item/clothing/ears/skrell/metal/redjewels
-	name = "and ruby headtail chains"
+	name = "gold and ruby headtail chains"
 	jewel_color = "#AA0C00"
 
 /obj/item/clothing/ears/skrell/metal/band
-	name = "headtail bands"
-	desc = "Golden metallic bands worn by male skrell to adorn their head tails."
+	name = "gold headtail bands"
+	desc = "Metallic bands worn by male skrell to adorn their head tails."
 	icon = 'mods/species/skrell/icons/clothing/band.dmi'
 
 /obj/item/clothing/ears/skrell/metal/band/set_material(new_material)
@@ -90,17 +112,19 @@
 		desc = "A [capitalize(material.solid_name)] band worn by skrell to decorate their head tails."
 
 /obj/item/clothing/ears/skrell/metal/band/silver
+	name = "silver headtail bands"
 	material = /decl/material/solid/metal/silver
 
 /obj/item/clothing/ears/skrell/metal/band/ceremonial
+	name = "ceremonial headtail bands"
 	material = /decl/material/solid/metal/blackbronze
 
 /obj/item/clothing/ears/skrell/metal/band/bluejewels
-	name = "and sapphire headtail bands"
+	name = "gold and sapphire headtail bands"
 	jewel_color = "#0000CA"
 
 /obj/item/clothing/ears/skrell/metal/band/redjewels
-	name = "and ruby headtail chains"
+	name = "gold and ruby headtail chains"
 	jewel_color = "#AA0C00"
 
 /obj/item/clothing/ears/skrell/cloth_female
