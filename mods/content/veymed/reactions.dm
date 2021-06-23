@@ -21,13 +21,27 @@
 /datum/chemical_reaction/cyro_fluid
 	name = "Cryogenic Fluid"
 	result = /decl/material/liquid/cyro_fluid
-	required_reagents = list(/decl/material/liquid/cyro_precursor = 1, /decl/material/liquid/water = 1)
-	inhibitors = list(/decl/material/solid/sodium)
-	maximum_temperature = 10 CELSIUS
+	required_reagents = list(/decl/material/liquid/cyro_precursor = 1, /decl/material/solid/ice = 1)
+	inhibitors = list(/decl/material/solid/sodium = 1)
+	minimum_temperature = (-20 CELSIUS) - 100
+	maximum_temperature = -20 CELSIUS
 	result_amount = 1
 
-/datum/chemical_reaction/cyro_fluid
+/datum/chemical_reaction/cyro_precursor
 	name = "Cryogenic Precursor"
 	result = /decl/material/liquid/cyro_precursor
 	required_reagents = list(/decl/material/liquid/acetone = 1, /decl/material/liquid/oxy_meds = 1, /decl/material/solid/exotic_matter = 0.1)
 	result_amount = 2
+
+/datum/chemical_reaction/trinitricine
+	name = "trinitricine"
+	result = /decl/material/liquid/trinitricine
+	required_reagents = list(/decl/material/liquid/stabilizer = 1, /decl/material/liquid/fertilizer = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/hextrazine
+	name = "hextrazine"
+	result = /decl/material/liquid/hextrazine
+	required_reagents = list(/decl/material/liquid/binitricine = 1)
+	inhibitors = list(/decl/material/liquid/trinitricine = 0.1)
+	result_amount = 1

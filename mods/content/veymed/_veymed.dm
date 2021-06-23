@@ -1,2 +1,2 @@
-/decl/modpack/bigpharma
+/decl/modpack/veymed
 	name = "Vey-Med Pharmaceuticals Content"
