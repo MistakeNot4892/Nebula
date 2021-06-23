@@ -6,6 +6,15 @@
 	color = "#b0dcea"
 	b_color ="#b0dcea"
 
+/obj/machinery/light/small/d_green
+	light_type = /obj/item/light/bulb/d_green
+
+/obj/item/light/bulb/d_green
+	color = "#4b734b"
+	b_color = "#4b734b"
+	b_power = 0.8
+	b_range = 5
+
 //Industrial environments
 /obj/effect/floor_decal/rust
 	icon_state = "rust"

@@ -550,7 +550,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /turf/simulated/open,
 /area/space)
@@ -774,7 +773,6 @@
 /area/noctis/atmos)
 "bN" = (
 /obj/machinery/door/airlock/external/bolted{
-	frequency = 1379;
 	id_tag = "pirate_con_ext"
 	},
 /turf/simulated/floor/plating,
@@ -1051,7 +1049,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/effect/floor_decal/corner/grey/mono,
 /obj/machinery/light/small/red{
@@ -1189,7 +1186,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 8;
-	mapped_color = null
 	},
 /obj/effect/floor_decal/corner/grey/mono,
 /obj/structure/table/steel,
@@ -1200,7 +1196,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /turf/simulated/open,
 /area/space)
@@ -1380,7 +1375,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 8;
-	mapped_color = null
 	},
 /obj/structure/lattice,
 /obj/structure/cable/blue{
@@ -1435,7 +1429,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1539,8 +1532,7 @@
 /area/noctis/bridge)
 "dM" = (
 /obj/structure/railing/mapped{
-	color = "#b95a00";
-	mapped_color = "#b95a00"
+	color = "#b95a00"
 	},
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1549,7 +1541,6 @@
 /turf/simulated/floor/plating,
 /area/noctis/asm)
 "dN" = (
-/obj/machinery/door/blast/regular/open,
 /obj/structure/ladder,
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/open,
@@ -1559,7 +1550,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/structure/cable/blue{
 	d2 = 2;
@@ -1699,7 +1689,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
 	id_tag = "pirate_con_vent"
 	},
 /turf/simulated/floor/plating,
@@ -2093,7 +2082,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/structure/cable/blue{
 	d1 = 2;
@@ -2141,7 +2129,7 @@
 	dir = 6
 	},
 /obj/machinery/button/access/interior{
-	master_tag = "pirate_con_controller";
+	id_tag = "pirate_con_controller";
 	pixel_x = 24;
 	pixel_y = -24
 	},
@@ -2149,7 +2137,6 @@
 /area/noctis/reactorov)
 "ff" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
 	id_tag = "pirate_con_int"
 	},
 /obj/structure/cable/blue{
@@ -2190,7 +2177,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
 	id_tag = "pirate_con_int"
 	},
 /turf/simulated/floor/plating,
@@ -2411,7 +2397,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -2458,7 +2443,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/effect/floor_decal{
 	icon_state = "rust"
@@ -2469,7 +2453,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 8;
-	mapped_color = null
 	},
 /obj/structure/catwalk,
 /obj/structure/cable/blue{
@@ -2592,7 +2575,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -2689,6 +2671,9 @@
 "gb" = (
 /obj/effect/floor_decal/techfloor,
 /obj/structure/table/steel,
+/obj/machinery/button/blast_door{
+	id_tag = "noctisbridge"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/noctis/bridge)
 "gc" = (
@@ -3203,7 +3188,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 8;
-	mapped_color = null
 	},
 /obj/structure/catwalk,
 /obj/structure/cable/blue{
@@ -3433,7 +3417,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 8;
-	mapped_color = null
 	},
 /turf/simulated/open,
 /area/space)
@@ -3444,7 +3427,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 1;
-	mapped_color = null
 	},
 /turf/space,
 /area/space)
@@ -3579,7 +3561,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/structure/lattice,
 /obj/structure/cable/blue{
@@ -3663,7 +3644,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /obj/structure/catwalk,
 /obj/random/trash,
@@ -3851,7 +3831,6 @@
 /area/noctis/prismngt)
 "is" = (
 /obj/machinery/computer/modular/preset/merchant{
-	computer_emagged = 1;
 	dir = 1;
 	icon_state = "console"
 	},
@@ -4058,7 +4037,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 8;
-	mapped_color = null
 	},
 /turf/simulated/open,
 /area/space)
@@ -4070,7 +4048,6 @@
 "iO" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1379;
 	id_tag = "pirate_con_vent"
 	},
 /turf/simulated/floor/plating,
@@ -4210,7 +4187,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 4;
-	mapped_color = null
 	},
 /turf/space,
 /area/space)
@@ -4224,7 +4200,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 8;
-	mapped_color = null
 	},
 /turf/space,
 /area/space)
@@ -4279,7 +4254,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 1;
-	mapped_color = null
 	},
 /turf/simulated/open,
 /area/space)
@@ -4329,7 +4303,6 @@
 /obj/structure/railing/mapped{
 	color = "#b95a00";
 	dir = 1;
-	mapped_color = null
 	},
 /obj/structure/lattice,
 /turf/simulated/open,

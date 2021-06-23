@@ -43,8 +43,8 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/storage/box/monkeycubes,/obj/item/weapon/aicard,/obj/item/device/paicard)
 	armor = list(melee = 10, bullet = 5, laser = 10,energy = 5, bomb = 60, bio = 100, rad = 30)
 
-/obj/item/clothing/suit/space/void/science/New()
-	..()
+/obj/item/clothing/suit/space/void/science/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = 2
 
 //Emergency Suit. It's really shitty, but better than a firesuit when it comes to space or biological hazards. Will need a special "emergency locker" for this.
@@ -58,8 +58,8 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 	permeability_coefficient = 0.50
 	bodytype_restricted = list("exclude", BODYTYPE_AVIAN, BODYTYPE_VOX)
 
-/obj/item/clothing/suit/urist/emergencysuit/New()
-	..()
+/obj/item/clothing/suit/urist/emergencysuit/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = 1.5
 
 //Armoured biosuit for sec
@@ -78,8 +78,8 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 	armor = list(melee = 20, bullet = 15, laser = 25, energy = 10, bomb = 25, bio = 100, rad = 20)
 	sprite_sheets = list(SPECIES_RESOMI = 'icons/mob/species/resomi/uristSuit.dmi')
 
-/obj/item/clothing/suit/bio_suit/asec/New()
-	..()
+/obj/item/clothing/suit/bio_suit/asec/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = 3
 
 //Welder apron done by ShoesandHats and added by Cozarctan. Moved from welder. Welder machete goes into the new uristweapons.dm
@@ -106,8 +106,8 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword,/obj/item/weapon/handcuffs,/obj/item/weapon/tank/emergency,/obj/item/device/flashlight)
 	armor = list(melee = 60, bullet = 50, laser = 30,energy = 15, bomb = 30, bio = 30, rad = 30)
 
-/obj/item/clothing/suit/space/naval/New()
-	..()
+/obj/item/clothing/suit/space/naval/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = 1
 
 //Naval Commando Suit
@@ -124,8 +124,8 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 	armor = list(melee = 80, bullet = 60, laser = 50,energy = 25, bomb = 50, bio = 30, rad = 30)
 	can_breach = 0
 
-/obj/item/clothing/suit/space/void/commando/New()
-	..()
+/obj/item/clothing/suit/space/void/commando/Initialize`()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = 1
 
 //Meido outfit, Pretty much Japanese for Maid outfit. I will most likely be doing more costumes. -Nien
@@ -174,12 +174,12 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 		switch(icon_state)
 			if("tweedjacket_open")
 				src.icon_state = "tweedjacket"
-				usr << "You button up the jacket."
+				to_chat(usr, "You button up the jacket.")
 			if("tweedjacket")
 				src.icon_state = "tweedjacket_open"
-				usr << "You unbutton the jacket."
+				to_chat(usr, "You unbutton the jacket.")
 			else
-				usr << "You attempt to button-up the velcro on your [src], before promptly realising how retarded you are."
+				to_chat(usr, "You attempt to button-up the velcro on your [src], before promptly realising how retarded you are.")
 				return
 		usr.update_inv_wear_suit()	//so our overlays update
 
@@ -1037,22 +1037,22 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 	item_state = "hamilton_uniform"
 
 /obj/item/clothing/suit/urist/civilwar/bluecoatjacket
-    name = "Blue Infantry Coat"
-    desc = "A blue coat worn by soldiers."
-    icon_state = "blue_coat_coat"
-    item_state = "blue_coat_coat"
+	name = "Blue Infantry Coat"
+	desc = "A blue coat worn by soldiers."
+	icon_state = "blue_coat_coat"
+	item_state = "blue_coat_coat"
 
 /obj/item/clothing/suit/urist/civilwar/redcoatjacket
-    name = "Red Infantry Coat"
-    desc = "A red coat worn by soldiers."
-    icon_state = "red_coat_coat"
-    item_state = "red_coat_coat"
+	name = "Red Infantry Coat"
+	desc = "A red coat worn by soldiers."
+	icon_state = "red_coat_coat"
+	item_state = "red_coat_coat"
 
 /obj/item/clothing/suit/urist/civilwar/hamiltoncoat
-    name = "Hamilton Coat"
-    desc = "A blue coat sporting gold buttons."
-    icon_state = "hamiltoncoat"
-    item_state = "hamiltoncoat"
+	name = "Hamilton Coat"
+	desc = "A blue coat sporting gold buttons."
+	icon_state = "hamiltoncoat"
+	item_state = "hamiltoncoat"
 
 //RS Armor Suits
 
@@ -1214,8 +1214,8 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 	armor = list(melee = 65, bullet = 60, laser = 40,energy = 20, bomb = 40, bio = 100, rad = 30)
 	can_breach = 0
 
-/obj/item/clothing/suit/space/void/commando/New()
-	..()
+/obj/item/clothing/suit/space/void/commando/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_wear_suit] = 1
 
 /obj/item/clothing/suit/storage/urist/terran_marine
@@ -1326,8 +1326,8 @@ Update 26/07/2014 - All generic clothing goes under obj/item/clothing/under/uris
 	flags_inv = HIDEJUMPSUIT|HIDETAIL|HIDEGLOVES|HIDESHOES
 	siemens_coefficient = 0.3
 
-/obj/item/clothing/suit/biohazardradiation/New()
-	..()
+/obj/item/clothing/suit/biohazardradiation/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_shoes] = 1.5
 
 // Blue Biohazard Suit.

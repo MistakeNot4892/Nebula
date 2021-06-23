@@ -1,6 +1,7 @@
 /datum/job/scientist
 	title = "Researcher"
 	supervisors = "the Captain and the Head of Security's tolerance"
+	hud_icon = "hudscientist"
 	total_positions = 2
 	spawn_positions = 2
 	outfit_type = /decl/hierarchy/outfit/job/wyrm/researcher

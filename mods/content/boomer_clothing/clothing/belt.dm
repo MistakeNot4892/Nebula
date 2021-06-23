@@ -23,8 +23,8 @@
 	/obj/item/device/integrated_electronics
  	)
 
-/obj/item/weapon/storage/belt/robotics/full/New()
-	..()
+/obj/item/weapon/storage/belt/robotics/full/Initialize()
+	. = ..()
 	new /obj/item/weapon/screwdriver(src)
 	new /obj/item/weapon/wrench(src)
 	new /obj/item/weapon/weldingtool(src)

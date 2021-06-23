@@ -6,4 +6,5 @@
 #include "labcoat.dm"
 #include "medicines.dm"
 #include "reactions.dm"
+#include "../../../code/modules/surgery/necrotic.dm"
 #endif

@@ -29,8 +29,8 @@ icon_override sprites go to 'icons/uristmob/shoes.dmi' Items should go to clothi
 	can_hold_knife = 1
 
 
-/obj/item/clothing/shoes/urist/leather/New()
-	..()
+/obj/item/clothing/shoes/urist/leather/Initialize()
+	. = ..()
 	slowdown_per_slot[slot_shoes] = 0
 
 //winter boots, for the shoevend

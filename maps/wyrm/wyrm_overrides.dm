@@ -1,6 +1,6 @@
 /obj/item/supply_beacon
-    randpixel = 0
-    density = TRUE
+	randpixel = 0
+	density = TRUE
 
 //Eventually this should get significantly refactored, but what's it matter now?
 /obj/item/clothing/head/helmet/space/Initialize()

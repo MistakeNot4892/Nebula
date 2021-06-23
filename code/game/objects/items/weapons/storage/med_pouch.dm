@@ -136,7 +136,6 @@ Single Use Emergency Pouches
 
 	startswith = list(
 	/obj/item/chems/hypospray/autoinjector/pouch_auto/antitoxins,
-	/obj/item/chems/pill/pouch_pill/organ_meds,
 	/obj/item/chems/pill/pouch_pill/antitoxins
 		)
 	instructions = {"
@@ -191,10 +190,6 @@ Single Use Emergency Pouches
 /obj/item/chems/pill/pouch_pill/burn_meds
 	chem_type = /decl/material/liquid/burn_meds
 
-/obj/item/chems/pill/pouch_pill/organ_meds
-	chem_type = /decl/material/liquid/organ_meds
-	chem_amount = 5
-
 /obj/item/chems/pill/pouch_pill/initialize_reagents()
 	reagents.add_reagent(chem_type, chem_amount)
 	var/decl/material/reagent = GET_DECL(chem_type)
@@ -228,7 +223,3 @@ Single Use Emergency Pouches
 /obj/item/chems/hypospray/autoinjector/pouch_auto/nanoblood
 	name = "emergency nanoblood autoinjector"
 	starts_with = list(/decl/material/liquid/nanoblood = 5)
-
-/obj/item/chems/hypospray/autoinjector/pouch_auto/anesthetic
-	name = "emergency anesthetic autoinjector"
-	starts_with = list(/decl/material/liquid/local_anesthetic = 5)

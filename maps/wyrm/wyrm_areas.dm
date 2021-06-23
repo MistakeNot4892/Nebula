@@ -27,19 +27,12 @@
 /area/command/bridge
 	name = "\improper Bridge"
 
-/area/command/hop
-	name = "\improper Head of Personnel Office"
-
 /area/command/captain
 	name = "\improper Captain's Office"
 	req_access = list(access_captain)
 
 /area/command/meeting
 	name = "\improper Meeting Room"
-
-/area/command/ce
-	name = "\improper Chief Engineer's Office"
-	req_access = list(access_ce)
 
 /area/command/aiupload
 	name = "\improper AI Upload"
@@ -90,9 +83,6 @@
 /area/civilian/hydro
 	name = "\improper Hydroponics"
 
-/area/civilian/holodeck
-	name = "\improper Holodeck"
-
 /area/civilian/personal
 	name = "\improper Personal Storage"
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -115,25 +105,19 @@
 
 /area/security/entrance
 	name = "\improper Brig Entrance"
+	req_access = list(access_sec_doors)
 
 /area/security/brig
 	name = "\improper Brig"
+	req_access = list(access_brig)
 
 /area/security/warden
-	name = "\improper Warden's Office"
+	name = "\improper Security Office"
+	req_access = list(access_hos)
 
 /area/security/armory
 	name = "\improper Armory"
 	req_access = list(access_armory)
-
-/area/security/locker
-	name = "\improper Security Locker Room"
-
-/area/security/forenics
-	name = "\improper Forensics Lab"
-
-/area/security/evidence
-	name = "\improper Evidence Storage"
 
 //////////////////////////////////////
 //			SCIENCE					//
@@ -156,9 +140,7 @@
 
 /area/science/xenobio
 	name = "\improper Xenobiology Wing"
-
-/area/science/xenoarch
-	name = "\improper Xenoarcheology Lab"
+	req_access = list(access_xenobiology)
 
 /area/science/prep
 	name = "\improper Research Locker Room"
@@ -170,9 +152,11 @@
 
 /area/science/xenoflora
 	name = "\improper Xenoflora"
+	req_access = list(access_xenobiology)
 
 /area/science/xenoflora_storage
 	name = "\improper Xenoflora Storage"
+	req_access = list(access_tox_storage)
 
 //////////////////////////////////////
 //			ENGINEERING				//
@@ -214,26 +198,28 @@
 	has_gravity = 0
 	area_flags = AREA_FLAG_EXTERNAL
 
-/area/engineering/smes
-	name = "\improper SMES Room"
-
 /area/engineering/subsmes
 	name = "\improper Sub Deck SMES Room"
 
 /area/engineering/securestorage
 	name = "\improper Secure Storage"
+	req_access = list(access_engine_equip)
 
 /area/engineering/techstorage
 	name = "\improper Tech Storage"
+	req_access = list(access_tech_storage)
 
 /area/engineering/stech
 	name = "\improper Secure Tech Storage"
+	req_access = list(access_ce)
 
 /area/engineering/tcomms
 	name = "\improper Telecommunications Server"
+	req_access = list(access_tcomsat)
 
 /area/engineering/tcommsmon
 	name = "\improper Telecommunication Monitoring Room"
+	req_access = list(access_tcomsat)
 
 /area/engineering/extsubmaint
 	name = "\improper External Sub Deck Engine Maintenance"
@@ -259,12 +245,14 @@
 
 /area/medical/morgue
 	name = "\improper Morgue"
+	req_access = list(access_morgue)
 
 /area/medical/storage
 	name = "\improper Medical Storage"
 
 /area/medical/chemistry
 	name = "\improper Chemistry Lab"
+	req_access = list(access_chemistry)
 
 /area/medical/surgery
 	name = "\improper Operating Theatre"
@@ -324,10 +312,6 @@
 	name = "\improper Cargo Maintenance"
 	icon_state = "maint_cargo"
 
-/area/maintenance/primary/med
-	name = "\improper Medical Maintenance"
-	icon_state = "maint_medical"
-
 /area/maintenance/primary/engs
 	name = "\improper Engineering Starboard Maintenance"
 	icon_state = "maint_engineering"
@@ -340,6 +324,10 @@
 	name = "\improper Fore Sub Deck Maintenance"
 	icon_state = "fmaint"
 
+/area/maintenance/sub/mid
+	name = "\improper Midship Sub Deck Maintenance"
+	icon_state = "fmaint"
+
 /area/maintenance/sub/aft
 	name = "\improper Aft Sub Deck Maintenance"
 	icon_state = "amaint"
@@ -347,11 +335,10 @@
 /area/maintenance/drone
 	name = "\improper Maintenance Drone Production"
 	icon_state = "maint_engineering"
+	req_access = list(access_engine)
 
 /area/maintenance/construction
 	name = "\improper Construction Room"
-
-/area/maintenance/exterior
 
 //////////////////////////////////////
 //			Z-LEVEL 3 / ADMIN		//
@@ -385,11 +372,6 @@
 
 /area/drone_test
 	name = "\improper Biohazard Simulation Arena"
-	requires_power = 0
-	dynamic_lighting = 0
-
-/area/wizard
-	name = "Wizard's Lair"
 	requires_power = 0
 	dynamic_lighting = 0
 
@@ -436,9 +418,6 @@
 /area/fightclub
 	name = "\improper Actor's Guild Break Room"
 	requires_power = FALSE
-
-/area/merchant_station
-	name = "\improper Merchant Station"
 
 //////////////////////////////////////
 //			AWAY MISSION			//

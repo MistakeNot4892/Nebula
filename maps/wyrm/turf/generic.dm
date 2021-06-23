@@ -4,12 +4,6 @@
 /turf/simulated/wall/r_wall/false
 	can_open = 1
 
-/turf/simulated/wall/wood/New(var/newloc)
-	..(newloc,"wood")
-
-/turf/simulated/floor/plating/airless
-	initial_gas = null
-
 /turf/unsimulated/floor/plating
 	name = "floor"
 	icon = 'icons/turf/floors.dmi'
@@ -82,11 +76,11 @@
 
 //Dark Blue
 /decl/flooring/tiling/new_tile/dblue
-	color = "#565D61"
+	color = "#565d61"
 	build_type = /obj/item/stack/tile/new_tile/dblue
 
 /turf/simulated/floor/tiled/old_tile/dblue
-	color = "#565D61"
+	color = "#565d61"
 	initial_flooring = /decl/flooring/tiling/new_tile/dblue
 
 /obj/item/stack/tile/new_tile/dblue
@@ -94,11 +88,11 @@
 	singular_name = "old dark blue tile"
 
 /decl/flooring/tiling/new_tile/cargo_one/dblue
-	color = "#565D61"
+	color = "#565d61"
 	build_type = /obj/item/stack/tile/new_tile/dblue/mono
 
 /turf/simulated/floor/tiled/old_cargo/dblue
-	color = "#565D61"
+	color = "#565d61"
 	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/dblue
 
 /obj/item/stack/tile/new_tile/dblue/mono
@@ -108,11 +102,11 @@
 
 //Medical/Research
 /decl/flooring/tiling/new_tile/med
-	color = "#CCCCCC"
+	color = "#cccccc"
 	build_type = /obj/item/stack/tile/new_tile/med
 
 /turf/simulated/floor/tiled/old_tile/med
-	color = "#CCCCCC"
+	color = "#cccccc"
 	initial_flooring = /decl/flooring/tiling/new_tile/med
 
 /obj/item/stack/tile/new_tile/med
@@ -120,11 +114,11 @@
 	singular_name = "old sterile tile"
 
 /decl/flooring/tiling/new_tile/cargo_one/med
-	color = "#CCCCCC"
+	color = "#cccccc"
 	build_type = /obj/item/stack/tile/new_tile/med/mono
 
 /turf/simulated/floor/tiled/old_cargo/med
-	color = "#CCCCCC"
+	color = "#cccccc"
 	initial_flooring = /decl/flooring/tiling/new_tile/cargo_one/med
 
 /obj/item/stack/tile/new_tile/med/mono
@@ -181,7 +175,7 @@
 	icon_state = "borderfloorcee_white"
 
 /obj/structure/window/reinforced/full/antique
-	paint_color = "#FFFFFF"
+	paint_color = "#ffffff"
 
 /obj/structure/wall_frame/antique
 	paint_color = COLOR_BEIGE

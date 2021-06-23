@@ -837,9 +837,7 @@
 /area/space)
 "dg" = (
 /obj/structure/bed/chair/comfy/black{
-	dir = 8;
-	icon_state = "comfychair_preview";
-	tag = "icon-comfychair_preview (WEST)"
+	dir = 8
 	},
 /turf/simulated/floor/tiled/airless,
 /area/space)

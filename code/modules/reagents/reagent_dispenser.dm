@@ -173,10 +173,10 @@
 		return TRUE
 	if(W.isflamesource())
 		if(user.a_intent != I_HURT)
-			to_chat(user, SPAN_WARNING("You almost got \the [W] too close to [src]! That could have ended very badly for you.</span>"))
+			to_chat(user, SPAN_WARNING("You almost got \the [W] too close to [src]! That could have ended very badly for you."))
 			return TRUE
 
-		user.visible_message(SPAN_WARNING("\The [user] draws closer to the fuel tank with \the [W].</span>"), SPAN_WARNING("You draw closer to the fuel tank with \the [W].</span>"))
+		user.visible_message(SPAN_WARNING("\The [user] draws closer to the fuel tank with \the [W]."), SPAN_WARNING("You draw closer to the fuel tank with \the [W]."))
 		if(do_after(user, 50, src))
 			log_and_message_admins("triggered a fuel tank explosion with \the [W].")
 			visible_message(SPAN_DANGER("\The [user] puts \the [W] to \the [src]!"))

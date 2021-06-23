@@ -1,10 +1,9 @@
 /datum/shuttle/autodock/overmap/raptor
 	name = "Raptor"
-	warmup_time = 15
+	warmup_time = 3.5 SECONDS
 	move_time = 50
 	shuttle_area = /area/noctis/raptor
 	current_location = "nav_noctis_raptor"
-	landmark_transition = "nav_noctis_transit"
 	dock_target = "noctis"
 	fuel_consumption = 1.2
 	range = 3

@@ -6,7 +6,7 @@
 	id_type = /obj/item/card/id/gold
 	l_ear = /obj/item/radio/headset/heads/captain
 
-/decl/hierarchy/outfit/job/tradeship/captain/post_equip(var/mob/living/carbon/human/H)
+/decl/hierarchy/outfit/job/wyrm/captain/post_equip(var/mob/living/carbon/human/H)
 	..()
 	var/obj/item/clothing/uniform = H.w_uniform
 	if(uniform)
@@ -55,5 +55,3 @@
 	name = "blue security guard uniform"
 	desc = "A durable uniform worn by the Wyrm's security crew."
 	icon = 'maps/wyrm/icons/clothing/guard.dmi'
-
-/decl/hierarchy/outfit/job/wyrm/bodyguard

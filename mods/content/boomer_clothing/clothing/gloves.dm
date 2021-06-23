@@ -27,7 +27,7 @@ icon_override sprites go to 'icons/uristmob/gloves.dmi' Items should go to cloth
 				species_restricted -= "Tajaran"
 			return
 		else
-			user << "<span class='notice'>The [src] have already been clipped!</span>"
+			to_chat(user, "<span class='notice'>The [src] have already been clipped!</span>")
 			update_icon()
 			return
 

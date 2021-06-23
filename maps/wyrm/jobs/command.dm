@@ -192,29 +192,3 @@
 		access_RC_announce,
 		access_keycard_auth
 	)
-
-/datum/job/blueshield
-	title = "Bodyguard"
-	department_types = list(
-		/decl/department/command
-	)
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the Captain, and only the Captain"
-	selection_color = "#004a7f"
-	req_admin_notify = 1
-	minimal_player_age = 8
-	outfit_type = /decl/hierarchy/outfit/job/wyrm/bodyguard
-	department_types = list(/decl/department/command)
-	access = list(access_security, access_sec_doors, access_forensics_lockers,
-			            access_medical, access_engine, access_ai_upload, access_eva, access_heads,
-			            access_all_personal_lockers, access_maint_tunnels, access_construction, access_morgue,
-			            access_cargo, access_mailsorting, access_qm, access_lawyer,
-			            access_research, access_mining, access_mining_station,
-			            access_RC_announce, access_keycard_auth, access_blueshield)
-	minimal_access = list(access_security, access_sec_doors, access_forensics_lockers,
-			            access_medical, access_engine, access_eva, access_heads,
-			            access_all_personal_lockers, access_maint_tunnels, access_construction, access_morgue,
-			            access_cargo, access_mailsorting, access_qm, access_lawyer,
-			            access_research, access_mining, access_mining_station,
-			            access_RC_announce, access_keycard_auth, access_blueshield)

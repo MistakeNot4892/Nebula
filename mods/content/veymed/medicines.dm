@@ -9,20 +9,20 @@
 	value = 4
 
 /decl/material/liquid/organ_meds/affect_blood(mob/living/carbon/M, alien, removed)
-    for(var/obj/item/organ/internal/I in M.internal_organs)
-        if(BP_IS_PROSTHETIC(I))
-            continue
-        if(I.organ_tag == BP_BRAIN)
-            SET_STATUS_MAX(M, STAT_CONFUSE, 2)
-            SET_STATUS_MAX(M, STAT_DROWSY, 2)
-            if(I.damage >= I.min_bruised_damage)
-                continue
-        if((I.status & ORGAN_DEAD) && I.death_time >= world.time - ORGAN_RECOVERY_THRESHOLD)
-            I.death_time += 27 SECONDS * removed //Let's say its 45% effective if not directly applied
-            if(I.death_time >= world.time)
-                I.status &= ~ORGAN_DEAD
-        else
-            I.damage = max(I.damage - 2 * removed, 0)
+	for(var/obj/item/organ/internal/I in M.internal_organs)
+		if(BP_IS_PROSTHETIC(I))
+			continue
+		if(I.organ_tag == BP_BRAIN)
+			SET_STATUS_MAX(M, STAT_CONFUSE, 2)
+			SET_STATUS_MAX(M, STAT_DROWSY, 2)
+			if(I.damage >= I.min_bruised_damage)
+				continue
+		if((I.status & ORGAN_DEAD) && I.death_time >= world.time - ORGAN_RECOVERY_THRESHOLD)
+			I.death_time += 27 SECONDS * removed //Let's say its 45% effective if not directly applied
+			if(I.death_time >= world.time)
+				I.status &= ~ORGAN_DEAD
+		else
+			I.damage = max(I.damage - 2 * removed, 0)
 
 /decl/material/liquid/organ_meds/affect_overdose(mob/living/carbon/M, alien, datum/reagents/holder)
 	if(prob(5))
@@ -80,6 +80,10 @@
 		SET_STATUS_MAX(M, STAT_DROWSY, 2)
 	if(prob(25))
 		SET_STATUS_MAX(M, STAT_CONFUSE, 3)
+
+/obj/item/chems/hypospray/autoinjector/pouch_auto/anesthetic
+	name = "emergency anesthetic autoinjector"
+	starts_with = list(/decl/material/liquid/local_anesthetic = 5)
 
 /decl/material/liquid/latrazine
 	name = "latrazine"

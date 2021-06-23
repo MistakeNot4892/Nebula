@@ -130,6 +130,8 @@
 	dir = 1;
 	icon_state = "firelight1"
 	},
+/obj/item/clothing/suit/space/void/security/cold,
+/obj/item/clothing/head/helmet/space/void/security/cold,
 /turf/simulated/floor/tiled/monotile,
 /area/noctis/hards)
 "aA" = (
@@ -162,6 +164,7 @@
 /obj/item/crowbar/cheap,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/item/weldingtool/electric,
+/obj/item/tracker_electronics,
 /turf/simulated/floor/tiled,
 /area/noctis/battery)
 "aE" = (
@@ -375,8 +378,7 @@
 /area/noctis/apm)
 "bc" = (
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	tag = "icon-borderfloor_white (NORTH)"
+	dir = 1
 	},
 /obj/structure/cable/blue{
 	d2 = 4;
@@ -391,8 +393,7 @@
 /area/noctis/hards)
 "bd" = (
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	tag = "icon-borderfloor_white (NORTH)"
+	dir = 1
 	},
 /obj/structure/cable/blue{
 	d1 = 4;
@@ -422,8 +423,7 @@
 /area/noctis/hards)
 "bf" = (
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	tag = "icon-borderfloor_white (NORTH)"
+	dir = 1
 	},
 /obj/structure/cable/blue{
 	d1 = 4;
@@ -636,7 +636,6 @@
 /area/noctis/fairlock)
 "bD" = (
 /obj/machinery/door/airlock/external/bolted{
-	frequency = 1379;
 	id_tag = "pirate_fp_ext"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -656,7 +655,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
-	frequency = 1379;
 	id_tag = "pirate_fp_vent"
 	},
 /turf/simulated/floor/plating,
@@ -705,7 +703,6 @@
 /area/noctis/apm)
 "bL" = (
 /obj/machinery/door/airlock/external/bolted{
-	frequency = 1379;
 	id_tag = "pirate_ap_ext"
 	},
 /turf/simulated/floor/plating,
@@ -713,7 +710,6 @@
 "bM" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
-	frequency = 1379;
 	id_tag = "pirate_ap_vent"
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
@@ -734,7 +730,6 @@
 /area/noctis/hards)
 "bN" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
 	id_tag = "pirate_ap_int"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -1037,8 +1032,7 @@
 /area/noctis/fm)
 "cp" = (
 /obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	frequency = 1379
+	dir = 4
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/machinery/light/small/d_green{
@@ -1060,12 +1054,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
-	frequency = 1379;
-	id_tag = "pirate_fp_vent"
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1379;
 	id_tag = "pirate_fp_vent"
 	},
 /turf/simulated/floor/plating,
@@ -1193,6 +1181,7 @@
 /obj/prefab/bluespace_radio,
 /obj/item/flashlight/upgraded,
 /obj/random/smokes,
+/obj/item/ship_tracker,
 /turf/simulated/floor/carpet/purple,
 /area/noctis/raptor)
 "cH" = (
@@ -1262,7 +1251,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
-	frequency = 1379;
 	id_tag = "pirate_fp_vent"
 	},
 /turf/simulated/floor/plating,
@@ -1285,7 +1273,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 8;
-	id = "p_com_obs"
+	id_tag = "p_com_obs"
 	},
 /turf/simulated/floor/plating,
 /area/noctis/combust)
@@ -1311,7 +1299,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 4;
-	id = "p_com_vent"
+	id_tag = "p_com_vent"
 	},
 /turf/simulated/floor/plating,
 /area/noctis/combust)
@@ -1362,7 +1350,7 @@
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/green_grey,
 /obj/machinery/door/blast/shutters{
-	id = "p_con_obs"
+	id_tag = "p_con_obs"
 	},
 /turf/simulated/floor/plating,
 /area/noctis/connect)
@@ -1493,7 +1481,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "pirate_fp_vent"
 	},
 /turf/simulated/floor/plating,
@@ -1688,8 +1675,7 @@
 /area/noctis/afth)
 "dG" = (
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	tag = "icon-borderfloor_white (NORTH)"
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -1705,8 +1691,7 @@
 	icon_state = "comfychair_preview"
 	},
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	tag = "icon-borderfloor_white (NORTH)"
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -1722,8 +1707,7 @@
 	icon_state = "comfychair_preview"
 	},
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	tag = "icon-borderfloor_white (NORTH)"
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -1732,8 +1716,7 @@
 /area/noctis/connect)
 "dJ" = (
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	tag = "icon-borderfloor_white (NORTH)"
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -1782,6 +1765,7 @@
 /area/noctis/hangar)
 "dO" = (
 /obj/machinery/door/window/southright{
+	autoset_access = 0;
 	req_access = list("ACCESS_NOCTIS")
 	},
 /turf/simulated/floor/carpet/purple,
@@ -1805,7 +1789,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "noctis_pump"
 	},
 /turf/simulated/floor/tiled,
@@ -2015,7 +1998,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	dir = 8;
-	id = "p_com_obs"
+	id_tag = "p_com_obs"
 	},
 /turf/simulated/floor/plating,
 /area/noctis/combust)
@@ -2045,7 +2028,6 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/solar_assembly,
-/obj/item/tracker_electronics,
 /obj/effect/floor_decal{
 	icon_state = "rust"
 	},
@@ -2170,11 +2152,9 @@
 "eC" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
-	frequency = 1380;
 	id_tag = "noctis_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
 	id_tag = "noctis";
 	pixel_x = -24;
 	tag_airpump = "noctis_pump";
@@ -2219,8 +2199,7 @@
 /area/noctis/lounge)
 "eG" = (
 /obj/effect/floor_decal/borderfloor{
-	dir = 1;
-	tag = "icon-borderfloor_white (NORTH)"
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/noctis/lounge)
@@ -2401,7 +2380,7 @@
 /obj/effect/paint/black,
 /obj/machinery/door/blast/regular{
 	dir = 8;
-	id = "p_com_obs"
+	id_tag = "p_com_obs"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2620,8 +2599,7 @@
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2";
-	tag = ""
+	icon_state = "1-2"
 	},
 /obj/structure/bed/chair/office/dark{
 	dir = 8
@@ -2703,7 +2681,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/igniter{
-	id = "p_ign"
+	id_tag = "p_ign"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/floor_decal/borderfloorblack{
@@ -2819,7 +2797,7 @@
 	dir = 1
 	},
 /obj/machinery/button/ignition{
-	id = "p_ign";
+	id_tag = "p_ign";
 	pixel_x = -24;
 	pixel_y = -3
 	},
@@ -3299,7 +3277,7 @@
 "gD" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/secure/weapon{
-	req_access = list(999)
+	req_access = list("ACCESS_SYNDICATE")
 	},
 /obj/item/gun/projectile/bolt_action,
 /obj/structure/window/reinforced{
@@ -3424,7 +3402,6 @@
 /obj/effect/paint/silver,
 /obj/machinery/atmospherics/valve/digital,
 /obj/machinery/button/access/exterior{
-	frequency = 1380;
 	id_tag = "noctis";
 	pixel_x = 8;
 	pixel_y = -10
@@ -3771,9 +3748,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/spawner/carbon/human/freightercap{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/noctis/hangar)
 "hv" = (
@@ -4020,8 +3994,7 @@
 /area/noctis/fm)
 "hX" = (
 /obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	frequency = 1379
+	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
@@ -4039,8 +4012,7 @@
 "hZ" = (
 /obj/item/tank/nitrogen,
 /obj/machinery/atmospherics/unary/vent_pump{
-	dir = 8;
-	frequency = 1379
+	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
@@ -4213,7 +4185,6 @@
 /area/noctis/medbay)
 "im" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1380;
 	id_tag = "noctis_outer"
 	},
 /obj/structure/cable/green{
@@ -4415,13 +4386,6 @@
 /obj/structure/grille,
 /turf/simulated/floor/plating,
 /area/space)
-"iE" = (
-/obj/machinery,
-/obj/effect/floor_decal/industrial{
-	icon_state = "danger"
-	},
-/turf/simulated/floor/plating,
-/area/space)
 "iF" = (
 /obj/effect/decal/remains,
 /turf/simulated/floor/plating,
@@ -4462,7 +4426,7 @@
 "iJ" = (
 /obj/machinery/conveyor{
 	dir = 1;
-	id = "piratedisposal"
+	id_tag = "piratedisposal"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
@@ -4799,7 +4763,7 @@
 /area/noctis/disposal)
 "jw" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "piratedisposal"
+	id_tag = "piratedisposal"
 	},
 /turf/simulated/floor/plating,
 /area/noctis/disposal)
@@ -4964,6 +4928,10 @@
 /area/noctis/apm)
 "jP" = (
 /obj/structure/ladder,
+/obj/machinery/door/blast/regular/open{
+	id_tag = "noctisbridge";
+	name = "Bridge Emergency"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/noctis/brdgst)
 "jQ" = (
@@ -5038,7 +5006,6 @@
 /area/noctis/connect)
 "jX" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1379;
 	id_tag = "pirate_fp_int"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -10731,7 +10698,7 @@ jU
 jG
 iU
 ad
-iE
+CM
 gg
 aa
 aa

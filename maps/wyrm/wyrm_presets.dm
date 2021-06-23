@@ -1,7 +1,7 @@
-var/const/NETWORK_SUBWYRM		= "Sub Deck"
-var/const/NETWORK_PRIMWYRM		= "Primary Deck"
-var/const/NETWORK_COMMAND		= "Command"
-var/const/NETWORK_HATCHLING		= "Hatchling"
+#define NETWORK_SUBWYRM "Sub Deck"
+#define NETWORK_PRIMWYRM "Primary Deck"
+#define NETWORK_COMMAND "Command"
+#define NETWORK_HATCHLING "Hatchling"
 
 /datum/map/wyrm/get_network_access(var/network)
 	switch(network)
@@ -275,24 +275,6 @@ var/const/NETWORK_HATCHLING		= "Hatchling"
 		"stripe_vertical_left_full" = COLOR_BABY_BLUE,
 		"stripe_vertical_right_full" = COLOR_GOLD,
 		"security" = COLOR_BABY_BLUE
-	)
-
-/decl/item_modifier/space_suit/salvage
-	name = "Salvage"
-	type_setups = list(
-		/obj/item/clothing/head/helmet/space/void = /obj/item/clothing/head/helmet/space/void/engineering/salvage,
-		/obj/item/clothing/suit/space/void =        /obj/item/clothing/suit/space/void/engineering/salvage
-	)
-
-/obj/machinery/suit_cycler/salvage
-	name = "salvaged suit cycler"
-	model_text = "Engineering"
-	initial_access = list()
-	suit = /obj/item/clothing/suit/space/void/engineering/salvage
-	helmet = /obj/item/clothing/head/helmet/space/void/engineering/salvage
-	boots = /obj/item/clothing/shoes/magboots
-	available_modifications = list(
-		/decl/item_modifier/space_suit/salvage
 	)
 
 /obj/effect/floor_decal/corner/gold

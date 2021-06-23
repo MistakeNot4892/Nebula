@@ -20,6 +20,22 @@
 	suffixes = list("noctis/noctis-1.dmm", "noctis/noctis-2.dmm")
 	cost = 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/raptor)
+	area_usage_test_exempted_root_areas = list(/area/noctis)
+	area_coherency_test_exempt_areas = list(/area/noctis/exteriorl)
+	apc_test_exempt_areas = list(
+		/area/noctis/exteriorl = NO_SCRUBBER|NO_VENT,
+		/area/noctis/apm = NO_SCRUBBER|NO_VENT,
+		/area/noctis/disposal = NO_SCRUBBER|NO_VENT,
+		/area/noctis/reactorch = NO_SCRUBBER|NO_VENT,
+		/area/noctis/raptor = NO_SCRUBBER,
+		/area/noctis/fm = NO_SCRUBBER|NO_VENT,
+		/area/noctis/combint = NO_SCRUBBER|NO_VENT,
+		/area/noctis/atmosc = NO_SCRUBBER|NO_VENT,
+		/area/noctis/atmos = NO_SCRUBBER|NO_VENT,
+		/area/noctis/reactorov = NO_SCRUBBER|NO_VENT,
+		/area/noctis/extconn = NO_SCRUBBER,
+		/area/noctis/fpm = NO_SCRUBBER|NO_VENT
+	)
 
 /obj/effect/overmap/ship/noctis
 	name = "exploration shuttle" //downgraded
@@ -27,13 +43,13 @@
 	vessel_mass = 4000
 	burn_delay = 2 SECONDS
 
-/obj/effect/overmap/ship/noctis/New()
+/obj/effect/overmap/ship/noctis/Initialize()
 	name = "UXO [pick("Khan's Blade", "Liberator", "Serpentine", "Arachnophobia","Sailor's Delight","NULL")]"
 	for(var/area/noctis/A)
 		A.name = "\improper [name] - [A.name]"
 		global.using_map.area_purity_test_exempt_areas += A.type
 	name = "[name], \an [initial(name)]"
-	..()
+	. = ..()
 
 /decl/prefab/ic_assembly/bluespace_radio
 	assembly_name = "bluespace radio" 			//Beware, dragons below

@@ -63,7 +63,6 @@
 
 /obj/item/clothing/ears/skrell/metal
 	name = "gold headtail chains"
-	icon_state = "skrell_chain"
 	//applies_material_name = TRUE
 	applies_material_colour = TRUE
 	material = /decl/material/solid/metal/gold
@@ -95,11 +94,11 @@
 
 /obj/item/clothing/ears/skrell/metal/bluejewels
 	name = "gold and sapphire headtail chains"
-	jewel_color = "#0000CA"
+	jewel_color = "#0000ca"
 
 /obj/item/clothing/ears/skrell/metal/redjewels
 	name = "gold and ruby headtail chains"
-	jewel_color = "#AA0C00"
+	jewel_color = "#aa0c00"
 
 /obj/item/clothing/ears/skrell/metal/band
 	name = "gold headtail bands"
@@ -121,11 +120,11 @@
 
 /obj/item/clothing/ears/skrell/metal/band/bluejewels
 	name = "gold and sapphire headtail bands"
-	jewel_color = "#0000CA"
+	jewel_color = "#0000ca"
 
 /obj/item/clothing/ears/skrell/metal/band/redjewels
 	name = "gold and ruby headtail chains"
-	jewel_color = "#AA0C00"
+	jewel_color = "#aa0c00"
 
 /obj/item/clothing/ears/skrell/cloth_female
 	name = "headtail cloth"
