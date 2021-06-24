@@ -27,8 +27,8 @@
 	. += " [pick(list("Hyperion","Earth","Mars","Venus","Neith","Luna","Halo","Pandora","Neptune","Triton", "Haumea", "Eris", "Makemake"))]"
 
 /decl/language/neoavian
-	name = "Neo-Avian Pidgin" // pigeon
-	desc = "A cluster of melodic, trilling languages spoken by the majority of neo-avian subcultures."
+	name = "Schechi"
+	desc = "A cluster of melodic, trilling languages spoken by the Teshari culture of neo-avians."
 	speech_verb = "chirps"
 	ask_verb = "chirrups"
 	exclaim_verb = "trills"
