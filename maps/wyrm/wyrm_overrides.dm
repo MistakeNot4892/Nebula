@@ -31,6 +31,3 @@
 
 /decl/flooring/tiling/new_tile/steel_ridged
 	color = COLOR_GUNMETAL
-
-/obj/effect/floor_decal/borderfloor
-	color = COLOR_GUNMETAL

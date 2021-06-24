@@ -10526,6 +10526,10 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/airless,
 /area/supply/external)
+"yI" = (
+/obj/structure/ladder,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/sub/mid)
 "yQ" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
@@ -10765,6 +10769,15 @@
 	},
 /turf/simulated/floor/tiled/old_tile/dgrey,
 /area/engineering/tcommsmon)
+"Ag" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/mid)
 "Ah" = (
 /obj/effect/floor_decal/borderfloorblack/corner{
 	dir = 1
@@ -11416,9 +11429,6 @@
 /obj/machinery/commsrelay,
 /turf/simulated/floor/tiled/white,
 /area/engineering/tcomms)
-"Gt" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/maintenance/sub/mid)
 "GC" = (
 /obj/machinery/material_processing/smeltery,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -11512,14 +11522,8 @@
 	},
 /turf/simulated/floor/plating,
 /area/logistics/loading)
-"HQ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
+"HK" = (
+/turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/sub/mid)
 "HV" = (
 /turf/simulated/floor/tiled/techmaint,
@@ -11826,10 +11830,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/civilian/cryo1)
-"Kl" = (
-/obj/structure/ladder,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/sub/mid)
 "Kx" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -12620,9 +12620,8 @@
 /turf/simulated/floor/plating,
 /area/science/shuttleprep)
 "Vh" = (
-/obj/structure/catwalk,
 /obj/machinery/suit_cycler/salvage,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/science/shuttleprep)
 "Vj" = (
 /obj/effect/floor_decal/borderfloorblack/corner,
@@ -37618,7 +37617,7 @@ aa
 aa
 aa
 aa
-Gt
+HK
 bc
 cl
 cl
@@ -37875,7 +37874,7 @@ aa
 aa
 ag
 ag
-Gt
+HK
 bd
 cm
 dn
@@ -37886,7 +37885,7 @@ hz
 HV
 HV
 kS
-Gt
+HK
 ag
 nV
 nV
@@ -38132,9 +38131,9 @@ aa
 aa
 aa
 ag
-Gt
-Gt
-Gt
+HK
+HK
+HK
 do
 eu
 cv
@@ -38143,7 +38142,7 @@ eE
 iw
 jt
 kT
-Gt
+HK
 aa
 aa
 aa
@@ -38389,18 +38388,18 @@ aa
 aa
 Fc
 Fc
-Gt
-Gt
-Gt
-HQ
+HK
+HK
+HK
+Ag
 eu
-Gt
-Gt
-Gt
-Gt
-Gt
-Gt
-Gt
+HK
+HK
+HK
+HK
+HK
+HK
+HK
 ag
 ag
 ag
@@ -38645,14 +38644,14 @@ aa
 aa
 aa
 Fc
-Gt
-Gt
+HK
+HK
 VD
 VD
 dp
 ev
 VD
-Gt
+HK
 ag
 aa
 aa
@@ -38902,14 +38901,14 @@ aa
 aa
 aa
 Fc
-Gt
+HK
 VD
 VD
 cn
 dq
 ew
 VD
-Gt
+HK
 ic
 ca
 aa
@@ -39158,15 +39157,15 @@ aa
 aa
 aa
 aa
-Gt
-Gt
+HK
+HK
 VD
 be
 co
 dr
 ex
 VD
-Gt
+HK
 aa
 aa
 NY
@@ -39415,7 +39414,7 @@ aa
 aa
 aa
 aa
-Gt
+HK
 VD
 VD
 bf
@@ -39423,7 +39422,7 @@ cp
 ds
 ey
 VD
-Gt
+HK
 aa
 NY
 wd
@@ -39672,7 +39671,7 @@ aa
 aa
 aa
 aa
-Gt
+HK
 VD
 ay
 bg
@@ -39680,7 +39679,7 @@ cq
 dt
 ez
 VD
-Gt
+HK
 hB
 hB
 hB
@@ -39929,7 +39928,7 @@ aa
 aa
 aa
 aa
-Gt
+HK
 VD
 az
 bh
@@ -39937,7 +39936,7 @@ VD
 VD
 VD
 VD
-Gt
+HK
 hB
 ix
 ju
@@ -40186,15 +40185,15 @@ aa
 aa
 aa
 aa
-Gt
-Gt
+HK
+HK
 aA
 bi
 eE
 du
 eA
-Gt
-Gt
+HK
+HK
 hB
 Kx
 jv
@@ -40444,13 +40443,13 @@ aa
 aa
 aa
 aa
-Gt
+HK
 QO
 TV
 eE
 dv
 eB
-Gt
+HK
 aa
 hC
 iz
@@ -40701,13 +40700,13 @@ aa
 aa
 aa
 aa
-Gt
+HK
 Zc
 bj
 eE
 dw
 eC
-Gt
+HK
 ag
 hC
 iA
@@ -40958,13 +40957,13 @@ aa
 aa
 ag
 ag
-Gt
+HK
 ML
 bk
 eE
 dx
 eD
-Gt
+HK
 aa
 hC
 iB
@@ -41215,13 +41214,13 @@ aa
 aa
 aa
 aa
-Gt
+HK
 aA
 bi
 eE
 eE
 Kh
-Gt
+HK
 aa
 hB
 iC
@@ -41472,13 +41471,13 @@ aa
 aa
 aa
 aa
-Gt
+HK
 aB
 bl
 cs
 dy
 et
-Gt
+HK
 aa
 hB
 hB
@@ -41729,13 +41728,13 @@ aa
 aa
 aa
 aa
-Gt
-Gt
+HK
+HK
 eE
 eE
-HQ
+Ag
 eu
-Gt
+HK
 aa
 hB
 iD
@@ -41987,12 +41986,12 @@ aa
 aa
 aa
 ag
-Gt
+HK
 bm
 eE
-HQ
+Ag
 eu
-Gt
+HK
 aa
 hB
 iE
@@ -42243,13 +42242,13 @@ aa
 aa
 aa
 aa
-Gt
-Gt
+HK
+HK
 Rx
 eE
-HQ
+Ag
 eF
-Gt
+HK
 aa
 hD
 iF
@@ -42500,13 +42499,13 @@ aa
 aa
 aa
 aa
-Gt
+HK
 aC
 bn
 cw
 dz
 eu
-Gt
+HK
 aa
 hE
 iG
@@ -42757,13 +42756,13 @@ aa
 ag
 ag
 aa
-Gt
+HK
 aA
 aA
 cv
 dA
 eu
-Gt
+HK
 aa
 hE
 iH
@@ -43014,13 +43013,13 @@ aa
 ag
 aa
 aa
-Gt
+HK
 aD
 Ya
 cw
 dB
 eu
-Gt
+HK
 ag
 hF
 iI
@@ -43271,13 +43270,13 @@ ag
 ag
 ag
 ag
-Gt
-Gt
-Gt
-Gt
+HK
+HK
+HK
+HK
 dC
 eG
-Gt
+HK
 aa
 aa
 aa
@@ -43528,13 +43527,13 @@ ag
 aa
 aa
 aa
-Gt
-Kl
+HK
+yI
 bo
 cx
-HQ
+Ag
 Mj
-Gt
+HK
 aa
 aa
 aa
@@ -43785,13 +43784,13 @@ ag
 aa
 aa
 aa
-Gt
-Gt
+HK
+HK
 bp
 Dr
 zY
 eu
-Gt
+HK
 aa
 ZU
 aa
@@ -44043,15 +44042,15 @@ ag
 ag
 ag
 ag
-Gt
+HK
 bq
 cy
 YM
 eu
-Gt
-Gt
-Gt
-Gt
+HK
+HK
+HK
+HK
 ng
 lh
 mh
@@ -44300,7 +44299,7 @@ aa
 aa
 aa
 aa
-Gt
+HK
 br
 Qv
 QU
@@ -44557,7 +44556,7 @@ aa
 aa
 aa
 aa
-Gt
+HK
 YP
 UZ
 dD

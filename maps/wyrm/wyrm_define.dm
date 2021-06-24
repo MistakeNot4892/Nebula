@@ -43,6 +43,8 @@
 	department_money = 0
 	salary_modifier = 0.5
 
+	reboot_sound = null
+
 //Having lost its enigmatic benefactor during the years of the conflict, funding and luck have been in short supply for the vessel.
 //Yet, with the slow return of galactic normalcy, some hope has returned to the eclectic group that remains.
 /datum/map/wyrm/get_map_info()
