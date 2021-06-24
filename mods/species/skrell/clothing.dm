@@ -1,38 +1,28 @@
-/obj/item/clothing/head/helmet/space/void/atmos/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/atmos.dmi')
+#define SKRELL_SPRITE(CLOTHING_PATH, SPRITE_SHEET)                                                   \
+/obj/item/clothing/##CLOTHING_PATH/Initialize() {                                                     \
+	. = ..();                                                                                          \
+	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, file("mods/species/skrell/icons/clothing/"+##SPRITE_SHEET));\
+}
 
-/obj/item/clothing/head/helmet/space/void/engineering/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/engineering.dmi')
+SKRELL_SPRITE(head/helmet/space/void/atmos,"void/atmos.dmi")
 
-/obj/item/clothing/head/helmet/space/void/medical/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/medical.dmi')
+SKRELL_SPRITE(head/helmet/space/void/engineering,"void/engineering.dmi")
 
-/obj/item/clothing/head/helmet/space/void/mining/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/mining.dmi')
+SKRELL_SPRITE(head/helmet/space/void/medical,"void/medical.dmi")
 
-/obj/item/clothing/head/helmet/space/void/pilot/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/pilot.dmi')
+SKRELL_SPRITE(head/helmet/space/void/mining,"void/mining.dmi")
 
-/obj/item/clothing/head/helmet/space/void/engineering/salvage/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/salvage.dmi')
+SKRELL_SPRITE(head/helmet/space/void/pilot,"void/pilot.dmi")
 
-/obj/item/clothing/head/helmet/space/void/security/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/security.dmi')
+SKRELL_SPRITE(head/helmet/space/void/engineering/salvage,"void/salvage.dmi")
 
-/obj/item/clothing/head/helmet/space/void/security/alt/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/security_alt.dmi')
+SKRELL_SPRITE(head/helmet/space/void/security,"void/security.dmi")
 
-/obj/item/clothing/head/helmet/space/void/merc/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_SKRELL, 'mods/species/skrell/icons/clothing/void/syndicate.dmi')
+SKRELL_SPRITE(head/helmet/space/void/security/alt,"void/security_alt.dmi")
+
+SKRELL_SPRITE(head/helmet/space/void/merc,"void/syndicate.dmi")
+
+#undef SKRELL_SPRITE
 
 /datum/gear/uniform/skrell
 	sort_category = "Xenowear"

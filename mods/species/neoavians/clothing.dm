@@ -1,49 +1,13 @@
+#define AVIAN_SPRITE(CLOTHING_PATH, SPRITE_SHEET)                                                      \
+/obj/item/clothing/##CLOTHING_PATH/Initialize() {                                                       \
+	. = ..();                                                                                            \
+	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, file("mods/species/neoavians/icons/clothing/"+##SPRITE_SHEET));\
+}
 
+AVIAN_SPRITE(gloves,"gloves.dmi")
 
-//Shoes
+AVIAN_SPRITE(accessory/cloak,"cloak.dmi")
 
-/obj/item/clothing/shoes/magboots/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/feet/magboots.dmi')
-
-/obj/item/clothing/shoes/galoshes/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/feet/galoshes.dmi')
-
-//Gloves
-
-/obj/item/clothing/gloves/Initialize()
-	. = ..()
-	if(!isnull(bodytype_equip_flags) && !(bodytype_equip_flags & BODY_FLAG_EXCLUDE))
-		bodytype_equip_flags |= BODY_FLAG_AVIAN
-	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/gloves.dmi')
-
-//Backpacks & tanks
-
-/obj/item/storage/backpack/satchel/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/satchel.dmi')
-
-//Radsuits (theyre essential?)
-
-/obj/item/clothing/head/radiation/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/head/rad_helm.dmi')
-
-/obj/item/clothing/suit/radiation/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/suit/rad_suit.dmi')
-
-//cloaks
-/obj/item/clothing/accessory/cloak/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/accessory/cloak.dmi')
-
-/obj/item/clothing/accessory/cloak/hide/Initialize()
-	. = ..()
-	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/accessory/cloak_hide.dmi')
-
-//clothing
 /obj/item/clothing/under/avian_smock
 	name = "smock"
 	desc = "A loose-fitting smock favoured by neo-avians."

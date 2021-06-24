@@ -1,5 +1,6 @@
 #define SPECIES_LIZARD  "Unathi"
 #define LANGUAGE_LIZARD "Sinta'unathi"
+#define BODYTYPE_UNATHI "unathi body"
 #define IS_LIZARD       "unathi"
 
 /decl/modpack/lizard
