@@ -24,8 +24,8 @@
 		else if(target.contains_dense_objects())
 			to_chat(user, SPAN_WARNING("Objects below block \the [src] from deploying!"))
 			return FALSE
-		else if(T.CanZPass(T,DOWN) && target.CanZPass(target,DOWN))
-			to_chat(user, SPAN_WARNING("You can't find anything to support \the [src] on!"))
+		else if(target.is_open() && target.CanZPass(target,DOWN))
+			to_chat(user, SPAN_WARNING("You can't find anything to support \the [src] on below!"))
 			return FALSE
 	else if (istype(T, /turf/simulated/floor) || istype(T, /turf/unsimulated/floor))
 		target = GetAbove(A)
