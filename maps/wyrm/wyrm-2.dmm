@@ -5844,6 +5844,22 @@
 /obj/effect/floor_decal/corner/blue/three_quarters,
 /turf/simulated/floor/tiled/old_tile/dblue,
 /area/command/bridge)
+"mJ" = (
+/obj/structure/catwalk,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1;
+	icon_state = "warning"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/sensor{
+	id_tag = "Engine Subnet";
+	name = "Engine Subnet"
+	},
+/turf/simulated/floor/plating,
+/area/engineering/engine)
 "mK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -12777,6 +12793,10 @@
 	color = "#ff7900";
 	dir = 1
 	},
+/obj/structure/railing/mapped/no_density{
+	color = "#ff7900";
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "zh" = (
@@ -12784,17 +12804,7 @@
 	dir = 8
 	},
 /obj/machinery/meter,
-/obj/structure/railing/mapped/no_density{
-	color = "#ff7900";
-	dir = 4
-	},
-/obj/structure/railing/mapped/no_density{
-	color = "#ff7900";
-	dir = 1
-	},
-/obj/structure/railing/mapped/no_density{
-	color = "#ff7900"
-	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "zi" = (
@@ -12907,6 +12917,11 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine)
 "zs" = (
@@ -12927,6 +12942,11 @@
 	pixel_x = -8;
 	pixel_y = -26
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine)
 "zt" = (
@@ -12941,6 +12961,11 @@
 	icon_state = "warning"
 	},
 /obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine)
 "zv" = (
@@ -16476,10 +16501,6 @@
 /turf/simulated/floor/tiled/old_tile/med,
 /area/medical/virology)
 "Gm" = (
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = -23
-	},
 /obj/structure/bed/padded,
 /obj/item/bedsheet/medical,
 /obj/effect/floor_decal/corner/paleblue/three_quarters,
@@ -16547,6 +16568,10 @@
 /obj/machinery/camera/network/medbay{
 	c_tag = "Patient Ward";
 	dir = 8
+	},
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = -28
 	},
 /turf/simulated/floor/tiled/old_tile/med,
 /area/medical/storage)
@@ -17543,6 +17568,7 @@
 /area/security/brig)
 "KU" = (
 /obj/machinery/power/sensor{
+	id_tag = "Primary Deck";
 	name = "Primary Deck Sensor"
 	},
 /obj/structure/cable{
@@ -62566,7 +62592,7 @@ tj
 nM
 tl
 mu
-zx
+mJ
 Bk
 ZW
 aa

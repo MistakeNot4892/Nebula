@@ -120,7 +120,7 @@
 "at" = (
 /obj/structure/grille,
 /turf/simulated/floor/asteroid,
-/area/command/aiatmos)
+/area/space)
 "au" = (
 /obj/structure/lattice,
 /turf/space,
@@ -986,7 +986,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating/airless,
-/area/space)
+/area/supply/external)
 "cv" = (
 /obj/random/junk,
 /turf/simulated/floor/plating,
@@ -1288,6 +1288,7 @@
 /area/engineering/subsmes)
 "cV" = (
 /obj/machinery/power/sensor{
+	id_tag = "Sub Deck";
 	name = "Sub Deck Powernet Sensor"
 	},
 /obj/structure/cable/orange{
@@ -1517,6 +1518,9 @@
 	},
 /obj/item/storage/pill_bottle,
 /obj/item/chems/glass/beaker,
+/obj/item/chems/pill/gleam,
+/obj/item/chems/pill/gleam,
+/obj/item/chems/pill/zoom,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/sub/mid)
 "dw" = (
@@ -1528,6 +1532,8 @@
 	dir = 1
 	},
 /obj/item/chems/glass/beaker,
+/obj/item/chems/pill/happy,
+/obj/item/chems/pill/stox,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/sub/mid)
 "dx" = (
@@ -1860,14 +1866,19 @@
 /turf/space,
 /area/space)
 "eg" = (
-/obj/structure/grille,
-/obj/structure/lattice,
-/turf/space,
-/area/command/aiupload)
+/obj/machinery/pointdefense{
+	initial_id_tag = "wyrm"
+	},
+/turf/simulated/floor/plating/airless,
+/area/supply/external)
 "eh" = (
-/obj/structure/lattice,
-/turf/space,
-/area/command/aiupload)
+/obj/structure/closet/crate,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/stack/material/pane/mapped/borosilicate/ten,
+/turf/simulated/floor/tiled/techfloor/grid{
+	initial_gas = null
+	},
+/area/supply/external)
 "ei" = (
 /obj/effect/paint/silver,
 /turf/simulated/wall/r_wall,
@@ -1879,9 +1890,8 @@
 /turf/simulated/floor/plating,
 /area/command/aiuploadfoyer)
 "ek" = (
-/obj/structure/lattice,
-/turf/space,
-/area/command/aicore)
+/turf/simulated/wall/r_wall/prepainted,
+/area/maintenance/sub/mid)
 "el" = (
 /obj/machinery/porta_turret/stationary,
 /turf/simulated/floor/plating,
@@ -2309,10 +2319,9 @@
 /turf/space,
 /area/engineering/extsubmaint)
 "fm" = (
-/obj/structure/lattice,
-/obj/structure/grille,
-/turf/space,
-/area/command/aiupload)
+/obj/structure/ladder,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/sub/mid)
 "fn" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -5797,6 +5806,7 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/power/sensor{
+	id_tag = "AI Subnet";
 	name = "AI Subnet Sensor"
 	},
 /obj/structure/table/standard,
@@ -6517,21 +6527,22 @@
 /turf/simulated/floor/plating,
 /area/science/shuttleprep)
 "np" = (
-/obj/structure/closet/wardrobe/science_white,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/structure/closet/wardrobe/robotics_black,
+/obj/item/clothing/glasses/welding,
 /obj/item/storage/box/gloves,
 /obj/item/storage/box/masks,
 /turf/simulated/floor/tiled/old_cargo/hallway,
 /area/science/prep)
 "nq" = (
-/obj/structure/closet/wardrobe/robotics_black,
 /obj/machinery/camera/network/research{
 	c_tag = "Research Lockers"
 	},
-/obj/item/clothing/glasses/welding,
+/obj/structure/closet/secure_closet/wyrmresearcher,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/old_cargo/hallway,
 /area/science/prep)
 "nr" = (
@@ -6752,10 +6763,14 @@
 /turf/simulated/floor/plating/airless,
 /area/engineering/extsubmaint)
 "nP" = (
-/obj/structure/grille,
-/obj/structure/lattice,
-/turf/space,
-/area/command/aicomputer)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/sub/mid)
 "nQ" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/computer/modular/preset/security{
@@ -7296,9 +7311,11 @@
 /turf/space,
 /area/engineering/extsubmaint)
 "oP" = (
-/obj/structure/lattice,
-/turf/space,
-/area/command/aicomputer)
+/obj/machinery/pointdefense{
+	initial_id_tag = "wyrm"
+	},
+/turf/simulated/floor/plating/airless,
+/area/command/aiupload)
 "oQ" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/computer/modular/preset/aislot/research{
@@ -9456,10 +9473,9 @@
 /turf/simulated/floor/plating/airless,
 /area/engineering/extsubmaint)
 "sN" = (
-/obj/structure/grille,
 /obj/structure/lattice,
 /turf/space,
-/area/command/aicore)
+/area/command/aiupload)
 "sO" = (
 /obj/machinery/computer/modular/preset/aislot/sysadmin{
 	dir = 4
@@ -9479,6 +9495,7 @@
 "sQ" = (
 /obj/structure/cable/blue,
 /obj/machinery/power/sensor{
+	id_tag = "Telecomms Subnet";
 	name = "Telecommunications Subnet Sensor"
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
@@ -10245,7 +10262,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/airless,
-/area/space)
+/area/supply/external)
 "vG" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -10325,10 +10342,6 @@
 /obj/structure/grille,
 /obj/structure/lattice,
 /turf/space,
-/area/space)
-"wI" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/airless,
 /area/space)
 "wR" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -10526,10 +10539,6 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating/airless,
 /area/supply/external)
-"yI" = (
-/obj/structure/ladder,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/sub/mid)
 "yQ" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
@@ -10769,15 +10778,6 @@
 	},
 /turf/simulated/floor/tiled/old_tile/dgrey,
 /area/engineering/tcommsmon)
-"Ag" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/sub/mid)
 "Ah" = (
 /obj/effect/floor_decal/borderfloorblack/corner{
 	dir = 1
@@ -11096,7 +11096,7 @@
 	},
 /obj/structure/lattice,
 /turf/space,
-/area/space)
+/area/supply/external)
 "Dc" = (
 /obj/machinery/light/small/red{
 	dir = 1;
@@ -11522,9 +11522,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/logistics/loading)
-"HK" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/maintenance/sub/mid)
 "HV" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/sub/mid)
@@ -11807,10 +11804,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/supply/bsa)
-"Kh" = (
-/obj/effect/paint/black,
-/turf/simulated/wall/r_wall/false,
-/area/maintenance/sub/mid)
 "Ki" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access = null
@@ -11819,7 +11812,7 @@
 /area/science/shuttleprep)
 "Kj" = (
 /obj/machinery/power/smes/buildable{
-	RCon_tag = "Secondary Cyro";
+	RCon_tag = "Priamry Cyro Backup";
 	charge = 5e+005;
 	input_attempt = 1;
 	output_attempt = 1
@@ -27598,18 +27591,18 @@ aa
 aa
 aa
 aa
-eg
-fm
-fm
-fm
+wD
+uW
+uW
+uW
 aa
 aa
+oP
 aa
 aa
-aa
-nP
-nP
-nP
+wD
+wD
+wD
 aa
 aa
 aa
@@ -27855,19 +27848,19 @@ aa
 aa
 aa
 aa
-eh
-eh
+ag
+ag
 aa
-eh
-eh
+ag
+ag
+aa
+sN
 aa
 aa
 aa
+ag
 aa
-aa
-oP
-aa
-oP
+ag
 aa
 aa
 aa
@@ -28112,7 +28105,7 @@ aa
 aa
 aa
 aa
-eh
+ag
 aa
 gu
 aa
@@ -28122,9 +28115,9 @@ if
 if
 if
 aa
-oP
+ag
 pZ
-oP
+ag
 aa
 aa
 aa
@@ -29654,7 +29647,7 @@ hs
 ft
 hs
 aa
-ek
+ag
 aa
 aa
 ag
@@ -29664,9 +29657,9 @@ kx
 fq
 fq
 aa
-ek
+ag
 aa
-ek
+ag
 aa
 aa
 aa
@@ -29911,7 +29904,7 @@ hs
 ft
 hs
 aa
-ek
+ag
 aa
 aa
 fq
@@ -29921,9 +29914,9 @@ kr
 lJ
 fq
 fq
-ek
+ag
 aa
-ek
+ag
 aa
 aa
 aa
@@ -30168,7 +30161,7 @@ hs
 ft
 hs
 aa
-ek
+ag
 aa
 fq
 fq
@@ -30180,8 +30173,8 @@ fq
 fq
 fq
 aa
-ek
-ek
+ag
+ag
 aa
 aa
 aa
@@ -30424,7 +30417,7 @@ ag
 ht
 aR
 hs
-au
+ag
 el
 fq
 fq
@@ -30438,8 +30431,8 @@ fr
 fq
 fq
 el
-ek
-sN
+ag
+wD
 aa
 aa
 aa
@@ -30696,7 +30689,7 @@ fq
 fq
 aa
 aa
-sN
+wD
 aa
 aa
 aa
@@ -30953,7 +30946,7 @@ fq
 fr
 qU
 aa
-sN
+wD
 aa
 aa
 ah
@@ -31210,7 +31203,7 @@ fq
 fq
 aa
 aa
-sN
+wD
 aa
 aa
 aa
@@ -31452,7 +31445,7 @@ aa
 hs
 ft
 hs
-au
+ag
 el
 fq
 fq
@@ -31466,8 +31459,8 @@ fr
 fq
 fq
 el
-ek
-sN
+ag
+wD
 aa
 aa
 aa
@@ -31722,7 +31715,7 @@ fq
 fq
 fq
 aa
-au
+ag
 aa
 aa
 aa
@@ -31979,7 +31972,7 @@ fq
 fq
 aa
 aa
-au
+ag
 aa
 aa
 aa
@@ -32227,16 +32220,16 @@ aa
 aa
 aa
 aa
-au
+ag
 fq
 fq
 kz
 fq
 fq
-au
+ag
 aa
 aa
-au
+ag
 Ye
 Ye
 VF
@@ -32484,16 +32477,16 @@ hs
 hs
 hs
 hs
-au
+ag
 el
 aa
 kA
 aa
 el
-au
-au
-au
-au
+ag
+ag
+ag
+ag
 at
 at
 VF
@@ -32741,15 +32734,15 @@ ft
 ft
 fs
 ht
-au
+ag
 aa
 aa
 kB
 aa
 aa
-au
+ag
 aa
-au
+ag
 Ye
 VF
 RI
@@ -32998,15 +32991,15 @@ hs
 hs
 ft
 hs
-au
+ag
 il
 ji
 kC
 aa
 aa
-au
+ag
 aa
-au
+ag
 aa
 RI
 RI
@@ -33250,18 +33243,18 @@ aa
 aa
 aa
 aa
-au
+ag
 aa
 hs
 ft
 hs
-au
+ag
 aa
 aa
 kD
 aa
 aa
-au
+ag
 aa
 oT
 oT
@@ -33507,18 +33500,18 @@ aa
 aa
 aa
 aa
-au
-au
+ag
+ag
 ht
 aR
 hs
-au
-au
-au
+ag
+ag
+ag
 kD
-au
-au
-au
+ag
+ag
+ag
 aa
 oT
 qV
@@ -33764,7 +33757,7 @@ aa
 aa
 aa
 aa
-au
+ag
 aa
 hs
 ft
@@ -34019,9 +34012,9 @@ aa
 aa
 aa
 aa
-au
-au
-au
+ag
+ag
+ag
 aa
 hs
 fu
@@ -34276,9 +34269,9 @@ aa
 aa
 aa
 aa
-au
+ag
 aa
-au
+ag
 aa
 hs
 fv
@@ -34533,9 +34526,9 @@ aa
 aa
 aa
 aa
-au
+ag
 aS
-au
+ag
 aa
 hs
 fv
@@ -34790,7 +34783,7 @@ aa
 aa
 aa
 aa
-au
+ag
 an
 an
 an
@@ -37617,7 +37610,7 @@ aa
 aa
 aa
 aa
-HK
+ek
 bc
 cl
 cl
@@ -37874,7 +37867,7 @@ aa
 aa
 ag
 ag
-HK
+ek
 bd
 cm
 dn
@@ -37885,7 +37878,7 @@ hz
 HV
 HV
 kS
-HK
+ek
 ag
 nV
 nV
@@ -38131,9 +38124,9 @@ aa
 aa
 aa
 ag
-HK
-HK
-HK
+ek
+ek
+ek
 do
 eu
 cv
@@ -38142,7 +38135,7 @@ eE
 iw
 jt
 kT
-HK
+ek
 aa
 aa
 aa
@@ -38388,18 +38381,18 @@ aa
 aa
 Fc
 Fc
-HK
-HK
-HK
-Ag
+ek
+ek
+ek
+nP
 eu
-HK
-HK
-HK
-HK
-HK
-HK
-HK
+ek
+ek
+ek
+ek
+ek
+ek
+ek
 ag
 ag
 ag
@@ -38644,14 +38637,14 @@ aa
 aa
 aa
 Fc
-HK
-HK
+ek
+ek
 VD
 VD
 dp
 ev
 VD
-HK
+ek
 ag
 aa
 aa
@@ -38901,14 +38894,14 @@ aa
 aa
 aa
 Fc
-HK
+ek
 VD
 VD
 cn
 dq
 ew
 VD
-HK
+ek
 ic
 ca
 aa
@@ -39157,15 +39150,15 @@ aa
 aa
 aa
 aa
-HK
-HK
+ek
+ek
 VD
 be
 co
 dr
 ex
 VD
-HK
+ek
 aa
 aa
 NY
@@ -39414,7 +39407,7 @@ aa
 aa
 aa
 aa
-HK
+ek
 VD
 VD
 bf
@@ -39422,7 +39415,7 @@ cp
 ds
 ey
 VD
-HK
+ek
 aa
 NY
 wd
@@ -39671,7 +39664,7 @@ aa
 aa
 aa
 aa
-HK
+ek
 VD
 ay
 bg
@@ -39679,7 +39672,7 @@ cq
 dt
 ez
 VD
-HK
+ek
 hB
 hB
 hB
@@ -39928,7 +39921,7 @@ aa
 aa
 aa
 aa
-HK
+ek
 VD
 az
 bh
@@ -39936,7 +39929,7 @@ VD
 VD
 VD
 VD
-HK
+ek
 hB
 ix
 ju
@@ -40185,15 +40178,15 @@ aa
 aa
 aa
 aa
-HK
-HK
+ek
+ek
 aA
 bi
 eE
 du
 eA
-HK
-HK
+ek
+ek
 hB
 Kx
 jv
@@ -40443,13 +40436,13 @@ aa
 aa
 aa
 aa
-HK
+ek
 QO
 TV
 eE
 dv
 eB
-HK
+ek
 aa
 hC
 iz
@@ -40700,13 +40693,13 @@ aa
 aa
 aa
 aa
-HK
+ek
 Zc
 bj
 eE
 dw
 eC
-HK
+ek
 ag
 hC
 iA
@@ -40957,13 +40950,13 @@ aa
 aa
 ag
 ag
-HK
+ek
 ML
 bk
 eE
 dx
 eD
-HK
+ek
 aa
 hC
 iB
@@ -41214,13 +41207,13 @@ aa
 aa
 aa
 aa
-HK
+ek
 aA
 bi
 eE
 eE
-Kh
-HK
+Rx
+ek
 aa
 hB
 iC
@@ -41471,13 +41464,13 @@ aa
 aa
 aa
 aa
-HK
+ek
 aB
 bl
 cs
 dy
 et
-HK
+ek
 aa
 hB
 hB
@@ -41728,13 +41721,13 @@ aa
 aa
 aa
 aa
-HK
-HK
+ek
+ek
 eE
 eE
-Ag
+nP
 eu
-HK
+ek
 aa
 hB
 iD
@@ -41986,12 +41979,12 @@ aa
 aa
 aa
 ag
-HK
+ek
 bm
 eE
-Ag
+nP
 eu
-HK
+ek
 aa
 hB
 iE
@@ -42242,13 +42235,13 @@ aa
 aa
 aa
 aa
-HK
-HK
+ek
+ek
 Rx
 eE
-Ag
+nP
 eF
-HK
+ek
 aa
 hD
 iF
@@ -42499,13 +42492,13 @@ aa
 aa
 aa
 aa
-HK
+ek
 aC
 bn
 cw
 dz
 eu
-HK
+ek
 aa
 hE
 iG
@@ -42756,13 +42749,13 @@ aa
 ag
 ag
 aa
-HK
+ek
 aA
 aA
 cv
 dA
 eu
-HK
+ek
 aa
 hE
 iH
@@ -43013,13 +43006,13 @@ aa
 ag
 aa
 aa
-HK
+ek
 aD
 Ya
 cw
 dB
 eu
-HK
+ek
 ag
 hF
 iI
@@ -43270,13 +43263,13 @@ ag
 ag
 ag
 ag
-HK
-HK
-HK
-HK
+ek
+ek
+ek
+ek
 dC
 eG
-HK
+ek
 aa
 aa
 aa
@@ -43527,13 +43520,13 @@ ag
 aa
 aa
 aa
-HK
-yI
+ek
+fm
 bo
 cx
-Ag
+nP
 Mj
-HK
+ek
 aa
 aa
 aa
@@ -43784,13 +43777,13 @@ ag
 aa
 aa
 aa
-HK
-HK
+ek
+ek
 bp
 Dr
 zY
 eu
-HK
+ek
 aa
 ZU
 aa
@@ -44042,15 +44035,15 @@ ag
 ag
 ag
 ag
-HK
+ek
 bq
 cy
 YM
 eu
-HK
-HK
-HK
-HK
+ek
+ek
+ek
+ek
 ng
 lh
 mh
@@ -44299,7 +44292,7 @@ aa
 aa
 aa
 aa
-HK
+ek
 br
 Qv
 QU
@@ -44556,7 +44549,7 @@ aa
 aa
 aa
 aa
-HK
+ek
 YP
 UZ
 dD
@@ -48142,7 +48135,7 @@ aa
 aa
 aa
 aa
-XC
+ct
 aa
 aa
 OL
@@ -48657,8 +48650,8 @@ aa
 aa
 Dz
 vE
-ag
-ag
+Ht
+Ht
 CV
 ot
 rr
@@ -48911,9 +48904,9 @@ aa
 aa
 aa
 aa
-aa
-Dz
-wI
+eg
+CV
+ot
 aa
 aa
 aa
@@ -49170,7 +49163,7 @@ aa
 aa
 aa
 Dz
-Xf
+Jh
 aa
 aa
 aa
@@ -49427,7 +49420,7 @@ aa
 aa
 aa
 aa
-aa
+WU
 aa
 aa
 aa
@@ -49684,7 +49677,7 @@ aa
 aa
 aa
 Dz
-Xf
+Jh
 aa
 aa
 aa
@@ -53287,7 +53280,7 @@ aa
 Ca
 Ht
 OR
-OR
+eh
 Uk
 RJ
 Ca

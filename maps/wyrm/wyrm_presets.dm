@@ -150,6 +150,17 @@
 		"tool" = COLOR_BEASTY_BROWN,
 	)
 
+/obj/structure/closet/wardrobe/robotics_black/Initialize()
+	. = ..()
+	new /obj/item/clothing/under/roboticist(src)
+	new /obj/item/clothing/under/roboticist(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/roboticist(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/roboticist(src)
+	new /obj/item/clothing/shoes/color/black(src)
+	new /obj/item/clothing/shoes/color/black(src)
+	new /obj/item/clothing/gloves/thick(src)
+	new /obj/item/clothing/gloves/thick(src)
+
 /obj/structure/closet/secure_closet/wyrmresearcher
 	name = "researchers' locker"
 	closet_appearance = /decl/closet_appearance/secure_closet/wyrmresearcher
@@ -159,6 +170,7 @@
 	return list(
 		/obj/item/clothing/under/polo/wyrm,
 		/obj/item/clothing/under/research_director/rdalt,
+		/obj/item/clothing/suit/storage/toggle/labcoat/chemist,
 		/obj/item/clothing/suit/storage/toggle/labcoat/biologist,
 		/obj/item/clothing/shoes/dress,
 		/obj/item/clothing/shoes/dress,
@@ -169,8 +181,9 @@
 
 /decl/closet_appearance/secure_closet/wyrmresearcher
 	color = COLOR_OFF_WHITE
+	decals = list()
 	extra_decals = list(
-		"stripe_vertical_mid_full" = COLOR_CLOSET_GOLD,
+		"stripe_vertical_mid_full" = COLOR_GOLD,
 		"stripe_vertical_left_full" = COLOR_PURPLE,
 		"stripe_vertical_right_full" = COLOR_PURPLE,
 		"research" = COLOR_CLOSET_GOLD
