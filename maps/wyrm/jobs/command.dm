@@ -174,7 +174,7 @@
 		access_sec_doors,
 		access_hos,
 		access_armory,
-		access_forensics_lockers,
+		access_brig,
 		access_bridge,
 		access_medical,
 		access_engine,

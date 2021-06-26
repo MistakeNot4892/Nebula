@@ -38,6 +38,8 @@
 /obj/machinery/vending/wallmed2
 	markup = 0
 
+/obj/machinery/vending/robotics 
+	markup = 0
 
 /datum/computer_file/program/supermatter_monitor
 	available_on_network = 0

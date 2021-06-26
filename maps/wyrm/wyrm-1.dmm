@@ -9472,10 +9472,6 @@
 /obj/machinery/atmospherics/pipe/zpipe/up/fuel,
 /turf/simulated/floor/plating/airless,
 /area/engineering/extsubmaint)
-"sN" = (
-/obj/structure/lattice,
-/turf/space,
-/area/command/aiupload)
 "sO" = (
 /obj/machinery/computer/modular/preset/aislot/sysadmin{
 	dir = 4
@@ -9714,7 +9710,6 @@
 /turf/simulated/floor/tiled/white,
 /area/science/xenoflora)
 "ts" = (
-/obj/structure/table/glass,
 /obj/machinery/reagentgrinder,
 /obj/item/storage/box/botanydisk,
 /obj/item/radio/intercom{
@@ -10302,7 +10297,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/supply/external)
 "wd" = (
-/obj/machinery/porta_turret/stationary,
+/obj/machinery/pointdefense,
 /turf/simulated/floor/reinforced/airless,
 /area/hatchling/start)
 "we" = (
@@ -27597,7 +27592,7 @@ uW
 uW
 aa
 aa
-oP
+aa
 aa
 aa
 wD
@@ -27854,7 +27849,7 @@ aa
 ag
 ag
 aa
-sN
+oP
 aa
 aa
 aa

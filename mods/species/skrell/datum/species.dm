@@ -2,7 +2,9 @@
 	name = SPECIES_SKRELL
 	name_plural = SPECIES_SKRELL
 	preview_icon = 'mods/species/skrell/icons/preview.dmi'
-	//skin_material = /decl/material/solid/skin/skrell
+	meat_type = /obj/item/chems/food/snacks/squid
+
+	unarmed_attacks = list(/decl/natural_attack/stomp, /decl/natural_attack/kick, /decl/natural_attack/punch)
 
 	available_bodytypes = list(
 		/decl/bodytype/skrell,

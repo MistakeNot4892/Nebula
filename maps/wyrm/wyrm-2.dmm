@@ -2895,14 +2895,18 @@
 /turf/simulated/floor/tiled,
 /area/engineering/locker)
 "gX" = (
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	initial_access = null
+	},
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/locker)
 "gY" = (
-/obj/machinery/vending/engineering,
+/obj/machinery/vending/engineering{
+	initial_access = null
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/locker)
 "gZ" = (
@@ -6589,7 +6593,7 @@
 	id_tag = "directsublight";
 	name = "valve theta"
 	},
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/wall/ocp_wall,
 /area/engineering/externalmaint)
 "nU" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
@@ -12130,7 +12134,7 @@
 /turf/simulated/floor/tiled/old_tile/dblue,
 /area/command/bridge)
 "xO" = (
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/wall/ocp_wall,
 /area/engineering/externalmaint)
 "xP" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -12520,27 +12524,31 @@
 	dir = 1;
 	icon_state = "warning"
 	},
-/obj/effect/floor_decal/borderfloorwhite/corner,
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 4
+	},
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/mob/living/simple_animal/cat/fluff/runtime{
+	desc = "Echo, your faithful compainion in the outer rim.";
+	name = "Echo"
+	},
 /turf/simulated/floor/tiled/old_tile,
 /area/science/rnd)
 "yI" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1;
-	icon_state = "warning"
+/obj/machinery/computer/design_console{
+	dir = 8
 	},
-/obj/effect/floor_decal/borderfloorwhite,
-/turf/simulated/floor/tiled/old_tile,
+/turf/simulated/floor/tiled/old_cargo/med,
 /area/science/rnd)
 "yJ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
 	icon_state = "warning"
 	},
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/structure/bed/chair/office/light,
-/mob/living/simple_animal/cat/fluff/runtime{
-	desc = "Echo, your faithful compainion in the outer rim.";
-	name = "Echo"
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/science/rnd)
@@ -12548,9 +12556,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
 	icon_state = "warning"
-	},
-/obj/effect/floor_decal/borderfloorwhite/corner{
-	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 26
@@ -13363,7 +13368,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/stack/material/shiny/mapped/aluminium/forty,
 /turf/simulated/floor/tiled/old_tile/dblue,
 /area/science/robotics)
 "Ar" = (
@@ -13375,6 +13379,10 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
+/obj/structure/table/rack,
+/obj/item/stack/material/shiny/mapped/aluminium/forty,
+/obj/item/stack/material/panel/mapped/plastic/ten,
+/obj/item/stack/material/ingot/mapped/osmium/ten,
 /turf/simulated/floor/tiled/old_tile/dblue,
 /area/science/robotics)
 "As" = (
@@ -13422,10 +13430,10 @@
 /turf/simulated/floor/tiled/old_cargo/med,
 /area/science/rnd)
 "Ay" = (
-/obj/machinery/computer/design_console{
-	dir = 1
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/old_cargo/med,
+/turf/simulated/floor/tiled/old_tile,
 /area/science/rnd)
 "Az" = (
 /obj/structure/table/rack,
@@ -13912,6 +13920,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/pod/start)
+"BC" = (
+/obj/machinery/door/airlock/research{
+	name = "Research and Development";
+	req_access = null
+	},
+/turf/simulated/floor/tiled/old_cargo/med,
+/area/science/rnd)
 "BD" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -14193,9 +14208,6 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/science/rnd)
 "Ca" = (
-/obj/effect/floor_decal/borderfloorwhite/corner{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -15266,9 +15278,6 @@
 /turf/simulated/floor/tiled/old_tile/med,
 /area/engineering/atmosmon)
 "DL" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8
-	},
 /obj/machinery/light/small{
 	dir = 4;
 	icon_state = "bulb1"
@@ -15570,6 +15579,10 @@
 /obj/machinery/camera/network/engineering{
 	c_tag = "External Maintenance - Chamber Input"
 	},
+/obj/machinery/light/small/red{
+	dir = 1;
+	icon_state = "firelight1"
+	},
 /turf/simulated/open,
 /area/engineering/externalmaint)
 "Em" = (
@@ -15699,6 +15712,7 @@
 /obj/structure/reagent_dispensers/acid{
 	pixel_y = -32
 	},
+/obj/item/clothing/glasses/science,
 /turf/simulated/floor/tiled/old_cargo/med,
 /area/science/rnd)
 "EG" = (
@@ -17273,12 +17287,6 @@
 /turf/simulated/floor/tiled/old_tile,
 /area/science/rnd)
 "HN" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
@@ -17286,6 +17294,12 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/old_tile,
 /area/science/rnd)
@@ -18326,7 +18340,7 @@
 	},
 /obj/item/paper/sticky{
 	color = "#5555cc";
-	info = "We're already down to just two weeks worth of trit., are y'all running more than 1:2 again?";
+	info = "We're already down to just two weeks worth of trit., are y'all running more than 1:3 again?";
 	name = "fuel";
 	pixel_x = -3;
 	pixel_y = 2
@@ -18566,6 +18580,14 @@
 /obj/item/flashlight/lamp/green,
 /turf/simulated/floor/tiled/old_tile/med,
 /area/engineering/rustmon)
+"Vu" = (
+/obj/structure/lattice,
+/obj/machinery/light/small/red{
+	dir = 1;
+	icon_state = "firelight1"
+	},
+/turf/space,
+/area/engineering/externalmaint)
 "Vy" = (
 /obj/structure/cable/yellow{
 	d1 = 6;
@@ -49743,7 +49765,7 @@ GU
 Hk
 pb
 pb
-pb
+BC
 pb
 pb
 pb
@@ -64907,7 +64929,7 @@ jf
 jf
 jf
 ZW
-aL
+Vu
 En
 Ft
 Gf

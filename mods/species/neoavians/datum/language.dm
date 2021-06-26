@@ -6,7 +6,7 @@
 	ask_verb = "rattles"
 	exclaim_verb = "calls"
 	colour = "alien"
-	key = "v"
+	key = "i"
 	flags = WHITELISTED
 	space_chance = 50
 	syllables = list(
@@ -33,7 +33,7 @@
 	ask_verb = "chirrups"
 	exclaim_verb = "trills"
 	colour = "alien"
-	key = "i"
+	key = "v"
 	flags = WHITELISTED
 	space_chance = 50
 	syllables = list(

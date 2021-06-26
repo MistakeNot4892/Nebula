@@ -7,11 +7,16 @@
 /turf/simulated/floor/tiled/dark/airless,
 /area/space)
 "ac" = (
-/obj/effect/paint/silver,
-/obj/machinery/button/blast_door{
+/obj/machinery/door/blast/shutters{
 	id_tag = "cargodrone"
 	},
-/turf/simulated/wall/titanium,
+/obj/machinery/button/blast_door{
+	id_tag = "cargodrone";
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/white/monotile{
+	initial_gas = null
+	},
 /area/supply/dock)
 "al" = (
 /turf/unsimulated/wall,
@@ -52,7 +57,7 @@
 "at" = (
 /obj/machinery/light/small/red{
 	dir = 1;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -71,7 +76,7 @@
 "aw" = (
 /obj/machinery/light/small/red{
 	dir = 1;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -126,7 +131,7 @@
 "aE" = (
 /obj/machinery/light/small/red{
 	dir = 8;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /obj/random/junk,
 /turf/simulated/floor/tiled/dark,
@@ -247,7 +252,7 @@
 	name = "fence"
 	},
 /obj/effect/floor_decal/corner/red{
-	dir = 10;
+	dir = 10
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/cable{
@@ -315,7 +320,7 @@
 	name = "fence"
 	},
 /obj/effect/floor_decal/corner/red{
-	dir = 6;
+	dir = 6
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -368,14 +373,14 @@
 "bh" = (
 /obj/machinery/light/small/red{
 	dir = 8;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /turf/simulated/floor/plating,
 /area/fightclub)
 "bi" = (
 /obj/machinery/light/small/red{
 	dir = 4;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/plating,
@@ -391,7 +396,7 @@
 "bl" = (
 /obj/machinery/light/small/red{
 	dir = 8;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/fightclub)
@@ -435,7 +440,7 @@
 "bs" = (
 /obj/machinery/light/small/red{
 	dir = 4;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /turf/simulated/floor/plating,
 /area/fightclub)
@@ -522,7 +527,7 @@
 	name = "fence"
 	},
 /obj/effect/floor_decal/corner/red{
-	dir = 6;
+	dir = 6
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -622,7 +627,7 @@
 	name = "fence"
 	},
 /obj/effect/floor_decal/corner/red{
-	dir = 5;
+	dir = 5
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -651,7 +656,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1;
-	icon_state = "warningcorner";
+	icon_state = "warningcorner"
 	},
 /obj/structure/cable,
 /obj/structure/cable{
@@ -682,7 +687,7 @@
 "bN" = (
 /obj/machinery/light/small/red{
 	dir = 8;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -699,20 +704,20 @@
 /area/fightclub)
 "bP" = (
 /obj/effect/floor_decal/corner/blue/three_quarters{
-	dir = 8;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/fightclub)
 "bQ" = (
 /obj/effect/floor_decal/corner/blue{
-	dir = 5;
+	dir = 5
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/white,
 /area/fightclub)
 "bR" = (
 /obj/effect/floor_decal/corner/blue{
-	dir = 5;
+	dir = 5
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -754,7 +759,7 @@
 "bX" = (
 /obj/machinery/light/small/red{
 	dir = 4;
-	icon_state = "firelight1";
+	icon_state = "firelight1"
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/tiled/dark,
@@ -777,7 +782,7 @@
 /area/fightclub)
 "cc" = (
 /obj/effect/floor_decal/corner/blue{
-	dir = 9;
+	dir = 9
 	},
 /obj/random/junk,
 /turf/simulated/floor/tiled/white,
@@ -1365,7 +1370,7 @@
 "dn" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1";
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled,
 /area/acting/stage)
@@ -1529,7 +1534,7 @@
 /area/tdome/tdome2)
 "dF" = (
 /turf/unsimulated/floor{
-	icon_state = "bcircuit";
+	icon_state = "bcircuit"
 	},
 /area/tdome)
 "dG" = (
@@ -1538,7 +1543,7 @@
 	name = "Thunderdome Flash"
 	},
 /turf/unsimulated/floor{
-	icon_state = "bcircuit";
+	icon_state = "bcircuit"
 	},
 /area/tdome)
 "dH" = (
@@ -1573,7 +1578,7 @@
 "dK" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/unsimulated/floor{
-	icon_state = "bcircuit";
+	icon_state = "bcircuit"
 	},
 /area/tdome)
 "dL" = (
@@ -1582,7 +1587,7 @@
 	invisibility = 101
 	},
 /turf/unsimulated/floor{
-	icon_state = "bcircuit";
+	icon_state = "bcircuit"
 	},
 /area/tdome)
 "dM" = (
@@ -1614,7 +1619,7 @@
 /area/acting/backstage)
 "dQ" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5;
+	dir = 5
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1630,7 +1635,7 @@
 /area/tdome)
 "dS" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 9;
+	dir = 9
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1986,19 +1991,19 @@
 /area/tdome/tdomeadmin)
 "eN" = (
 /obj/effect/floor_decal/corner/paleblue{
-	dir = 4;
+	dir = 4
 	},
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_surgery)
 "eO" = (
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
-	dir = 1;
+	dir = 1
 	},
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_surgery)
 "eP" = (
 /obj/effect/floor_decal/corner/paleblue{
-	dir = 1;
+	dir = 1
 	},
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_surgery)
@@ -2054,10 +2059,10 @@
 /area/tdome/tdomeadmin)
 "fd" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8;
+	dir = 8
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 4;
+	dir = 4
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
@@ -2071,7 +2076,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 1;
-	icon_state = "warningcee";
+	icon_state = "warningcee"
 	},
 /turf/simulated/floor/plating,
 /area/drone_test)
@@ -2113,10 +2118,10 @@
 /area/drone_test)
 "fW" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 4;
+	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8;
+	dir = 8
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
@@ -2172,14 +2177,14 @@
 "hc" = (
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 8;
-	icon_state = "warningcee";
+	icon_state = "warningcee"
 	},
 /turf/simulated/floor/plating,
 /area/drone_test)
 "hd" = (
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4;
-	icon_state = "warningcee";
+	icon_state = "warningcee"
 	},
 /turf/simulated/floor/plating,
 /area/drone_test)
@@ -2203,7 +2208,7 @@
 /area/drone_test)
 "hV" = (
 /obj/effect/floor_decal/corner/red{
-	dir = 10;
+	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2217,7 +2222,7 @@
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4";
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2225,7 +2230,7 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2233,17 +2238,17 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
+	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/red{
-	dir = 6;
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "iz" = (
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 1;
-	icon_state = "warningcee";
+	icon_state = "warningcee"
 	},
 /obj/machinery/power/breakerbox,
 /turf/simulated/floor/plating,
@@ -2252,7 +2257,7 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
+	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/red{
 	dir = 9
@@ -2274,13 +2279,13 @@
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2";
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "iP" = (
 /obj/effect/floor_decal/corner/red{
-	dir = 6;
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2293,7 +2298,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/mauve{
-	dir = 8;
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -2344,7 +2349,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/mauve{
-	dir = 4;
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -2382,7 +2387,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/mauve{
-	dir = 1;
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -2392,14 +2397,14 @@
 /area/drone_test)
 "kc" = (
 /obj/effect/floor_decal/corner/green{
-	dir = 6;
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "kd" = (
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 1;
-	icon_state = "warningcee";
+	icon_state = "warningcee"
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2407,7 +2412,7 @@
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4";
+	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/corner/green{
 	dir = 9
@@ -2436,10 +2441,10 @@
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2";
+	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/paleblue{
-	dir = 10;
+	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2477,14 +2482,14 @@
 /area/drone_test)
 "kF" = (
 /obj/effect/floor_decal/corner/blue{
-	dir = 10;
+	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "kG" = (
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 1;
-	icon_state = "warningcee";
+	icon_state = "warningcee"
 	},
 /turf/simulated/floor/plating,
 /area/drone_test)
@@ -2494,7 +2499,7 @@
 /area/drone_test)
 "la" = (
 /obj/effect/floor_decal/corner/paleblue{
-	dir = 6;
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2520,10 +2525,10 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
+	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/paleblue{
-	dir = 9;
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2531,10 +2536,10 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
+	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/green{
-	dir = 6;
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2553,7 +2558,7 @@
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
-	icon_state = "1-8";
+	icon_state = "1-8"
 	},
 /obj/structure/cable{
 	d1 = 2;
@@ -2586,12 +2591,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/effect/floor_decal/industrial/warning/full,
 /turf/simulated/floor/plating,
-/area/drone_test)
-"lj" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 9;
-	},
-/turf/simulated/floor/tiled,
 /area/drone_test)
 "lk" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -2628,16 +2627,10 @@
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2";
+	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/corner/paleblue{
-	dir = 5;
-	},
-/turf/simulated/floor/tiled,
-/area/drone_test)
-"lH" = (
-/obj/effect/floor_decal/corner/blue{
-	dir = 5;
+	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
@@ -2655,7 +2648,7 @@
 /area/drone_test)
 "lQ" = (
 /obj/effect/floor_decal/corner/brown{
-	dir = 10;
+	dir = 10
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
@@ -2792,7 +2785,7 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
+	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
@@ -2811,20 +2804,20 @@
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8";
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "nt" = (
 /obj/effect/floor_decal/corner/red{
-	dir = 10;
+	dir = 10
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating,
 /area/drone_test)
 "nu" = (
 /obj/effect/floor_decal/corner/red{
-	dir = 8;
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8;
@@ -2848,7 +2841,7 @@
 /area/drone_test)
 "nM" = (
 /obj/effect/floor_decal/corner/red{
-	dir = 9;
+	dir = 9
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -2858,7 +2851,7 @@
 /area/drone_test)
 "nN" = (
 /obj/effect/floor_decal/corner/yellow{
-	dir = 6;
+	dir = 6
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -2929,7 +2922,7 @@
 /area/drone_test)
 "om" = (
 /obj/effect/floor_decal/corner/yellow{
-	dir = 4;
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -2938,7 +2931,7 @@
 /area/drone_test)
 "on" = (
 /obj/effect/floor_decal/corner/yellow{
-	dir = 5;
+	dir = 5
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
@@ -3131,13 +3124,13 @@
 /area/holodeck/source_chapel)
 "oN" = (
 /obj/effect/floor_decal/spline/fancy/wood/cee{
-	dir = 1;
+	dir = 1
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
 "oO" = (
 /turf/simulated/floor/holofloor/beach/water{
-	icon_state = "seadeep";
+	icon_state = "seadeep"
 	},
 /area/holodeck/source_winter)
 "oP" = (
@@ -3155,69 +3148,69 @@
 /area/holodeck/source_chapel)
 "oR" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8;
+	dir = 8
 	},
 /obj/effect/floor_decal/spline/fancy/wood/corner{
-	dir = 1;
+	dir = 1
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
 "oT" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 1;
+	dir = 1
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
 "oU" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 4;
+	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood/corner{
-	dir = 4;
+	dir = 4
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
 "oX" = (
 /obj/structure/bed/chair/holochair{
 	dir = 1;
-	icon_state = "chair_preview";
+	icon_state = "chair_preview"
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8;
+	dir = 8
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
 "oZ" = (
 /obj/structure/bed/chair/holochair{
 	dir = 1;
-	icon_state = "chair_preview";
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
 "pa" = (
 /obj/structure/bed/chair/holochair{
 	dir = 1;
-	icon_state = "chair_preview";
+	icon_state = "chair_preview"
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 4;
+	dir = 4
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
 "pl" = (
 /obj/structure/bed/chair/holochair{
 	dir = 1;
-	icon_state = "chair_preview";
+	icon_state = "chair_preview"
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 10;
+	dir = 10
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
 "pn" = (
 /obj/structure/bed/chair/holochair{
 	dir = 1;
-	icon_state = "chair_preview";
+	icon_state = "chair_preview"
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/holofloor/wood,
@@ -3225,10 +3218,10 @@
 "po" = (
 /obj/structure/bed/chair/holochair{
 	dir = 1;
-	icon_state = "chair_preview";
+	icon_state = "chair_preview"
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 6;
+	dir = 6
 	},
 /turf/simulated/floor/holofloor/wood,
 /area/holodeck/source_chapel)
@@ -3237,19 +3230,19 @@
 /area/holodeck/source_plating)
 "px" = (
 /turf/simulated/floor/holofloor/beach/water{
-	icon_state = "desert4";
+	icon_state = "desert4"
 	},
 /area/holodeck/source_beach)
 "py" = (
 /turf/simulated/floor/holofloor/beach/water{
 	dir = 4;
-	icon_state = "beach";
+	icon_state = "beach"
 	},
 /area/holodeck/source_beach)
 "pz" = (
 /turf/simulated/floor/holofloor/beach/water{
 	dir = 8;
-	icon_state = "beach";
+	icon_state = "beach"
 	},
 /area/holodeck/source_beach)
 "pA" = (
@@ -3257,7 +3250,7 @@
 /area/holodeck/source_beach)
 "pB" = (
 /turf/simulated/floor/holofloor/beach/water{
-	icon_state = "desert1";
+	icon_state = "desert1"
 	},
 /area/holodeck/source_beach)
 "pJ" = (
@@ -3266,13 +3259,13 @@
 /area/space)
 "pK" = (
 /turf/simulated/floor/holofloor/beach/water{
-	icon_state = "beach";
+	icon_state = "beach"
 	},
 /area/holodeck/source_beach)
 "pL" = (
 /turf/simulated/floor/holofloor/beach/water{
 	dir = 6;
-	icon_state = "beach";
+	icon_state = "beach"
 	},
 /area/holodeck/source_beach)
 "pP" = (
@@ -3285,13 +3278,13 @@
 "pR" = (
 /turf/simulated/floor/holofloor/beach/water{
 	dir = 1;
-	icon_state = "beach";
+	icon_state = "beach"
 	},
 /area/holodeck/source_beach)
 "pS" = (
 /turf/simulated/floor/holofloor/beach/water{
 	dir = 4;
-	icon_state = "beachcorner";
+	icon_state = "beachcorner"
 	},
 /area/holodeck/source_beach)
 "pT" = (
@@ -3300,7 +3293,7 @@
 /area/holodeck/source_beach)
 "qb" = (
 /turf/simulated/floor/holofloor/beach/water{
-	icon_state = "desert3";
+	icon_state = "desert3"
 	},
 /area/holodeck/source_beach)
 "qc" = (
@@ -3309,12 +3302,12 @@
 /area/holodeck/source_beach)
 "qd" = (
 /turf/simulated/floor/holofloor/beach/water{
-	icon_state = "desert2";
+	icon_state = "desert2"
 	},
 /area/holodeck/source_beach)
 "qe" = (
 /turf/simulated/floor/holofloor/beach/water{
-	icon_state = "desert5";
+	icon_state = "desert5"
 	},
 /area/holodeck/source_beach)
 "qp" = (
@@ -3338,7 +3331,7 @@
 "qC" = (
 /obj/machinery/light{
 	dir = 1;
-	icon_state = "tube1";
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/white/airless,
 /area/supply/dock)
@@ -3348,7 +3341,7 @@
 	},
 /obj/structure/shuttle/engine/propulsion/burst/right{
 	dir = 4;
-	name = "propulsion";
+	name = "propulsion"
 	},
 /turf/simulated/floor/airless,
 /area/supply/dock)
@@ -3367,7 +3360,7 @@
 /area/supply/dock)
 "qM" = (
 /obj/structure/shuttle/engine/propulsion{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -3384,7 +3377,7 @@
 	},
 /obj/structure/shuttle/engine/propulsion/burst/left{
 	dir = 4;
-	name = "propulsion";
+	name = "propulsion"
 	},
 /turf/simulated/floor/airless,
 /area/supply/dock)
@@ -3398,7 +3391,7 @@
 /area/holodeck/source_surgery)
 "qV" = (
 /obj/effect/floor_decal/corner/paleblue{
-	dir = 8;
+	dir = 8
 	},
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_surgery)
@@ -3431,7 +3424,7 @@
 /area/holodeck/source_surgery)
 "rj" = (
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/table/holotable,
 /turf/simulated/floor/holofloor/tiled,
@@ -17052,7 +17045,7 @@ pQ
 qw
 qB
 qw
-ac
+pQ
 iN
 aa
 aa
@@ -17305,11 +17298,11 @@ pP
 pP
 pP
 iN
-qp
+ac
 qB
 qB
 qB
-qp
+ac
 iN
 aa
 aa
@@ -20611,7 +20604,7 @@ fA
 fo
 kF
 li
-lH
+od
 fo
 fA
 fA
@@ -20867,7 +20860,7 @@ fA
 fA
 fA
 fA
-lj
+mv
 fA
 fA
 fA
