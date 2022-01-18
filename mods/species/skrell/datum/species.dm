@@ -79,4 +79,4 @@
 /decl/blood_type/skrell
 	name = "Sk"
 	antigens = list("S","k")
-	splatter_color = "#1d2cbf"
+	splatter_colour = "#1d2cbf"
