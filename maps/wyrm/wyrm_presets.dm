@@ -13,6 +13,7 @@
 			return access_security
 	return ..()
 
+/*
 /datum/map/wyrm
 	station_networks = list(
 		NETWORK_SUBWYRM,
@@ -32,7 +33,7 @@
 		NETWORK_HATCHLING,
 		NETWORK_THUNDER
 	)
-
+*/
 //
 // Cameras
 //
@@ -40,31 +41,31 @@
 // Networks
 
 /obj/machinery/camera/network/command
-	network = list(NETWORK_COMMAND)
+	preset_channels = list(NETWORK_COMMAND)
 
 /obj/machinery/camera/network/primdeck
-	network = list(NETWORK_PRIMWYRM)
+	preset_channels = list(NETWORK_PRIMWYRM)
 
 /obj/machinery/camera/network/subdeck
-	network = list(NETWORK_SUBWYRM)
+	preset_channels = list(NETWORK_SUBWYRM)
 
 /obj/machinery/camera/network/research
-	network = list(NETWORK_RESEARCH)
+	preset_channels = list(CAMERA_CHANNEL_RESEARCH)
 
 /obj/machinery/camera/network/hatchling
-	network = list(NETWORK_HATCHLING)
+	preset_channels = list(NETWORK_HATCHLING)
 
 // Motion
 /obj/machinery/camera/motion/command
-	network = list(NETWORK_COMMAND)
+	preset_channels = list(NETWORK_COMMAND)
 
 // X-ray
 /obj/machinery/camera/xray/security
-	network = list(NETWORK_SECURITY)
+	preset_channels = list(CAMERA_CHANNEL_SECURITY)
 
 //Special explorer camera
 /obj/machinery/camera/network/exploration
-	network = list(NETWORK_HATCHLING)
+	preset_channels = list(NETWORK_HATCHLING)
 
 /obj/machinery/telecomms/hub/preset/wyrm
 	network = "wyrm"

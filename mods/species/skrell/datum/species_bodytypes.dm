@@ -5,9 +5,7 @@
 	husk_icon =              'mods/species/skrell/icons/husk.dmi'
 	icon_deformed =          'mods/species/skrell/icons/deformed_body.dmi'
 	lip_icon =               'icons/mob/human_races/species/lips.dmi'
-	damage_overlays =        'icons/mob/human_races/species/human/damage_overlay.dmi'
-	damage_mask =            'icons/mob/human_races/species/human/damage_mask.dmi'
-	blood_mask =             'icons/mob/human_races/species/human/blood_mask.dmi'
+	blood_overlays =        'icons/mob/human_races/species/human/blood_overlays.dmi'
 	bandages_icon =          'icons/mob/bandage.dmi'
 	associated_gender =      PLURAL
 	uniform_state_modifier = "_f"

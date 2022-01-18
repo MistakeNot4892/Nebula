@@ -2,7 +2,7 @@
 	name = SPECIES_SKRELL
 	name_plural = SPECIES_SKRELL
 	preview_icon = 'mods/species/skrell/icons/preview.dmi'
-	meat_type = /obj/item/chems/food/snacks/squid
+	meat_type = /obj/item/chems/food/squid
 
 	unarmed_attacks = list(/decl/natural_attack/stomp, /decl/natural_attack/kick, /decl/natural_attack/punch)
 
@@ -46,7 +46,7 @@
 
 	reagent_tag = IS_SKRELL
 	base_color = "#006666"
-	blood_color = "#1d2cbf"
+	blood_types = list(/decl/blood_type/skrell)
 	organs_icon = 'mods/species/skrell/icons/organs.dmi'
 
 	override_organ_types = list(
@@ -75,3 +75,8 @@
 		LAZYSET(default_cultural_info, TAG_CULTURE, caste)
 	LAZYDISTINCTADD(available_cultural_info[TAG_HOMEWORLD], /decl/cultural_info/location/qerrbalak)
 	LAZYSET(default_cultural_info, TAG_HOMEWORLD, /decl/cultural_info/location/qerrbalak)
+
+/decl/blood_type/skrell
+	name = "Sk"
+	antigens = list("S","k")
+	splatter_color = "#1d2cbf"

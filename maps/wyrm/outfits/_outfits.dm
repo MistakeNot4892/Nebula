@@ -2,7 +2,6 @@
 #define WYRM_OUTFIT_JOB_NAME(job_name) ("Wyrm - Job - " + job_name)
 
 /decl/hierarchy/outfit/job/wyrm
-	hierarchy_type = /decl/hierarchy/outfit/job/wyrm
 	pda_type = /obj/item/modular_computer/pda
 	pda_slot = slot_l_store_str
 

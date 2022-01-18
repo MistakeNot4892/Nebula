@@ -23,24 +23,24 @@ SKRELL_SPRITE(head/helmet/space/void/security/alt,"void/security_alt.dmi")
 SKRELL_SPRITE(head/helmet/space/void/merc,"void/syndicate.dmi")
 
 #undef SKRELL_SPRITE
-
-/datum/gear/uniform/skrell
-	sort_category = "Xenowear"
-	category = /datum/gear/uniform/skrell
+/decl/loadout_category/skrell
+	name = "Skrell"
+/decl/loadout_option/skrell
+	category = /decl/loadout_category/skrell
 	whitelisted = list(SPECIES_SKRELL)
 
-/datum/gear/uniform/skrell/metal
-	display_name = "metalic headtail accessories (Skrell)"
+/decl/loadout_option/skrell/metal
+	name = "metalic headtail accessories (Skrell)"
 	path = /obj/item/clothing/ears/skrell/metal
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/uniform/skrell/cloth_female
-	display_name = "female headtail cloth (Skrell)"
+/decl/loadout_option/skrell/cloth_female
+	name = "female headtail cloth (Skrell)"
 	path = /obj/item/clothing/ears/skrell/cloth_female
 	flags = GEAR_HAS_COLOR_SELECTION
 
-/datum/gear/uniform/skrell/cloth_male
-	display_name = "male headtail cloth (Skrell)"
+/decl/loadout_option/skrell/cloth_male
+	name = "male headtail cloth (Skrell)"
 	path = /obj/item/clothing/ears/skrell/cloth_male
 	flags = GEAR_HAS_COLOR_SELECTION
 
@@ -49,7 +49,7 @@ SKRELL_SPRITE(head/helmet/space/void/merc,"void/syndicate.dmi")
 	name = "skrell headtail wear"
 	desc = "Some stuff worn by skrell to adorn their headtails."
 	icon = 'mods/species/skrell/icons/clothing/chain.dmi'
-	bodytype_restricted = list(BODYTYPE_SKRELL)
+	bodytype_equip_flags = list(BODY_FLAG_SKRELL)
 
 /obj/item/clothing/ears/skrell/metal
 	name = "gold headtail chains"

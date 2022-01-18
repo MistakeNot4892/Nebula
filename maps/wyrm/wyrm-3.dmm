@@ -434,7 +434,7 @@
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
 	dir = 8
 	},
-/obj/structure/table/rack/holorack,
+/obj/structure/rack/holorack,
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_surgery)
 "bs" = (
@@ -593,7 +593,7 @@
 /obj/item/handcuffs,
 /obj/item/handcuffs,
 /obj/item/handcuffs,
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/baton,
 /turf/simulated/floor/tiled/dark,
 /area/fightclub)
@@ -804,10 +804,10 @@
 	},
 /area/tdome/tdomeobserve)
 "cg" = (
-/obj/structure/table/standard,
-/obj/item/chems/food/drinks/bottle/small/beer,
-/obj/item/chems/food/drinks/bottle/small/beer,
-/obj/item/chems/food/drinks/bottle/small/beer,
+/obj/structure/table,
+/obj/item/chems/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /obj/item/flame/lighter/zippo,
 /obj/item/storage/fancy/cigarettes,
 /turf/unsimulated/floor{
@@ -815,10 +815,10 @@
 	},
 /area/tdome/tdomeobserve)
 "ch" = (
-/obj/item/chems/food/drinks/cans/cola,
-/obj/item/chems/food/drinks/cans/cola,
-/obj/item/chems/food/drinks/cans/cola,
-/obj/structure/table/standard,
+/obj/item/chems/drinks/cans/cola,
+/obj/item/chems/drinks/cans/cola,
+/obj/item/chems/drinks/cans/cola,
+/obj/structure/table,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
@@ -885,7 +885,7 @@
 	},
 /area/acting/backstage)
 "cs" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
@@ -907,7 +907,7 @@
 	},
 /area/tdome)
 "ct" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/machinery/microwave,
 /turf/unsimulated/floor{
 	icon_state = "white"
@@ -921,14 +921,14 @@
 /area/tdome)
 "cv" = (
 /obj/item/modular_computer/telescreen/preset/generic,
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
 /area/tdome/tdomeobserve)
 "cw" = (
 /obj/item/camera,
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
@@ -956,7 +956,7 @@
 	},
 /area/acting/backstage)
 "cA" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/box/lights/mixed,
 /obj/item/paint_sprayer,
 /turf/unsimulated/floor{
@@ -965,7 +965,7 @@
 	},
 /area/acting/backstage)
 "cB" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/tile/floor{
 	amount = 50
 	},
@@ -978,7 +978,7 @@
 	},
 /area/acting/backstage)
 "cC" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/tile/floor_freezer{
 	amount = 50
 	},
@@ -991,7 +991,7 @@
 	},
 /area/acting/backstage)
 "cD" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/tile/carpet{
 	amount = 50
 	},
@@ -1004,7 +1004,7 @@
 	},
 /area/acting/backstage)
 "cE" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/tile/grass{
 	amount = 50
 	},
@@ -1017,7 +1017,7 @@
 	},
 /area/acting/backstage)
 "cF" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/sheet/mapped/steel{
 	amount = 50;
 	pixel_x = 5;
@@ -1039,7 +1039,7 @@
 	},
 /area/acting/backstage)
 "cG" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/reinforced/mapped/plasteel{
 	amount = 50
 	},
@@ -1055,7 +1055,7 @@
 	},
 /area/acting/backstage)
 "cH" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/plank/mapped/wood{
 	amount = 50
 	},
@@ -1071,7 +1071,7 @@
 	},
 /area/acting/backstage)
 "cI" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/brick/mapped/sandstone{
 	amount = 50
 	},
@@ -1087,7 +1087,7 @@
 	},
 /area/acting/backstage)
 "cJ" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/pane/mapped/glass{
 	amount = 50;
 	pixel_x = 3;
@@ -1109,7 +1109,7 @@
 	},
 /area/acting/backstage)
 "cK" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/pane/mapped/rglass{
 	amount = 50
 	},
@@ -1125,7 +1125,7 @@
 	},
 /area/acting/backstage)
 "cL" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/brick/mapped/marble{
 	amount = 50
 	},
@@ -1141,7 +1141,7 @@
 	},
 /area/acting/backstage)
 "cM" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/panel/mapped/plastic{
 	amount = 50
 	},
@@ -1157,7 +1157,7 @@
 	},
 /area/acting/backstage)
 "cN" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/ingot/mapped/silver{
 	amount = 50
 	},
@@ -1261,7 +1261,7 @@
 	},
 /area/tdome)
 "cZ" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/under/color/red,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/energy_blade/axe,
@@ -1292,7 +1292,7 @@
 	},
 /area/tdome)
 "dc" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/under/color/green,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/energy_blade/axe,
@@ -1382,7 +1382,7 @@
 	},
 /area/acting/backstage)
 "dp" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/under/color/red,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/suit/armor/tdome/red,
@@ -1449,7 +1449,7 @@
 	},
 /area/tdome/tdome1)
 "dw" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/under/color/green,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/suit/armor/tdome/green,
@@ -1519,19 +1519,6 @@
 	name = "plating"
 	},
 /area/acting/backstage)
-"dE" = (
-/obj/effect/landmark{
-	name = "tdome2"
-	},
-/obj/machinery/camera/network/thunder{
-	c_tag = "Thunderdome - Red Team";
-	invisibility = 101
-	},
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/tdome/tdome2)
 "dF" = (
 /turf/unsimulated/floor{
 	icon_state = "bcircuit"
@@ -1546,19 +1533,6 @@
 	icon_state = "bcircuit"
 	},
 /area/tdome)
-"dH" = (
-/obj/effect/landmark{
-	name = "tdome1"
-	},
-/obj/machinery/camera/network/thunder{
-	c_tag = "Green Team";
-	invisibility = 101
-	},
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/tdome/tdome1)
 "dI" = (
 /obj/machinery/vending/robotics,
 /turf/unsimulated/floor{
@@ -1581,18 +1555,9 @@
 	icon_state = "bcircuit"
 	},
 /area/tdome)
-"dL" = (
-/obj/machinery/camera/network/thunder{
-	c_tag = "Thunderdome Arena";
-	invisibility = 101
-	},
-/turf/unsimulated/floor{
-	icon_state = "bcircuit"
-	},
-/area/tdome)
 "dM" = (
 /obj/effect/floor_decal/corner/paleblue/three_quarters,
-/obj/structure/table/rack/holorack,
+/obj/structure/rack/holorack,
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_surgery)
 "dN" = (
@@ -1602,14 +1567,6 @@
 	name = "plating"
 	},
 /area/acting/backstage)
-"dO" = (
-/obj/machinery/camera/network/thunder{
-	anchored = 0;
-	c_tag = "Television";
-	name = "Movable Camera"
-	},
-/turf/simulated/floor/tiled,
-/area/acting/stage)
 "dP" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/unsimulated/floor{
@@ -1717,7 +1674,7 @@
 	},
 /area/tdome)
 "ec" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/under/color/red,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/suit/armor/vest,
@@ -1749,7 +1706,7 @@
 	},
 /area/tdome)
 "ef" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/under/color/green,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/suit/armor/vest,
@@ -1934,7 +1891,7 @@
 	},
 /area/acting/backstage)
 "eH" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/tile/floor{
 	amount = 50
 	},
@@ -1965,7 +1922,7 @@
 	},
 /area/acting/backstage)
 "eL" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/machinery/recharger{
 	pixel_y = 4
 	},
@@ -1984,7 +1941,7 @@
 /obj/item/grenade/chem_grenade/cleaner,
 /obj/item/grenade/chem_grenade/cleaner,
 /obj/item/grenade/chem_grenade/cleaner,
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
@@ -2016,13 +1973,13 @@
 /obj/item/stack/medical/ointment,
 /obj/item/stack/medical/ointment,
 /obj/item/stack/medical/ointment,
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
 /area/tdome/tdomeadmin)
 "eS" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/stack/medical/bruise_pack,
 /obj/item/stack/medical/bruise_pack,
 /obj/item/stack/medical/bruise_pack,
@@ -2031,27 +1988,27 @@
 	},
 /area/tdome/tdomeadmin)
 "eT" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/box/handcuffs,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
 /area/tdome/tdomeadmin)
 "eU" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
 /area/tdome/tdomeadmin)
 "eV" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/toolbox/electrical,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
 /area/tdome/tdomeadmin)
 "eW" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
 /turf/unsimulated/floor{
 	icon_state = "lino"
@@ -2758,7 +2715,7 @@
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "nc" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/sheet/mapped/steel/fifty,
 /obj/item/stack/material/sheet/mapped/steel/fifty,
 /obj/item/stack/material/sheet/mapped/steel/fifty,
@@ -2767,7 +2724,7 @@
 /turf/simulated/floor/plating,
 /area/drone_test)
 "nd" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/stack/material/reinforced/mapped/plasteel/fifty,
 /obj/item/stack/material/reinforced/mapped/plasteel/fifty,
 /obj/item/stack/material/reinforced/mapped/ocp/fifty,
@@ -2831,7 +2788,7 @@
 /turf/simulated/floor/plating,
 /area/drone_test)
 "nL" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/gun/energy/laser,
 /obj/item/gun/energy/laser,
 /obj/item/gun/energy/laser,
@@ -3401,14 +3358,14 @@
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_surgery)
 "rf" = (
-/obj/structure/table/rack/holorack,
+/obj/structure/rack/holorack,
 /obj/item/holo/esword/green,
 /obj/item/holo/esword/green,
 /obj/item/holo/esword/green,
 /turf/simulated/floor/holofloor/reinforced,
 /area/holodeck/source_battle_arena)
 "rg" = (
-/obj/structure/table/rack/holorack,
+/obj/structure/rack/holorack,
 /obj/item/holo/esword/red,
 /obj/item/holo/esword/red,
 /obj/item/holo/esword/red,
@@ -12098,7 +12055,7 @@ dm
 dm
 dm
 dm
-dO
+dm
 dm
 dm
 dm
@@ -17493,7 +17450,7 @@ cZ
 dh
 dr
 dr
-dE
+dr
 dr
 dr
 dr
@@ -20321,7 +20278,7 @@ dj
 dj
 dj
 dG
-dL
+dF
 dR
 dU
 dU
@@ -23147,7 +23104,7 @@ dc
 dh
 dv
 dv
-dH
+dv
 dv
 dv
 dv

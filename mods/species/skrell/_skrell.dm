@@ -1,17 +1,17 @@
 #define SPECIES_SKRELL  "Skrell"
 #define LANGUAGE_SKRELL "Skrellian"
 #define IS_SKRELL       "skrell"
-#define BODYTYPE_SKRELL "skrellian body"
-
+#define BODYTYPE_SKRELL  "skrellian body"
+#define BODY_FLAG_SKRELL BITFLAG(7)
 
 /obj/item/clothing/Initialize()
 	. = ..()
-	if(length(bodytype_restricted) && !("exclude" in bodytype_restricted))
-		bodytype_restricted |= BODYTYPE_SKRELL
+	if(bodytype_equip_flags & BODY_FLAG_EXCLUDE)
+		bodytype_equip_flags |= BODY_FLAG_SKRELL
 
 /obj/machinery/suit_cycler/Initialize(mapload, d, populate_parts)
 	. = ..()
-	available_bodytypes |= BODYTYPE_SKRELL
+	available_bodytypes |= BODY_FLAG_SKRELL
 
 /decl/modpack/skrell
 	name = "Skrell"

@@ -17,6 +17,7 @@
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 
 	#include "wyrm_areas.dm"
+	#include "wyrm_departments.dm"
 	#include "wyrm_jobs.dm"
 	#include "wyrm_overmap.dm"
 	#include "wyrm_overrides.dm"

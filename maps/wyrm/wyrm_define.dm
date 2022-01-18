@@ -11,9 +11,6 @@
 	player_levels = list(1,2)
 	admin_levels = list(3)
 
-	overmap_size = 30
-	overmap_event_areas = 25
-
 	station_name  = "ISC Wyrm"
 	station_short = "Wyrm"
 
@@ -36,7 +33,6 @@
 
 //	default_law_type = /datum/ai_laws/manifest
 
-	use_overmap = TRUE
 	num_exoplanets = 1
 	away_site_budget = 2
 

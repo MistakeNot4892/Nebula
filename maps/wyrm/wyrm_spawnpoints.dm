@@ -2,34 +2,34 @@ var/global/list/latejoin_cryo_captain = list()
 var/global/list/latejoin_cryo_two = list()
 
 /datum/map/wyrm
-	allowed_spawns = list("Secondary Cryogenic Bay", "Primary Cryogenic Bay", "Robot Storage", "Captain Compartment")
+	allowed_spawns = list(/decl/spawnpoint/cryo, /decl/spawnpoint/cryo/two, /decl/spawnpoint/cyborg, /decl/spawnpoint/cryo/captain)
 	default_spawn = "Secondary Cryogenic Bay"
 
-/datum/spawnpoint/cryo
-	display_name = "Secondary Cryogenic Bay"
+/decl/spawnpoint/cryo
+	name = "Secondary Cryogenic Bay"
 	msg = "has completed revival in the secondary cryogenics bay"
-	disallow_job = list("Robot")
+	disallow_job = list(/datum/job/cyborg)
 
-/obj/effect/landmark/latejoin/cryo_captain/add_loc()
+/obj/abstract/landmark/latejoin/cryo_captain/add_loc()
 	global.latejoin_cryo_captain |= get_turf(src)
 
-/datum/spawnpoint/cryo/captain
-	display_name = "Captain Compartment"
+/decl/spawnpoint/cryo/captain
+	name = "Captain Compartment"
 	msg = "has completed revival in the captain compartment"
-	restrict_job = list("Captain")
+	restrict_job = list(/datum/job/captain)
 
-/datum/spawnpoint/cryo/captain/New()
+/decl/spawnpoint/cryo/captain/New()
 	..()
 	turfs = global.latejoin_cryo_captain
 
-/obj/effect/landmark/latejoin/cryo_two/add_loc()
+/obj/abstract/landmark/latejoin/cryo_two/add_loc()
 	global.latejoin_cryo_two |= get_turf(src)
 
-/datum/spawnpoint/cryo/two
-	display_name = "Primary Cryogenic Bay"
+/decl/spawnpoint/cryo/two
+	name = "Primary Cryogenic Bay"
 	msg = "has completed revival in the primary cryogenics bay"
-	disallow_job = list("Robot")
+	disallow_job = list(/datum/job/cyborg)
 
-/datum/spawnpoint/cryo/two/New()
+/decl/spawnpoint/cryo/two/New()
 	..()
 	turfs = global.latejoin_cryo_two
