@@ -375,7 +375,7 @@
 /area/maintenance/primary/engs)
 "bh" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /turf/simulated/floor/plating,
 /area/engineering/securestorage)
 "bi" = (
@@ -919,7 +919,7 @@
 /turf/simulated/open,
 /area/turbolift/freightmain)
 "cw" = (
-/obj/machinery/power/breakerbox/activated{
+/obj/machinery/breakerbox/activated{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/yellow/mono,
@@ -1028,7 +1028,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/primary/engs)
 "cI" = (
-/obj/machinery/power/emitter,
+/obj/machinery/emitter,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -1037,7 +1037,7 @@
 /area/engineering/securestorage)
 "cJ" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/power/emitter/gyrotron,
+/obj/machinery/emitter/gyrotron,
 /turf/simulated/floor/plating,
 /area/engineering/securestorage)
 "cK" = (
@@ -1575,7 +1575,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/primary/engs)
 "ea" = (
-/obj/machinery/power/emitter,
+/obj/machinery/emitter,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/engineering/securestorage)
@@ -1585,7 +1585,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/securestorage)
 "ec" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/port_gen/pacman,
 /turf/simulated/floor/plating,
 /area/engineering/securestorage)
 "ed" = (
@@ -3849,7 +3849,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine)
 "jd" = (
-/obj/machinery/power/smes/buildable{
+/obj/machinery/smes/buildable{
 	RCon_tag = "Primary Deck";
 	charge = 5e+006;
 	input_attempt = 1;
@@ -4675,7 +4675,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/power/terminal{
+/obj/machinery/terminal{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorbiege,
@@ -5858,7 +5858,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/sensor{
+/obj/machinery/sensor{
 	id_tag = "Engine Subnet";
 	name = "Engine Subnet"
 	},
@@ -9236,7 +9236,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/fusion_core/mapped{
+/obj/machinery/fusion_core/mapped{
 	initial_id_tag = "wyrm"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -10647,7 +10647,7 @@
 /turf/simulated/floor/tiled/old_cargo/dgrey,
 /area/civilian/bar)
 "va" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 8;
 	icon_state = "0-8"
@@ -11781,7 +11781,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/power/terminal{
+/obj/machinery/terminal{
 	dir = 8
 	},
 /obj/item/airlock_brace,
@@ -12027,7 +12027,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/catwalk,
-/obj/machinery/power/terminal{
+/obj/machinery/terminal{
 	dir = 4
 	},
 /obj/structure/cable,
@@ -12043,7 +12043,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/machinery/power/smes/buildable/outpost_substation{
+/obj/machinery/smes/buildable/outpost_substation{
 	RCon_tag = "Sublight Engine";
 	charge = 60000;
 	output_attempt = 1
@@ -15224,7 +15224,7 @@
 /turf/simulated/floor/tiled/old_cargo,
 /area/science/rnd)
 "DH" = (
-/obj/machinery/power/smes/buildable/outpost_substation{
+/obj/machinery/smes/buildable/outpost_substation{
 	RCon_tag = "Research Capacitor";
 	capacity = 10000;
 	charge = 10000
@@ -17445,7 +17445,7 @@
 /turf/simulated/open,
 /area/science/hallway)
 "IU" = (
-/obj/machinery/power/emitter/gyrotron/anchored{
+/obj/machinery/emitter/gyrotron/anchored{
 	initial_id_tag = "wyrm"
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
@@ -17581,7 +17581,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/security/brig)
 "KU" = (
-/obj/machinery/power/sensor{
+/obj/machinery/sensor{
 	id_tag = "Primary Deck";
 	name = "Primary Deck Sensor"
 	},
@@ -17694,7 +17694,7 @@
 /turf/simulated/floor/tiled,
 /area/civilian/storage)
 "Mc" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"
@@ -17883,7 +17883,7 @@
 /turf/simulated/floor/plating,
 /area/command/captain)
 "NH" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /turf/simulated/floor/plating/airless,
 /area/supply/external)
 "NM" = (
@@ -17983,7 +17983,7 @@
 /turf/simulated/floor/asteroid,
 /area/maintenance/primary/fp)
 "Pp" = (
-/obj/machinery/power/smes/buildable{
+/obj/machinery/smes/buildable{
 	RCon_tag = "Fusion Engine SMES";
 	charge = 5e+006;
 	output_attempt = 1;
@@ -18023,7 +18023,7 @@
 	icon_state = "0-2";
 	pixel_y = 1
 	},
-/obj/machinery/power/terminal{
+/obj/machinery/terminal{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorbiege{
@@ -18735,7 +18735,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/primary/cargo)
 "WI" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"

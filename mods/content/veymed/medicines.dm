@@ -26,7 +26,7 @@
 
 /decl/material/liquid/organ_meds/affect_overdose(mob/living/carbon/M, alien, datum/reagents/holder)
 	if(prob(5))
-		var/obj/item/organ/external/E = pick(M.organs)
+		var/obj/item/organ/external/E = pick(M.get_organs())
 		if(prob(50))
 			to_chat(M,SPAN_DANGER("It feels like something in your [E.name] is trying to tear your skin open from the inside!"))
 		else
@@ -36,7 +36,7 @@
 			)
 			E.status |= ORGAN_MUTATED
 			E.take_external_damage(rand(15,25), damage_flags = DAM_SHARP)
-	
+
 /obj/item/chems/pill/organ_meds
 	name = "peridaxon (10u)"
 	desc = "Used to treat internal damage."
@@ -97,7 +97,7 @@
 	value = 10
 
 /decl/material/liquid/latrazine/affect_blood(mob/living/carbon/M, alien, removed)
-	var/obj/item/organ/external/E = pick(M.organs)
+	var/obj/item/organ/external/E = pick(M.get_organs())
 	if(E.status & ORGAN_BROKEN)
 		E.status &= ~ORGAN_BROKEN
 		M.custom_pain("You suddenly feel <b>EXCRUCIATING</b> pain as the muscles in your [E.name] spasm, <i>SNAPPING</i> the bones into place.", 120, 1, E)
@@ -123,7 +123,7 @@
 	scannable = 1
 	flags = IGNORE_MOB_SIZE
 	heating_products = list(/decl/material/liquid/water = 0.8, /decl/material/liquid/nutriment/sugar = 0.2)
-	heating_point = 22 CELSIUS //reminder to mess around with this 
+	heating_point = 22 CELSIUS //reminder to mess around with this
 	heating_message = "turns back to sludge."
 	value = 10
 

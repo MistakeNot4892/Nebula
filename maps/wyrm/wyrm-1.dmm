@@ -214,7 +214,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/sub/aft)
 "aK" = (
-/obj/machinery/power/breakerbox,
+/obj/machinery/breakerbox,
 /turf/simulated/floor/plating,
 /area/engineering/subsmes)
 "aL" = (
@@ -771,7 +771,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/subsmes)
 "bT" = (
-/obj/machinery/power/terminal,
+/obj/machinery/terminal,
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
@@ -968,7 +968,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/sub/mid)
 "ct" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"
@@ -976,7 +976,7 @@
 /turf/simulated/floor/plating/airless,
 /area/supply/external)
 "cu" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 8;
 	icon_state = "0-8"
@@ -1287,7 +1287,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/subsmes)
 "cV" = (
-/obj/machinery/power/sensor{
+/obj/machinery/sensor{
 	id_tag = "Sub Deck";
 	name = "Sub Deck Powernet Sensor"
 	},
@@ -1312,7 +1312,7 @@
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
-/obj/machinery/power/smes/buildable{
+/obj/machinery/smes/buildable{
 	RCon_tag = "Sub Deck";
 	charge = 5e+006;
 	input_attempt = 1;
@@ -2280,7 +2280,7 @@
 "fh" = (
 /obj/structure/cable,
 /obj/effect/floor_decal/corner/yellow/full,
-/obj/machinery/power/generator{
+/obj/machinery/generator{
 	anchored = 1;
 	dir = 4
 	},
@@ -4167,7 +4167,7 @@
 /turf/simulated/wall/r_wall,
 /area/command/aicore)
 "jg" = (
-/obj/machinery/power/smes/buildable{
+/obj/machinery/smes/buildable{
 	RCon_tag = "AI Core";
 	charge = 5e+006;
 	input_attempt = 1;
@@ -4193,7 +4193,7 @@
 	icon_state = "0-2";
 	pixel_y = 1
 	},
-/obj/machinery/power/terminal{
+/obj/machinery/terminal{
 	dir = 8
 	},
 /obj/effect/paint/silver,
@@ -4421,7 +4421,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/science/shuttleprep)
 "jF" = (
-/obj/machinery/power/breakerbox/activated{
+/obj/machinery/breakerbox/activated{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -5421,7 +5421,7 @@
 /area/hatchling/start)
 "lb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/power/port_gen/pacman{
+/obj/machinery/port_gen/pacman{
 	anchored = 1
 	},
 /obj/structure/cable{
@@ -5805,7 +5805,7 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/machinery/power/sensor{
+/obj/machinery/sensor{
 	id_tag = "AI Subnet";
 	name = "AI Subnet Sensor"
 	},
@@ -7436,7 +7436,7 @@
 /turf/simulated/floor/tiled/old_tile/dblue,
 /area/hatchling/start)
 "pe" = (
-/obj/machinery/power/terminal,
+/obj/machinery/terminal,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -7862,7 +7862,7 @@
 /turf/simulated/floor/tiled/white,
 /area/science/xenoflora)
 "pM" = (
-/obj/machinery/power/emitter/anchored,
+/obj/machinery/emitter/anchored,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/orange{
 	d2 = 8;
@@ -7912,7 +7912,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rescue/start)
 "pQ" = (
-/obj/machinery/power/port_gen/pacman{
+/obj/machinery/port_gen/pacman{
 	anchored = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -8048,7 +8048,7 @@
 /turf/simulated/floor/tiled/white,
 /area/engineering/tcommsmon)
 "qe" = (
-/obj/machinery/power/smes/buildable{
+/obj/machinery/smes/buildable{
 	RCon_tag = "Telecommunications Subnet";
 	charge = 5e+006;
 	input_attempt = 1;
@@ -8170,7 +8170,7 @@
 /area/hatchling/start)
 "qp" = (
 /obj/effect/floor_decal/corner/blue,
-/obj/machinery/power/smes/buildable{
+/obj/machinery/smes/buildable{
 	RCon_tag = "Hatchling"
 	},
 /obj/structure/cable,
@@ -8619,7 +8619,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/terminal{
+/obj/machinery/terminal{
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -9490,7 +9490,7 @@
 /area/engineering/tcommsmon)
 "sQ" = (
 /obj/structure/cable/blue,
-/obj/machinery/power/sensor{
+/obj/machinery/sensor{
 	id_tag = "Telecomms Subnet";
 	name = "Telecommunications Subnet Sensor"
 	},
@@ -10154,7 +10154,7 @@
 /obj/structure/railing/mapped{
 	color = "#ff7900"
 	},
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /turf/simulated/floor/plating/airless,
 /area/supply/external)
 "uL" = (
@@ -10361,7 +10361,7 @@
 /obj/structure/railing/mapped{
 	color = "#ff7900"
 	},
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 8;
 	icon_state = "0-8"
@@ -10447,7 +10447,7 @@
 /turf/simulated/floor/tiled/old_cargo/hallway,
 /area/supply/bsa)
 "xD" = (
-/obj/machinery/power/solar_control{
+/obj/machinery/solar_control{
 	dir = 8
 	},
 /obj/structure/cable/orange{
@@ -10626,7 +10626,7 @@
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/science/xenoflora)
 "zp" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"
@@ -10657,7 +10657,7 @@
 /turf/simulated/floor/tiled,
 /area/science/shuttleprep)
 "zA" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 2;
 	icon_state = "0-2"
@@ -10702,7 +10702,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/civilian/cryo1)
 "zM" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 8;
 	icon_state = "0-8"
@@ -10879,7 +10879,7 @@
 /obj/structure/railing/mapped{
 	color = "#ff7900"
 	},
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 8;
 	icon_state = "0-8"
@@ -10949,7 +10949,7 @@
 /turf/simulated/floor/tiled/old_tile/hallway,
 /area/logistics/loading)
 "BK" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 2;
 	icon_state = "0-2"
@@ -11110,7 +11110,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/machinery/power/terminal{
+/obj/machinery/terminal{
 	dir = 8
 	},
 /obj/structure/catwalk,
@@ -11806,7 +11806,7 @@
 /turf/simulated/floor/plating,
 /area/science/shuttleprep)
 "Kj" = (
-/obj/machinery/power/smes/buildable{
+/obj/machinery/smes/buildable{
 	RCon_tag = "Priamry Cyro Backup";
 	charge = 5e+005;
 	input_attempt = 1;
@@ -12111,7 +12111,7 @@
 /obj/structure/railing/mapped{
 	color = "#ff7900"
 	},
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"
@@ -12309,7 +12309,7 @@
 /turf/simulated/wall/false,
 /area/maintenance/sub/mid)
 "Ry" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"
@@ -12847,7 +12847,7 @@
 /turf/simulated/floor/plating,
 /area/logistics/loading)
 "XC" = (
-/obj/machinery/power/solar,
+/obj/machinery/solar,
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"

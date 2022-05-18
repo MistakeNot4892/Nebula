@@ -84,7 +84,7 @@
 /turf/simulated/floor/lino,
 /area/fightclub)
 "ax" = (
-/obj/machinery/power/breakerbox,
+/obj/machinery/breakerbox,
 /turf/simulated/floor/plating,
 /area/fightclub)
 "ay" = (
@@ -98,7 +98,7 @@
 /turf/simulated/floor/plating,
 /area/fightclub)
 "az" = (
-/obj/machinery/power/debug_items/infinite_generator,
+/obj/machinery/debug_items/infinite_generator,
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
@@ -2207,7 +2207,7 @@
 	dir = 1;
 	icon_state = "warningcee"
 	},
-/obj/machinery/power/breakerbox,
+/obj/machinery/breakerbox,
 /turf/simulated/floor/plating,
 /area/drone_test)
 "iA" = (
@@ -2461,7 +2461,7 @@
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "lb" = (
-/obj/machinery/power/debug_items/infinite_generator{
+/obj/machinery/debug_items/infinite_generator{
 	power_generation_rate = 100000
 	},
 /obj/structure/cable,
@@ -2508,7 +2508,7 @@
 	dir = 8;
 	icon_state = "warning"
 	},
-/obj/machinery/power/breakerbox,
+/obj/machinery/breakerbox,
 /turf/simulated/floor/plating,
 /area/drone_test)
 "lf" = (
@@ -2542,7 +2542,7 @@
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "li" = (
-/obj/machinery/power/debug_items/infinite_generator{
+/obj/machinery/debug_items/infinite_generator{
 	power_generation_rate = 50000
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -2751,7 +2751,7 @@
 /area/drone_test)
 "ng" = (
 /obj/effect/floor_decal/industrial/warning/cee,
-/obj/machinery/power/breakerbox,
+/obj/machinery/breakerbox,
 /turf/simulated/floor/plating,
 /area/drone_test)
 "nh" = (
@@ -2816,17 +2816,17 @@
 /turf/simulated/floor/plating,
 /area/drone_test)
 "nO" = (
-/obj/machinery/power/emitter,
+/obj/machinery/emitter,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/drone_test)
 "nP" = (
-/obj/machinery/power/emitter/gyrotron,
+/obj/machinery/emitter/gyrotron,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/drone_test)
 "nQ" = (
-/obj/machinery/power/port_gen/pacman/mrs,
+/obj/machinery/port_gen/pacman/mrs,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/drone_test)
@@ -2939,7 +2939,7 @@
 /turf/simulated/floor/tiled,
 /area/drone_test)
 "oy" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/port_gen/pacman,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/drone_test)

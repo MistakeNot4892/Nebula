@@ -197,7 +197,7 @@
 				else
 					available_recipes[initial_stage] = "\a [initial(prop.name)]"
 
-		if(user.inquisitive_examine && length(available_recipes))
+		if(length(available_recipes))
 			desc_comp += "<BR>*--------* <BR>"
 			for(var/decl/crafting_stage/initial_stage in available_recipes)
 				desc_comp += SPAN_NOTICE("With [available_recipes[initial_stage]], you could start making \a [initial_stage.descriptor] out of this.")
