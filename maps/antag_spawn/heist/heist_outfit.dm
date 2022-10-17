@@ -1,5 +1,7 @@
 /decl/hierarchy/outfit/raider
-	name =    "Special Role - Raider"
+	name =  "Special Role - Raider"
+	l_ear = /obj/item/radio/headset/raider
+
 	var/list/raider_uniforms = list(
 		/obj/item/clothing/under/soviet,
 		/obj/item/clothing/under/pirate,

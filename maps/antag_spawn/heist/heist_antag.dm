@@ -81,5 +81,3 @@
 /decl/special_role/raider/equip(var/mob/living/carbon/human/player)
 	default_outfit = LAZYACCESS(outfits_per_species, player.species.name) || initial(default_outfit)
 	. = ..()
-	if(.)
-		create_radio(/obj/item/radio/headset/raider, player)

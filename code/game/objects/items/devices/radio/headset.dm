@@ -25,13 +25,3 @@
 				add_overlay(icon, "[icon_state]-online")
 			else
 				add_overlay(icon, "[icon_state]-offline")
-
-/obj/item/radio/headset/receive_range(freq, level, aiOverride = 0)
-	if (aiOverride)
-		return ..(freq, level)
-	if(ishuman(src.loc))
-		var/mob/living/carbon/human/H = src.loc
-		for(var/slot in global.ear_slots)
-			if(H.get_equipped_item(slot) == src)
-				return ..(freq, level)
-	return -1

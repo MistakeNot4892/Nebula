@@ -70,18 +70,6 @@
 	spawn (0)
 		attack_self(user)
 
-/obj/item/radio/intercom/receive_range(freq, level)
-	if (!on)
-		return -1
-	if(!(0 in level))
-		var/turf/position = get_turf(src)
-		if(isnull(position) || !(position.z in level))
-			return -1
-	if (!src.listening)
-		return -1
-
-	return canhear_range
-
 /obj/item/radio/intercom/Process()
 	if(((world.timeofday - last_tick) > 30) || ((world.timeofday - last_tick) < 0))
 		last_tick = world.timeofday

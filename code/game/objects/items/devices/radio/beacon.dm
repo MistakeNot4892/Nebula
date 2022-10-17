@@ -24,9 +24,6 @@ var/global/list/radio_beacons = list()
 /obj/item/radio/beacon/hear_talk()
 	return
 
-/obj/item/radio/beacon/send_hear()
-	return null
-
 /obj/item/radio/beacon/emp_act(severity)
 	if(functioning && severity >= 1)
 		fry()
@@ -66,7 +63,7 @@ var/global/list/radio_beacons = list()
 	anchored = TRUE
 	w_class = ITEM_SIZE_HUGE
 	randpixel = 0
-	
+
 	var/repair_fail_chance = 35
 
 /obj/item/radio/beacon/anchored/Initialize()

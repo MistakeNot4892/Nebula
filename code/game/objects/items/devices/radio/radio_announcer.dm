@@ -32,8 +32,8 @@ var/global/list/announcers = list()
 
 // NOTE TO SELF: this is not really viable, protect it against being blown up somehow
 /obj/item/radio/announcer/Initialize(var/ml, var/nz)
-	var/list/sector = GetConnectedZlevels(nz) 
-	for(var/obj/machinery/network/telecomms_hub/T in SSmachines.machinery)
+	var/list/sector = GetConnectedZlevels(nz)
+	for(var/obj/machinery/network/telecomms_hub/T in global.telecomms_hubs)
 		if((T.z in sector) && T.can_receive_message())
 			forceMove(get_turf(T))
 			break

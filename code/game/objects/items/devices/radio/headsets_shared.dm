@@ -139,6 +139,19 @@
 		access_security
 	)
 
+/obj/item/radio/headset/heads/hos
+	name = "head of security's headset"
+	desc = "TODO"
+	icon = 'icons/obj/items/device/radio/headsets/headset_command.dmi'
+	encryption_keys = list(/obj/item/encryptionkey/heads/hos)
+
+/obj/item/encryptionkey/heads/hos
+	name = "head of personnel's encryption key"
+	icon_state = "hos_cypherkey"
+	can_decrypt = list(
+		access_bridge,
+		access_security
+	)
 
 /obj/item/encryptionkey/ert
 	name = "\improper ERT radio encryption key"

@@ -16,6 +16,7 @@
 /obj/structure/closet/gmcloset/WillContain()
 	return list(
 		/obj/item/clothing/head/that = 2,
+		/obj/item/radio/headset/headset_service = 2,
 		/obj/item/clothing/head/hairflower,
 		/obj/item/clothing/head/hairflower/pink,
 		/obj/item/clothing/head/hairflower/yellow,
@@ -39,6 +40,7 @@
 	return list(
 		/obj/item/clothing/under/sundress,
 		/obj/item/clothing/under/waiter = 2,
+		/obj/item/radio/headset/headset_service = 2,
 		/obj/item/storage/box/mousetraps = 2,
 		/obj/item/clothing/under/chef,
 		/obj/item/clothing/head/chefhat
@@ -55,6 +57,7 @@
 /obj/structure/closet/jcloset/WillContain()
 	return list(
 		/obj/item/clothing/under/janitor,
+		/obj/item/radio/headset/headset_service,
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/head/soft/purple,
 		/obj/item/clothing/head/beret/purple,

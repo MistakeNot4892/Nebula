@@ -5,16 +5,13 @@
 
 /obj/item/radio/exosuit/get_cell()
 	. = ..()
-	if(!.)
+	if(!. && istype(loc, /mob/living/exosuit))
 		var/mob/living/exosuit/E = loc
-		if(istype(E))
-			return E.get_cell()
+		return E.get_cell()
 
 /obj/item/radio/exosuit/nano_host()
-	var/mob/living/exosuit/E = loc
-	if(istype(E))
-		return E
-	return null
+	if(istype(loc, /mob/living/exosuit))
+		return loc
 
 /obj/item/radio/exosuit/attack_self(var/mob/user)
 	var/mob/living/exosuit/exosuit = loc
@@ -31,5 +28,6 @@
 		if(istype(exosuit) && exosuit.head && exosuit.head.radio && exosuit.head.radio.is_functional())
 			return ..()
 
+/// Overridden solely to change the default topic state supplied.
 /obj/item/radio/exosuit/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = global.mech_topic_state)
 	. = ..()

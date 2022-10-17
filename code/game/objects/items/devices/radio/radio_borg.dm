@@ -8,13 +8,11 @@
 	var/shut_up = 1
 
 /obj/item/radio/borg/can_receive_message(var/check_network_membership)
-	. = ..()
+	. = ..() && isrobot(loc)
 	if(.)
-		var/mob/living/silicon/robot/myborg = loc
-		if(istype(myborg))
-			var/datum/robot_component/CO = myborg.get_component("radio")
-			if(!CO || !myborg.is_component_functioning("radio") || !myborg.cell_use_power(CO.active_usage))
-				. = FALSE
+		var/mob/living/silicon/robot/R = loc
+		if(!R.handle_radio_transmission())
+			return FALSE
 
 /obj/item/radio/borg/ert
 	encryption_keys = list(/obj/item/encryptionkey/ert)
@@ -28,15 +26,11 @@
 		. = INITIALIZE_HINT_QDEL
 		CRASH("Invalid spawn location: [log_info_line(loc)]")
 
-/obj/item/radio/borg/talk_into()
+/obj/item/radio/borg/talk_into(mob/living/M, message, message_mode, var/verb = "says", var/decl/language/speaking = null)
 	. = ..()
-	if (isrobot(src.loc))
+	if(isrobot(loc))
 		var/mob/living/silicon/robot/R = src.loc
-		var/datum/robot_component/C = R.components["radio"]
-		R.cell_use_power(C.active_usage)
-
-/obj/item/radio/borg/attackby(obj/item/W, mob/user)
-	. = ..()
+		R.handle_radio_transmission()
 
 /obj/item/radio/borg/Topic(href, href_list)
 	if(..())

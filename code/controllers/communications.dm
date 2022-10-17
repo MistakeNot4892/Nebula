@@ -72,7 +72,7 @@ var/global/const/PUB_FREQ =         1459
 var/global/const/PUBLIC_HIGH_FREQ = 1489
 var/global/const/RADIO_HIGH_FREQ  = 1600
 
-#define COMMON_FREQUENCY_DATA list("name" = "Common", "key" = "g", "frequency" = PUB_FREQ, "color" = COMMS_COLOR_COMMON,  "span_class" = ".radio")
+#define COMMON_FREQUENCY_DATA list("name" = "Common", "key" = "g", "frequency" = PUB_FREQ, "color" = COMMS_COLOR_COMMON,  "span_class" = "radio")
 
 // Device signal frequencies
 var/global/const/ATMOS_ENGINE_FREQ = 1438 // Used by atmos monitoring in the engine.
@@ -85,8 +85,6 @@ var/global/const/BLAST_DOORS_FREQ  = 1303 // Used by blast doors, buttons contro
 var/global/const/AIRLOCK_FREQ      = 1305 // Used by airlocks and buttons controlling them.
 var/global/const/SHUTTLE_AIR_FREQ  = 1331 // Used by shuttles and shuttle-related atmos systems.
 var/global/const/EXTERNAL_AIR_FREQ = 1381 // Used by some external airlocks.
-
-// central command channels, i.e deathsquid & response teams
 
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1

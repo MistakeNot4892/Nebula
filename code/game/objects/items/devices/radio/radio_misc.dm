@@ -1,10 +1,10 @@
 /obj/item/radio/phone
+	name = "phone"
 	broadcasting = 0
 	icon = 'icons/obj/items/red_phone.dmi'
 	icon_state = "red_phone"
 	randpixel = 0
-	listening = 1
-	name = "phone"
+	listening = TRUE
 
 /obj/item/radio/intercept
 	name = "bulky radio"

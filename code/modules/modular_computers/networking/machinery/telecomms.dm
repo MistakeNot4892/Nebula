@@ -49,7 +49,7 @@
 		if(!isnull(data["receive_only"])) receive_only = data["receive_only"]
 
 	if(key && (key in global.special_channel_keys))
-		to_world_log("Comms channel '[name]' created with reserved key '[key]'.")
+		PRINT_STACK_TRACE("Comms channel '[name]' created with reserved key '[key]'.")
 
 /obj/machinery/network/telecomms_hub
 	name = "telecommunications hub"
@@ -76,7 +76,7 @@
 		"key" = "z",
 		"frequency" = 1461,
 		"color" = COMMS_COLOR_ENTERTAIN,
-		"span_class" = ".radio"
+		"span_class" = CSS_CLASS_RADIO
 	))
 	global_radio_broadcaster = TRUE
 
@@ -125,11 +125,13 @@ var/global/list/telecomms_hubs = list()
 	if(overloaded_for > 0)
 		overloaded_for--
 
-/obj/machinery/network/telecomms_hub/proc/get_channel(var/freq)
-	. = LAZYACCESS(channels_by_frequency, freq) || LAZYACCESS(channels_by_key, freq)
+/// Accepts either a raw frequency (numeric), or or a frequency/key string, and returns the associated channel data.
+/obj/machinery/network/telecomms_hub/proc/get_channel_from_freq_or_key(var/cid)
+	cid = "[cid]"
+	. = LAZYACCESS(channels_by_frequency, cid) || LAZYACCESS(channels_by_key, cid)
 
 /obj/machinery/network/telecomms_hub/proc/can_receive_message(var/check_network_membership)
-	. = !(stat & NOPOWER) && !(stat & BROKEN) && (overloaded_for <= 0)
+	. = operable() && (overloaded_for <= 0)
 	if(. && check_network_membership)
 		var/datum/extension/network_device/network_device = get_extension(src, /datum/extension/network_device)
 		return network_device?.get_network() == check_network_membership
@@ -147,11 +149,11 @@ var/global/list/telecomms_hubs = list()
 
 	// Find networks in our z-chunk that have a hub with a channel with the same name, security and frequency.
 	var/list/receiving_networks = list(network)
-	var/datum/radio_channel/channel = get_channel("[frequency]")
+	var/datum/radio_channel/channel = get_channel_from_freq_or_key(frequency)
 	for(var/obj/machinery/network/telecomms_hub/other_hub in global.telecomms_hubs)
 		if(!global_radio_broadcaster && !(other_hub.z in levels))
 			continue
-		var/datum/radio_channel/other_channel = other_hub.get_channel("[frequency]")
+		var/datum/radio_channel/other_channel = other_hub.get_channel_from_freq_or_key(frequency)
 		if(!other_channel || other_channel.name != channel.name)
 			continue
 		if(islist(other_channel.secured) && islist(channel.secured))
@@ -197,7 +199,7 @@ var/global/list/telecomms_hubs = list()
 		channel_data["channel_name"] =   channel_datum.name
 		channel_data["channel_freq"] =   channel_datum.frequency
 		channel_data["channel_key"] =    channel_datum.key
-		channel_data["channel_colour"] = channel_datum.color || COLOR_BLACK
+		channel_data["channel_color"] = channel_datum.color || COLOR_BLACK
 		if(channel_datum.secured)
 			channel_data["channel_access"] = jointext(channel_datum.secured, " ")
 		else

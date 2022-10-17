@@ -47,6 +47,7 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/suit/storage/toggle/fr_jacket,
 		/obj/item/clothing/shoes/color/white,
+		/obj/item/radio/headset/headset_med,
 		/obj/item/stack/tape_roll/barricade_tape/medical,
 		/obj/item/storage/belt/medical/emt,
 		RANDOM_SCRUBS,
@@ -61,24 +62,25 @@
 
 /obj/structure/closet/secure_closet/paramedic/WillContain()
 	return list(
-	    /obj/item/storage/box/autoinjectors,
-	    /obj/item/storage/box/syringes,
-	    /obj/item/chems/glass/bottle/stabilizer,
-	    /obj/item/chems/glass/bottle/antitoxin,
-	    /obj/item/storage/belt/medical/emt,
-	    /obj/item/clothing/mask/gas,
-	    /obj/item/clothing/suit/storage/toggle/fr_jacket,
-	    /obj/item/clothing/suit/storage/toggle/labcoat,
-	    /obj/item/flashlight,
-	    /obj/item/tank/emergency/oxygen/engi,
-	    /obj/item/clothing/glasses/hud/health,
-	    /obj/item/scanner/health,
-	    /obj/item/radio/off,
-	    /obj/random/medical,
-	    /obj/item/crowbar,
-	    /obj/item/extinguisher/mini,
-	    /obj/item/storage/box/freezer,
-	    /obj/item/clothing/accessory/storage/vest,
+		/obj/item/storage/box/autoinjectors,
+		/obj/item/storage/box/syringes,
+		/obj/item/chems/glass/bottle/stabilizer,
+		/obj/item/chems/glass/bottle/antitoxin,
+		/obj/item/storage/belt/medical/emt,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/suit/storage/toggle/fr_jacket,
+		/obj/item/clothing/suit/storage/toggle/labcoat,
+		/obj/item/radio/headset/headset_med,
+		/obj/item/flashlight,
+		/obj/item/tank/emergency/oxygen/engi,
+		/obj/item/clothing/glasses/hud/health,
+		/obj/item/scanner/health,
+		/obj/item/radio/off,
+		/obj/random/medical,
+		/obj/item/crowbar,
+		/obj/item/extinguisher/mini,
+		/obj/item/storage/box/freezer,
+		/obj/item/clothing/accessory/storage/vest
 	)
 
 /obj/structure/closet/secure_closet/CMO
@@ -98,6 +100,7 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/cmoalt,
 		/obj/item/clothing/gloves/latex,
 		/obj/item/clothing/shoes/color/brown,
+		/obj/item/radio/headset/heads/cmo,
 		/obj/item/flash,
 		/obj/item/chems/hypospray/vial,
 		RANDOM_SCRUBS
@@ -124,7 +127,7 @@
 	wall_mounted = 1
 	storage_types = CLOSET_STORAGE_ITEMS
 	req_access = list(access_medical_equip)
-	
+
 /obj/structure/closet/secure_closet/medical_wall/Initialize()
 	. = ..()
 	tool_interaction_flags &= ~TOOL_INTERACTION_ANCHOR

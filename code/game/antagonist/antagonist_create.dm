@@ -40,10 +40,6 @@
 		player.equip_to_slot_or_del(W, slot_wear_id_str)
 	return W
 
-/decl/special_role/proc/create_radio(var/radio_type = /obj/item/radio/headset, var/mob/living/carbon/human/player)
-	if(radio_type)
-		player.equip_to_slot_or_del(new radio_type, slot_l_ear_str)
-
 /decl/special_role/proc/create_nuke(var/atom/paper_spawn_loc, var/datum/mind/code_owner)
 
 	// Decide on a code.

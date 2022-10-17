@@ -21,11 +21,14 @@
 	initial_spawn_target = 7
 	show_objectives_on_creation = 0 //we are not antagonists, we do not need the antagonist shpiel/objectives
 
+	default_outfit = /decl/hierarchy/outfit/ert
+	default_access = list(access_cent_general, access_cent_specops, access_cent_living, access_cent_storage)
+
 	base_to_load = "ERT Base"
 
 /decl/special_role/ert/create_default(var/mob/source)
 	var/mob/living/carbon/human/M = ..()
-	if(istype(M)) 
+	if(istype(M))
 		M.set_age(rand(25,45))
 
 /decl/special_role/ert/Initialize()
@@ -38,13 +41,3 @@
 		return
 	to_chat(player.current, "The Emergency Response Team works for Asset Protection; your job is to protect [global.using_map.company_name]'s ass-ets. There is a code red alert on [station_name()], you are tasked to go and fix the problem.")
 	to_chat(player.current, "You should first gear up and discuss a plan with your team. More members may be joining, don't move out before you're ready.")
-
-/decl/special_role/ert/equip(mob/living/carbon/human/player)
-	if(!..())
-		return 0
-	var/decl/hierarchy/outfit/ert = outfit_by_type(	/decl/hierarchy/outfit/ert)
-	ert.equip(player)
-	var/obj/item/card/id/id = player.get_equipped_item(slot_wear_id_str)
-	if(istype(id))
-		LAZYDISTINCTADD(id.access, access_cent_specops)
-	return 1

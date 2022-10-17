@@ -21,11 +21,11 @@
 	var/list/receivers = list()
 
 	for(var/obj/machinery/shipcomms/comms in linked.comms_masers)
-		var/functional = (comms.stat & (BROKEN|NOPOWER))
+		var/functional = comms.operable()
 		broadcasters += list(list(
-			"name" = comms.name, 
-			"coords" = "[comms.x],[comms.y],[comms.z]", 
-			"desc" = (functional ? "inactive" : "active")
+			"name" = comms.name,
+			"coords" = "[comms.x],[comms.y],[comms.z]",
+			"desc" = (functional ? "active" : "inactive")
 		))
 		if(functional)
 			for(var/obj/effect/overmap/entity in comms.get_nearby_entitities())
@@ -34,45 +34,47 @@
 				printing_entities += entity
 				var/has_receiver = FALSE
 				for(var/obj/machinery/shipcomms/receiver/antenna in entity.comms_antennae)
-					if(!(antenna.stat & (BROKEN|NOPOWER)))
+					if(antenna.operable())
 						has_receiver = TRUE
+						break
 				if(!has_receiver)
 					continue
 				var/has_broadcaster = FALSE
 				for(var/obj/machinery/shipcomms/broadcaster/maser in entity.comms_masers)
-					if(!(maser.stat & (BROKEN|NOPOWER)))
+					if(maser.operable())
 						has_broadcaster = TRUE
+						break
 				entities += list(list(
-					"name" = entity.name, 
-					"coords" = "[entity.x],[entity.y]", 
-					"desc" = entity.desc, 
+					"name" = entity.name,
+					"coords" = "[entity.x],[entity.y]",
+					"desc" = entity.desc,
 					"status" = ((has_broadcaster && has_receiver) ? "Responding to comms pings." : "Not responding to comms pings.")
 				))
 
 	for(var/obj/machinery/shipcomms/comms in linked.comms_antennae)
 		receivers += list(list(
-			"name" = comms.name, 
-			"coords" = "[comms.x],[comms.y],[comms.z]", 
-			"desc" = ((comms.stat & (BROKEN|NOPOWER)) ? "inactive" : "active")
+			"name" = comms.name,
+			"coords" = "[comms.x],[comms.y],[comms.z]",
+			"desc" = (!operable() ? "inactive" : "active")
 		))
 
 	if(!length(entities))
 		entities += list(list(
-			"name" = "None.", 
-			"coords" = "-,-", 
+			"name" = "None.",
+			"coords" = "-,-",
 			"desc" = "-",
 			"status" = "No local entities responding to comms ping."
 		))
 	if(!length(broadcasters))
 		broadcasters += list(list(
-			"name" = "None.", 
-			"coords" = "-,-,-", 
+			"name" = "None.",
+			"coords" = "-,-,-",
 			"desc" = "No broadcasters available."
 		))
 	if(!length(receivers))
 		receivers += list(list(
-			"name" = "None.", 
-			"coords" = "-,-,-", 
+			"name" = "None.",
+			"coords" = "-,-,-",
 			"desc" = "No receivers available."
 		))
 
@@ -110,7 +112,7 @@
 	var/enabled = TRUE
 
 /obj/machinery/shipcomms/proc/toggle()
-	if((stat & BROKEN) || use_power != POWER_USE_OFF)
+	if(is_broken() || use_power != POWER_USE_OFF)
 		update_use_power(POWER_USE_OFF)
 	else
 		update_use_power(POWER_USE_IDLE)
@@ -122,7 +124,7 @@
 	var/obj/effect/overmap/O = global.overmap_sectors["[z]"]
 	if(!O)
 		return
-	if(stat & (BROKEN|NOPOWER))
+	if(!operable())
 		unregister(O)
 	else
 		register(O)
@@ -194,13 +196,13 @@
 	if(!istype(T))
 		return FALSE
 	for(var/turf/neighbor in RANGE_TURFS(T, 1))
-		if(istype(neighbor, /turf/space) || istype(neighbor, /turf/exterior))
+		if(neighbor.is_outside())
 			return TRUE
 	return FALSE
 
 /obj/machinery/shipcomms/on_update_icon()
 	cut_overlays()
-	if(stat & (BROKEN|NOPOWER))
+	if(!operable())
 		set_light(0)
 	else
 		var/image/I = emissive_overlay(icon, "[icon_state]_on")
@@ -223,7 +225,7 @@
 
 /obj/machinery/shipcomms/broadcaster/get_available_z_levels()
 	. = ..()
-	if(!(stat & (BROKEN|NOPOWER)) && has_clear_adjacent_turf())
+	if(operable() && has_clear_adjacent_turf())
 		for(var/obj/effect/overmap/other in get_nearby_entitities())
 			for(var/obj/machinery/shipcomms/receiver/antenna in other.comms_antennae)
 				. |= antenna.get_available_z_levels()
@@ -243,5 +245,5 @@
 
 /obj/machinery/shipcomms/receiver/get_available_z_levels()
 	. = ..()
-	if(!(stat & (BROKEN|NOPOWER)) && has_clear_adjacent_turf())
+	if(operable() && has_clear_adjacent_turf())
 		. = GetConnectedZlevels(z)

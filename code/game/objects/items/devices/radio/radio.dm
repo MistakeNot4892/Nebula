@@ -193,11 +193,8 @@ var/global/list/initial_peer_to_peer_passwords = list()
 		playsound(loc, 'sound/effects/radio_chatter.ogg', 10, 0, -6)
 		last_radio_sound = world.time
 
-/obj/item/radio/proc/list_channels(var/mob/user)
-	return
-
 /obj/item/radio/proc/has_channel_access(var/mob/user, var/freq)
-	return TRUE
+	return TRUE // TODO: add antag/valid bounds checking
 
 /obj/item/radio/get_cell()
 	return cell
@@ -331,7 +328,7 @@ var/global/list/initial_peer_to_peer_passwords = list()
 			to_chat(M, SPAN_WARNING("You're disrupted as you reach for \the [src]."))
 			return 0
 
-		if(istype(M)) 
+		if(istype(M))
 			M.trigger_aiming(TARGET_CAN_RADIO)
 
 	addtimer(CALLBACK(src, .proc/transmit, M, message, message_mode, verb, speaking), 0)
@@ -404,7 +401,7 @@ var/global/list/initial_peer_to_peer_passwords = list()
 			if(!T || !(T.z in current_sector) || get_dist(position, T) > peer_to_peer_range)
 				continue
 			if(!radio.peer_to_peer || !radio.can_receive_message())
-				continue 
+				continue
 			if(!radio.decrypt_all_messages && peer_to_peer_password && radio.peer_to_peer_password != peer_to_peer_password)
 				continue
 			for(var/mob/listener in hearers(radio.canhear_range, T))
@@ -416,7 +413,7 @@ var/global/list/initial_peer_to_peer_passwords = list()
 			var/obj/machinery/network/telecomms_hub/hub = H.resolve()
 			if(istype(hub) && !QDELETED(hub) && hub.can_receive_message(network))
 				send_message_to = hub.get_recipients(current_sector, network, use_frequency)
-				channel = hub.get_channel("[use_frequency]")
+				channel = hub.get_channel_from_freq_or_key(use_frequency)
 
 	set_frequency(last_frequency)
 
@@ -447,24 +444,6 @@ var/global/list/initial_peer_to_peer_passwords = list()
 /obj/item/radio/hear_talk(mob/M, msg, var/verb = "says", var/decl/language/speaking = null)
 	if(on && broadcasting && get_dist(src, M) <= canhear_range)
 		talk_into(M, msg, null, verb, speaking)
-
-/obj/item/radio/proc/receive_range(freq, level)
-	// check if this radio can receive on the given frequency, and if so,
-	// what the range is in which mobs will hear the radio
-	// returns: -1 if can't receive, range otherwise
-
-	if(!on || !listening || wires.IsIndexCut(WIRE_RECEIVE))
-		return -1
-	if(!(0 in level))
-		var/turf/position = get_turf(src)
-		if(!position || !(position.z in level))
-			return -1
-	return canhear_range
-
-/obj/item/radio/proc/send_hear(freq, level)
-	var/range = receive_range(freq, level)
-	if(range > -1)
-		return get_mobs_or_objects_in_view(canhear_range, src)
 
 /obj/item/radio/examine(mob/user, distance)
 	. = ..()
@@ -524,40 +503,3 @@ var/global/list/initial_peer_to_peer_passwords = list()
 
 /obj/item/radio/off
 	listening = FALSE
-//The exosuit  radio subtype. It allows pilots to interact and consumes exosuit power
-
-/obj/item/radio/exosuit
-	name = "exosuit radio"
-	cell = null
-	intercom_handling = TRUE
-
-/obj/item/radio/exosuit/get_cell()
-	. = ..()
-	if(!.)
-		var/mob/living/exosuit/E = loc
-		if(istype(E))
-			return E.get_cell()
-
-/obj/item/radio/exosuit/nano_host()
-	var/mob/living/exosuit/E = loc
-	if(istype(E))
-		return E
-	return null
-
-/obj/item/radio/exosuit/attack_self(var/mob/user)
-	var/mob/living/exosuit/exosuit = loc
-	if(istype(exosuit) && exosuit.head && exosuit.head.radio && exosuit.head.radio.is_functional())
-		user.set_machine(src)
-		interact(user)
-	else
-		to_chat(user, SPAN_WARNING("The radio is too damaged to function."))
-
-/obj/item/radio/exosuit/CanUseTopic()
-	. = ..()
-	if(.)
-		var/mob/living/exosuit/exosuit = loc
-		if(istype(exosuit) && exosuit.head && exosuit.head.radio && exosuit.head.radio.is_functional())
-			return ..()
-
-/obj/item/radio/exosuit/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = global.mech_topic_state)
-	. = ..()

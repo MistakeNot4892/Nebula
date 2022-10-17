@@ -8,6 +8,7 @@
 		/obj/item/clothing/under/color/white,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
 		/obj/item/clothing/shoes/color/white,
+		/obj/item/radio/headset/headset_sci,
 		/obj/item/clothing/mask/gas,
 		/obj/item/clipboard
 	)
@@ -24,6 +25,7 @@
 		/obj/item/clothing/shoes/color/white,
 		/obj/item/clothing/mask/gas,
 		/obj/item/clothing/gloves/latex,
+		/obj/item/radio/headset/heads/rd,
 		/obj/item/clipboard,
 		/obj/item/storage/belt/general
 	)

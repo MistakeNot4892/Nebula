@@ -39,10 +39,7 @@
 	if(!cause)
 		death_message = "[mobname] has died-zzzzt in-in-in..."
 	STOP_PROCESSING(SSobj, src)
-	var/obj/item/radio/announcer = get_announcer(src)
-	if(announcer)
-		for(var/channel in list("Security", "Medical", "Command"))
-			announcer.autosay(death_message, "[mobname]'s Death Alarm", channel)
+	do_telecomms_announcement(src, death_message, "[mobname]'s Death Alarm", list("Security", "Medical", "Command"))
 
 /obj/item/implant/death_alarm/disable()
 	. = ..()

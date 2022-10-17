@@ -31,6 +31,7 @@
 	return list(
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/clothing/head/helmet,
+		/obj/item/radio/headset/heads/hop,
 		/obj/item/storage/box/ids = 2,
 		/obj/item/flash
 	)
@@ -70,6 +71,7 @@
 		/obj/item/clothing/under/head_of_security/jensen,
 		/obj/item/clothing/suit/armor/hos/jensen,
 		/obj/item/clothing/suit/armor/hos,
+		/obj/item/radio/headset/heads/hos,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/stack/tape_roll/barricade_tape/police,
 		/obj/item/shield/riot,
@@ -96,6 +98,7 @@
 		/obj/item/clothing/under/warden,
 		/obj/item/clothing/suit/armor/warden,
 		/obj/item/clothing/head/warden,
+		/obj/item/radio/headset/headset_sec,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/stack/tape_roll/barricade_tape/police,
 		/obj/item/storage/box/flashbangs,
@@ -118,6 +121,7 @@
 		new/datum/atom_creator/weighted(list(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel/sec)),
 		new/datum/atom_creator/simple(/obj/item/storage/backpack/dufflebag/sec, 50),
 		/obj/item/clothing/head/helmet,
+		/obj/item/radio/headset/headset_sec,
 		/obj/item/storage/belt/holster/security,
 		/obj/item/flash,
 		/obj/item/chems/spray/pepper,
@@ -150,6 +154,7 @@
 		/obj/item/clothing/head/det/grey,
 		/obj/item/clothing/shoes/dress,
 		/obj/item/storage/box/evidence,
+		/obj/item/radio/headset/headset_sec,
 		/obj/item/clothing/suit/armor/pcarrier/detective,
 		/obj/item/stack/tape_roll/barricade_tape/police,
 		/obj/item/gun/projectile/pistol,

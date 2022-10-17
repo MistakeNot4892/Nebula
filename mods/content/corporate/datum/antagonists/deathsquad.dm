@@ -29,6 +29,7 @@
 /decl/hierarchy/outfit/commando
 	name =     "Special Role - Deathsquad Commando"
 	uniform =  /obj/item/clothing/under/color/green
+	l_ear =    /obj/item/radio/headset/syndicate
 	l_pocket = /obj/item/plastique
 	shoes =    /obj/item/clothing/shoes/jackboots/swat
 	glasses =  /obj/item/clothing/glasses/thermal
@@ -53,7 +54,6 @@
 	. = ..()
 	if(.)
 		player.implant_loyalty(player)
-		create_radio(/obj/item/radio/headset/syndicate, player)
 
 /decl/special_role/deathsquad/create_id(mob/living/carbon/human/player, equip)
 	var/obj/item/card/id/id = ..()

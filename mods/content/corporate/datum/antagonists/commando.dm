@@ -14,17 +14,13 @@
 	rig_type = /obj/item/rig/merc
 	id_title = "Commando"
 
-/decl/special_role/deathsquad/mercenary/equip(var/mob/living/carbon/human/player)
-	. = ..()
-	if(.)
-		create_radio(/obj/item/radio/headset/syndicate, player)
-
 /decl/hierarchy/outfit/mercenary_commando
 	name =    "Special Role - Mercenary Commando"
 	uniform = /obj/item/clothing/under/syndicate
 	shoes =   /obj/item/clothing/shoes/jackboots/swat
 	glasses = /obj/item/clothing/glasses/thermal
 	mask =    /obj/item/clothing/mask/gas/syndicate
+	l_ear =   /obj/item/radio/headset/syndicate
 	backpack_contents = list(/obj/item/ammo_magazine/box/pistol = 1)
 	hands = list(
 		/obj/item/gun/energy/laser,
