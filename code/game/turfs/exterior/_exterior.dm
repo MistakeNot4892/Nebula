@@ -8,10 +8,10 @@
 	turf_flags = TURF_FLAG_BACKGROUND
 	var/diggable = 1
 	var/dirt_color = "#7c5e42"
-	var/possible_states = 0
-	var/icon_edge_layer = -1
-	var/icon_edge_states
-	var/icon_has_corners = FALSE
+	var/possible_states = 0      // Number of random base states to pick from.
+	var/icon_edge_layer = -1     // Where to layer the edges.
+	var/icon_edge_states         // Number of edge states.
+	var/icon_has_corners = FALSE // Whether or not to try and draw edge corners.
 	var/list/affecting_heat_sources
 	var/obj/effect/overmap/visitable/sector/exoplanet/owner
 
@@ -40,6 +40,8 @@
 	var/air_graphic = get_air_graphic()
 	if(length(air_graphic))
 		add_vis_contents(src, air_graphic)
+	if(flooded)
+		add_vis_contents(src, global.flood_object)
 
 	if (no_update_icon)
 		return

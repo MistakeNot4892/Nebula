@@ -202,10 +202,12 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 		to_chat(src, alert("That spawnpoint is unavailable. Please try another."))
 		return 0
 
-	var/turf/spawn_turf = pick(spawnpoint.turfs)
+	var/turf/spawn_turf
 	if(job.latejoin_at_spawnpoints)
 		var/obj/S = job.get_roundstart_spawnpoint()
 		spawn_turf = get_turf(S)
+	else
+		spawn_turf = pick(spawnpoint.turfs)
 
 	if(!SSjobs.check_unsafe_spawn(src, spawn_turf))
 		return

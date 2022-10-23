@@ -1382,3 +1382,6 @@ var/global/list/floor_decals = list()
 
 /obj/effect/floor_decal/stoneborder/corner
 	icon_state = "stoneborder_c"
+
+/obj/effect/floor_decal/road_stripe
+	icon_state = "road_stripe"

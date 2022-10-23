@@ -440,3 +440,9 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	if(overmap_entity?.name)
 		return overmap_entity.name
 	return "Sector #[z]"
+
+/datum/map/proc/apply_ambient_exterior_light(var/turf/target)
+	if(config.starlight)
+		target.set_ambient_light(SSskybox.background_color, config.starlight)
+		return TRUE
+	return FALSE

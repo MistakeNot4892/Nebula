@@ -2,8 +2,8 @@
 
 	#include "borderworld-1.dmm"
 	#include "borderworld-2.dmm"
-	#include "borderworld_jobs.dm"
 	#include "borderworld_areas.dm"
+	#include "borderworld_jobs.dm"
 	#include "borderworld_unit_testing.dm"
 
 	#define USING_MAP_DATUM /datum/map/borderworld

@@ -19,6 +19,8 @@
 	parts_amount = 2
 	parts_type = /obj/item/stack/material/strut
 
+	var/can_plate = TRUE
+	var/can_reinforce = TRUE
 	var/can_flip = TRUE
 	var/is_flipped = FALSE
 	var/decl/material/additional_reinf_material
@@ -162,14 +164,14 @@
 		physically_destroyed()
 		return TRUE
 
-	if(!reinf_material)
+	if(!reinf_material && can_reinforce)
 		if(istype(W, /obj/item/stack/material/rods))
 			return reinforce_table(W, user)
 		if(istype(W, /obj/item/stack/material))
 			return finish_table(W, user)
 		return ..()
 
-	if(!felted && istype(W, /obj/item/stack/tile/carpet))
+	if(!felted && can_plate && istype(W, /obj/item/stack/tile/carpet))
 		var/obj/item/stack/tile/carpet/C = W
 		if(C.use(1))
 			user.visible_message(
@@ -280,6 +282,9 @@
 	alpha = 255
 	..()
 
+	if(!istype(material))
+		return
+
 	icon_state = "blank"
 	if(!is_flipped)
 		mob_offset = initial(mob_offset)
@@ -291,13 +296,13 @@
 			I.alpha = 255 * material.opacity
 			add_overlay(I)
 		// Tabletop
-		if(reinf_material)
+		if(istype(reinf_material))
 			for(var/i = 1 to 4)
 				I = image(icon, "[reinf_material.table_icon_base]_[connections ? connections[i] : "0"]", dir = BITFLAG(i-1))
 				I.color = reinf_material.color
 				I.alpha = 255 * reinf_material.opacity
 				add_overlay(I)
-		if(additional_reinf_material)
+		if(istype(additional_reinf_material))
 			for(var/i = 1 to 4)
 				I = image(icon, "[additional_reinf_material.table_icon_reinforced]_[connections ? connections[i] : "0"]", dir = BITFLAG(i-1))
 				I.color = additional_reinf_material.color
@@ -330,13 +335,13 @@
 		alpha = 255 * material.opacity
 
 		var/image/I
-		if(reinf_material)
+		if(istype(reinf_material))
 			I = image(icon, "[reinf_material.table_icon_base]_flip[flip_type][flip_mod]")
 			I.color = reinf_material.color
 			I.alpha = 255 * reinf_material.opacity
 			I.appearance_flags |= RESET_COLOR|RESET_ALPHA
 			add_overlay(I)
-		if(additional_reinf_material)
+		if(istype(additional_reinf_material))
 			I = image(icon, "[reinf_material.table_icon_reinforced]_flip[flip_type][flip_mod]")
 			I.color = additional_reinf_material.color
 			I.alpha = 255 * additional_reinf_material.opacity
@@ -746,3 +751,32 @@
 
 /obj/structure/table/woodentable_reinforced/ebony/walnut
 	additional_reinf_material = /decl/material/solid/wood/walnut
+
+/obj/structure/table/small
+	name = "small table"
+	desc = "Good to rest your coffee on."
+	icon = 'icons/obj/structures/tables_small.dmi'
+	icon_state = "table_small"
+	can_plate = FALSE
+	can_reinforce = FALSE
+	can_flip = FALSE
+
+/obj/structure/table/small/Initialize()
+	. = ..()
+	verbs -= list(
+		/obj/structure/table/verb/do_flip,
+		/obj/structure/table/proc/do_put
+	)
+
+/obj/structure/table/small/update_connections()
+	return
+
+/obj/structure/table/small/update_material_desc()
+	return
+
+/obj/structure/table/small/on_update_icon()
+	return
+
+/obj/structure/table/small/cloth
+	desc = "It has one of those weird lacy cloth things on it."
+	icon_state = "table_small_cloth"

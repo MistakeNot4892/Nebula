@@ -277,3 +277,25 @@
 		var/obj/structure/grille/F = new(loc, ST.material.type)
 		user.visible_message(SPAN_NOTICE("\The [user] finishes building \a [F]."))
 		F.add_fingerprint(user)
+
+// Decorative variants.
+/obj/structure/grille/fence
+	name = "fence"
+	icon = 'icons/obj/structures/fence.dmi'
+	icon_state = "fence"
+	density =  TRUE
+	anchored = TRUE
+
+/obj/structure/grille/on_update_icon()
+	color = null
+	return
+
+/obj/structure/grille/attackby(var/obj/item/thing, var/mob/user)
+	if(IS_SCREWDRIVER(thing))
+		return FALSE
+	return ..()
+
+/obj/structure/grille/fence/gate
+	name = "fence gate"
+	icon_state = "fence_gate"
+	density = FALSE

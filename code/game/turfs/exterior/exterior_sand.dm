@@ -4,7 +4,7 @@
 	dirt_color = "#ae9e66"
 	footstep_type = /decl/footsteps/sand
 	icon = 'icons/turf/exterior/sand.dmi'
-	icon_edge_layer = EXT_EDGE_SAND 
+	icon_edge_layer = EXT_EDGE_SAND
 	icon_has_corners = TRUE
 	possible_states = 5
 
@@ -19,3 +19,11 @@
 		icon_state = "glass"
 		icon_edge_layer = -1
 		diggable = FALSE
+
+/turf/exterior/sand/flooded
+	flooded = TRUE
+	color = COLOR_LIQUID_WATER
+
+/turf/exterior/sand/flooded/Initialize()
+	color = null
+	. = ..()

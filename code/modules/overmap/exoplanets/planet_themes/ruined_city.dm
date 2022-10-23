@@ -99,15 +99,14 @@
 
 /datum/random_map/city/get_appropriate_path(var/value)
 	if(value == ROAD_VALUE && prob(99))
-		return /turf/exterior/concrete/reinforced/road
+		return /turf/exterior/asphalt
 
 /datum/random_map/city/get_additional_spawns(var/value, var/turf/simulated/floor/T)
-	if(istype(T, /turf/exterior/concrete/reinforced/road))
-		if(prob(1))
-			new/obj/structure/rubble/house(T)
-		if(prob(5))
-			var/turf/exterior/concrete/C = T
-			C.set_broken(TRUE)
+	if(istype(T, /turf/exterior/asphalt) && prob(1))
+		new /obj/structure/rubble/house(T)
+	else if(prob(5) && istype(T, /turf/exterior/concrete))
+		var/turf/exterior/concrete/C = T
+		C.set_broken(TRUE)
 
 /datum/random_map/city/apply_to_map()
 	..()
@@ -214,6 +213,6 @@
 			new/obj/structure/rubble/lab(T)
 		if(prob(20))
 			new/obj/item/remains/xeno/charred(T)
-	
+
 
 #undef TRANSLATE_COORD

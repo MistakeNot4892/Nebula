@@ -47,10 +47,8 @@ SUBSYSTEM_DEF(ambience)
 			if(planet.lightlevel)
 				set_ambient_light(COLOR_WHITE, planet.lightlevel)
 				return TRUE
-		else
-			if(config.starlight)
-				set_ambient_light(SSskybox.background_color, config.starlight)
-				return TRUE
+		else if(global.using_map.apply_ambient_exterior_light(src))
+			return TRUE
 
 	clear_ambient_light()
 	return FALSE
