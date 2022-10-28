@@ -173,9 +173,9 @@ var/global/list/initial_peer_to_peer_passwords = list()
 			var/list/channel_data = list()
 			channel_data["display_name"] = channel.name || format_frequency(channel.frequency)
 			channel_data["chan"] = "[channel.frequency]"
+			channel_data["color"] = "[channel.color]"
 			channel_data["secure_channel"] = !!(channel.secured)
 			channel_data["listening"] = !!(current_channels[channel])
-			channel_data["chan_span"] = channel.span_class
 			data["channel_list"] += list(channel_data)
 
 	if(can_decrypt(access_syndicate))

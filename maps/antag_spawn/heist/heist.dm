@@ -21,7 +21,6 @@
 			"key" = "t",
 			"frequency" = PUB_FREQ,
 			"color" = COMMS_COLOR_SYNDICATE,
-			"span_class" = CSS_CLASS_RADIO,
 			"secured" = access_raider
 		)
 	)

@@ -6,18 +6,17 @@
 	apc_test_exempt_areas = list(
 		/area/map_template/rescue_base = NO_SCRUBBER|NO_VENT|NO_APC
 	)
-		
+
 /obj/machinery/network/telecomms_hub/ert
 	req_access = list(access_cent_specops)
 	initial_network_id = "responsenet"
 	channels = list(
 		COMMON_FREQUENCY_DATA,
 		list(
-			"name" = "Response", 
-			"key" = "t", 
-			"frequency" = 1345, 
-			"color" = COMMS_COLOR_CENTCOMM, 
-			"span_class" = ".centradio", 
+			"name" = "Response",
+			"key" = "t",
+			"frequency" = 1345,
+			"color" = COMMS_COLOR_CENTCOMM,
 			"secured" = access_cent_specops
 		)
 	)

@@ -72,7 +72,7 @@ var/global/const/PUB_FREQ =         1459
 var/global/const/PUBLIC_HIGH_FREQ = 1489
 var/global/const/RADIO_HIGH_FREQ  = 1600
 
-#define COMMON_FREQUENCY_DATA list("name" = "Common", "key" = "g", "frequency" = PUB_FREQ, "color" = COMMS_COLOR_COMMON,  "span_class" = "radio")
+#define COMMON_FREQUENCY_DATA list("name" = "Common", "key" = "g", "frequency" = PUB_FREQ, "color" = COMMS_COLOR_COMMON)
 
 // Device signal frequencies
 var/global/const/ATMOS_ENGINE_FREQ = 1438 // Used by atmos monitoring in the engine.

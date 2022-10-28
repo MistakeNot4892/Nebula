@@ -35,7 +35,6 @@
 	var/frequency
 	var/color
 	var/secured
-	var/span_class = ".syndradio"
 	var/receive_only = FALSE
 
 /datum/radio_channel/New(var/list/data)
@@ -45,7 +44,6 @@
 		if(!isnull(data["frequency"]))    frequency =    data["frequency"]
 		if(!isnull(data["color"]))        color =        data["color"]
 		if(!isnull(data["secured"]))      secured =      data["secured"]
-		if(!isnull(data["span_class"]))   span_class =   data["span_class"]
 		if(!isnull(data["receive_only"])) receive_only = data["receive_only"]
 
 	if(key && (key in global.special_channel_keys))
@@ -76,7 +74,6 @@
 		"key" = "z",
 		"frequency" = 1461,
 		"color" = COMMS_COLOR_ENTERTAIN,
-		"span_class" = CSS_CLASS_RADIO
 	))
 	global_radio_broadcaster = TRUE
 
