@@ -2196,6 +2196,8 @@
 #include "code\modules\codex\entries\tools.dm"
 #include "code\modules\codex\entries\turfs.dm"
 #include "code\modules\codex\entries\weapons.dm"
+#include "code\modules\condenser\_condenser.dm"
+#include "code\modules\condenser\condenser_circuit.dm"
 #include "code\modules\crafting\handmade_fancy.dm"
 #include "code\modules\crafting\handmade_items.dm"
 #include "code\modules\crafting\forging\bellows.dm"
