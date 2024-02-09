@@ -3,6 +3,7 @@
 	codex_name = "liquid water" // need a better name than this so it passes the overlapping ID unit tests :(
 	uid = "liquid_water"
 	solid_name = "ice"
+	liquid_name = "water"
 	gas_name = "water vapour"
 	lore_text = "A ubiquitous chemical substance composed of hydrogen and oxygen."
 	color = COLOR_LIQUID_WATER

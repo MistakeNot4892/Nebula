@@ -641,4 +641,3 @@
 		var/val_factor  = 1 + (rand(10, 50) / 100) //Make the color brighter within a factor of 10%-50%
 		//Scale and clamp to sane-ish values for lighting
 		return hsv(HSV[1], clamp(round(HSV[2] * sat_factor), 40, 80), clamp(round(HSV[3] * val_factor), 60, 90), 200)
-

@@ -61,6 +61,43 @@
 		REMOVE_ACTIVE_FLUID_SOURCE(src)
 		fluid_update() // We are now floodable, so wake up our neighbors.
 
+	if(HasAbove(z))
+		var/turf/overhead = GetAbove(src)
+		if(TURF_IS_MIMICKING(overhead) && overhead.is_open())
+			overhead.queue_icon_update()
+
+/turf/exterior/open/on_update_icon()
+	. = ..()
+	if(TURF_IS_MIMICKING(src))
+		name = initial(name)
+		cut_overlays()
+		var/turf/underneath = GetBelow(src)
+		if(istype(underneath) && underneath.flooded && !flooded)
+			add_overlay(get_zmimic_fluid_appearance(underneath.flooded))
+			var/decl/material/fluid_decl = GET_DECL(underneath.flooded)
+			name = "deep [fluid_decl.liquid_name]"
+
+/turf/exterior/open/Initialize(mapload)
+	. = ..()
+	if(HasBelow(z) && TURF_IS_MIMICKING(src))
+		queue_icon_update()
+
+/turf/simulated/open/on_update_icon()
+	. = ..()
+	if(TURF_IS_MIMICKING(src))
+		name = initial(name)
+		cut_overlays()
+		var/turf/underneath = GetBelow(src)
+		if(istype(underneath) && underneath.flooded && !flooded)
+			add_overlay(get_zmimic_fluid_appearance(underneath.flooded))
+			var/decl/material/fluid_decl = GET_DECL(underneath.flooded)
+			name = "deep [fluid_decl.liquid_name]"
+
+/turf/simulated/open/Initialize(mapload)
+	. = ..()
+	if(HasBelow(z) && TURF_IS_MIMICKING(src))
+		queue_icon_update()
+
 /turf/is_flooded(var/lying_mob, var/absolute)
 	return (flooded || (!absolute && check_fluid_depth(lying_mob ? FLUID_OVER_MOB_HEAD : FLUID_DEEP)))
 
