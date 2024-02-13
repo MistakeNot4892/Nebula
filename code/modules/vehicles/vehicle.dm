@@ -130,7 +130,7 @@
 	pulse2.icon = 'icons/effects/effects.dmi'
 	pulse2.icon_state = "empdisable"
 	pulse2.SetName("emp sparks")
-	pulse2.anchored = TRUE
+	pulse2.set_anchored(TRUE)
 	pulse2.set_dir(pick(global.cardinal))
 
 	spawn(10)
@@ -262,7 +262,7 @@
 
 	C.forceMove(loc)
 	C.set_dir(dir)
-	C.anchored = TRUE
+	C.set_anchored(TRUE)
 
 	load = C
 
@@ -311,7 +311,7 @@
 
 	load.forceMove(dest)
 	load.set_dir(get_dir(loc, dest))
-	load.anchored = FALSE		//we can only load non-anchored items, so it makes sense to set this to false
+	load.set_anchored(FALSE)		//we can only load non-anchored items, so it makes sense to set this to false
 	if(ismob(load)) //atoms should probably have their own procs to define how their pixel shifts and layer can be manipulated, someday
 		var/mob/M = load
 		M.pixel_x = M.default_pixel_x

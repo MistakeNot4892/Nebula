@@ -4,6 +4,8 @@
 		#include "../../code/unit_tests/offset_tests.dm"
 	#endif
 
+	#include "../../mods/content/mechanics/_mechanics.dme"
+	
 	#include "example_areas.dm"
 	#include "example_shuttles.dm"
 	#include "example_departments.dm"

@@ -24,7 +24,7 @@
 		if (src.allowed(user))
 			if	(src.emagged < 2.0)
 				src.locked = !src.locked
-				src.anchored = !src.anchored
+				set_anchored(!anchored)
 				src.icon_state = "barrier[src.locked]"
 				if ((src.locked == 1.0) && (src.emagged < 2.0))
 					to_chat(user, "Barrier lock toggled on.")

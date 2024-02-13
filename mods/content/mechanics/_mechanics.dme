@@ -1,0 +1,8 @@
+#ifndef MODPACK_MECHANICS
+#define MODPACK_MECHANICS
+#include "_mechanics.dm"
+#include "mechanics_crafting.dm"
+#include "structures/mechanics_axle.dm"
+#include "structures/mechanics_column.dm"
+#include "structures/mechanics_junction.dm"
+#endif

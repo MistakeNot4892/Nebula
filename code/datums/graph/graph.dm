@@ -32,9 +32,12 @@
 		return QDEL_HINT_LETMELIVE
 	. = ..()
 
+/datum/graph/proc/GetNodes()
+	return nodes?.Copy()
+
 /datum/graph/proc/Connect(var/datum/node/node, var/list/neighbours, var/queue = TRUE)
 	SHOULD_NOT_SLEEP(TRUE)
-	SHOULD_NOT_OVERRIDE(TRUE)
+	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(neighbours))
 		neighbours = list(neighbours)
 	if(!length(neighbours))
@@ -65,7 +68,7 @@
 
 /datum/graph/proc/Disconnect(var/datum/node/node, var/list/neighbours, var/queue = TRUE)
 	SHOULD_NOT_SLEEP(TRUE)
-	SHOULD_NOT_OVERRIDE(TRUE)
+	SHOULD_CALL_PARENT(TRUE)
 	if(neighbours && !istype(neighbours))
 		neighbours = list(neighbours)
 	neighbours = neighbours || edges[node] // A null list of neighbours implies all neighbours
@@ -259,10 +262,10 @@
 		CRASH("Attempted check a node that is not in the graph")
 
 	var/list/neighbours = edges[node]
-	if(length(nodes) == 1) // A graph with only a single node is not likely to have edges and then, and only then, we allow neighbours to be null
-		return neighbours ? neighbours.Copy() : list()
-	else
-		return neighbours.Copy()
+	// This comment doesn't appear to be correct. Deleting a single node causes a runtime.
+	//if(length(nodes) == 1) // A graph with only a single node is not likely to have edges and then, and only then, we allow neighbours to be null
+	return neighbours ? neighbours.Copy() : list()
+	//return neighbours.Copy()
 
 /datum/graph/get_log_info_line()
 	return "[..()] (nodes: [log_info_line(nodes)]) (edges: [log_info_line(edges)])"

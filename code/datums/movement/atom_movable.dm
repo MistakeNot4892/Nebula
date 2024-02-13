@@ -35,3 +35,9 @@
 /datum/movement_handler/move_relay_self/DoMove(var/direction, var/mover)
 	host.relaymove(mover, direction)
 	return MOVEMENT_HANDLED
+
+/atom/movable/proc/set_anchored(var/new_anchored)
+	if(anchored != new_anchored)
+		anchored = new_anchored
+		return TRUE
+	return FALSE

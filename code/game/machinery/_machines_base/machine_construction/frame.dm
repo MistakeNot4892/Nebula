@@ -17,7 +17,7 @@
 		if(do_after(user, 20, machine))
 			TRANSFER_STATE(/decl/machine_construction/frame/wrenched)
 			to_chat(user, "<span class='notice'>You wrench \the [machine] into place.</span>")
-			machine.anchored = TRUE
+			machine.set_anchored(TRUE)
 	if(IS_WELDER(I))
 		var/obj/item/weldingtool/WT = I
 		if(!WT.weld(0, user))
@@ -55,7 +55,7 @@
 		if(do_after(user, 20, machine))
 			TRANSFER_STATE(/decl/machine_construction/frame/unwrenched)
 			to_chat(user, "<span class='notice'>You unfasten \the [machine].</span>")
-			machine.anchored = FALSE
+			machine.set_anchored(FALSE)
 			return
 
 	if(IS_COIL(I))

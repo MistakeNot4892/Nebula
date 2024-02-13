@@ -153,3 +153,36 @@ Quick adjacency (to turf):
 
 	Since I don't want to complicate the click code rework by messing with unrelated systems it won't be changed here.
 */
+
+/atom/proc/IsMultiZAdjacent(var/atom/neighbor)
+
+	var/turf/T = get_turf(src)
+	var/turf/N = get_turf(neighbor)
+
+	// Not on valid turfs.
+	if(QDELETED(src) || QDELETED(neighbor) || !istype(T) || !istype(N))
+		return FALSE
+
+	// On the same z-level, we don't need to care about multiz.
+	if(N.z == T.z)
+		return Adjacent(neighbor)
+
+	// More than one z-level away from each other.
+	if(abs(N.x - T.x) > 1 || abs(N.y - T.y) > 1 || abs(N.z - T.z) > 1)
+		return FALSE
+
+	// Not in a connected z-volume.
+	if(!(N.z in SSmapping.get_connected_levels(T.z)))
+		return FALSE
+
+	// Are they below us?
+	if(N.z < T.z && HasBelow(T.z))
+		var/turf/B = GetBelow(T)
+		return T.is_open() && neighbor.Adjacent(B)
+
+	// Are they above us?
+	if(HasAbove(T.z))
+		var/turf/A = GetAbove(T)
+		return A.is_open() && neighbor.Adjacent(A)
+
+	return FALSE

@@ -295,6 +295,15 @@
 	max_icon_state = "sheet-wood-max"
 	stack_merge_type = /obj/item/stack/material/plank
 
+/obj/item/stack/material/log
+	name = "logs"
+	singular_name = "log"
+	plural_name = "logs"
+	icon_state = "log"
+	plural_icon_state = "log-mult"
+	max_icon_state = "log-max"
+	stack_merge_type = /obj/item/stack/material/log
+
 /obj/item/stack/material/segment
 	name = "segments"
 	singular_name = "segment"

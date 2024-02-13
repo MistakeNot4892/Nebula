@@ -41,3 +41,16 @@ var/global/list/ccw_dir = list(
 	32, 40, 36, 44, 33, 41, 37, 45, 34, 42, 38, 46, 35, 43, 39, 47, // DOWN - Same as first line but +32
 	48, 56, 52, 60, 49, 57, 53, 61, 50, 58, 54, 62, 51, 59, 55, 63  // UP+DOWN - Same as first line but +48
 )
+
+var/global/list/reverse_dir_strings = list(
+	num2text(NORTH)     = num2text(SOUTH),
+	num2text(SOUTH)     = num2text(NORTH),
+	num2text(EAST)      = num2text(WEST),
+	num2text(WEST)      = num2text(EAST),
+	num2text(NORTHEAST) = num2text(SOUTHWEST),
+	num2text(NORTHWEST) = num2text(SOUTHEAST),
+	num2text(SOUTHWEST) = num2text(NORTHEAST),
+	num2text(SOUTHEAST) = num2text(NORTHWEST)
+)
+
+var/global/list/dir_up_down = list(UP, DOWN)

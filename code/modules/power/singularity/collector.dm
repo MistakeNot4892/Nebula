@@ -115,7 +115,7 @@ var/global/list/rad_collectors = list()
 				to_chat(user, "<span class='warning'>You cannot install more than one collector on the same spot.</span>")
 				return 1
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-		src.anchored = !src.anchored
+		set_anchored(!anchored)
 		user.visible_message("[user.name] [anchored? "secures":"unsecures"] the [src.name].", \
 			"You [anchored? "secure":"undo"] the external bolts.", \
 			"You hear a ratchet.")

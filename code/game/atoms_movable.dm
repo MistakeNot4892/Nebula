@@ -382,7 +382,7 @@
 	if(buckled_mob && buckled_mob.buckled == src)
 		. = buckled_mob
 		buckled_mob.buckled = null
-		buckled_mob.anchored = initial(buckled_mob.anchored)
+		buckled_mob.set_anchored(initial(buckled_mob.anchored))
 		buckled_mob.UpdateLyingBuckledAndVerbStatus()
 		buckled_mob.update_floating()
 		buckled_mob = null

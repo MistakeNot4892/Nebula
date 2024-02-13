@@ -28,7 +28,7 @@
 			var/atom/movable/overlay/animation = new /atom/movable/overlay(holder)
 			animation.SetName("water")
 			animation.set_density(0)
-			animation.anchored = TRUE
+			animation.set_anchored(TRUE)
 			animation.icon = 'icons/mob/mob.dmi'
 			animation.layer = FLY_LAYER
 			target.ExtinguishMob()

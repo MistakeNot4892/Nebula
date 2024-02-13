@@ -23,7 +23,7 @@
 						"[user] tightens \the [src]'s casters.", \
 						"<span class='notice'> You tighten \the [src]'s casters. Now it can be played again.</span>", \
 						"<span class='italics'>You hear ratchet.</span>")
-					src.anchored = TRUE
+					set_anchored(TRUE)
 		else if(anchored)
 			playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
 			to_chat(usr, "<span class='notice'> You begin to loosen \the [src]'s casters...</span>")
@@ -33,7 +33,7 @@
 						"[user] loosens \the [src]'s casters.", \
 						"<span class='notice'> You loosen \the [src]. Now it can be pulled somewhere else.</span>", \
 						"<span class='italics'>You hear ratchet.</span>")
-					src.anchored = FALSE
+					set_anchored(FALSE)
 	else
 		..()
 

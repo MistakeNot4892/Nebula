@@ -166,14 +166,14 @@ So, hopefully this is helpful if any more icons are to be added/changed/wonderin
 		if(0)
 			if(IS_WRENCH(O))
 				playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-				src.anchored = TRUE
+				set_anchored(TRUE)
 				user.visible_message("[user.name] secures the [src.name] to the floor.", \
 					"You secure the external bolts.")
 				temp_state++
 		if(1)
 			if(IS_WRENCH(O))
 				playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-				src.anchored = FALSE
+				set_anchored(FALSE)
 				user.visible_message("[user.name] detaches the [src.name] from the floor.", \
 					"You remove the external bolts.")
 				temp_state--
@@ -261,14 +261,14 @@ So, hopefully this is helpful if any more icons are to be added/changed/wonderin
 		if(0)
 			if(IS_WRENCH(O))
 				playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-				src.anchored = TRUE
+				set_anchored(TRUE)
 				user.visible_message("[user.name] secures the [src.name] to the floor.", \
 					"You secure the external bolts.")
 				temp_state++
 		if(1)
 			if(IS_WRENCH(O))
 				playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
-				src.anchored = FALSE
+				set_anchored(FALSE)
 				user.visible_message("[user.name] detaches the [src.name] from the floor.", \
 					"You remove the external bolts.")
 				temp_state--
