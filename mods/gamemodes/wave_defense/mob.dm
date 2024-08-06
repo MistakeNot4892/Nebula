@@ -1,0 +1,16 @@
+/mob/Stat()
+	. = ..()
+	if(!client || !statpanel("Status") || !istype(SSwave_defense))
+		return
+
+	if(SSwave_defense.controller_state != WAVE_CONTROL_STATE_ROUNDEND)
+		if(SSwave_defense.current_wave)
+			stat("Current wave", SSwave_defense.current_wave)
+		if(SSwave_defense.controller_state == WAVE_CONTROL_STATE_PREP)
+			stat("First wave in", SSwave_defense.get_prep_time_string())
+		else if(SSwave_defense.controller_state == WAVE_CONTROL_STATE_CLEANUP)
+			stat("Next wave in", SSwave_defense.get_wave_time_string())
+		else if(SSwave_defense.controller_state == WAVE_CONTROL_STATE_RUNNING)
+			stat("Wave ends in", SSwave_defense.get_wave_time_string())
+			if(length(SSwave_defense.wave_packs) && (SSwave_defense.wave_time - (world.time - SSwave_defense.wave_start_time)) <= 0)
+				stat("Enemy groups remaining", length(SSwave_defense.wave_packs))

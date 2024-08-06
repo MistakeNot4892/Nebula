@@ -1,0 +1,12 @@
+#ifndef GAMEMODE_PACK_WAVE_DEFENSE
+#define GAMEMODE_PACK_WAVE_DEFENSE
+// BEGIN_INCLUDE
+#include "_wave_defense.dm"
+#include "gamemode.dm"
+#include "mob.dm"
+#include "pack_ai.dm"
+#include "packs.dm"
+#include "spawnpoint.dm"
+#include "wave_controller.dm"
+// END_INCLUDE
+#endif

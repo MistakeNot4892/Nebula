@@ -42,7 +42,8 @@
 
 			if(STANCE_IDLE)
 				set_target(find_target())
-				set_stance(STANCE_ATTACK)
+				if(get_target())
+					set_stance(STANCE_ATTACK)
 
 			if(STANCE_ATTACK)
 				body.face_atom(get_target())

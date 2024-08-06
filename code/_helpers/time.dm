@@ -96,16 +96,7 @@ var/global/round_start_time = 0
 		return "00:00"
 	if(last_round_duration && world.time < next_duration_update)
 		return last_round_duration
-
-	var/mills = round_duration_in_ticks // 1/10 of a second, not real milliseconds but whatever
-	//var/secs = ((mills % 36000) % 600) / 10 //Not really needed, but I'll leave it here for reference or something
-	var/mins = round((mills % 36000) / 600)
-	var/hours = round(mills / 36000)
-
-	mins = mins < 10 ? add_zero(mins, 1) : mins
-	hours = hours < 10 ? add_zero(hours, 1) : hours
-
-	last_round_duration = "[hours]:[mins]"
+	last_round_duration = deciseconds2string(round_duration_in_ticks)
 	next_duration_update = world.time + 1 MINUTES
 	return last_round_duration
 
@@ -150,3 +141,20 @@ var/global/rollovercheck_last_timeofday = 0
 	var/time_string = time2text(world.realtime, "MM-DD")
 	var/time_list = splittext(time_string, "-")
 	return list(text2num(time_list[1]), text2num(time_list[2]))
+
+
+/proc/deciseconds2string(deciseconds, show_seconds = FALSE)
+
+
+	var/hours   = round(deciseconds / (1 HOUR))
+	deciseconds -= (hours HOURS)
+	var/mins    = round(deciseconds / (1 MINUTE))
+	deciseconds -= (mins MINUTES)
+
+	mins    = mins     < 10 ? add_zero(mins, 1)    : mins
+	hours   = hours    < 10 ? add_zero(hours, 1)   : hours
+	if(show_seconds)
+		var/seconds = round(deciseconds / (1 SECOND))
+		seconds = seconds  < 10 ? add_zero(seconds, 1) : seconds
+		return "[hours]:[mins]:[seconds]"
+	return "[hours]:[mins]"

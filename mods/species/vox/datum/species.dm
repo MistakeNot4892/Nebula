@@ -65,9 +65,9 @@
 	taste_sensitivity = TASTE_DULL
 	speech_sounds = list('sound/voice/shriek1.ogg')
 	speech_chance = 20
-
+#ifdef GAMEMODE_PACK_HEIST
 	preview_outfit = /decl/hierarchy/outfit/vox_raider
-
+#endif
 	gluttonous = GLUT_TINY|GLUT_ITEM_NORMAL
 	stomach_capacity = 12
 
