@@ -5831,10 +5831,8 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 6
 	},
-/obj/machinery/vending/cigarette{
-	dir = 4;
-	markup = 0;
-	name = "hacked Cigarette machine"
+/obj/machinery/vending/cigarette/hacked{
+	dir = 4
 	},
 /turf/floor/tiled/techfloor/grid,
 /area/map_template/colony)

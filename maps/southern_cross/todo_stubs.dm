@@ -1,4 +1,3 @@
-/obj/item/storage/bag/circuits/basic
 /obj/item/pinpointer/shuttle/merc
 /obj/item/pinpointer/shuttle/heist
 /obj/machinery/pda_multicaster/prebuilt

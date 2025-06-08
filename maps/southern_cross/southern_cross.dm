@@ -10,15 +10,21 @@
 	#include "../../mods/content/scaling_descriptors.dm"
 	#include "../../mods/content/xenobiology/_xenobiology.dme"
 	#include "../../mods/content/matchmaking/_matchmaking.dme"
+	#include "../../mods/content/beekeeping/_beekeeping.dme"
+	#include "../../mods/content/standard_jobs/_standard_jobs.dme"
+	#include "../../mods/content/supermatter/_supermatter.dme"
+	#include "../../mods/content/xenobiology/_xenobiology.dme"
+	#include "../../mods/content/tabloids/_tabloids.dme"
 
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 	#include "../../mods/mobs/borers/_borers.dme"
 
 	#include "../../mods/species/ascent/_ascent.dme"
-	#include "../../mods/species/serpentid/_serpentid.dme"
 	#include "../../mods/species/utility_frames/_utility_frames.dme"
 	#include "../../mods/species/neoavians/_neoavians.dme"
-	#include "../../mods/species/bayliens/_bayliens.dme"
+	#include "../../mods/species/tajaran/_tajaran.dme"
+	#include "../../mods/species/unathi/_unathi.dme"
+	#include "../../mods/species/skrell/_skrell.dme"
 	#include "../../mods/species/vox/_vox.dme"
 
 	#include "datum/shuttles.dm"

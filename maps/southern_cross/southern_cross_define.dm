@@ -67,7 +67,7 @@
 	use_global_exterior_ambience = FALSE
 	ambient_light_level = 0.7
 	ambient_light_color = "#8497ec"
-	base_turf = /turf/exterior/dirt
+	base_turf = /turf/floor/dirt
 	exterior_atmosphere = list(
 		/decl/material/gas/oxygen =   MOLES_O2STANDARD,
 		/decl/material/gas/nitrogen = MOLES_N2STANDARD
@@ -88,7 +88,7 @@
 	use_global_exterior_ambience = FALSE
 	ambient_light_level = 0.7
 	ambient_light_color = "#8497ec"
-	base_turf = /turf/exterior/dirt
+	base_turf = /turf/floor/dirt
 	exterior_atmosphere = list(
 		/decl/material/gas/oxygen =   MOLES_O2STANDARD,
 		/decl/material/gas/nitrogen = MOLES_N2STANDARD
@@ -109,7 +109,7 @@
 	use_global_exterior_ambience = FALSE
 	ambient_light_level = 0.7
 	ambient_light_color = "#8497ec"
-	base_turf = /turf/exterior/dirt
+	base_turf = /turf/floor/dirt
 	exterior_atmosphere = list(
 		/decl/material/gas/oxygen =   MOLES_O2STANDARD,
 		/decl/material/gas/nitrogen = MOLES_N2STANDARD
@@ -150,22 +150,22 @@
 	if(refresh_icons_post_apply)
 		for(var/x = 1, x <= limit_x, x++)
 			for(var/y = 1, y <= limit_y, y++)
-				var/turf/exterior/T = locate((origin_x-1)+x,(origin_y-1)+y,origin_z)
+				var/turf/floor/T = locate((origin_x-1)+x,(origin_y-1)+y,origin_z)
 				if(istype(T))
 					T.update_icon()
 
 /datum/random_map/noise/sif/get_appropriate_path(var/value)
 	switch(value)
 		if(0)
-			return /turf/exterior/mud
+			return /turf/floor/mud
 		if(1 to 2)
-			return /turf/exterior/dirt
+			return /turf/floor/dirt
 		if(3 to 5)
-			return /turf/exterior/sif_growth
+			return /turf/floor/sif_growth
 		if(6 to 8)
-			return /turf/exterior/sif_growth/thick
+			return /turf/floor/sif_growth/thick
 		if(9)
-			return /turf/exterior/snow
+			return /turf/floor/snow
 
 /datum/random_map/noise/sif/get_additional_spawns(var/value, var/turf/T)
 	if(prob(45) || T.density)
@@ -208,11 +208,11 @@
 /datum/random_map/noise/sif/forest/get_appropriate_path(var/value)
 	switch(value)
 		if(0 to 3)
-			return /turf/exterior/sif_growth
+			return /turf/floor/sif_growth
 		if(4 to 6)
-			return /turf/exterior/sif_growth/thick
+			return /turf/floor/sif_growth/thick
 		if(7 to 9)
-			return /turf/exterior/snow
+			return /turf/floor/snow
 
 /datum/random_map/noise/sif/forest/get_additional_spawns(var/value, var/turf/T)
 	if(prob(25) || T.density)
@@ -241,14 +241,14 @@
 
 /datum/random_map/noise/sif/underground
 	descriptor = "Sif underground (roundstart)"
-	target_turf_type = /turf/exterior/wall
+	target_turf_type = /turf/wall/natural
 
 /datum/random_map/noise/sif/underground/get_appropriate_path(var/value)
 	switch(value)
 		if(0 to 2)
-			return /turf/exterior/mud
+			return /turf/floor/mud
 		if(3 to 4)
-			return /turf/exterior/dirt
+			return /turf/floor/dirt
 
 /datum/random_map/noise/sif/underground/get_additional_spawns(var/value, var/turf/T)
 	if(value <= 1 && prob(30)) // Mud is very fun-gy.

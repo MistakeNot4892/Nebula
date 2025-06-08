@@ -420,15 +420,15 @@
 
 /area/turbolift/firstdeck
 	name = "\improper first deck"
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/floor/plating
 
 /area/turbolift/seconddeck
 	name = "\improper second deck"
-	base_turf = /turf/simulated/open
+	base_turf = /turf/open
 
 /area/turbolift/thirddeck
 	name = "\improper third deck"
-	base_turf = /turf/simulated/open
+	base_turf = /turf/open
 
 // Elevator areas.
 /area/turbolift/port_deck_one
@@ -436,7 +436,7 @@
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Hangar Deck"
 	lift_announce_str = "Arriving at Hangar Deck: Main Hangars.Cargo Delivery. Telecommunications. Auxiliary Shuttle Docks. Escape Pods."
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/floor
 
 /area/turbolift/port_deck_two
 	name = "lift (second deck)"
@@ -449,7 +449,7 @@
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Hangar Deck"
 	lift_announce_str = "Arriving at Hangar Deck: Main Hangars.Cargo Delivery. Telecommunications. Auxiliary Shuttle Docks. Escape Pods."
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/floor
 
 /area/turbolift/starboard_deck_two
 	name = "lift (second deck)"
@@ -462,7 +462,7 @@
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Hangar Deck"
 	lift_announce_str = "Arriving at Hangar Deck: Main Hangars.Cargo Delivery. Telecommunications. Auxiliary Shuttle Docks. Escape Pods."
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/floor
 
 /area/turbolift/center_deck_two
 	name = "lift (second deck)"
@@ -481,7 +481,7 @@
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Hangar Deck"
 	lift_announce_str = "Arriving at Cargo Delivery."
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/floor
 
 /area/turbolift/cargo_deck_two
 	name = "lift (second deck)"
@@ -1087,7 +1087,7 @@
 /area/shuttle/response_ship/start
 	name = "\improper Response Team Base"
 	icon_state = "shuttlered"
-	base_turf = /turf/unsimulated/floor/
+	base_turf = /turf/unsimulated/floor
 
 /area/shuttle/response_ship/firstdeck
 	name = "north-west of first deck"
@@ -1104,7 +1104,7 @@
 /area/shuttle/response_ship/planet
 	name = "planetside outpost"
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/dirt
+	base_turf = /turf/floor/dirt
 
 /area/shuttle/response_ship/mining
 	name = "mining site"
@@ -1123,12 +1123,12 @@
 /area/shuttle/response_ship/sky
 	name = "hovering over skies of sif"
 	icon_state = "shuttlegrn"
-	base_turf = /turf/exterior/sky/west
+	base_turf = /turf/open/sky/west
 
 /area/shuttle/response_ship/sky_transit
 	name = "in flight over sif"
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/sky/moving/west
+	base_turf = /turf/open/sky/moving/west
 
 /area/shuttle/response_ship/transit
 	name = "transit"
@@ -1163,7 +1163,7 @@
 /area/shuttle/shuttle1/planet
 	name = "planetside outpost"
 	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/floor
 
 /area/shuttle/shuttle1/transit
 	name = "transit"
@@ -1178,12 +1178,12 @@
 /area/shuttle/shuttle1/sky
 	name = "hovering over skies of sif"
 	icon_state = "shuttlegrn"
-	base_turf = /turf/exterior/sky
+	base_turf = /turf/open/sky
 
 /area/shuttle/shuttle1/sky_transit
 	name = "in flight over sif"
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/sky/moving
+	base_turf = /turf/open/sky/moving
 
 //Shuttle Two
 
@@ -1213,7 +1213,7 @@
 /area/shuttle/shuttle2/planet
 	name = "planetside outpost"
 	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/floor
 
 /area/shuttle/shuttle2/transit
 	name = "transit"
@@ -1228,12 +1228,12 @@
 /area/shuttle/shuttle2/sky
 	name = "hovering over skies of sif"
 	icon_state = "shuttlegrn"
-	base_turf = /turf/exterior/sky
+	base_turf = /turf/open/sky
 
 /area/shuttle/shuttle2/sky_transit
 	name = "in flight over sif"
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/sky/moving
+	base_turf = /turf/open/sky/moving
 
 // Centcom Transport Shuttle
 /area/shuttle/transport1/centcom
@@ -1296,7 +1296,7 @@
 	name = "planetside"
 	dynamic_lighting = 1
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/sif_growth
+	base_turf = /turf/floor/sif_growth
 
 /area/syndicate_station/transit
 	name = " transit"
@@ -1311,12 +1311,12 @@
 /area/syndicate_station/sky
 	name = "hovering over skies of sif"
 	icon_state = "shuttlegrn"
-	base_turf = /turf/exterior/sky/west
+	base_turf = /turf/open/sky/west
 
 /area/syndicate_station/sky_transit
 	name = "in flight over sif"
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/sky/moving/west
+	base_turf = /turf/open/sky/moving/west
 
 /area/syndicate_station/arrivals_dock
 	name = "\improper docked with Southern Cross"
@@ -1358,7 +1358,7 @@
 	name = "planet"
 	icon_state = "shuttlered"
 	dynamic_lighting = 1
-	base_turf = /turf/exterior/sif_growth
+	base_turf = /turf/floor/sif_growth
 
 /area/skipjack_station/orbit
 	name = "in orbit of Sif"
@@ -1368,12 +1368,12 @@
 /area/skipjack_station/sky
 	name = "hovering over skies of sif"
 	icon_state = "shuttlegrn"
-	base_turf = /turf/exterior/sky/north
+	base_turf = /turf/open/sky/north
 
 /area/skipjack_station/sky_transit
 	name = "in flight over sif"
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/sky/moving/north
+	base_turf = /turf/open/sky/moving/north
 
 /area/skipjack_station/arrivals_dock
 	name = "\improper docked with Southern Cross"
@@ -1394,7 +1394,7 @@
 /area/ninja_dojo/start
 	name = "\improper Clan Dojo"
 	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/plating
+	base_turf = /turf/floor/plating
 
 /area/ninja_dojo/firstdeck
 	name = "south of first deck"
@@ -1415,7 +1415,7 @@
 /area/ninja_dojo/planet
 	name = "planet outposts"
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/sif_growth
+	base_turf = /turf/floor/sif_growth
 
 /area/ninja_dojo/transit
 	name = "transit"
@@ -1430,12 +1430,12 @@
 /area/ninja_dojo/sky
 	name = "hovering over skies of sif"
 	icon_state = "shuttlegrn"
-	base_turf = /turf/exterior/sky/south
+	base_turf = /turf/open/sky/south
 
 /area/ninja_dojo/sky_transit
 	name = "in flight over sif"
 	icon_state = "shuttlered"
-	base_turf = /turf/exterior/sky/moving/south
+	base_turf = /turf/open/sky/moving/south
 
 /area/ninja_dojo/arrivals_dock
 	name = "\improper docked with Southern Cross"
@@ -1470,7 +1470,7 @@
 
 /area/shuttle/escape_pod1/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/escape_pod1/centcom
 	icon_state = "shuttle"
@@ -1484,7 +1484,7 @@
 
 /area/shuttle/escape_pod2/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/escape_pod2/centcom
 	icon_state = "shuttle"
@@ -1498,7 +1498,7 @@
 
 /area/shuttle/escape_pod3/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/escape_pod3/centcom
 	icon_state = "shuttle"
@@ -1512,7 +1512,7 @@
 
 /area/shuttle/escape_pod4/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/escape_pod4/centcom
 	icon_state = "shuttle"
@@ -1526,7 +1526,7 @@
 
 /area/shuttle/escape_pod5/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/escape_pod5/centcom
 	icon_state = "shuttle"
@@ -1540,7 +1540,7 @@
 
 /area/shuttle/escape_pod6/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/escape_pod6/centcom
 	icon_state = "shuttle"
@@ -1554,7 +1554,7 @@
 
 /area/shuttle/escape_pod7/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/reinforced/airless
+	base_turf = /turf/floor/reinforced/airless
 
 /area/shuttle/escape_pod7/centcom
 	icon_state = "shuttle"
@@ -1568,7 +1568,7 @@
 
 /area/shuttle/escape_pod8/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/reinforced/airless
+	base_turf = /turf/floor/reinforced/airless
 
 /area/shuttle/escape_pod8/centcom
 	icon_state = "shuttle"
@@ -1584,7 +1584,7 @@
 
 /area/shuttle/large_escape_pod1/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/large_escape_pod1/centcom
 	icon_state = "shuttle"
@@ -1598,7 +1598,7 @@
 
 /area/shuttle/large_escape_pod2/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/large_escape_pod2/centcom
 	icon_state = "shuttle"
@@ -1611,7 +1611,7 @@
 
 /area/shuttle/cryo/station
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/airless
+	base_turf = /turf/floor/plating/airless
 
 /area/shuttle/cryo/centcom
 	icon_state = "shuttle"

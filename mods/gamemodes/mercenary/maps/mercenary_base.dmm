@@ -2242,11 +2242,8 @@
 /turf/unsimulated/floor/vault,
 /area/map_template/merc_spawn)
 "zC" = (
-/obj/machinery/vending/cigarette{
+/obj/machinery/vending/cigarette/hacked{
 	dir = 8;
-	markup = 0;
-	name = "hacked cigarette machine";
-	products = list(/obj/item/box/fancy/cigarettes = 10, /obj/item/box/matches = 10, /obj/item/flame/fuelled/lighter/zippo/random = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /obj/structure/railing/mapped/no_density{
 	dir = 8

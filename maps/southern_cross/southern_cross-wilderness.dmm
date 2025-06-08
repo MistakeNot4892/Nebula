@@ -8,7 +8,7 @@
 	},
 /area/surface/outside/wilderness/mountains)
 "ac" = (
-/turf/exterior/wall,
+/turf/wall/natural,
 /area/surface/outside/wilderness/mountains)
 "ae" = (
 /turf/unsimulated/mask,
@@ -17,28 +17,28 @@
 /turf/unsimulated/mask,
 /area/surface/outpost/wall)
 "ah" = (
-/turf/exterior/dirt,
+/turf/floor/dirt,
 /area/surface/outside/wilderness/deep)
 "al" = (
 /turf/unsimulated/mineral,
 /area/surface/outside/river/svartan)
 "an" = (
-/turf/exterior/water,
+/turf/floor/rock/sand/water,
 /area/surface/outside/river/svartan)
 "ao" = (
-/turf/exterior/dirt,
+/turf/floor/dirt,
 /area/surface/outside/path/wilderness)
 "ap" = (
-/turf/exterior/dirt,
+/turf/floor/dirt,
 /area/surface/outside/wilderness/normal)
 "aq" = (
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outside/path/wilderness)
 "ar" = (
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/surface/outside/path/wilderness)
 "as" = (
-/turf/simulated/wall/wood,
+/turf/wall/wood,
 /area/surface/outside/path/wilderness)
 "at" = (
 /turf/unsimulated/mask,
@@ -47,54 +47,42 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/exterior/water,
-/area/surface/outside/river/svartan)
-"ax" = (
-/turf/exterior/water,
-/area/surface/outside/river/svartan)
-"ay" = (
-/turf/exterior/water,
-/area/surface/outside/river/svartan)
-"az" = (
-/turf/exterior/water,
-/area/surface/outside/river/svartan)
-"aB" = (
-/turf/exterior/water,
+/turf/floor/rock/sand/water,
 /area/surface/outside/river/svartan)
 "aC" = (
 /obj/structure/sign/warning{
 	name = "\improper WILDERNESS";
 	desc = "This appears to be a sign warning people that the other side is extremely hazardous."
 	},
-/turf/simulated/wall/wood,
+/turf/wall/wood,
 /area/surface/outside/path/wilderness)
 "aE" = (
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/exterior/water,
+/turf/floor/rock/sand/water,
 /area/surface/outside/river/svartan)
 "aF" = (
 /obj/abstract/level_data_spawner/southern_cross_wilderness,
-/turf/exterior/wall,
+/turf/wall/natural,
 /area/surface/outside/wilderness/mountains)
 "aJ" = (
-/turf/exterior/barren,
+/turf/floor/barren,
 /area/surface/outside/wilderness/deep)
 "aK" = (
-/turf/exterior/water,
+/turf/floor/rock/sand/water,
 /area/surface/outside/ocean)
 "aL" = (
 /turf/unsimulated/mineral,
 /area/surface/outside/ocean)
 "aM" = (
-/turf/exterior/barren,
+/turf/floor/barren,
 /area/surface/outside/wilderness/normal)
 "aT" = (
-/turf/exterior/dirt,
+/turf/floor/dirt,
 /area/shuttle/shuttle2/mining)
 "aU" = (
-/turf/exterior/dirt,
+/turf/floor/dirt,
 /area/shuttle/shuttle1/mining)
 "aX" = (
 /turf/unsimulated/mask,
@@ -105,32 +93,31 @@
 "aZ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "ba" = (
-/turf/simulated/wall/wood,
+/turf/wall/wood,
 /area/surface/outpost/shelter)
 "bc" = (
 /obj/structure/door/wood,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bd" = (
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	icon_state = "0-2"
 	},
 /obj/machinery/port_gen/pacman,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "be" = (
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bf" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
 	pixel_y = 26
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bg" = (
 /obj/structure/table/steel,
@@ -142,107 +129,102 @@
 	pixel_x = -24
 	},
 /obj/structure/cable,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bh" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bi" = (
 /obj/structure/closet,
 /obj/random/maintenance/clean,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bj" = (
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bk" = (
-/turf/exterior/dirt,
+/turf/floor/dirt,
 /area/surface/outside/wilderness/mountains)
 "bl" = (
-/turf/simulated/shuttle/floor/voidcraft/external,
+/turf/floor/shuttle,
 /area/surface/outpost/wall/checkpoint)
 "bm" = (
-/turf/simulated/shuttle/floor/voidcraft/external,
+/turf/floor/shuttle,
 /area/surface/outside/path/wilderness)
 "bn" = (
 /obj/structure/banner_frame/nanotrasen,
-/turf/simulated/shuttle/floor/voidcraft/external,
+/turf/floor/shuttle,
 /area/surface/outside/path/wilderness)
 "bo" = (
-/turf/simulated/shuttle/wall/voidcraft/hard_corner,
+/turf/wall/shuttle,
 /area/surface/outpost/wall/checkpoint)
 "bp" = (
 /obj/machinery/door/airlock/external/bolted{
 	name = "Wilderness Containment"
 	},
-/turf/simulated/shuttle/floor/voidcraft/external,
+/turf/floor/shuttle,
 /area/surface/outpost/wall/checkpoint)
 "bq" = (
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/wall/shuttle,
 /area/surface/outpost/wall/checkpoint)
 "br" = (
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/voidcraft/external,
+/turf/floor/shuttle,
 /area/surface/outpost/wall/checkpoint)
 "bs" = (
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/voidcraft/external,
+/turf/floor/shuttle,
 /area/surface/outpost/wall/checkpoint)
 "bt" = (
 /obj/structure/banner_frame/virgov,
-/turf/simulated/shuttle/floor/voidcraft/external,
+/turf/floor/shuttle,
 /area/surface/outside/path/wilderness)
-"bu" = (
-/turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
 "bv" = (
 /obj/structure/closet/crate,
 /obj/random/powercell,
 /obj/item/screwdriver,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bw" = (
 /obj/random/junk,
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1381;
 	id_tag = "mining_dock_1";
 	name = "shuttle bay controller";
 	pixel_x = 0;
 	pixel_y = -26;
 	tag_door = "mining_dock_1_door"
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bx" = (
 /obj/structure/banner_frame/virgov,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "by" = (
 /obj/machinery/space_heater,
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bz" = (
 /obj/machinery/space_heater,
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1381;
 	id_tag = "mining_dock_2";
 	name = "shuttle bay controller";
 	pixel_x = 0;
 	pixel_y = -26;
 	tag_door = "mining_dock_2_door"
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/surface/outpost/shelter)
 "bA" = (
 /obj/effect/shuttle_landmark{
@@ -258,20 +240,8 @@
 	landmark_tag = "shuttle1_mining";
 	name = "Wilderness Landing Site"
 	},
-/turf/exterior/dirt,
+/turf/floor/dirt,
 /area/shuttle/shuttle1/mining)
-"bC" = (
-/turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
-"bD" = (
-/turf/exterior/water,
-/area/surface/outside/ocean)
-"bE" = (
-/turf/exterior/water,
-/area/surface/outside/ocean)
-"bF" = (
-/turf/simulated/shuttle/floor/voidcraft/external,
-/area/surface/outpost/wall/checkpoint)
 
 (1,1,1) = {"
 aa
@@ -15834,7 +15804,7 @@ ao
 aq
 aE
 aE
-ay
+an
 an
 aE
 aE
@@ -16092,7 +16062,7 @@ ar
 ar
 ar
 ar
-aB
+an
 ar
 ar
 ar
@@ -16347,7 +16317,7 @@ ae
 ae
 ar
 ar
-ax
+an
 ar
 ar
 ar
@@ -16605,8 +16575,8 @@ ae
 as
 av
 an
-az
-az
+an
+an
 av
 av
 aC
@@ -32388,8 +32358,8 @@ bl
 bp
 br
 bl
-bu
-bF
+bl
+bl
 aa
 aa
 aa
@@ -32645,8 +32615,8 @@ bl
 bq
 bl
 bl
-bC
-bF
+bl
+bl
 aa
 aa
 aa
@@ -32902,8 +32872,8 @@ bl
 bp
 bs
 bl
-bC
-bF
+bl
+bl
 aa
 aa
 aa
@@ -62971,7 +62941,7 @@ aK
 aK
 aK
 aK
-bE
+aK
 aK
 aa
 aa
@@ -63228,7 +63198,7 @@ aK
 aK
 aK
 aK
-bD
+aK
 aK
 aa
 aa
@@ -63485,7 +63455,7 @@ aK
 aK
 aK
 aK
-bD
+aK
 aK
 aa
 aa
