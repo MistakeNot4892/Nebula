@@ -12,7 +12,7 @@
 	)
 
 /decl/blood_type/vox
-	name = "vox ichor"
+	name = "shoal ichor"
 	antigen_category = "vox"
 	splatter_name = "ichor"
 	splatter_desc = "A smear of thin, sticky alien ichor."
@@ -21,8 +21,8 @@
 
 /decl/species/vox
 	uid = "species_vox"
-	name = "Vox"
-	name_plural = "Vox"
+	name = "Shoaler"
+	name_plural = "Shoalers"
 	base_external_prosthetics_model = /decl/bodytype/prosthetic/vox/crap
 
 	default_emotes = list(
@@ -35,20 +35,44 @@
 
 	rarity_value = 4
 
-	description = {"The Vox are the broken remnants of a once-proud race, now reduced to little more
-	than scavenging vermin who prey on isolated stations, ships or planets to keep their own ancient
-	arkships alive. They are four to five feet tall, reptillian, beaked, tailed and quilled; human
-	crews often refer to them as 'shitbirds' for their violent and offensive nature, as well as their
-	horrible smell.
-	<br/><br/>
-	Most humans will never meet a Vox raider, instead learning of this insular species through dealing
-	with their traders and merchants; those that do rarely enjoy the experience."}
 
-	codex_description = {"The Vox are a hostile, deeply untrustworthy species from the edges of human
-	space. They prey on isolated stations, ships or settlements without any apparent logic or reason,
-	and tend to refuse communications or negotiations except when their backs are to the wall or they
-	are in dire need of resources. They are four to five feet tall, reptillian, beaked, tailed and
-	quilled."}
+/*
+- Shoalers need 'reclamation vats' that meat objects and mobs get digested into biomass in, to be fed into biofoundries.
+Humans are tolerated in shoal expeditions (local guides, local labour, tagalongs) but shoalers also aren't shy about
+recycling them into new armour or limbs for themselves.
+- Biofoundries also need to exist - fab that takes biomass chunks or reagents and other mats to print vox tech.
+- Related to above shoaler organs shouldn't be made of meat and they should need specialized medkits to do more than bandage or suture themselves.
+*/
+
+	rarity_value = 4
+	description = \
+	"Shoalers are the last remnants of an ancient stellar culture. Their masters were peerless shapers of flesh and chitin, and wrought the shoal in their image to serve as their hands and eyes. Now the masters are gone, and their houses are empty, leaving their machines and lost children to try to find a way forward. \
+	<br><br> \
+	The people of the shoal are deathless, housed in vat-grown bodies and given new life by the transfer of their cortical stacks. Their existence is one of unending work, driven by divine purpose, and they serve at the behest of the god-machines that once kept the worlds of their masters running. Now the gods are rotting, and their directions are becoming increasingly wild and deranged."
+
+	codex_description = \
+	"Also commonly known as: screamers, shriekers, vox. \
+	<br><br> \
+	Shoalers are a nitrogen-breathing species (or several species, see below) of repto-avian sapients. In surviving CSA records, they're referred to as 'vox', and between those same records and those of the Imperial House and the chrysoarmis, historically they tended towards antagonizing and raiding lightly defended ships and stations for raw resources. On the Plate, it seems that things are a bit different, and shoalers are frequently seen attached to trading caravans or salvaging expeditions alongside the other local forces. \
+	<br><br> \
+	At least three distinct shoal bodyforms have been observed, two of which are some kind of labourer or servitor form, and one of which is a more heavily armoured soldier form. While shoalers are loud, rude, and frequently elitist, isolationist pricks, they are not violent or overly aggressive unless provoked. \
+	<br><br> \
+	Under no circumstances should you try their cooking."
+
+	roleplay_summary = \
+	"<ul> \
+	<li>Shoalers are lizard-avian biomachine thralls of mad computer gods, and they are near-universally devoted to maintaining KHAKRIKITA-KHA, the last surviving arkship on the Plate, via trading, salvaging, and theft.</li> \
+	<li>They tend to be obnoxiously loud, vain and insular, and generally sneer at any non-shoal technology or individual as primitive meat.</li> \
+	<li>Neck-markings encoded with their personal histories and achievements are a point of pride for shoalers, and they will often get into first-blood scuffles over establishing a pecking order amongst their fellows.</li> \
+	<li>Shoalers are scavengers and will happily eat anything with the slightest amount of nutrition or even useful metals or chemicals, which will be processed and vomited up again by their impressively efficient gizzard and stomach.</li> \
+	</ul>"
+
+	ooc_codex_information = \
+	"<ul> \
+	<li>Shoalers breathe nitrogen and are poisoned by oxygen, so outside of sealed environments suited to them they will need to wear a filter mask or a breath mask and nitrogen tank.</li> \
+	<li>Shaper bodyforms can eat almost anything and digest it into usable sheets, which can be vomited back up.</li> \
+	<li>Soldier bodyforms are pressure resistant and capable of very long standing leaps, but servitor bodyforms are less robust.</li> \
+	</ul>"
 
 	scream_verb_1p = "shriek"
 	scream_verb_3p = "shrieks"
@@ -59,7 +83,7 @@
 	speech_sounds = list('sound/voice/shriek1.ogg')
 	speech_chance = 20
 
-	preview_outfit = /decl/outfit/vox_raider
+	preview_outfit = /decl/outfit/job/ringdown/shoaler
 
 	gluttonous = GLUT_TINY|GLUT_ITEM_NORMAL
 	stomach_capacity = 12
@@ -90,6 +114,7 @@
 		/decl/bodytype/vox/servitor/alchemist,
 	)
 
+/*
 	available_background_info = list(
 		/decl/background_category/citizenship = list(
 			/decl/background_detail/citizenship/other
@@ -113,6 +138,7 @@
 			/decl/background_detail/religion/vox
 		)
 	)
+*/
 
 	exertion_effect_chance = 10
 	exertion_hydration_scale = 1

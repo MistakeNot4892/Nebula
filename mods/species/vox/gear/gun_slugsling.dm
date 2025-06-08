@@ -35,7 +35,7 @@
 	qdel(src)
 
 /mob/living/simple_animal/hostile/slug/vox
-	faction = "Vox"
+	faction = "Shoalers"
 
 //a slug sling basically launches a small egg that hatches (either on a person or on the floor), releasing a terrible blood thirsty monster.
 //Balanced due to the non-spammy nature of the gun, as well as the frailty of the creatures.

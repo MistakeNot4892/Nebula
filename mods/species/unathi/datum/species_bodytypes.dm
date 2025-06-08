@@ -22,6 +22,9 @@
 	age_descriptor = /datum/appearance_descriptor/age/unathi
 
 	default_sprite_accessories = list(
+		SAC_HORNS  = list(
+			/decl/sprite_accessory/horns/unathi/bighorns = list(SAM_COLOR = "#b9ccee")
+		),
 		SAC_FRILLS = list(
 			/decl/sprite_accessory/frills/unathi/frills_long = list(SAM_COLOR = "#192e19")
 		)

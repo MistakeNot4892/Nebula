@@ -4,10 +4,10 @@
 #define BODY_EQUIP_FLAG_VOX      BITFLAG(8)
 
 /decl/modpack/vox
-	name = "Vox Content"
-	dreams = list("a red stool", "a vox raider")
-	credits_crew_names = list("THE VOX")
-	credits_topics = list("VOX RITUAL DUELS", "NECK MARKINGS", "ANCIENT SUPERCOMPUTERS")
+	name = "Shoaler Content"
+	dreams = list("a red stool", "a Shoal raider")
+	credits_crew_names = list("THE SHOAL")
+	credits_topics = list("SHOAL RITUAL DUELS", "NECK MARKINGS", "ANCIENT SUPERCOMPUTERS")
 
 /mob/living/human/vox/Initialize(mapload, species_uid, datum/mob_snapshot/supplied_appearance)
 	SET_HAIR_STYLE(src, /decl/sprite_accessory/hair/vox/short, TRUE)

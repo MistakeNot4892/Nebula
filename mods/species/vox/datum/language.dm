@@ -1,5 +1,5 @@
 /decl/language/vox
-	name = "Vox-Pidgin"
+	name = "Shoal-Pidgin"
 	desc = "The common tongue of the various Vox ships making up the Shoal. It sounds like chaotic shrieking to everyone else."
 	speech_verb = "shrieks"
 	ask_verb = "creels"
@@ -10,7 +10,7 @@
 	syllables = list("ti","ti","ti","hi","hi","ki","ki","ki","ki","ya","ta","ha","ka","ya","chi","cha","kah", \
 	"SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
 	machine_understands = 0
-	shorthand = "Vox"
+	shorthand = "SP"
 
 /decl/language/vox/can_speak_special(var/mob/speaker)
 	if(!ishuman(speaker))

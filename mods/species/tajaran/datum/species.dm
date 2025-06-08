@@ -13,11 +13,26 @@
 
 /decl/species/tajaran
 	uid = "species_tajaran"
-	name = "Tajara"
-	name_plural = "Tajaran"
+	name = "Feline"
+	name_plural = "Felines"
 	base_external_prosthetics_model = null
 
-	description = "A small mammalian carnivore. If you are reading this, you are probably a Tajaran."
+/*
+prowlers, cats, hunters - hedonistic, imperialist and incestuous Taj analogue, ruling family marries into itself,
+Hapsburg levels of bad times, court is a vicious political arena. Culture has a history of psionics so has developed
+tech/gear to combat it, territory is stable and well policed but authoritarian, and they practice eugenics against
+'feral' psionics in non-imperial bloodlines.
+- Prowlers are ancient Persian empire themed, king of kings, military structured around 10s 100s 1000s
+- Prowlers have docked tails (steal from Rubeau's mithra) for legionnaries, mark of white collar life, nobility all have
+scav-style elaborately decorated tails to show how far beneath them manual labour is. People joining the space cats need
+their tails properly docked (faction-locked surgery option) or lost in combat (can tails be lost in combat?)
+*/
+
+	description = "The feline bipeds of the Crown Imperial are tall, lanky humanoids sharing many features in common \
+	with Earthborn cats; they tend towards being remorseless, cold-blooded killers with a playful streak that often \
+	manifests as cruelty. They hail from a chain of frozen worlds ruled by a bloody-fisted imperial court that relies \
+	on military might and judicious use of psionics to keep itself in power."
+
 	hidden_from_codex = FALSE
 	available_bodytypes = list(
 		/decl/bodytype/tajaran,
@@ -25,9 +40,7 @@
 	)
 
 	traits = list(/decl/trait/malus/intolerance/caffeine = TRAIT_LEVEL_MAJOR)
-
-	preview_outfit = /decl/outfit/job/generic/engineer
-
+	preview_outfit = /decl/outfit/job/ringdown/imperial_citizen
 	spawn_flags = SPECIES_CAN_JOIN
 
 	blood_types = list(

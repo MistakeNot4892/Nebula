@@ -43,7 +43,7 @@
 
 	body_temperature = null // cold-blooded, implemented the same way nabbers do it
 
-	spawn_flags = SPECIES_CAN_JOIN
+	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_IS_WHITELISTED
 
 	flesh_color = "#8cd7a3"
 	organs_icon = 'mods/species/skrell/icons/body/organs.dmi'

@@ -17,10 +17,20 @@
 
 /decl/species/unathi
 	uid = "species_unathi"
-	name = "Unathi"
-	name_plural = "Unathi"
-	butchery_data = /decl/butchery_data/humanoid/unathi
+	name = "Drake"
+	name_plural = "Drakes"
 
+/*
+scrap eaters, dragons, goldskins - chrysoarmis (bad latin placeholder), solitary/wandering Unathi analogue, very
+honourable ronin by 'default' but various levels of wild and insular. (how did they get into space?) eat metal, metal
+scales, breathe molten slag. Ships are the carcasses of great sand leviathans from their homeworld and their histories
+are graven along the spine, biggest settlements are crashed remains. Organized into clans based around the power and
+influence of leaders. Based on the Parthian Empire (ancient persia, king of kings)
+- Dragons have strong oral tradition, loud calls, chanting/singing, oral histories. Writing is sacred and not to be squandered frivolously.
+- Patch-scaled sad lizards living in a uranium-contaminated area and concentrating uranium in their scales
+*/
+
+	butchery_data = /decl/butchery_data/humanoid/unathi
 	available_bodytypes = list(
 		/decl/bodytype/unathi,
 		/decl/bodytype/unathi/masculine
@@ -46,15 +56,20 @@
 
 	body_temperature = null // cold-blooded, implemented the same way nabbers do it
 
-	description = "A heavily reptillian species. They prefer warmer temperatures than most species and \
-	their native tongue is a heavy hissing laungage."
+	description = "Drakes are a species of ferrovorous reptillian humanoids who hail from a blasted volcanic planet in \
+	the far reaches of known space. Their culture is one that prizes individual strength and resilience, and lacks \
+	most of the cooperative assumptions and social structures a human would take for granted; an adult drake would expect \
+	to wander alone for decades without meeting another of her kind, and would consider it shameful and weak to ask for \
+	or need help or support during her roaming. Exactly how they got to space is a long and complex story, but in short \
+	it was via hitching a lift on a local species of roaming void leviathan, and making vessels from their hide and bones \
+	when the last of them passed away."
 
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_NO_ROBOTIC_INTERNAL_ORGANS
 
-	flesh_color = "#34af10"
+	flesh_color = "#577e83"
 	organs_icon = 'mods/species/unathi/icons/organs.dmi'
 
-	preview_outfit = /decl/outfit/job/generic/doctor
+	preview_outfit = /decl/outfit/job/ringdown/drake_clanner
 
 	blood_types = list(
 		/decl/blood_type/reptile/splus,
@@ -96,11 +111,13 @@
 		/decl/emote/exertion/biological/pant
 	)
 
+/*
 /decl/species/unathi/Initialize()
 	. = ..()
 	LAZYINITLIST(available_background_info)
 	LAZYDISTINCTADD(available_background_info[/decl/background_category/heritage], /decl/background_detail/heritage/unathi)
 	LAZYSET(default_background_info, /decl/background_category/heritage, /decl/background_detail/heritage/unathi)
+*/
 
 /decl/species/unathi/equip_survival_gear(var/mob/living/human/H)
 	..()

@@ -159,6 +159,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
+
 		var/datum/job/job = SSjobs.get_by_title(href_list["SelectedJob"])
 
 		if(!SSjobs.check_general_join_blockers(src, job))
@@ -180,31 +181,33 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 		LateChoices()
 
 /mob/new_player/proc/AttemptLateSpawn(var/datum/job/job, var/spawning_at)
+
 	if(src != usr)
-		return 0
+		return FALSE
 
 	if(GAME_STATE != RUNLEVEL_GAME)
-		to_chat(usr, SPAN_WARNING("The round is either not ready, or has already finished."))
-		return 0
+		to_chat(usr, SPAN_WARNING("The round is either not ready, or has already finished..."))
+		return FALSE
 
 	if(get_config_value(/decl/config/enum/server_whitelist) == CONFIG_SERVER_JOIN_WHITELIST && !check_server_whitelist(usr))
 		alert("Non-whitelisted players are not permitted to join rounds except as observers.")
-		return 0
+		return FALSE
 
 	if(!get_config_value(/decl/config/toggle/on/enter_allowed))
-		to_chat(usr, SPAN_WARNING("There is an administrative lock on entering the game!"))
-		return 0
+		alert(usr, SPAN_WARNING("There is an administrative lock on entering the game!"))
+		return FALSE
 
 	if(!job || !job.is_available(client))
-		alert("[job.title] is not available. Please try another.")
-		return 0
+		alert(src, SPAN_WARNING("[job.title] is not available. Please try another."))
+		return FALSE
 	if(job.is_restricted(client.prefs, src))
-		return
+		alert(src, SPAN_WARNING("[job.title] is not available for your current preferences. Please try another."))
+		return FALSE
 
 	var/decl/spawnpoint/spawnpoint = job.get_spawnpoint(client)
 	if(!spawnpoint)
-		to_chat(src, alert("That spawnpoint is unavailable. Please try another."))
-		return 0
+		alert(src, SPAN_WARNING("That spawnpoint is unavailable. Please try another."))
+		return FALSE
 
 	var/turf/spawn_turf
 	if(job.latejoin_at_spawnpoints)
@@ -213,26 +216,27 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	else
 		spawn_turf = SAFEPICK(spawnpoint.get_spawn_turfs(src))
 
-	if(!spawn_turf || !job.no_warn_unsafe && !SSjobs.check_unsafe_spawn(src, spawn_turf))
-		return
+	if(!spawn_turf || (!job.no_warn_unsafe && !SSjobs.check_unsafe_spawn(src, spawn_turf)))
+		return FALSE
 
 	// Just in case someone stole our position while we were waiting for input from alert() proc
 	if(!job || !job.is_available(client))
-		to_chat(src, alert("[job.title] is not available. Please try another."))
-		return 0
+		to_chat(src, SPAN_WARNING("[job.title] is not available. Please try another."))
+		return FALSE
 
 	SSjobs.assign_role(src, job.title, 1)
 
 	var/mob/living/character = create_character(spawn_turf)	//creates the human and transfers vars and mind
 	if(!character)
-		return 0
+		return FALSE
 
 	character = SSjobs.equip_job_title(character, job.title, 1)					//equips the human
 	SScustomitems.equip_custom_items(character)
 
 	if(job.do_spawn_special(character, src, TRUE)) //This replaces the AI spawn logic with a proc stub. Refer to silicon.dm for the spawn logic.
 		qdel(src)
-		return
+		return FALSE
+
 
 	SSticker.mode.handle_latejoin(character)
 	global.universe.OnPlayerLatejoin(character)
@@ -250,6 +254,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	log_and_message_admins("has joined the round as [character.mind.assigned_role].", character)
 
 	qdel(src)
+	return TRUE
 
 /mob/new_player/proc/AnnounceCyborg(var/mob/living/character, var/rank, var/join_message)
 	if (GAME_STATE == RUNLEVEL_GAME)

@@ -49,7 +49,7 @@
 	speech_chance = 25
 
 	species_flags = SPECIES_FLAG_NO_POISON | SPECIES_FLAG_NO_MINOR_CUT
-	spawn_flags =   SPECIES_CAN_JOIN
+	spawn_flags = SPECIES_IS_RESTRICTED | SPECIES_IS_WHITELISTED
 
 	flesh_color = "#90edeb"
 	species_hud = /datum/hud_data/adherent

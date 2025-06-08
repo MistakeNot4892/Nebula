@@ -3,7 +3,7 @@ var/global/default_gyne
 /decl/ghosttrap/kharmaani_egg
 	name = "mantid nymph"
 	ban_checks = list(/decl/special_role/provocateur)
-	ghost_trap_message = "They are hatching from a kharmaan egg now."
+	ghost_trap_message = "They are hatching from a mantid egg now."
 
 /decl/ghosttrap/kharmaani_egg/forced(var/mob/user)
 	request_player(new /mob/living/simple_animal/alien/kharmaan(get_turf(user)), "A mantid nymph is ready to hatch and needs a player.")

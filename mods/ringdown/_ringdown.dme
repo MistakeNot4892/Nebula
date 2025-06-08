@@ -1,0 +1,28 @@
+#ifndef CONTENT_PACK_RINGDOWN
+#define CONTENT_PACK_RINGDOWN
+// BEGIN_INCLUDE
+#include "ringdown.dm"
+#include "clothing\asset_reclamation.dm"
+#include "clothing\coursers.dm"
+#include "clothing\drifters.dm"
+#include "clothing\misc.dm"
+#include "clothing\outfits.dm"
+#include "clothing\shoalers.dm"
+#include "clothing\veiled.dm"
+#include "culture\culture_shared.dm"
+#include "culture\factions_shared.dm"
+#include "culture\locations_shared.dm"
+#include "music\music.dm"
+// END_INCLUDE
+#endif
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+
+
+
+
