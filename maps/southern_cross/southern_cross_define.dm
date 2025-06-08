@@ -161,9 +161,9 @@
 		if(1 to 2)
 			return /turf/floor/dirt
 		if(3 to 5)
-			return /turf/floor/sif_growth
+			return /turf/floor/grass/sif
 		if(6 to 8)
-			return /turf/floor/sif_growth/thick
+			return /turf/floor/grass/wild/sif
 		if(9)
 			return /turf/floor/snow
 
@@ -208,9 +208,9 @@
 /datum/random_map/noise/sif/forest/get_appropriate_path(var/value)
 	switch(value)
 		if(0 to 3)
-			return /turf/floor/sif_growth
+			return /turf/floor/grass/sif
 		if(4 to 6)
-			return /turf/floor/sif_growth/thick
+			return /turf/floor/grass/wild/sif
 		if(7 to 9)
 			return /turf/floor/snow
 

@@ -13,7 +13,6 @@
 	#include "../../mods/content/beekeeping/_beekeeping.dme"
 	#include "../../mods/content/standard_jobs/_standard_jobs.dme"
 	#include "../../mods/content/supermatter/_supermatter.dme"
-	#include "../../mods/content/xenobiology/_xenobiology.dme"
 	#include "../../mods/content/tabloids/_tabloids.dme"
 
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
@@ -29,9 +28,12 @@
 
 	#include "datum/shuttles.dm"
 	#include "datum/turbolifts.dm"
+	#include "datum/materials.dm"
 
 	#include "atoms/cameras.dm"
 	#include "atoms/flora.dm"
+	#include "atoms/flooring.dm"
+	#include "atoms/furniture.dm"
 	#include "atoms/mobs.dm"
 	#include "atoms/machinery.dm"
 	#include "atoms/props.dm"
