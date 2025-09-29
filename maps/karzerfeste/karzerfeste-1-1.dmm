@@ -1,4 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/item/flame/candle/handmade{
+	pixel_y = 8
+	},
+/turf/floor/wood/maple,
+/area/karzerfeste/keep)
 "ai" = (
 /obj/structure/table/wood/reinforced/mahogany,
 /obj/item/flame/candle/handmade,
@@ -43,13 +49,13 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/wall/two)
 "bi" = (
-/obj/structure/table/wood/ebony,
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
 	pixel_y = 10;
 	start_lit = 1
 	},
 /obj/item/staff/broom,
+/obj/structure/table/end/alt/ebony,
 /turf/floor/carpet,
 /area/karzerfeste/keep/tower/three)
 "br" = (
@@ -68,7 +74,7 @@
 /turf/floor/mud,
 /area/karzerfeste/outside/keep)
 "bC" = (
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 8
 	},
 /turf/floor/mud,
@@ -127,11 +133,11 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/gatehouse/west)
 "cx" = (
-/obj/structure/chair/wood/ebony{
-	dir = 8
-	},
 /obj/structure/wall_sconce/lantern{
 	dir = 4
+	},
+/obj/structure/chair/rustic{
+	dir = 8
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
@@ -144,7 +150,7 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep)
 "cL" = (
-/obj/structure/chair/wood/ebony{
+/obj/structure/chair/rustic{
 	dir = 8
 	},
 /turf/floor/wood/maple,
@@ -154,7 +160,7 @@
 /area/karzerfeste/outside/ward)
 "cX" = (
 /obj/structure/wall_sconce/lantern,
-/obj/structure/table/wood/ebony,
+/obj/structure/table/end/alt/ebony,
 /turf/floor/carpet,
 /area/karzerfeste/keep/tower/three)
 "cZ" = (
@@ -177,7 +183,7 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/gatehouse/west)
 "dt" = (
-/obj/structure/produce_bin/ebony,
+/obj/structure/produce_bin/walnut,
 /turf/floor/mud,
 /area/karzerfeste/outside/ward)
 "dD" = (
@@ -207,6 +213,10 @@
 	},
 /turf/floor/path/granite,
 /area/karzerfeste/ward/shrine)
+"dP" = (
+/obj/structure/table/end/alt/ebony,
+/turf/floor/wood/maple,
+/area/karzerfeste/keep)
 "dQ" = (
 /obj/structure/table/wood/ebony,
 /obj/item/chems/glass/handmade/bottle/tall/wine,
@@ -277,12 +287,12 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
 "eH" = (
-/obj/structure/chair/wood/ebony{
-	dir = 1
-	},
 /obj/structure/wall_sconce/lantern{
 	dir = 8;
 	start_lit = 1
+	},
+/obj/structure/chair/rustic{
+	dir = 1
 	},
 /turf/floor/wood/maple,
 /area/karzerfeste/ward/shrine)
@@ -341,12 +351,12 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
 "fu" = (
-/obj/structure/closet/crate/chest,
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
 /obj/item/pen/fancy/quill,
-/obj/item/stool/wood,
+/obj/structure/closet/crate/chest/ebony,
+/obj/item/stool/rustic,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep)
 "fv" = (
@@ -361,7 +371,7 @@
 "fG" = (
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
-	pixel_y = 10
+	pixel_y = 24
 	},
 /turf/floor/carpet/blue,
 /area/karzerfeste/keep)
@@ -371,10 +381,6 @@
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep/tower)
-"fW" = (
-/obj/structure/drying_rack,
-/turf/floor/path/granite,
-/area/karzerfeste/keep/tower/four)
 "gh" = (
 /obj/structure/railing/mapped/wooden/ebony{
 	dir = 1
@@ -434,10 +440,10 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep/tower/four)
 "hw" = (
-/obj/structure/railing/mapped/wooden/ebony,
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 4
 	},
+/obj/structure/railing/mapped/wooden/walnut,
 /turf/floor/dirt,
 /area/karzerfeste/outside/ward)
 "hx" = (
@@ -564,8 +570,8 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
 "jC" = (
-/obj/structure/table/wood/ebony,
 /obj/item/flame/candle/handmade,
+/obj/structure/table/end/alt/ebony,
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
 "jL" = (
@@ -613,7 +619,7 @@
 /area/karzerfeste/keep/gatehouse/west)
 "kl" = (
 /obj/structure/wall_sconce/lantern,
-/obj/structure/table/wood/ebony,
+/obj/structure/table/end/alt,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
 "kv" = (
@@ -627,9 +633,16 @@
 /obj/structure/wall_sconce/lantern,
 /turf/floor/path/herringbone/granite,
 /area/karzerfeste/keep)
+"kB" = (
+/obj/structure/bookcase/fancy/ebony,
+/obj/structure/railing/mapped/wooden/ebony{
+	dir = 8
+	},
+/turf/floor/wood/maple,
+/area/karzerfeste/keep)
 "kC" = (
 /obj/structure/table/marble,
-/obj/item/kitchen/rollingpin,
+/obj/item/rollingpin,
 /obj/item/knife/kitchen/cleaver/bronze,
 /turf/floor/path/herringbone/granite,
 /area/karzerfeste/keep)
@@ -678,7 +691,7 @@
 /turf/wall/natural/basalt/karzerfeste,
 /area/karzerfeste/caves/surface_east)
 "lJ" = (
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 1
 	},
 /turf/floor/dirt,
@@ -706,13 +719,13 @@
 /turf/floor/dirt,
 /area/karzerfeste/outside/keep)
 "mn" = (
-/obj/structure/table/wood/ebony,
 /obj/effect/floor_decal/spline/fancy/wood/walnut{
 	dir = 1
 	},
 /obj/effect/floor_decal/spline/fancy/wood/walnut{
 	dir = 4
 	},
+/obj/structure/table/end,
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/gatehouse)
 "mo" = (
@@ -733,6 +746,11 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/structure/rack/ebony,
 /turf/floor/path/running_bond/granite,
+/area/karzerfeste/keep)
+"mF" = (
+/obj/abstract/landmark/start/karzerfeste/guildmaster,
+/obj/structure/chair/wood/ebony,
+/turf/floor/wood/maple,
 /area/karzerfeste/keep)
 "mL" = (
 /obj/structure/bookcase/ebony,
@@ -762,7 +780,7 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/wall/two)
 "ni" = (
-/obj/structure/door/ebony,
+/obj/structure/door/walnut,
 /turf/floor/wood/maple,
 /area/karzerfeste/ward/shrine)
 "nv" = (
@@ -832,7 +850,7 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/wall/two)
 "nZ" = (
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 4
 	},
 /turf/floor/dirt,
@@ -894,7 +912,7 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/gatehouse/west)
 "ph" = (
-/obj/item/stool/wood,
+/obj/item/stool/rustic,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep)
 "pj" = (
@@ -902,8 +920,27 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep/tower/four)
 "pp" = (
-/obj/structure/table/wood/reinforced/ebony,
-/obj/item/flame/candle/handmade,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/paper/scroll,
+/obj/item/cash/imperial/regalis,
+/obj/item/cash/imperial/quin,
+/obj/item/cash/imperial/quin,
+/obj/item/cash/imperial/quin,
+/obj/item/cash/imperial/crown,
+/obj/item/cash/imperial/crown,
+/obj/item/cash/imperial/crown,
+/obj/item/cash/imperial/crown,
+/obj/item/cash/imperial/crown,
+/obj/item/chems/glass/inkwell/quilled{
+	pixel_x = 14;
+	pixel_y = 8
+	},
+/obj/structure/railing/mapped/wooden/ebony{
+	dir = 8
+	},
+/obj/structure/table/desk/ebony,
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
 "pu" = (
@@ -913,7 +950,7 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/outside/ward)
 "py" = (
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 1
 	},
 /turf/floor/dirt,
@@ -936,7 +973,7 @@
 /turf/wall/brick/basalt,
 /area/karzerfeste/ward/wall/three)
 "pS" = (
-/obj/structure/chair/wood/ebony{
+/obj/structure/chair/rustic{
 	dir = 4
 	},
 /turf/floor/carpet,
@@ -966,8 +1003,8 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep/tower)
 "qy" = (
-/obj/structure/table/wood/ebony,
 /obj/structure/railing/mapped/wooden/ebony,
+/obj/structure/table/end/alt/ebony,
 /turf/floor/carpet/blue,
 /area/karzerfeste/keep)
 "qC" = (
@@ -979,7 +1016,7 @@
 /turf/wall/natural/basalt/karzerfeste,
 /area/karzerfeste/caves/surface_west)
 "qH" = (
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 8
 	},
 /turf/floor/dirt,
@@ -1097,13 +1134,6 @@
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep)
-"sT" = (
-/obj/structure/wall_sconce/lantern,
-/obj/structure/railing/mapped/wooden/ebony{
-	dir = 8
-	},
-/turf/floor/wood/maple,
-/area/karzerfeste/keep)
 "sY" = (
 /obj/effect/floor_decal/spline/fancy/wood/walnut{
 	dir = 1
@@ -1174,30 +1204,13 @@
 /obj/item/chems/cooking_vessel/baking_dish/earthenware,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
-"uz" = (
-/obj/structure/table/wood/reinforced/ebony,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/paper/scroll,
-/obj/item/cash/imperial/regalis,
-/obj/item/cash/imperial/quin,
-/obj/item/cash/imperial/quin,
-/obj/item/cash/imperial/quin,
-/obj/item/cash/imperial/crown,
-/obj/item/cash/imperial/crown,
-/obj/item/cash/imperial/crown,
-/obj/item/cash/imperial/crown,
-/obj/item/cash/imperial/crown,
-/turf/floor/wood/maple,
-/area/karzerfeste/keep)
 "uC" = (
 /obj/abstract/landmark/latejoin,
 /turf/floor/dirt,
 /area/karzerfeste/outside/road)
 "uE" = (
-/obj/structure/table/wood/ebony,
 /obj/item/flame/candle/handmade,
+/obj/structure/table/end/alt/ebony,
 /turf/floor/wood/maple,
 /area/karzerfeste/ward/shrine)
 "uK" = (
@@ -1279,14 +1292,14 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
 "wA" = (
-/obj/structure/table/wood/ebony,
 /obj/effect/floor_decal/spline/fancy/wood/walnut{
 	dir = 1
 	},
+/obj/structure/table/end,
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/gatehouse)
 "wM" = (
-/obj/structure/chair/wood/ebony{
+/obj/structure/chair/rustic{
 	dir = 8
 	},
 /turf/floor/carpet,
@@ -1295,9 +1308,9 @@
 /obj/structure/wall_sconce/lantern{
 	dir = 4
 	},
-/obj/structure/closet/crate/chest,
 /obj/item/paper/scroll,
 /obj/item/pen/fancy/quill,
+/obj/structure/closet/crate/chest/ebony,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep)
 "xl" = (
@@ -1312,6 +1325,12 @@
 /obj/item/knife/kitchen/cleaver/bronze,
 /turf/floor/path/granite,
 /area/karzerfeste/keep/tower/four)
+"xJ" = (
+/obj/structure/divider/extended/wood/ebony{
+	dir = 4
+	},
+/turf/floor/wood/maple,
+/area/karzerfeste/keep)
 "xM" = (
 /obj/structure/decoration/gargoyle/plinth,
 /turf/floor/path/granite,
@@ -1321,8 +1340,9 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
 "xP" = (
+/obj/structure/table/wood/ebony,
 /obj/structure/railing/mapped/wooden/ebony{
-	dir = 8
+	dir = 4
 	},
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
@@ -1472,7 +1492,7 @@
 /turf/floor/dirt,
 /area/karzerfeste/ward/wall/three)
 "BE" = (
-/obj/structure/door/ebony{
+/obj/structure/door/walnut{
 	dir = 4
 	},
 /turf/floor/path/running_bond/granite,
@@ -1574,7 +1594,7 @@
 	},
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
-	pixel_y = 10
+	pixel_y = 24
 	},
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
@@ -1647,7 +1667,7 @@
 /turf/floor/mud,
 /area/karzerfeste/outside/ward)
 "DN" = (
-/obj/structure/table/wood/ebony,
+/obj/structure/table/end/alt,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
 "DR" = (
@@ -1713,10 +1733,10 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/gatehouse/west)
 "Fh" = (
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 1
 	},
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 4
 	},
 /turf/floor/dirt,
@@ -1728,6 +1748,11 @@
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
+"Fo" = (
+/obj/structure/table/end/alt/ebony,
+/obj/item/flame/candle/scented,
+/turf/floor/wood/maple,
+/area/karzerfeste/keep)
 "Ft" = (
 /turf/floor/path/granite,
 /area/karzerfeste/ward/shrine)
@@ -1736,7 +1761,7 @@
 /turf/floor/mud,
 /area/karzerfeste/outside/keep/courtyard)
 "FP" = (
-/obj/structure/door/ebony{
+/obj/structure/door/walnut{
 	dir = 4
 	},
 /turf/floor/path/granite,
@@ -1781,7 +1806,7 @@
 /obj/structure/table/wood/ebony,
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
-	pixel_y = 10
+	pixel_y = 24
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep)
@@ -1862,7 +1887,7 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep/gatehouse)
 "HT" = (
-/obj/structure/reagent_dispensers/compost_bin/ebony,
+/obj/structure/reagent_dispensers/compost_bin/walnut,
 /turf/floor/mud,
 /area/karzerfeste/outside/ward)
 "HV" = (
@@ -1874,12 +1899,12 @@
 /turf/floor/mud,
 /area/karzerfeste/outside/ward)
 "Ij" = (
-/obj/structure/table/wood/ebony,
 /obj/item/flame/candle/handmade,
+/obj/structure/table/end/alt/ebony,
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/tower/three)
 "Ip" = (
-/obj/structure/chair/wood/ebony{
+/obj/structure/chair/rustic{
 	dir = 8
 	},
 /turf/floor/path/running_bond/granite,
@@ -1921,7 +1946,7 @@
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep/gatehouse/west)
 "IW" = (
-/obj/structure/railing/mapped/wooden/ebony,
+/obj/structure/railing/mapped/wooden/walnut,
 /turf/floor/mud,
 /area/karzerfeste/outside/ward)
 "IY" = (
@@ -1936,7 +1961,7 @@
 /turf/floor/snow,
 /area/karzerfeste/outside/road)
 "Ji" = (
-/obj/structure/railing/mapped/wooden/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 4
 	},
 /turf/floor/mud,
@@ -1984,6 +2009,10 @@
 	},
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
+"JY" = (
+/obj/structure/reagent_dispensers/well/mapped/covered,
+/turf/floor/mud,
+/area/karzerfeste/outside/ward)
 "Km" = (
 /obj/abstract/landmark/start/karzerfeste/traveller,
 /turf/floor/dirt,
@@ -2020,13 +2049,6 @@
 /obj/structure/produce_bin/ebony,
 /turf/floor/dirt,
 /area/karzerfeste/outside/keep/courtyard)
-"Lb" = (
-/obj/structure/chair/wood/ebony{
-	dir = 4
-	},
-/obj/abstract/landmark/start/karzerfeste/guildmaster,
-/turf/floor/wood/maple,
-/area/karzerfeste/keep)
 "Ll" = (
 /turf/wall/brick/basalt/shutter,
 /area/karzerfeste/keep/gatehouse/west)
@@ -2034,10 +2056,10 @@
 /turf/unsimulated/mask,
 /area/karzerfeste/caves/surface_east)
 "Lq" = (
-/obj/structure/chair/wood/ebony,
 /obj/structure/wall_sconce/lantern{
 	dir = 4
 	},
+/obj/structure/chair/rustic,
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/tower/three)
 "Lz" = (
@@ -2085,7 +2107,7 @@
 "MV" = (
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
-	pixel_y = 10
+	pixel_y = 24
 	},
 /obj/structure/table/wood/ebony,
 /obj/item/paper/scroll,
@@ -2141,9 +2163,9 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
 "NY" = (
-/obj/structure/closet/crate/chest,
 /obj/item/paper/scroll,
 /obj/item/pen/fancy/quill,
+/obj/structure/closet/crate/chest/ebony,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep)
 "Oc" = (
@@ -2151,7 +2173,7 @@
 /area/karzerfeste/ward/shrine/east)
 "Od" = (
 /obj/structure/table/marble,
-/obj/item/kitchen/rollingpin,
+/obj/item/rollingpin,
 /turf/floor/path/herringbone/granite,
 /area/karzerfeste/keep)
 "Oe" = (
@@ -2259,7 +2281,7 @@
 "PO" = (
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
-	pixel_y = 10
+	pixel_y = 24
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/wall)
@@ -2269,6 +2291,10 @@
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep/tower/two)
+"PS" = (
+/obj/structure/table/wood/reinforced/ebony,
+/turf/floor/path/granite,
+/area/karzerfeste/keep/tower/four)
 "Qb" = (
 /obj/item/stack/material/log/mapped/walnut/ten,
 /obj/structure/rack/ebony,
@@ -2396,10 +2422,10 @@
 /turf/floor/path/basalt,
 /area/karzerfeste/caves/surface_east)
 "ST" = (
-/obj/structure/table/wood/ebony,
 /obj/effect/floor_decal/spline/fancy/wood/walnut{
 	dir = 4
 	},
+/obj/structure/table/end,
 /turf/floor/wood/maple,
 /area/karzerfeste/keep/gatehouse)
 "SW" = (
@@ -2417,15 +2443,18 @@
 "Te" = (
 /turf/floor/path/herringbone/granite,
 /area/karzerfeste/keep/gatehouse/west)
-"Tr" = (
-/obj/effect/floor_decal/spline/fancy/wood/walnut{
-	dir = 4
-	},
-/turf/wall/brick/basalt,
-/area/karzerfeste/keep)
 "TJ" = (
 /turf/floor/path/basalt,
 /area/karzerfeste/outside/keep)
+"Ub" = (
+/obj/effect/floor_decal/spline/fancy/wood/walnut{
+	dir = 4
+	},
+/obj/structure/chair/rustic{
+	dir = 8
+	},
+/turf/floor/wood/maple,
+/area/karzerfeste/keep)
 "Ud" = (
 /obj/item/towel/doormat/flat{
 	dir = 8
@@ -2484,7 +2513,7 @@
 "Vi" = (
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
-	pixel_y = 10
+	pixel_y = 24
 	},
 /obj/structure/railing/mapped/wooden/ebony{
 	dir = 1
@@ -2512,11 +2541,15 @@
 /turf/floor/snow,
 /area/karzerfeste/outside/road)
 "VX" = (
-/obj/structure/chair/wood/ebony{
+/obj/structure/chair/rustic{
 	dir = 4
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
+"VZ" = (
+/obj/structure/drying_rack/ebony,
+/turf/floor/path/granite,
+/area/karzerfeste/keep/tower/four)
 "Wa" = (
 /obj/structure/stairs/south,
 /turf/floor/path/running_bond/granite,
@@ -2640,14 +2673,14 @@
 "Yq" = (
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
-	pixel_y = 10
+	pixel_y = 24
 	},
 /turf/floor/path/basalt,
 /area/karzerfeste/outside/keep/courtyard)
 "Yx" = (
 /obj/structure/wall_sconce/lantern{
 	dir = 1;
-	pixel_y = 10
+	pixel_y = 24
 	},
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/wall/two)
@@ -2658,13 +2691,8 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/keep)
-"YI" = (
-/obj/structure/table/wood/reinforced/ebony,
-/obj/item/pen/fancy/quill,
-/turf/floor/wood/maple,
-/area/karzerfeste/keep)
 "YN" = (
-/obj/structure/door/ebony,
+/obj/structure/door/walnut,
 /turf/floor/path/running_bond/granite,
 /area/karzerfeste/ward/shrine)
 "YT" = (
@@ -2684,7 +2712,7 @@
 /turf/floor/wood/maple,
 /area/karzerfeste/keep)
 "Zb" = (
-/obj/structure/table/wood/ebony,
+/obj/structure/table/end/alt/ebony,
 /turf/floor/carpet/blue,
 /area/karzerfeste/keep)
 "Ze" = (
@@ -2695,7 +2723,7 @@
 /turf/floor/mud,
 /area/karzerfeste/outside/keep/courtyard)
 "Zl" = (
-/obj/structure/door/ebony{
+/obj/structure/door/walnut{
 	dir = 4
 	},
 /turf/floor/wood/maple,
@@ -11597,15 +11625,15 @@ Wp
 ZM
 jz
 jz
-gG
+Ub
 ZM
 jz
 jz
-gG
+Ub
 ZM
 jz
 jz
-gG
+Ub
 ZM
 kv
 Si
@@ -12353,7 +12381,7 @@ Je
 Ou
 gG
 gG
-Tr
+ZM
 ZM
 ZM
 ZM
@@ -16310,15 +16338,15 @@ Je
 Je
 ZM
 HI
-tK
+dP
 ZM
 HI
-tK
+dP
 ZM
-LZ
+Fo
 Gn
-LZ
-ZM
+cc
+Rs
 yI
 Cf
 Cf
@@ -16467,10 +16495,10 @@ ZM
 LZ
 gz
 ZM
+sh
 LZ
 LZ
-LZ
-Rs
+ZM
 QX
 yI
 yI
@@ -16619,9 +16647,9 @@ ZM
 LZ
 sh
 ZM
-sh
-LZ
-cp
+kB
+xJ
+ZM
 ZM
 QX
 QX
@@ -16773,8 +16801,8 @@ ZM
 ZM
 xP
 LZ
-sT
-ZM
+Rs
+yI
 ZI
 QX
 QX
@@ -16924,9 +16952,9 @@ Wd
 Wd
 Ir
 LZ
-Lb
-LZ
-Rs
+Wp
+ZM
+ZM
 ZI
 ZI
 ZI
@@ -17076,8 +17104,8 @@ Wd
 Wd
 ZM
 pp
-uz
-YI
+LZ
+cp
 ZM
 ZI
 tS
@@ -17227,10 +17255,10 @@ ZM
 ZM
 ZM
 ZM
-ZM
-ZM
-ZM
-ZM
+aa
+mF
+LZ
+Rs
 yI
 tS
 tS
@@ -17242,11 +17270,11 @@ At
 At
 mR
 At
-fW
 gP
 gP
 gP
 gP
+VZ
 be
 be
 Gb
@@ -17382,7 +17410,7 @@ ZM
 ZM
 ZM
 ZM
-hC
+ZM
 hC
 bt
 Ph
@@ -17398,7 +17426,7 @@ gP
 gP
 gP
 gP
-gP
+VZ
 be
 be
 be
@@ -17551,7 +17579,7 @@ pj
 be
 gP
 gP
-gP
+NB
 be
 be
 Gb
@@ -17700,9 +17728,9 @@ vX
 oc
 oc
 oc
+gP
+gP
 GM
-gP
-gP
 be
 be
 be
@@ -17852,9 +17880,9 @@ NB
 gP
 oc
 gP
+gP
+gP
 GM
-gP
-gP
 be
 be
 Gb
@@ -18004,8 +18032,8 @@ yy
 gP
 gP
 gP
-GM
 gP
+GM
 be
 be
 be
@@ -18156,7 +18184,7 @@ be
 yi
 xz
 Et
-gP
+PS
 be
 be
 be
@@ -19406,7 +19434,7 @@ dd
 dd
 dd
 dd
-Xt
+dd
 Xt
 Xt
 Xt
@@ -19557,9 +19585,9 @@ Xt
 Xt
 Xt
 dd
-Xt
-Xt
-Xt
+dd
+dd
+dd
 Xt
 Xt
 Xt
@@ -19708,10 +19736,10 @@ Xt
 Xt
 Xt
 Xt
-Xt
-Xt
-Xt
-Xt
+dd
+dd
+JY
+dd
 Xt
 Xt
 Xt
@@ -19861,10 +19889,10 @@ Xt
 Xt
 Xt
 Xt
-Xt
-Xt
-Xt
-Xt
+dd
+dd
+dd
+dd
 Xt
 Xt
 Xt
