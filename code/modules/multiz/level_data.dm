@@ -739,6 +739,9 @@ INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
 ////////////////////////////////////////////
 /datum/level_data/space
 
+/datum/level_data/empty
+	base_turf = /turf/unsimulated/dark_filler
+
 /datum/level_data/debug
 	name = "Debug Level"
 

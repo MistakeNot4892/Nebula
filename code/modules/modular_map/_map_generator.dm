@@ -1,7 +1,9 @@
 /decl/modular_map_generator
 	abstract_type = /decl/modular_map_generator
+	/// Human-readable identifier.
+	var/name
 	/// A level data type to pass to the new-z proc if needed.
-	var/level_data_type
+	var/level_data_type = /datum/level_data/empty
 	/// Turfs per cell - functionally the grid size of the modular map.
 	var/grid_cell_size
 	/// Flag to avoid regenerating the template list unnecessarily.
@@ -11,13 +13,14 @@
 	/// A cache of template instances by their connection category for use in template selection.
 	var/list/templates_by_category = list()
 	/// A maximum number of templates forming a given path. <= 0 indicates no max.
-	var/max_generation = 10
+	var/max_generation = 0 //8
 	/// A minimum number of templates forming a given path. <= 0 indicates no max.
-	var/min_generation = 5
+	var/min_generation = 0 //5
 
 /decl/modular_map_generator/proc/setup_templates()
 	if(templates_are_setup || !SSmapping.initialized)
 		return
+	var/list/template_instances = list()
 	for(var/template_type in cell_templates)
 		var/datum/map_template/modular_map/template_instance = SSmapping.map_templates_by_type[template_type]
 		if(!istype(template_instance))
@@ -28,11 +31,15 @@
 			if(!length(template_instance.cell_connections))
 				PRINT_STACK_TRACE("Map generator [type] has template [template_instance.type] with empty cell_connections.")
 			LAZYDISTINCTADD(templates_by_category[template_instance.connection_type], template_instance)
+			template_instances |= template_instance
+	cell_templates = template_instances
 	templates_are_setup = TRUE
 
 /decl/modular_map_generator/validate()
 	. = ..()
 	setup_templates()
+	if(!name)
+		. += "no name set"
 	if(!length(cell_templates))
 		. += "no templates to place"
 	if(!templates_by_category[MOD_MAP_CONN_TYPE_ROOM])
@@ -48,10 +55,9 @@
 
 /decl/modular_map_generator/proc/place_on_grid(datum/map_template/modular_map/placing, list/grid, place_x, place_y, bound_x, bound_y, generation)
 
-	if(max_generation > 0 && generation >= max_generation && placing.connection_type != MOD_MAP_CONN_TYPE_TERM)
+	if(max_generation > 0 && generation >= max_generation && !placing.is_terminator)
 		return null
-
-	if(min_generation > 0 && generation < min_generation && placing.connection_type == MOD_MAP_CONN_TYPE_TERM)
+	if(min_generation > 0 && generation < min_generation && placing.is_terminator)
 		return null
 
 	// We will be returning a list of connections resulting from this placement.
@@ -141,17 +147,22 @@
 			var/datum/modular_map_node/node = new(dangling_cell, connection, target_connection, generation+1)
 			LAZYADD(., node)
 
+/decl/modular_map_generator/proc/get_initial_template()
+	return pick(templates_by_category[MOD_MAP_CONN_TYPE_ROOM])
+
 /decl/modular_map_generator/proc/generate()
 
 	set waitfor = FALSE
 
 	if(!SSmapping.initialized)
 		to_chat(usr, SPAN_WARNING("Please wait until SSmapping initialization so template setup can complete."))
-		return
+		return TRUE
 
 	setup_templates()
-	SSmapping.increment_world_z_size(level_data_type)
-	var/start_z = world.maxz // just in case a template increments it for some reason.
+	var/initial_template = get_initial_template()
+	if(!initial_template)
+		to_world("No initial template, generation failed.")
+		return FALSE
 
 	// Declare a list for tracking our occupied space and pre-build our graph.
 	var/cell_max_x = floor(world.maxx / grid_cell_size)-1
@@ -161,7 +172,7 @@
 	var/const/LOOP_SANITY = 100000
 	// Place our central room and keep track of the connections it provides for the main loop.
 	var/sanity = LOOP_SANITY
-	var/list/nodes = place_on_grid(pick(templates_by_category[MOD_MAP_CONN_TYPE_ROOM]), grid, round(rand(cell_max_x * 0.3, cell_max_x * 0.6)), round(rand(cell_max_y * 0.3, cell_max_y * 0.6)), cell_max_x, cell_max_y)
+	var/list/nodes = place_on_grid(initial_template, grid, round(rand(cell_max_x * 0.3, cell_max_x * 0.6)), round(rand(cell_max_y * 0.3, cell_max_y * 0.6)), cell_max_x, cell_max_y)
 	while(length(nodes) && sanity)
 
 		// Pick one of our remaining connections.
@@ -251,24 +262,24 @@
 		CHECK_TICK
 
 	// Keep track of load operations to run after we finalize our map.
-	var/list/mark_operations = list()
+	var/target_z = world.maxz+1
+	while(world.maxz < target_z)
+		SSmapping.increment_world_z_size(level_data_type)
+
 	var/list/load_operations = list()
 	for(var/datum/modular_map_cell/cell in grid)
 		// Non-origin cell; disregard.
 		if(cell.filler_cell)
 			continue
-		var/turf/cell_origin = locate((cell.cell_x * grid_cell_size), (cell.cell_y * grid_cell_size), start_z)
+		var/turf/cell_origin = locate((cell.cell_x * grid_cell_size), (cell.cell_y * grid_cell_size), target_z)
 		if(istype(cell_origin))
 			load_operations[cell_origin] = cell.template
-			var/mark = "<font color='#ffffff'>#[cell.generation]</font>"
-			LAZYINITLIST(mark_operations[mark])
-			mark_operations[mark] += list(list(cell_origin.x, cell_origin.y, cell_origin.z))
 		CHECK_TICK
 
-
-
 	if(!length(load_operations))
-		return
+		to_world("No load operations (grid count is [length(grid)]).")
+		return FALSE
+
 	global._gag_report_progress++ // disable template load subsystem spam.
 	try
 		var/announced = FALSE
@@ -283,10 +294,16 @@
 		log_error("Exception during final DMMS load of [type]: [EXCEPTION_TEXT(E)]")
 	global._gag_report_progress-- // enable subsystem spam.
 
-	for(var/mark in mark_operations)
-		for(var/list/coord in mark_operations[mark])
-			var/turf/marking = locate(coord[1], coord[2], coord[3])
-			if(istype(marking))
-				marking.maptext = mark
-
 	QDEL_LIST(grid)
+
+	// DMMS and mapload alters wall connection behavior, give it a poke to ensure they blend correctly.
+	for(var/turf/turf as anything in block(locate(1, 1, target_z), locate(world.maxx, world.maxy, target_z)))
+		if(!turf.simulated)
+			continue
+		if(istype(turf, /turf/wall))
+			var/turf/wall/wall = turf
+			wall.update_material(FALSE)
+		else
+			turf.update_icon()
+
+	return TRUE

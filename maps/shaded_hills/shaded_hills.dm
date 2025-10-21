@@ -9,6 +9,9 @@
 	#include "../../mods/content/fantasy/_fantasy.dme"
 	#include "../../mods/content/blacksmithy/_blacksmithy.dme"
 
+	#include "dungeon_gen/submaps/dungeon/dungeon.dm"
+	#include "dungeon_gen/submaps/aqueduct/aqueduct.dm"
+
 	#include "areas/_areas.dm"
 	#include "areas/downlands.dm"
 	#include "areas/grassland.dm"

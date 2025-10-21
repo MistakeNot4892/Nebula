@@ -13,6 +13,8 @@
 	var/cell_height = 1
 	/// What /decl/modular_map_generator type are we associated with?
 	var/generator
+	/// Is this template a terminator?
+	var/is_terminator = FALSE
 
 /datum/map_template/modular_map/New()
 	..()
