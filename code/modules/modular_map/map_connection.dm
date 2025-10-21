@@ -12,8 +12,8 @@
 	var/target_x = 0
 	/// y-offset for the cell this connection would connect to.
 	var/target_y = 0
-	/// A list of valid connection constants for sections joining with this connection.
-	var/list/connection_types
+	/// A bitfield of connection bitflags for sections joining with this connection.
+	var/connection_flags
 	/// Reference to our owning template to simplify connection compatibility checking.
 	var/datum/map_template/modular_map/template
 
@@ -24,26 +24,24 @@
 		return FALSE
 
 	// Null connections just need to be facing another null connection, they don't care about template compat.
-	var/self_dummy = (MOD_MAP_CONN_TYPE_NONE in connection_types)
-	var/other_dummy = (MOD_MAP_CONN_TYPE_NONE in other.connection_types)
+	var/self_dummy  = !!(connection_flags & MFC_NONE)
+	var/other_dummy = !!(connection_flags & MFC_NONE)
 	if(self_dummy || other_dummy)
 		return self_dummy == other_dummy
 
 	// Connection type is not permitted from this template; still no dice.
-	if(!(template.connection_type in other.connection_types))
+	if(!(other.connection_flags & template.connection_flag))
 		return FALSE
 
 	// Connection type is not permitted to that template; still no dice.
-	if(!(other.template.connection_type in connection_types))
+	if(!(connection_flags & other.template.connection_flag))
 		return FALSE
 
 	return TRUE
 
 /datum/modular_map_connection/New(_dir, _x, _y, _connect)
-
 	offset_x = _x
 	offset_y = _y
-
 	direction_string = _dir
 	switch(direction_string)
 		if("NORTH")
@@ -58,7 +56,4 @@
 		if("WEST")
 			reverse_direction_string = "EAST"
 			target_x = -1
-
-	connection_types = _connect
-	if(connection_types && !islist(connection_types))
-		connection_types = list(connection_types)
+	connection_flags = _connect

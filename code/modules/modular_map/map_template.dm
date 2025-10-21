@@ -3,10 +3,10 @@
 	is_spawnable = FALSE // Do not bloat out the map placement list.
 
 	/// A list of cell coordinates linking to directions linking to connection types from that point.
-	/// ex. "1_1" = list("NORTH" = list(MOD_MAP_CONN_TYPE_ROOM))
+	/// ex. "1_1" = list("NORTH" = MFC_ROOM)
 	var/list/cell_connections
 	/// A category for this module, used by the above list when building the graph.
-	var/connection_type = MOD_MAP_CONN_TYPE_ROOM
+	var/connection_flag = MFC_ROOM
 	/// How many cells wide is this room?
 	var/cell_width = 1
 	/// How many cells long is this room?
@@ -54,12 +54,6 @@
 			for(var/connection_dir in connection_dirs)
 				if(connection_dir in existing_coords[coord])
 					continue
-				var/datum/modular_map_connection/new_conn = new(connection_dir, x, y, list(MOD_MAP_CONN_TYPE_NONE))
+				var/datum/modular_map_connection/new_conn = new(connection_dir, x, y, MFC_NONE)
 				new_conn.template = src
 				cell_connections += new_conn
-
-	/*
-	to_world_log("Template [name] ([type]) has connections:")
-	for(var/datum/modular_map_connection/connection in cell_connections)
-		to_world_log("- [connection.direction_string] ([connection.offset_x],[connection.offset_y]): [jointext(connection.connection_types, ", ")]")
-	*/

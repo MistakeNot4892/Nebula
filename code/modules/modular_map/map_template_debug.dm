@@ -24,7 +24,7 @@
 /datum/map_template/modular_map/debug
 	generator = /decl/modular_map_generator/debug
 	abstract_type = /datum/map_template/modular_map/debug
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/corner_sw
 	name = "Debug Modular Map South-to-West Hall"
@@ -32,154 +32,154 @@
 
 /datum/map_template/modular_map/debug/corner_sw/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("WEST",  0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/hall_nes
 	name = "Debug Modular Map North-East-South Junction"
 	mappaths = list("maps/modular_maps/debug/debug_hall_nes.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/hall_nes/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("EAST",  0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/hall_esw
 	name = "Debug Modular Map East-South-West Junction"
 	mappaths = list("maps/modular_maps/debug/debug_hall_esw.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/hall_esw/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("EAST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("EAST",  0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("WEST",  0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/hall_swn
 	name = "Debug Modular Map South-West-North Junction"
 	mappaths = list("maps/modular_maps/debug/debug_hall_swn.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/hall_swn/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("WEST",  0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/hall_wne
 	name = "Debug Modular Map West-North-East Junction"
 	mappaths = list("maps/modular_maps/debug/debug_hall_wne.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/hall_wne/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST",  0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("EAST",  0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/corner_se
 	name = "Debug Modular Map South-to-East Hall"
 	mappaths = list("maps/modular_maps/debug/debug_hall_corner_se.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/corner_se/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("EAST",  0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/corner_nw
 	name = "Debug Modular Map North-to-West Hall"
 	mappaths = list("maps/modular_maps/debug/debug_hall_corner_nw.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/corner_nw/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("WEST",  0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/corner_ne
 	name = "Debug Modular Map North-to-East Hall"
 	mappaths = list("maps/modular_maps/debug/debug_hall_corner_ne.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/corner_ne/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST",  0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("EAST",  0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/hall_vert
 	name = "Debug Modular Map Vertical Hallway"
 	mappaths = list("maps/modular_maps/debug/debug_hall_vert.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/hall_vert/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/hall_hori
 	name = "Debug Modular Map Horizontal Hallway"
 	mappaths = list("maps/modular_maps/debug/debug_hall_hori.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/debug/hall_hori/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST", 0, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("EAST", 0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/junction
 	name = "Debug Modular Map Junction"
 	mappaths = list("maps/modular_maps/debug/debug_hall_junction.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_ROOM
+	connection_flag = MFC_ROOM
 
 /datum/map_template/modular_map/debug/junction/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST",  0, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST",  0, 0, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST",  0, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("WEST",  0, 0, (MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/debug/room_10_10
 	name = "Debug Modular Map 10x10 Room"
 	mappaths = list("maps/modular_maps/debug/debug_room_10_10.dmm")
-	connection_type = MOD_MAP_CONN_TYPE_ROOM
+	connection_flag = MFC_ROOM
 	cell_width  = 2
 	cell_height = 2
 
 /datum/map_template/modular_map/debug/room_10_10/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST",  0, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("NORTH", 0, 1, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST",  0, 1, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 1, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST",  1, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("NORTH", 1, 1, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST",  1, 1, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("WEST",  0, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("NORTH", 0, 1, (MFC_HALL)),
+		new /datum/modular_map_connection("WEST",  0, 1, (MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 1, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST",  1, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("NORTH", 1, 1, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST",  1, 1, (MFC_HALL))
 	)
 	..()
 
@@ -190,7 +190,7 @@
 
 /datum/map_template/modular_map/debug/hall_end_n/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_HALL))
 	)
 	..()
 
@@ -201,7 +201,7 @@
 
 /datum/map_template/modular_map/debug/hall_end_s/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_HALL))
 	)
 	..()
 
@@ -212,7 +212,7 @@
 
 /datum/map_template/modular_map/debug/hall_end_e/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 0, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST", 0, 0, (MFC_HALL))
 	)
 	..()
 
@@ -223,6 +223,6 @@
 
 /datum/map_template/modular_map/debug/hall_end_w/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("EAST", 0, 0, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("EAST", 0, 0, (MFC_HALL))
 	)
 	..()

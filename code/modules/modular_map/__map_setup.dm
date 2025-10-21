@@ -1,6 +1,17 @@
-#define MOD_MAP_CONN_TYPE_HALL "hall"
-#define MOD_MAP_CONN_TYPE_ROOM "room"
-#define MOD_MAP_CONN_TYPE_NONE "non-connecting"
+#define MFC_NONE      0
+#define MFC_HALL      BITFLAG(0)
+#define MFC_ROOM      BITFLAG(1)
+#define MFC_AQUEDUCT  BITFLAG(2)
+#define MFC_HALL_BEND BITFLAG(3)
+#define MFC_BRIDGE    BITFLAG(4)
+
+var/global/list/_mm_all_connection_flags = list(
+	(MFC_HALL),
+	(MFC_ROOM),
+	(MFC_AQUEDUCT),
+	(MFC_HALL_BEND),
+	(MFC_BRIDGE)
+)
 
 /client/verb/test_modular_map_gen()
 	set name = "Test Modular Map Gen"

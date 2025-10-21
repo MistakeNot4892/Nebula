@@ -31,7 +31,7 @@
 	generator = /decl/modular_map_generator/dungeon
 	abstract_type = /datum/map_template/modular_map/dungeon
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS
-	connection_type = MOD_MAP_CONN_TYPE_ROOM
+	connection_flag = MFC_ROOM
 
 /datum/map_template/modular_map/dungeon/barracks
 	name     = "dungeon barracks"
@@ -41,8 +41,8 @@
 
 /datum/map_template/modular_map/dungeon/barracks/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 3, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST", 4, 3, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST", 0, 3, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST", 4, 3, (MFC_HALL))
 	)
 	..()
 
@@ -54,7 +54,7 @@
 
 /datum/map_template/modular_map/dungeon/butchery/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("EAST", 1, 0, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("EAST", 1, 0, (MFC_HALL))
 	)
 	..()
 
@@ -66,12 +66,12 @@
 
 /datum/map_template/modular_map/dungeon/hall/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 1, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST", 0, 3, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST", 0, 1, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST", 2, 1, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST", 2, 3, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("NORTH", 1, 4, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("SOUTH", 1, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("WEST", 0, 3, (MFC_HALL)),
+		new /datum/modular_map_connection("WEST", 0, 1, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST", 2, 1, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST", 2, 3, (MFC_HALL)),
+		new /datum/modular_map_connection("NORTH", 1, 4, (MFC_HALL))
 	)
 	..()
 
@@ -83,7 +83,7 @@
 
 /datum/map_template/modular_map/dungeon/foundry/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 1, 0, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("SOUTH", 1, 0, (MFC_HALL))
 	)
 	..()
 
@@ -95,7 +95,7 @@
 
 /datum/map_template/modular_map/dungeon/kitchen/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("EAST", 2, 1, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("EAST", 2, 1, (MFC_HALL))
 	)
 	..()
 
@@ -107,9 +107,9 @@
 
 /datum/map_template/modular_map/dungeon/library/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 1, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("NORTH", 1, 4, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST", 0, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 1, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("NORTH", 1, 4, (MFC_HALL))
 	)
 	..()
 
@@ -121,8 +121,8 @@
 
 /datum/map_template/modular_map/dungeon/pool_small/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("NORTH", 1, 1, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("NORTH", 1, 1, (MFC_HALL))
 	)
 	..()
 
@@ -134,10 +134,10 @@
 
 /datum/map_template/modular_map/dungeon/pool/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 1, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 1, 0, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("NORTH", 1, 2, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST", 2, 1, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST", 0, 1, (MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 1, 0, (MFC_HALL)),
+		new /datum/modular_map_connection("NORTH", 1, 2, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST", 2, 1, (MFC_HALL))
 	)
 	..()
 
@@ -149,8 +149,8 @@
 
 /datum/map_template/modular_map/dungeon/smithy/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 1, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST", 1, 0, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST", 0, 1, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST", 1, 0, (MFC_HALL))
 	)
 	..()
 
@@ -162,7 +162,7 @@
 
 /datum/map_template/modular_map/dungeon/surgery/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 1, 1, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 1, 1, (MFC_HALL))
 	)
 	..()
 
@@ -174,8 +174,8 @@
 
 /datum/map_template/modular_map/dungeon/workshop/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 1, list(MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("EAST", 2, 1, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST", 0, 1, (MFC_HALL)),
+		new /datum/modular_map_connection("EAST", 2, 1, (MFC_HALL))
 	)
 	..()
 
@@ -187,14 +187,14 @@
 
 /datum/map_template/modular_map/dungeon/spider_nest/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 1, list(MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("WEST", 0, 1, (MFC_HALL))
 	)
 	..()
 
 /datum/map_template/modular_map/dungeon/hallway
 	abstract_type  = /datum/map_template/modular_map/dungeon/hallway
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_ALLOW_DUPLICATES | TEMPLATE_FLAG_GENERIC_REPEATABLE
-	connection_type = MOD_MAP_CONN_TYPE_HALL
+	connection_flag = MFC_HALL
 
 /datum/map_template/modular_map/dungeon/hallway/vertical_aqueduct
 	name     = "dungeon vertical aqueduct"
@@ -204,8 +204,8 @@
 
 /datum/map_template/modular_map/dungeon/hallway/vertical_aqueduct/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 1, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 0, 1, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
@@ -217,8 +217,8 @@
 
 /datum/map_template/modular_map/dungeon/hallway/horizontal_aqueduct/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("EAST", 1, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("EAST", 1, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("WEST", 0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
@@ -230,8 +230,8 @@
 
 /datum/map_template/modular_map/dungeon/hallway/vertical_hallway/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 1, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("NORTH", 0, 1, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
@@ -243,8 +243,8 @@
 
 /datum/map_template/modular_map/dungeon/hallway/horizontal_hallway/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("EAST", 1, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL)),
-		new /datum/modular_map_connection("WEST", 0, 0, list(MOD_MAP_CONN_TYPE_ROOM, MOD_MAP_CONN_TYPE_HALL))
+		new /datum/modular_map_connection("EAST", 1, 0, (MFC_ROOM | MFC_HALL)),
+		new /datum/modular_map_connection("WEST", 0, 0, (MFC_ROOM | MFC_HALL))
 	)
 	..()
 
@@ -260,7 +260,7 @@
 
 /datum/map_template/modular_map/dungeon/hallway/end/north/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("SOUTH", 0, 0, list(MOD_MAP_CONN_TYPE_HALL, MOD_MAP_CONN_TYPE_ROOM))
+		new /datum/modular_map_connection("SOUTH", 0, 0, (MFC_HALL | MFC_ROOM))
 	)
 	..()
 
@@ -270,7 +270,7 @@
 
 /datum/map_template/modular_map/dungeon/hallway/end/south/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("NORTH", 0, 0, list(MOD_MAP_CONN_TYPE_HALL, MOD_MAP_CONN_TYPE_ROOM))
+		new /datum/modular_map_connection("NORTH", 0, 0, (MFC_HALL | MFC_ROOM))
 	)
 	..()
 
@@ -280,7 +280,7 @@
 
 /datum/map_template/modular_map/dungeon/hallway/end/east/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("WEST", 0, 0, list(MOD_MAP_CONN_TYPE_HALL, MOD_MAP_CONN_TYPE_ROOM))
+		new /datum/modular_map_connection("WEST", 0, 0, (MFC_HALL | MFC_ROOM))
 	)
 	..()
 
@@ -290,6 +290,6 @@
 
 /datum/map_template/modular_map/dungeon/hallway/end/west/New()
 	cell_connections = list(
-		new /datum/modular_map_connection("EAST", 0, 0, list(MOD_MAP_CONN_TYPE_HALL, MOD_MAP_CONN_TYPE_ROOM))
+		new /datum/modular_map_connection("EAST", 0, 0, (MFC_HALL | MFC_ROOM))
 	)
 	..()

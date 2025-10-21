@@ -27,11 +27,11 @@
 		if(!istype(template_instance))
 			PRINT_STACK_TRACE("Map generator [type] has template type [template_type] with no instance on SSmapping.")
 		else
-			if(!template_instance.connection_type)
-				PRINT_STACK_TRACE("Map generator [type] has template [template_instance.type] with unset connection_type.")
+			if(!template_instance.connection_flag)
+				PRINT_STACK_TRACE("Map generator [type] has template [template_instance.type] with unset connection_flag.")
 			if(!length(template_instance.cell_connections))
 				PRINT_STACK_TRACE("Map generator [type] has template [template_instance.type] with empty cell_connections.")
-			LAZYDISTINCTADD(templates_by_category[template_instance.connection_type], template_instance)
+			LAZYDISTINCTADD(templates_by_category["[template_instance.connection_flag]"], template_instance)
 			template_instances |= template_instance
 	cell_templates = template_instances
 	templates_are_setup = TRUE
@@ -43,9 +43,9 @@
 		. += "no name set"
 	if(!length(cell_templates))
 		. += "no templates to place"
-	if(!templates_by_category[MOD_MAP_CONN_TYPE_ROOM])
+	if(!templates_by_category["[MFC_ROOM]"])
 		. += "no rooms to place"
-	if(!templates_by_category[MOD_MAP_CONN_TYPE_HALL])
+	if(!templates_by_category["[MFC_HALL]"])
 		. += "no hallways to place"
 	if(!isnum(grid_cell_size) || grid_cell_size < 0)
 		. += "invalid grid cell size ([grid_cell_size || "NULL"])"
@@ -152,7 +152,7 @@
 			LAZYADD(., node)
 
 /decl/modular_map_generator/proc/get_initial_template()
-	return pick(templates_by_category[MOD_MAP_CONN_TYPE_ROOM])
+	return pick(templates_by_category["[MFC_ROOM]"])
 
 /decl/modular_map_generator/proc/generate()
 
@@ -185,17 +185,20 @@
 		var/datum/modular_map_cell/cell             = node.origin_cell
 
 		// Try to find a template that we can connect to this spot.
-		connection.connection_types = shuffle(connection.connection_types)
-		for(var/con_i = 1 to length(connection.connection_types))
+		shuffle(global._mm_all_connection_flags)
+		for(var/con_i = 1 to length(global._mm_all_connection_flags))
 
-			var/connection_type = connection.connection_types[con_i]
+			var/connection_flag = global._mm_all_connection_flags[con_i]
+
+			if(!(connection.connection_flags & connection_flag))
+				continue
 
 			// Dummy connection, skip.
-			if(connection_type == MOD_MAP_CONN_TYPE_NONE)
+			if(connection_flag & MFC_NONE)
 				continue
 
 			// Determine the bottom-left corner of the space needed to fit this template from this connection.
-			var/list/templates = templates_by_category[connection_type]
+			var/list/templates = templates_by_category[connection_flag]
 			if(!islist(templates))
 				continue
 
