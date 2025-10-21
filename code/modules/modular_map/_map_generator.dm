@@ -21,7 +21,8 @@
 	if(templates_are_setup || !SSmapping.initialized)
 		return
 	var/list/template_instances = list()
-	for(var/template_type in cell_templates)
+	for(var/i = 1 to length(cell_templates))
+		var/template_type = cell_templates[i]
 		var/datum/map_template/modular_map/template_instance = SSmapping.map_templates_by_type[template_type]
 		if(!istype(template_instance))
 			PRINT_STACK_TRACE("Map generator [type] has template type [template_type] with no instance on SSmapping.")
@@ -80,7 +81,9 @@
 	// Connection targets with no corresponding cell are valid.
 	// Connection targets which match the type and orientation of the corresponding cell are valid.
 	var/list/available_connections
-	for(var/datum/modular_map_connection/connection in placing.cell_connections)
+	for(var/i in 1 to length(placing.cell_connections))
+
+		var/datum/modular_map_connection/connection = placing.cell_connections[i]
 
 		// Work out the coords for the cell we're trying to connect to.
 		var/target_x = place_x + connection.offset_x + connection.target_x
@@ -105,7 +108,8 @@
 
 		// We need to find a potential match for all our connections in the target connections.
 		var/found_cell = FALSE
-		for(var/datum/modular_map_connection/target_connection in target_cell.available_connections)
+		for(var/con_i = 1 to length(target_cell.available_connections))
+			var/datum/modular_map_connection/target_connection = target_cell.available_connections[con_i]
 			if(!connection.can_connect_to(target_connection))
 				continue
 			// This one is possible! Mark it down for later and continue evaluation.
@@ -126,8 +130,8 @@
 		for(var/y = place_y to place_y_m)
 			grid[TRANSLATE_MODMAP_COORD(x, y, bound_x)] = new /datum/modular_map_cell(x, y, placing, (x != place_x || y != place_y), generation+1)
 
-	for(var/datum/modular_map_connection/connection in available_connections)
-
+	for(var/i = 1 to length(available_connections))
+		var/datum/modular_map_connection/connection = available_connections[i]
 		var/datum/modular_map_connection/target_connection = available_connections[connection]
 		var/dangling_x = place_x + connection.offset_x
 		var/dangling_y = place_y + connection.offset_y
@@ -182,7 +186,9 @@
 
 		// Try to find a template that we can connect to this spot.
 		connection.connection_types = shuffle(connection.connection_types)
-		for(var/connection_type in connection.connection_types)
+		for(var/con_i = 1 to length(connection.connection_types))
+
+			var/connection_type = connection.connection_types[con_i]
 
 			// Dummy connection, skip.
 			if(connection_type == MOD_MAP_CONN_TYPE_NONE)
@@ -195,14 +201,14 @@
 
 			// Randomise template order to avoid always placing a northeast corner or whatever.
 			templates = shuffle(templates)
-			for(var/datum/map_template/modular_map/template in templates)
+			for(var/t_i = 1 to length(templates))
 
-				CHECK_TICK
-
+				var/datum/map_template/modular_map/template = templates[t_i]
 				// Coarse parse; find all connections in this template that are facing the right way
 				// and have the right connection type to match up with our outgoing connection.
 				var/list/possible_connections = list()
-				for(var/datum/modular_map_connection/possible_connection in template.cell_connections)
+				for(var/pc_i = 1 to length(template.cell_connections))
+					var/datum/modular_map_connection/possible_connection = template.cell_connections[pc_i]
 					if(connection.can_connect_to(possible_connection))
 						// Nominally compatible; it will fail placement if it overlaps with an existing cell.
 						possible_connections += possible_connection
@@ -215,7 +221,10 @@
 				possible_connections = shuffle(possible_connections)
 				var/connection_x = (cell.cell_x + connection.target_x)
 				var/connection_y = (cell.cell_y + connection.target_y)
-				for(var/datum/modular_map_connection/possible_connection in possible_connections)
+				for(var/pc_i = 1 to length(possible_connections))
+
+					var/datum/modular_map_connection/possible_connection = possible_connections[pc_i]
+
 					// Get base template origin coords, then adjust for template size.
 					var/place_x = connection_x
 					var/place_y = connection_y
@@ -242,8 +251,8 @@
 					var/list/placement_results = place_on_grid(template, grid, place_x, place_y, cell_max_x, cell_max_y, node.generation)
 					if(length(placement_results))
 						nodes -= node
-						for(var/datum/modular_map_node/new_node in placement_results)
-							nodes |= new_node
+						for(var/n_i = 1 to length(placement_results))
+							nodes |= placement_results[n_i]
 						connection = null
 						sanity = LOOP_SANITY // reset our failure counter
 						break
@@ -267,12 +276,14 @@
 		SSmapping.increment_world_z_size(level_data_type)
 
 	var/list/load_operations = list()
-	for(var/datum/modular_map_cell/cell in grid)
+	for(var/c_i in 1 to length(grid))
+		var/datum/modular_map_cell/cell = grid[c_i]
 		// Non-origin cell; disregard.
 		if(cell.filler_cell)
 			continue
 		var/turf/cell_origin = locate((cell.cell_x * grid_cell_size), (cell.cell_y * grid_cell_size), target_z)
 		if(istype(cell_origin))
+
 			load_operations[cell_origin] = cell.template
 		CHECK_TICK
 
@@ -283,7 +294,8 @@
 	global._gag_report_progress++ // disable template load subsystem spam.
 	try
 		var/announced = FALSE
-		for(var/turf/load_turf in load_operations)
+		for(var/i = 1 to length(load_operations))
+			var/turf/load_turf = load_operations[i]
 			var/datum/map_template/template = load_operations[load_turf]
 			template.load(load_turf)
 			if(!announced)
