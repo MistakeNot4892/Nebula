@@ -20,6 +20,7 @@
 /decl/modular_map_generator/proc/setup_templates()
 	if(templates_are_setup || !SSmapping.initialized)
 		return
+
 	var/list/template_instances = list()
 	for(var/i = 1 to length(cell_templates))
 		var/template_type = cell_templates[i]
@@ -31,7 +32,9 @@
 				PRINT_STACK_TRACE("Map generator [type] has template [template_instance.type] with unset connection_flag.")
 			if(!length(template_instance.cell_connections))
 				PRINT_STACK_TRACE("Map generator [type] has template [template_instance.type] with empty cell_connections.")
-			LAZYDISTINCTADD(templates_by_category["[template_instance.connection_flag]"], template_instance)
+			var/ind = num2text(template_instance.connection_flag)
+			LAZYINITLIST(templates_by_category[ind])
+			LAZYDISTINCTADD(templates_by_category[ind], template_instance)
 			template_instances |= template_instance
 	cell_templates = template_instances
 	templates_are_setup = TRUE
@@ -43,9 +46,9 @@
 		. += "no name set"
 	if(!length(cell_templates))
 		. += "no templates to place"
-	if(!templates_by_category["[MFC_ROOM]"])
+	if(!templates_by_category[num2text(MFC_ROOM)])
 		. += "no rooms to place"
-	if(!templates_by_category["[MFC_HALL]"])
+	if(!templates_by_category[num2text(MFC_HALL)])
 		. += "no hallways to place"
 	if(!isnum(grid_cell_size) || grid_cell_size < 0)
 		. += "invalid grid cell size ([grid_cell_size || "NULL"])"
@@ -152,7 +155,7 @@
 			LAZYADD(., node)
 
 /decl/modular_map_generator/proc/get_initial_template()
-	return pick(templates_by_category["[MFC_ROOM]"])
+	return pick(templates_by_category[num2text(MFC_ROOM)])
 
 /decl/modular_map_generator/proc/generate()
 
@@ -179,8 +182,10 @@
 	var/list/nodes = place_on_grid(initial_template, grid, round(rand(cell_max_x * 0.3, cell_max_x * 0.6)), round(rand(cell_max_y * 0.3, cell_max_y * 0.6)), cell_max_x, cell_max_y)
 	while(length(nodes) && sanity)
 
-		// Pick one of our remaining connections.
-		var/datum/modular_map_node/node             = pick(nodes)
+		// Pick one of our remaining connections and remove it from the pending list.
+		var/datum/modular_map_node/node             = nodes[1]
+		nodes.Cut(1, 2)
+
 		var/datum/modular_map_connection/connection = node.origin
 		var/datum/modular_map_cell/cell             = node.origin_cell
 
@@ -198,7 +203,7 @@
 				continue
 
 			// Determine the bottom-left corner of the space needed to fit this template from this connection.
-			var/list/templates = templates_by_category[connection_flag]
+			var/list/templates = templates_by_category[num2text(connection_flag)]
 			if(!islist(templates))
 				continue
 
@@ -253,9 +258,10 @@
 					// Actually try to place this template from our connection.
 					var/list/placement_results = place_on_grid(template, grid, place_x, place_y, cell_max_x, cell_max_y, node.generation)
 					if(length(placement_results))
-						nodes -= node
-						for(var/n_i = 1 to length(placement_results))
-							nodes |= placement_results[n_i]
+
+						// Notes for future self: all nodes produced by this step will have a generation one step higher than the previous node.
+						// We add them to the head of the nodes list, so that we're always processing the highest generation nodes first.
+						nodes.Insert(1, shuffle(placement_results))
 						connection = null
 						sanity = LOOP_SANITY // reset our failure counter
 						break
@@ -281,12 +287,11 @@
 	var/list/load_operations = list()
 	for(var/c_i in 1 to length(grid))
 		var/datum/modular_map_cell/cell = grid[c_i]
-		// Non-origin cell; disregard.
-		if(cell.filler_cell)
+		// Empty or non-origin cell; disregard.
+		if(!istype(cell) || cell.filler_cell)
 			continue
 		var/turf/cell_origin = locate((cell.cell_x * grid_cell_size), (cell.cell_y * grid_cell_size), target_z)
 		if(istype(cell_origin))
-
 			load_operations[cell_origin] = cell.template
 		CHECK_TICK
 
