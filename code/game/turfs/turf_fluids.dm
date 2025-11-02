@@ -50,6 +50,7 @@
 
 	// Set our flood state.
 	flooded = new_flooded
+	blocks_air = new_flooded ? TRUE : initial(blocks_air) // gas transfer is blocked by the liquid when flooded
 	if(flooded)
 		QDEL_NULL(reagents)
 		ADD_ACTIVE_FLUID_SOURCE(src)

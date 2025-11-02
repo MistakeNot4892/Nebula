@@ -37,6 +37,10 @@
 	strata_override = /decl/strata/permafrost
 	floor_type = /turf/floor/ice
 
+/turf/wall/natural/ice/flooded
+	flooded = /decl/material/liquid/water
+	color = COLOR_LIQUID_WATER
+
 /turf/wall/natural/random/ice
 	strata_override = /decl/strata/permafrost
 	floor_type = /turf/floor/ice

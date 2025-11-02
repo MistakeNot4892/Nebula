@@ -5,6 +5,10 @@
 	icon_state    = "tiled"
 	_flooring     = /decl/flooring/tiling
 
+/turf/floor/tiled/flooded
+	flooded = /decl/material/liquid/water
+	color = COLOR_LIQUID_WATER
+
 /turf/floor/tiled/dark
 	name          = "dark floor"
 	icon_state    = "dark"

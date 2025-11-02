@@ -1,5 +1,5 @@
 #define FLUID_QDEL_POINT 1           // Depth a fluid begins self-deleting
-#define FLUID_MINIMUM_TRANSFER 5     // Minimum amount that a flowing fluid will transfer from one turf to another.
+#define FLUID_MINIMUM_TRANSFER MINIMUM_CHEMICAL_VOLUME // Minimum amount that a flowing fluid will transfer from one turf to another.
 #define FLUID_PUDDLE 25              // Minimum total depth that a fluid needs before it will start spreading.
 #define FLUID_SLURRY 50              // Mimimum depth before fluids will move solids as reagents.
 #define FLUID_SHALLOW 200            // Depth shallow icon is used
@@ -7,7 +7,7 @@
 #define FLUID_DEEP 800               // Depth deep icon is used
 #define FLUID_VERY_DEEP FLUID_DEEP*2 // Solid fill icon is used
 #define FLUID_MAX_DEPTH FLUID_DEEP*4 // Arbitrary max value for flooding.
-#define FLUID_PUSH_THRESHOLD 20      // Amount of flow needed to push items.
+#define FLUID_PUSH_THRESHOLD 100      // Amount of flow needed to push items.
 /turf
 	var/_fluid_source_is_active = FALSE
 	var/_fluid_turf_is_active = FALSE

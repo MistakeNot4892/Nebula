@@ -4,6 +4,10 @@
 	icon_state  = "reinforced"
 	_flooring   = /decl/flooring/reinforced
 
+/turf/floor/reinforced/flooded
+	flooded = /decl/material/liquid/water
+	color = COLOR_LIQUID_WATER
+
 /turf/floor/reinforced/airless
 	initial_gas = null
 

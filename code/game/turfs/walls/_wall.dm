@@ -1,3 +1,7 @@
+// Special string for walls that will never blend.
+
+var/const/WALL_NO_JOIN = "__nojoin__"
+
 var/global/list/wall_blend_objects = list(
 	/obj/machinery/door,
 	/obj/structure/door,

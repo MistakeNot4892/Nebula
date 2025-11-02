@@ -219,12 +219,13 @@
 			integrity += reinf_material.integrity
 		add_overlay(SSmaterials.wall_damage_overlays[clamp(round(damage / integrity * DAMAGE_OVERLAY_COUNT) + 1, 1, DAMAGE_OVERLAY_COUNT)])
 
+// Return 0 for no join, 1 for partial join, 2 for full join.
 /turf/wall/proc/can_join_with(var/turf/wall/wall)
-	if(unique_merge_identifier != wall.unique_merge_identifier)
+	if(unique_merge_identifier != wall.unique_merge_identifier || wall.unique_merge_identifier == WALL_NO_JOIN)
 		return 0
-	else if(unique_merge_identifier)
+	if(unique_merge_identifier)
 		return 1
-	else if(material && istype(wall.material))
+	if(material && istype(wall.material))
 		var/other_wall_icon = wall.get_wall_icon()
 		if(get_wall_icon() == other_wall_icon)
 			return 1

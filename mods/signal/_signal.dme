@@ -1,0 +1,12 @@
+#ifndef CONTENT_PACK_SIGNALVERSE
+#define CONTENT_PACK_SIGNALVERSE
+#include "_signal.dm"
+#include "pressure.dm"
+#include "clothing/rig.dm"
+#include "clothing/suits.dm"
+#include "datum/lore/culture.dm"
+#include "datum/lore/factions.dm"
+#include "datum/lore/languages.dm"
+#include "datum/lore/locations.dm"
+#include "structures/lockers.dm"
+#endif

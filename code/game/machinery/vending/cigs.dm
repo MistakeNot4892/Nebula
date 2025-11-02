@@ -63,3 +63,13 @@
 		/obj/item/box/fancy/cigar = 5,
 		/obj/item/box/fancy/cigarettes/killthroat = 5
 	)
+
+/obj/machinery/vending/cigarette/hacked
+	name = "hacked cigarette machine"
+	markup = 0
+	products = list(
+		/obj/item/box/fancy/cigarettes = 10,
+		/obj/item/box/matches          = 10,
+		/obj/item/flame/fuelled/lighter/zippo/random = 4,
+		/obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2
+	)

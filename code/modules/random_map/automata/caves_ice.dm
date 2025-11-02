@@ -1,0 +1,25 @@
+/datum/random_map/noise/ice_plain
+	name = "ice plain"
+	smoothing_iterations = 3
+	target_turf_type = /turf/unsimulated/mask
+	smooth_single_tiles = TRUE
+
+/datum/random_map/noise/ice_plain/get_appropriate_path(var/value)
+	switch(min(9,max(0,round((value/cell_range)*10))))
+		if(1 to 4)
+			return /turf/wall/natural/ice
+		if(8 to 9)
+			return /turf/floor/ice
+	return /turf/floor/snow
+
+/datum/random_map/automata/cave_system/ice_sheet
+	descriptor = "ice caves"
+	wall_type =  /turf/wall/natural/ice
+	floor_type = /turf/floor/ice
+	target_turf_type = /turf/unsimulated/mask/flooded
+	sparse_mineral_turf = /turf/wall/natural/random/ice
+	rich_mineral_turf = /turf/wall/natural/random/ice
+
+/datum/random_map/automata/cave_system/ice_sheet/flooded
+	descriptor = "flooded ice caves"
+	floor_type = /turf/open/flooded

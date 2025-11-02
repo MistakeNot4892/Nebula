@@ -100,9 +100,15 @@
 	paint_color = COLOR_BEIGE
 	stripe_color = COLOR_SKY_BLUE
 
+/turf/wall/shuttle/no_join
+	unique_merge_identifier = WALL_NO_JOIN
+
 /turf/wall/shuttle/get_wall_icon()
 	return 'icons/turf/walls/solid.dmi'
 
 /turf/wall/shuttle/dark
 	paint_color = COLOR_GUNMETAL
 	stripe_color = COLOR_MAROON
+
+/turf/wall/shuttle/dark/no_join
+	unique_merge_identifier = WALL_NO_JOIN
