@@ -14,6 +14,8 @@
 	#include "../../mods/content/mundane.dm"
 	#include "../../mods/content/scaling_descriptors.dm"
 
+	#include "../../mods/content/plant_dissection/_plant_dissection.dme"
+
 	#include "../../mods/content/beekeeping/_beekeeping.dme"
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/blob/_blob.dme"
@@ -72,6 +74,7 @@
 	#include "tradeship_areas.dm"
 	#include "tradeship_documents.dm"
 	#include "tradeship_jobs.dm"
+	#include "tradeship_levels.dm"
 	#include "tradeship_loadouts.dm"
 	#include "tradeship_overmap.dm"
 	#include "tradeship_overrides.dm"

@@ -10,9 +10,8 @@
 	w_class            = ITEM_SIZE_SMALL
 	atom_flags         = ATOM_FLAG_OPEN_CONTAINER
 	obj_flags          = OBJ_FLAG_HOLLOW
-	volume             = 20
+	chem_volume        = 20
 	presentation_flags = PRESENTATION_FLAG_NAME
-	current_health     = 40
 	max_health         = 40
 	material           = /decl/material/solid/metal/steel
 	var/can_refuel     = TRUE
@@ -87,7 +86,7 @@
 	base_name          = "small welding tank"
 	icon_state         = "tank_small"
 	w_class            = ITEM_SIZE_TINY
-	volume             = 5
+	chem_volume        = 5
 	size_in_use        = ITEM_SIZE_SMALL
 	unlit_force        = 5
 	lit_force          = 7
@@ -98,7 +97,7 @@
 	base_name          = "large welding tank"
 	icon_state         = "tank_large"
 	w_class            = ITEM_SIZE_SMALL
-	volume             = 40
+	chem_volume        = 40
 	size_in_use        = ITEM_SIZE_NORMAL
 	_base_attack_force = 6
 
@@ -107,7 +106,7 @@
 	base_name          = "huge welding tank"
 	icon_state         = "tank_huge"
 	w_class            = ITEM_SIZE_NORMAL
-	volume             = 80
+	chem_volume        = 80
 	size_in_use        = ITEM_SIZE_LARGE
 	unlit_force        = 9
 	lit_force          = 15
@@ -118,7 +117,7 @@
 	base_name          = "experimental welding tank"
 	icon_state         = "tank_experimental"
 	w_class            = ITEM_SIZE_NORMAL
-	volume             = 40
+	chem_volume        = 40
 	can_refuel         = FALSE
 	size_in_use        = ITEM_SIZE_LARGE
 	unlit_force        = 9

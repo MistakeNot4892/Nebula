@@ -12,14 +12,17 @@
 	wrenchable                = FALSE
 	storage                   = /datum/storage/barrel
 	amount_dispensed          = 10
-	volume                    = 7500
+	chem_volume               = 7500
 	movable_flags             = MOVABLE_FLAG_WHEELED
 	throwpass                 = TRUE
 	tool_interaction_flags    = TOOL_INTERACTION_ANCHOR | TOOL_INTERACTION_DECONSTRUCT
 	// Should we draw our lid and liquid contents as overlays?
 	var/show_liquid_contents  = TRUE
-	// Rivets, bands, etc. Currently just cosmetic.
+	// Rivets, bands, etc. Currently just cosmetic unless the forging modpack is ticked.
 	var/decl/material/metal_material = /decl/material/solid/metal/iron
+
+// Stub type for crafting (forging modpack modifies metal_material)
+/obj/structure/reagent_dispensers/barrel/crafted
 
 // Overrides due to wonky reagent_dispeners opencontainer flag handling.
 /obj/structure/reagent_dispensers/barrel/can_be_poured_from(mob/user, atom/target)

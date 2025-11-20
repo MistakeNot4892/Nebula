@@ -1,13 +1,13 @@
 /obj/structure/pit
-	name           = "pit"
-	desc           = "Watch your step, partner."
-	icon           = 'icons/obj/structures/pit.dmi'
-	icon_state     = "pit1"
-	blend_mode     = BLEND_MULTIPLY
-	density        = FALSE
-	anchored       = TRUE
-	current_health = ITEM_HEALTH_NO_DAMAGE //You can't break a hole in the ground.
-	var/open       = TRUE
+	name       = "pit"
+	desc       = "Watch your step, partner."
+	icon       = 'icons/obj/structures/pit.dmi'
+	icon_state = "pit1"
+	blend_mode = BLEND_MULTIPLY
+	density    = FALSE
+	anchored   = TRUE
+	max_health = ITEM_HEALTH_NO_DAMAGE //You can't break a hole in the ground.
+	var/open   = TRUE
 
 /obj/structure/pit/attackby(obj/item/used_item, mob/user)
 	if(IS_SHOVEL(used_item))
@@ -200,7 +200,7 @@
 	icon_state = pick("wood","cross")
 
 	var/decl/background_detail/S = GET_DECL(/decl/background_detail/heritage/human)
-	var/nam = S.get_random_name(null, pick(MALE,FEMALE))
+	var/nam = S.get_random_cultural_name(null, pick(MALE,FEMALE))
 	var/cur_year = global.using_map.game_year
 	var/born = cur_year - rand(5,150)
 	var/died = max(cur_year - rand(0,70),born)

@@ -10,6 +10,7 @@
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	material = /decl/material/liquid/slimejelly
 	_base_attack_force = 1
+	chem_volume = 100
 	var/slime_type = /decl/slime_colour/grey
 	var/Uses = 1 // uses before it goes inert
 	var/enhanced = 0 //has it been enhanced before?
@@ -32,18 +33,13 @@
 		return TRUE
 	. = ..()
 
-/obj/item/slime_extract/Initialize(var/ml, var/material, var/_stype = /decl/slime_colour/grey)
-	. = ..(ml, material)
+/obj/item/slime_extract/Initialize(var/ml, var/mat, var/_stype = /decl/slime_colour/grey)
+	. = ..(ml, mat)
 	slime_type = _stype
 	if(!ispath(slime_type, /decl/slime_colour))
 		PRINT_STACK_TRACE("Slime extract initialized with non-decl slime colour: [slime_type || "NULL"].")
 	SSstatistics.extracted_slime_cores_amount++
-	initialize_reagents()
 	update_icon()
-
-/obj/item/slime_extract/initialize_reagents(populate)
-	create_reagents(100)
-	. = ..()
 
 /obj/item/slime_extract/populate_reagents()
 	add_to_reagents(/decl/material/liquid/slimejelly, 30)
