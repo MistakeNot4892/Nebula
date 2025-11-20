@@ -1,0 +1,12 @@
+#ifndef MODPACK_UNDEAD
+#define MODPACK_UNDEAD
+// BEGIN_INCLUDE
+#include "_undead.dm"
+#include "overrides.dm"
+#include "skillset.dm"
+#include "traits.dm"
+#include "mobs\undead.dm"
+#include "mobs\undead_skeleton.dm"
+#include "mobs\undead_zombie.dm"
+// END_INCLUDE
+#endif

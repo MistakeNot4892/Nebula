@@ -88,11 +88,11 @@
 
 //Third argument may be a dna datum; if null will be set to holder's dna.
 /obj/item/organ/Initialize(mapload, material_key, datum/mob_snapshot/supplied_appearance)
+	chem_volume = 5 * (w_class-1)**2
 	. = ..(mapload, material_key)
 	if(. == INITIALIZE_HINT_QDEL)
 		return .
 	setup_organ(supplied_appearance)
-	initialize_reagents()
 
 /obj/item/organ/proc/setup_organ(datum/mob_snapshot/supplied_appearance)
 	//Null DNA setup
@@ -122,14 +122,6 @@
 		copy_from_mob_snapshot(supplied_appearance)
 	else
 		set_species(owner?.get_species() || global.using_map.default_species)
-
-//Called on initialization to add the neccessary reagents
-
-/obj/item/organ/initialize_reagents(populate = TRUE)
-	if(reagents)
-		return
-	create_reagents(5 * (w_class-1)**2)
-	. = ..()
 
 // todo: make this redundant with matter shenanigans
 /obj/item/organ/populate_reagents()
@@ -443,9 +435,7 @@
 	return bodytype && !(bodytype.body_flags & BODY_FLAG_NO_PAIN) && !(status & ORGAN_DEAD)
 
 /obj/item/organ/proc/is_usable()
-	. = !(status & (ORGAN_CUT_AWAY|ORGAN_MUTATED))
-	if(. && (status & ORGAN_DEAD))
-		return owner?.has_trait(/decl/trait/undead)
+	return  !(status & (ORGAN_DEAD|ORGAN_CUT_AWAY|ORGAN_MUTATED))
 
 /obj/item/organ/proc/can_recover()
 	return (max_damage > 0) && !(status & ORGAN_DEAD) || death_time >= REALTIMEOFDAY - ORGAN_RECOVERY_THRESHOLD
@@ -622,9 +612,9 @@ var/global/list/ailment_reference_cache = list()
 
 	max_health = max_damage
 	if(current_health == ITEM_HEALTH_NO_DAMAGE)
-		current_health = max_health
+		current_health = get_max_health()
 	else
-		current_health = min(current_health, max_health)
+		current_health = min(current_health, get_max_health())
 
 	action_button_name = null
 	screen_loc = null

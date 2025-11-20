@@ -48,37 +48,6 @@
 /mob/living/proc/copy_wyrd_eyes_color(new_color)
 	return
 
-/mob/living/simple_animal/proc/get_default_animal_colours()
-	return
-
-/mob/living/simple_animal/passive/fox/get_default_animal_colours()
-	var/static/list/default_colors = list(
-		"base"     = "#ed5a20",
-		"markings" = "#efe9e6",
-		"socks"    = "#36221b"
-	)
-	return default_colors
-
-/mob/living/simple_animal/passive/deer/get_default_animal_colours()
-	var/static/list/default_colors = list(
-		"base"     = "#b39161",
-		"markings" = "#3a3329",
-		"socks"    = "#ddd5c9"
-	)
-	return default_colors
-
-/mob/living/simple_animal/passive/rabbit/get_default_animal_colours()
-	var/static/list/default_colors = list(
-		"base"     = "#e6e5da",
-		"markings" = "#c8b1a5",
-		"socks"    = "#e6e5da"
-	)
-	return default_colors
-
-/mob/living/simple_animal/proc/get_default_animal_colour(marking_type)
-	var/list/colors = get_default_animal_colours()
-	return LAZYACCESS(colors, marking_type) || COLOR_BLACK
-
 /mob/living/simple_animal/copy_wyrd_fur_color(new_color)
 	if(!new_color || new_color == COLOR_BLACK)
 		new_color = get_default_animal_colour("base")
