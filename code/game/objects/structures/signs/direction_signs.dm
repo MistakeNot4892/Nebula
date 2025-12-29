@@ -12,7 +12,7 @@
 	directional_offset = @'{"NORTH":{"y":32}, "SOUTH":{"y":32}, "WEST":{"y":32}, "EAST":{"y":32}}'
 
 /obj/structure/sign/directions/update_description()
-	desc = "A direction sign, pointing out \the [name] is [global.dir_name(dir)]."
+	desc = "A direction sign, pointing out \the [name] is [dir_name(dir)]."
 
 /////////////////////////////////////////////////////
 //Direction Signs Definition
