@@ -99,7 +99,7 @@
 
 	LAZYINITLIST(removed_segments)
 	removed_segments[remove_comp]++
-	if(reagents?.total_volume && remove_comp.contributes_to_fruit_reagents)
+	if(REAGENT_TOTAL_VOLUME(reagents) && remove_comp.contributes_to_fruit_reagents)
 		for(var/rid in remove_comp.reagents)
 			reagents.remove_reagent(rid, remove_comp.reagents[rid])
 
