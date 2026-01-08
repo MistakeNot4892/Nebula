@@ -71,23 +71,6 @@
 		new_color = initial(eye_color)
 	eye_color = new_color
 
-/decl/loadout_option/fantasy/mask/ghost_caul
-	name = "customised wyrdling mask"
-	path = /obj/item/clothing/mask/ghost_caul
-	uid = "gear_misc_wyrdling_mask"
-	apply_to_existing_if_possible = TRUE
-	required_traits = list(/decl/trait/wyrd/wild)
-	available_materials = list(
-		/decl/material/solid/organic/bone,
-		/decl/material/solid/stone/marble,
-		/decl/material/solid/stone/basalt,
-		/decl/material/solid/organic/wood/oak,
-		/decl/material/solid/organic/wood/mahogany,
-		/decl/material/solid/organic/wood/maple,
-		/decl/material/solid/organic/wood/ebony,
-		/decl/material/solid/organic/wood/walnut
-	)
-
 /obj/item/clothing/mask/ghost_caul
 	name = "mask"
 	abstract_type = /obj/item/clothing/mask/ghost_caul
@@ -100,8 +83,11 @@
 	var/const/preview_offset = 28
 	var/transformation_trait
 	var/transformation_mob_type
+	var/mob/living/_our_owner
 	VAR_PRIVATE/mob/living/_our_animal
-	var/mob/living/our_owner
+
+/obj/item/clothing/mask/ghost_caul/proc/set_animal(mob/living/_new_animal)
+	_our_animal = _new_animal
 
 /obj/item/clothing/mask/ghost_caul/get_preview_screen_locs()
 	var/static/list/override_preview_screen_locs = list(
@@ -114,15 +100,18 @@
 
 /obj/item/clothing/mask/ghost_caul/Destroy()
 	// Only qdel our animal if they are not out and about in the world.
-	if(_our_animal && !_our_animal.key && (_our_animal.loc == src || isnull(_our_animal.loc)))
-		qdel(_our_animal)
+	if(_our_animal)
+		if(!_our_animal.key && (_our_animal.loc == src || isnull(_our_animal.loc)))
+			qdel(_our_animal)
+		else
+			to_chat(_our_animal, SPAN_DANGER("You feel a dull, diffuse pain in your spirit as something precious is lost..."))
 	_our_animal = null
-	our_owner = null
+	_our_owner = null
 	. = ..()
 
-/mob/proc/revert_veering()
+/mob/proc/wyrdling_revert_sembling()
 
-	set name = "Veer To Human"
+	set name = "Semble Human"
 	set category = "IC"
 	set src = usr
 
@@ -130,17 +119,17 @@
 		return
 
 	var/obj/item/clothing/mask/ghost_caul/mask = locate() in src
-	if(!mask?.our_owner)
+	if(!mask?._our_owner)
 		to_chat(src, SPAN_WARNING("You feel only an emptiness where your human self used to reside."))
-		verbs -= /mob/proc/revert_veering
+		verbs -= /mob/proc/wyrdling_revert_sembling
 		return
 
 	visible_message(
 		SPAN_NOTICE("\The [src] stills and closes their eyes."),
 		SPAN_NOTICE("You close your eyes and focus on your human self.")
 	)
-	if(do_after(src, 5 SECONDS) && mask.our_owner)
-		wyrd_transform_into(mask.our_owner, mask)
+	if(do_after(src, 5 SECONDS) && mask._our_owner)
+		wyrd_transform_into(mask._our_owner, mask)
 
 /mob/proc/wyrd_transform_into(mob/living/target, obj/item/clothing/mask/ghost_caul/mask)
 
@@ -152,11 +141,11 @@
 
 	// Keep a reference to our human to avoid them getting GC'd in nullspace.
 	if(istype(target, mask.transformation_mob_type))
-		mask.our_owner = src
+		mask.set_animal(src)
 		drop_from_inventory(mask)
 		mask.forceMove(target)
 	else
-		mask.our_owner = null
+		mask.set_animal(null)
 		mask.forceMove(get_turf(target))
 		target.equip_to_slot_or_store_or_drop(mask, slot_wear_mask_str)
 
@@ -183,7 +172,7 @@
 	transfer_key_from_mob_to_mob(src, target)
 	target.forceMove(get_turf(src))
 	forceMove(null)
-	target.visible_message(SPAN_NOTICE("\The [src] blurs, distorts and veers into \a [target]."))
+	target.visible_message(SPAN_NOTICE("\The [src] blurs, distorts and transforms into \a [target]."))
 	return TRUE
 
 // Used to provide wyrdling mob preview.
@@ -193,7 +182,7 @@
 		return null
 	if(!_our_animal)
 		_our_animal = new transformation_mob_type
-		_our_animal.verbs |= /mob/proc/revert_veering
+		_our_animal.verbs |= /mob/proc/wyrdling_revert_sembling
 		_our_animal.remove_from_living_mob_list() // don't process!
 	_our_animal.copy_wyrd_from(owner)
 	return _our_animal
@@ -221,7 +210,7 @@
 		return
 	var/mob/living/user_living = user
 	if(user_living.get_equipped_slot_for_item(src) == slot_wear_mask_str && user_living.has_trait(/decl/trait/wyrd/wild))
-		action_button_name = "Veer"
+		action_button_name = "Semble"
 	else if(action)
 		action_button_name = null
 		user_living.actions -= action
@@ -238,10 +227,10 @@
 
 	user.visible_message(
 		SPAN_NOTICE("\The [user] becomes still, concentrating."),
-		SPAN_NOTICE("You close your eyes and turn your focus inward, preparing to veer into your semblance.")
+		SPAN_NOTICE("You close your eyes and turn your focus inward, preparing to discard your human semblance.")
 	)
 	if(!do_after(user, 5 SECONDS, src) || QDELETED(user) || user.get_equipped_item(slot_wear_mask_str) != src)
-		to_chat(user, SPAN_WARNING("You must remain still and wear your mask to veer."))
+		to_chat(user, SPAN_WARNING("You must remain still and wear your mask to semble."))
 		return TRUE
 
 	user.wyrd_transform_into(get_wyrd_animal(user), src)

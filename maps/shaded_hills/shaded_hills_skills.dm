@@ -5,12 +5,6 @@
 /obj/item/runestone
 	work_skill = /decl/skill/crafting/artifice
 
-/decl/material/solid/potentia
-	arcana_skill = SKILL_SCIENCE
-
-/decl/runestone_spell_archetype
-	arcana_skill = SKILL_SCIENCE
-
 // Removal of space skills
 /datum/map/shaded_hills/get_available_skill_types()
 	. = ..()
