@@ -20,17 +20,24 @@ var/global/list/special_channel_keys = list(
 	set category = "IC"
 	return
 
-/mob/verb/say_verb(message as text)
+/mob/verb/say_verb()
 	set name = "Say"
 	set category = "IC"
+	var/message = length(args) ? "[args[1]]" : null
+	if(!message)
+		open_message_panel(MESSAGE_SPEECH)
+		return
 	SStyping.set_indicator_state(client, FALSE)
 	if(!filter_block_message(usr, message))
 		usr.say(message)
 
-/mob/verb/me_verb(message as text)
+/mob/verb/me_verb()
 	set name = "Me"
 	set category = "IC"
-
+	var/message = length(args) ? "[args[1]]" : null
+	if(!message)
+		open_message_panel(MESSAGE_EMOTE)
+		return
 	SStyping.set_indicator_state(client, FALSE)
 	if(!filter_block_message(usr, message))
 		message = sanitize(message)

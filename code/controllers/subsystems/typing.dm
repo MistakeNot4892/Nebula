@@ -117,7 +117,7 @@ SUBSYSTEM_DEF(typing)
 		return
 	entry[INDEX_INFLIGHT] = FALSE
 	if(!QDELETED(client))
-		entry[INDEX_INPUT_STATE] = match_verbs.Find(content) != 0
+		entry[INDEX_INPUT_STATE] = (match_verbs.Find(content) != 0) || client.mob?.message_panel_is_open()
 		update_indicator(client, entry)
 
 /// Attempt to update the mob's typing state and indicator according to new state.
@@ -127,14 +127,12 @@ SUBSYSTEM_DEF(typing)
 	var/display = target.stat == CONSCIOUS && entry[INDEX_PREFERENCE] && (entry[INDEX_INPUT_STATE] || entry[INDEX_VERB_STATE]) && !target.is_cloaked() && isturf(target.loc)
 	if(display == target.is_typing)
 		return
+	target.is_typing = display
 	if(display)
-		if(!target.typing_indicator)
-			target.typing_indicator = new(null, target)
-		target.is_typing = TRUE
+		target.typing_indicator ||= new(null, target)
 		target.typing_indicator.show_typing_indicator()
-	else if(target.typing_indicator)
-		target.is_typing = FALSE
-		target.typing_indicator.hide_typing_indicator()
+	else
+		target.typing_indicator?.hide_typing_indicator()
 
 /*
 Typing indicators, when a mob uses the F3/F4 keys to bring the say/emote input boxes up this little buddy is

@@ -20,7 +20,6 @@
 					set_default_language(.)
 				return
 
-
 /mob/living/is_silenced()
 	. = ..() || HAS_STATUS(src, STAT_SILENCE)
 
@@ -112,8 +111,10 @@
 	SHOULD_CALL_PARENT(TRUE)
 	return FALSE
 
-/mob/living/say(var/message, var/decl/language/speaking, var/verb = "says", whispering)
+/mob/living/say(message, decl/language/speaking, verb = "says", whispering)
+
 	set waitfor = FALSE
+
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
 			to_chat(src, "<span class='warning'>You cannot speak in IC (Muted).</span>")
