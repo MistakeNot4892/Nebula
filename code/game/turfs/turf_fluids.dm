@@ -75,8 +75,8 @@
 	. = (get_fluid_depth() >= min)
 
 /turf/proc/get_fluid_name()
-	var/decl/material/mat = reagents?.get_primary_reagent_decl()
-	return mat.get_reagent_name(reagents, MAT_PHASE_LIQUID) || "liquid"
+	var/decl/material/mat = reagents?.get_primary_reagent_decl() || RESOLVE_TO_DECL(flooded)
+	return mat?.get_reagent_name(reagents, MAT_PHASE_LIQUID) || "liquid"
 
 /turf/get_fluid_depth()
 	if(is_flooded(absolute=1))
@@ -179,6 +179,8 @@
 	if(!(. = ..()))
 		return
 
+	state_was_modified()
+
 	if(REAGENT_TOTAL_LIQUID_VOLUME(reagents) < FLUID_SLURRY)
 		dump_solid_reagents()
 
@@ -204,7 +206,7 @@
 
 	for(var/checkdir in global.cardinal)
 		var/turf/neighbor = get_step_resolving_mimic(src, checkdir)
-		if(REAGENT_TOTAL_VOLUME(neighbor?.reagents) > FLUID_QDEL_POINT)
+		if(istype(neighbor) && (islist(neighbor.reagents) || (istype(neighbor.reagents) && REAGENT_TOTAL_VOLUME(neighbor.reagents) > FLUID_QDEL_POINT)))
 			ADD_ACTIVE_FLUID(neighbor)
 
 /turf/proc/dump_solid_reagents(datum/reagents/solids)

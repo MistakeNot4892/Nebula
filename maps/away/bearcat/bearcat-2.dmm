@@ -75,7 +75,7 @@
 	id_tag = "scraplock";
 	name = "External Lockdown"
 	},
-/obj/item/gun/energy/captain,
+/obj/item/gun/energy/retro/captain,
 /turf/floor/tiled/dark/usedup,
 /area/ship/scrap/command/bridge)
 "am" = (
@@ -1961,7 +1961,7 @@
 /turf/floor/usedup,
 /area/ship/scrap/crew/hallway/starboard)
 "ed" = (
-/obj/structure/sign/department/redcross,
+/obj/structure/sign/department/cross,
 /turf/wall,
 /area/ship/scrap/crew/medbay)
 "ee" = (

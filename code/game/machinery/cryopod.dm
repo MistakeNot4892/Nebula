@@ -248,7 +248,7 @@
 	var/newz
 	if(prob(90))
 		var/list/possible_locations
-		var/obj/effect/overmap/visitable/O = global.overmap_sectors[num2text(z)]
+		var/obj/effect/overmap/visitable/O = global.overmap_sectors[z]
 		if(istype(O))
 			for(var/obj/effect/overmap/visitable/OO in range(O,2))
 				if((OO.sector_flags & OVERMAP_SECTOR_IN_SPACE) || istype(OO,/obj/effect/overmap/visitable/sector/planetoid))
@@ -475,7 +475,7 @@
 	if(!usr.can_enter_cryopod(usr))
 		return
 
-	visible_message(emote_replace_user_tokens(emote_replace_target_tokens(on_enter_visible_message, src), usr), range = 3)
+	visible_message(capitalize_proper_html(emote_replace_user_tokens(emote_replace_target_tokens(on_enter_visible_message, src), usr)), range = 3)
 
 	if(do_after(usr, 20, src))
 

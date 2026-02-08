@@ -237,7 +237,7 @@
 	return FTL_START_CONFIRMED
 
 /obj/machinery/ftl_shunt/core/proc/calculate_jump_requirements()
-	var/obj/effect/overmap/visitable/site = global.overmap_sectors[num2text(z)]
+	var/obj/effect/overmap/visitable/site = global.overmap_sectors[z]
 	if(site)
 		var/shunt_distance
 		var/vessel_mass = ftl_computer.linked.get_vessel_mass()
@@ -274,7 +274,7 @@
 		cancel_shunt()
 		return //If for some reason we don't have fuel now, just return.
 
-	var/obj/effect/overmap/visitable/site = global.overmap_sectors[num2text(z)]
+	var/obj/effect/overmap/visitable/site = global.overmap_sectors[z]
 	if(site)
 		var/destination = locate(shunt_x, shunt_y, site.z)
 		var/jumpdist = get_dist(get_turf(ftl_computer.linked), destination)
@@ -554,7 +554,7 @@
 		/decl/material/gas/hydrogen/deuterium = 25000,
 		/decl/material/gas/hydrogen = 25000,
 		/decl/material/solid/exotic_matter = 50000
-		)
+	)
 	var/obj/item/fuel_assembly/fuel
 	var/obj/machinery/ftl_shunt/core/master
 	var/max_fuel = 0
@@ -654,4 +654,7 @@
 	icon = 'icons/obj/items/stock_parts/stock_parts.dmi'
 	icon_state = "smes_coil"
 	color = COLOR_YELLOW
-	matter = list(/decl/material/solid/exotic_matter = MATTER_AMOUNT_REINFORCEMENT, /decl/material/solid/metal/plasteel = MATTER_AMOUNT_PRIMARY)
+	matter = list(
+		/decl/material/solid/exotic_matter = MATTER_AMOUNT_REINFORCEMENT,
+		/decl/material/solid/metal/plasteel = MATTER_AMOUNT_PRIMARY
+	)

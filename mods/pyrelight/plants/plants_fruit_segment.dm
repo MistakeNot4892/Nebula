@@ -21,10 +21,7 @@
 	icon = _fruit.icon
 	icon_state = "seg_[_template.icon_state]"
 	fruit_template = _template
-	return ..()
-
-/obj/item/food/fruit_segment/initialize_reagents(populate)
-	create_reagents(fruit_template.reagent_total)
+	chem_volume = fruit_template?.reagent_total || chem_volume
 	return ..()
 
 /obj/item/food/fruit_segment/populate_reagents()

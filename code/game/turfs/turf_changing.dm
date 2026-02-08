@@ -55,6 +55,7 @@
 
 	// Track a number of old values for the purposes of raising
 	// state change events after changing the turf to the new type.
+	var/old_earliest_type =    _earliest_type
 	var/old_fire =             fire
 	var/old_above =            above
 	var/old_opacity =          opacity
@@ -80,6 +81,7 @@
 	var/old_ambient_light_old_r = ambient_light_old_r
 	var/old_ambient_light_old_g = ambient_light_old_g
 	var/old_ambient_light_old_b = ambient_light_old_b
+	var/old_dangerous_objects   = dangerous_objects
 
 	var/old_zone_membership_candidate = zone_membership_candidate
 
@@ -104,6 +106,7 @@
 	// Set our observation bookkeeping lists back.
 	changed_turf.event_listeners =  old_event_listeners
 	changed_turf._listening_to =    old_listening_to
+	changed_turf.dangerous_objects = old_dangerous_objects
 
 	changed_turf.affecting_heat_sources = old_affecting_heat_sources
 
@@ -198,6 +201,9 @@
 	if(HasBelow(z) && changed_turf.is_open() && !old_is_open)
 		for(var/atom/movable/thing in changed_turf.get_contained_external_atoms())
 			thing.fall()
+
+	changed_turf._earliest_type = old_earliest_type
+	changed_turf.state_was_modified()
 
 /turf/proc/transport_properties_from(turf/other, transport_air)
 	if(transport_air && can_inherit_air && (other.zone || other.air))

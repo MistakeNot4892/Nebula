@@ -4,6 +4,7 @@
 	icon            = 'icons/turf/flooring/snow.dmi'
 	icon_base       = "snow"
 	icon_edge_layer = FLOOR_EDGE_SNOW
+	has_corners     = FALSE
 	flooring_flags  = TURF_REMOVE_SHOVEL
 	footstep_type   = /decl/footsteps/snow
 	has_base_range  = 13
@@ -12,6 +13,7 @@
 	print_type      = /obj/effect/footprints
 	drop_material_on_remove = TRUE
 	uid             = "floor_snow"
+	can_conceal_hazards = TRUE
 
 /decl/flooring/snow/get_movement_delay(var/travel_dir, var/mob/mover)
 	. = ..()
@@ -46,6 +48,9 @@
 		return FALSE
 	return ..()
 
+/decl/flooring/snow/get_vehicle_transit_delay(obj/vehicle/vehicle)
+	return vehicle.vehicle_transit_type == vehicle::VEHICLE_SNOWMOBILE ? 0.8 : 1.7
+
 /decl/flooring/permafrost
 	name            = "permafrost"
 	desc            = "A stretch of frozen soil that hasn't seen a thaw for many seasons."
@@ -54,8 +59,16 @@
 	force_material  = /decl/material/solid/ice
 	uid             = "floor_permafrost"
 
+/decl/flooring/permafrost/get_vehicle_transit_delay(obj/vehicle/vehicle)
+	if(holographic)
+		return vehicle::base_speed
+	if(vehicle.vehicle_transit_type == vehicle::VEHICLE_SNOWMOBILE)
+		return 0.8
+	return ..()
+
 /decl/flooring/snow/fake
 	name            = "holosnow"
 	desc            = "Not quite the same as snow on an entertainment terminal, but close."
 	holographic     = TRUE
 	uid             = "floor_snow_fake"
+

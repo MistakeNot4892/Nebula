@@ -7,6 +7,9 @@
 	temperature_sensitive = TRUE
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 
+	// Linear lazylist of weakrefs to dangerous things on this turf.
+	var/list/dangerous_objects
+
 	/// Will participate in ZAS, join zones, etc.
 	var/zone_membership_candidate = FALSE
 	/// Will participate in external atmosphere simulation if the turf is outside and no zone is set.
@@ -37,6 +40,14 @@
 	var/flooded // Whether or not this turf is absolutely flooded ie. a water source.
 	var/footstep_type
 	var/open_turf_type = /turf/open // Which open turf type to use by default above this turf in a multiz context. Overridden by area.
+
+	// If you ever need to refill or flood a turf with more than two reagents, this should be rewritten entirely.
+	// The reason it's written like this is to avoid creating a new list for every turf with contaminants
+	// and that should still hold up even if you have turfs with three or more liquids in the mixture.
+	/// Reagent to contaminate refilled or flooded reagents.
+	var/contaminant_reagent_type
+	/// What fraction of the refilled/flooded liquid should be the contaminant? If zero, no contaminant is added.
+	var/contaminant_proportion
 
 	var/tmp/changing_turf
 	var/tmp/prev_type // Previous type of the turf, prior to turf translation.
@@ -90,6 +101,7 @@
 /turf/Initialize(mapload, ...)
 	. = null && ..()	// This weird construct is to shut up the 'parent proc not called' warning without disabling the lint for child types. We explicitly return an init hint so this won't change behavior.
 
+	_earliest_type ||= type
 	color = null
 
 	// atom/Initialize has been copied here for performance (or at least the bits of it that turfs use has been)
@@ -104,6 +116,10 @@
 		luminosity = 0
 	else
 		luminosity = 1
+
+	// Reagents got deserialized, set them up. Do not return as we want to finish turf init.
+	// we don't care about volume because turfs always create a maximum volume holder on reagent add.
+	FINALIZE_REAGENTS_SERDE(reagents)
 
 	AMBIENCE_QUEUE_TURF(src)
 
@@ -128,6 +144,7 @@
 
 	if(flooded)
 		set_flooded(flooded, TRUE, skip_vis_contents_update = TRUE, mapload = mapload)
+
 	update_vis_contents()
 
 	if(simulated)
@@ -616,6 +633,7 @@
 	if(is_outside == new_outside)
 		return FALSE
 
+	state_was_modified()
 	is_outside = new_outside
 	update_external_atmos_participation()
 	AMBIENCE_QUEUE_TURF(src)
@@ -929,3 +947,24 @@
 
 /turf/take_vaporized_reagent(reagent, amount)
 	return assume_gas(reagent, round(amount / REAGENT_UNITS_PER_GAS_MOLE))
+
+// Tells the turf that it currently contains something that automated movement should consider if planning to enter the tile.
+// This uses lazy list macros to reduce memory footprint, since for 99% of turfs the list would've been empty anyways.
+/turf/proc/register_dangerous_object(atom/thing)
+	if(!istype(thing))
+		return FALSE
+	LAZYDISTINCTADD(dangerous_objects, weakref(thing))
+
+// Similar to above, for when the dangerous object stops being dangerous/gets deleted/moved/etc.
+/turf/proc/unregister_dangerous_object(atom/thing)
+	if(!istype(thing))
+		return FALSE
+	LAZYREMOVE(dangerous_objects, weakref(thing))
+
+/turf/proc/is_safe_to_enter(mob/living/stepper)
+	if(LAZYLEN(dangerous_objects))
+		for(var/weakref/ref in dangerous_objects)
+			var/atom/thing = ref.resolve()
+			if(istype(thing) && !QDELETED(thing) && !thing.is_safe_to_step(stepper))
+				return FALSE
+	return TRUE

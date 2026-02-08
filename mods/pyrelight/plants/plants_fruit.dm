@@ -5,18 +5,19 @@
 	icon_state = "base"
 	material = /decl/material/solid/organic/plantmatter
 	is_spawnable_type = FALSE
+	abstract_type = /obj/item/food/fruit
 	var/examine_info
 	var/examine_info_skill = SKILL_BOTANY
 	var/examine_info_rank = SKILL_BASIC
 	var/list/removed_segments
 
-/obj/item/food/fruit/initialize_reagents(populate)
+/obj/item/food/fruit/Initialize(ml, material_key, skip_plate)
 	var/segment_amount = 0
 	for(var/datum/fruit_segment/comp as anything in get_composition())
 		if(comp.contributes_to_fruit_reagents)
 			segment_amount += comp.reagent_total
-	create_reagents(segment_amount)
-	return ..()
+	chem_volume = segment_amount
+	. = ..()
 
 /obj/item/food/fruit/populate_reagents()
 	for(var/datum/fruit_segment/comp as anything in get_composition())

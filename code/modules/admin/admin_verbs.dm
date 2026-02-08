@@ -73,7 +73,6 @@ var/global/list/admin_verbs_admin = list(
 	/datum/admins/proc/show_skills,
 	/client/proc/man_up,
 	/client/proc/global_man_up,
-	/client/proc/response_team, // Response Teams admin verb,
 	/client/proc/toggle_antagHUD_use,
 	/client/proc/toggle_antagHUD_restrictions,
 	/client/proc/allow_character_respawn,    // Allows a ghost to respawn ,
@@ -158,7 +157,8 @@ var/global/list/admin_verbs_server = list(
 	/datum/admins/proc/removeserverwhitelist,
 	/datum/admins/proc/panicbunker,
 	/datum/admins/proc/addbunkerbypass,
-	/datum/admins/proc/revokebunkerbypass
+	/datum/admins/proc/revokebunkerbypass,
+	/datum/admins/proc/force_persistence_save_verb
 	)
 var/global/list/admin_verbs_debug = list(
 	/datum/admins/proc/jump_to_fluid_source,
