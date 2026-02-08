@@ -15,7 +15,7 @@
 	for(var/datum/fruit_segment/comp as anything in get_composition())
 		if(comp.contributes_to_fruit_reagents)
 			segment_amount += comp.reagent_total
-	create_reagents(segment_amount)
+	create_or_update_reagents(segment_amount)
 	return ..()
 
 /obj/item/food/fruit/populate_reagents()

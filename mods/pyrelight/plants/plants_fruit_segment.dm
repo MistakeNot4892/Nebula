@@ -24,7 +24,7 @@
 	return ..()
 
 /obj/item/food/fruit_segment/initialize_reagents(populate)
-	create_reagents(fruit_template.reagent_total)
+	create_or_update_reagents(fruit_template.reagent_total)
 	return ..()
 
 /obj/item/food/fruit_segment/populate_reagents()
