@@ -16,6 +16,7 @@
 
 	#include "../../mods/content/plant_dissection/_plant_dissection.dme"
 
+	#include "../../mods/content/augments/_augments.dme"
 	#include "../../mods/content/beekeeping/_beekeeping.dme"
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/blob/_blob.dme"
@@ -34,6 +35,7 @@
 	#include "../../mods/content/supermatter/_supermatter.dme"
 	#include "../../mods/content/ventcrawl/_ventcrawl.dme"
 	#include "../../mods/content/xenobiology/_xenobiology.dme"
+	#include "../../mods/content/exploration/_exploration.dme"
 
 	#include "../../mods/gamemodes/cult/_cult.dme"
 	#include "../../mods/gamemodes/heist/_heist.dme"

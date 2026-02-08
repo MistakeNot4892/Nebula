@@ -7,9 +7,12 @@
  *			angle2text
  */
 
+// This proc does not support converting numerically indexed alists to assoc lists.
 /proc/alist2list(alist/input)
 	. = list()
 	for(var/k,v in input)
+		if(isnum(k))
+			CRASH("Numeric index passed to alist2list()!")
 		.[k] = v
 
 // Splits the text of a file at seperator and returns them in a list.

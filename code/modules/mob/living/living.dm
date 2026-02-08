@@ -1,6 +1,8 @@
 /mob/living/Initialize()
 
-	current_health            = get_max_health()
+	if(isnull(current_health) || current_health == INFINITY)
+		current_health = get_max_health()
+
 	original_fingerprint_seed = sequential_id(/mob)
 	fingerprint               = md5(num2text(original_fingerprint_seed))
 	original_genetic_seed     = sequential_id(/mob)
@@ -2001,3 +2003,17 @@ default behaviour is:
 
 /mob/living/is_cloaked()
 	return has_mob_modifier(/decl/mob_modifier/cloaked)
+
+/mob/living/proc/apply_random_mutation(radiation_amount)
+	set_unique_enzymes(num2text(random_id(/mob, 1000000, 9999999)))
+	if(prob(98))
+		add_genetic_condition(pick(decls_repository.get_decls_of_type(/decl/genetic_condition/disability)))
+	else
+		add_genetic_condition(pick(decls_repository.get_decls_of_type(/decl/genetic_condition/superpower)))
+	if(radiation_amount)
+		apply_damage(radiation_amount, IRRADIATE, armor_pen = 100)
+
+// Used by specimen taggers to avoid tagging/overwriting players or named mobs like Runtime.
+/mob/living/proc/is_tagging_suitable()
+	return !key && !client
+

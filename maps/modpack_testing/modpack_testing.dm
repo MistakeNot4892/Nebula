@@ -7,6 +7,7 @@
 	#include "../../mods/content/mundane.dm"
 	#include "../../mods/content/scaling_descriptors.dm"
 
+	#include "../../mods/content/augments/_augments.dme"
 	#include "../../mods/content/beekeeping/_beekeeping.dme"
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/biomods/_biomods.dme"
@@ -28,6 +29,7 @@
 	#include "../../mods/content/pheromones/_pheromones.dme"
 	#include "../../mods/content/plant_dissection/_plant_dissection.dme"
 	#include "../../mods/content/psionics/_psionics.dme"
+	#include "../../mods/content/response_team/_response_team.dme"
 	#include "../../mods/content/sealant_gun/_sealant_gun.dme"
 	#include "../../mods/content/shackles/_shackles.dme"
 	#include "../../mods/content/standard_jobs/_standard_jobs.dme"
@@ -39,6 +41,7 @@
 	#include "../../mods/content/blacksmithy/_blacksmithy.dme"
 	#include "../../mods/content/item_sharpening/_item_sharpening.dme"
 	#include "../../mods/pyrelight/_pyrelight.dme" // include after _fantasy.dme so overrides work
+	#include "../../mods/content/exploration/_exploration.dme"
 
 	#include "../../mods/gamemodes/cult/_cult.dme"
 	#include "../../mods/gamemodes/heist/_heist.dme"

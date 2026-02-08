@@ -1,4 +1,3 @@
-
 /mob/living/simple_animal
 	name = "animal"
 	max_health = 20
@@ -71,9 +70,6 @@
 	var/bleed_colour = COLOR_BLOOD_HUMAN
 	var/can_bleed = TRUE
 
-	// contained in a cage
-	var/in_stasis = 0
-
 	//for simple animals with abilities, mostly megafauna
 	var/ability_cooldown
 
@@ -114,6 +110,11 @@
 /mob/living/simple_animal/Initialize()
 	. = ..()
 
+	// Deserialize any JSON payload for our overlays.
+	if(istext(draw_visible_overlays))
+		draw_visible_overlays = cached_json_decode(draw_visible_overlays)
+		if(!islist(draw_visible_overlays))
+			draw_visible_overlays = null
 	if(isnull(draw_visible_overlays))
 		var/list/defaults = get_default_animal_colours()
 		draw_visible_overlays = defaults?.Copy() // do not mutate static list

@@ -5,6 +5,7 @@
 	icon_base       = "mud"
 	color           = null // autoset from material
 	icon_edge_layer = FLOOR_EDGE_MUD
+	has_corners     = FALSE
 	footstep_type   = /decl/footsteps/mud
 	turf_flags      = TURF_FLAG_BACKGROUND | TURF_IS_HOLOMAP_PATH | TURF_FLAG_ABSORB_LIQUID
 	force_material  = /decl/material/solid/soil
@@ -33,18 +34,25 @@
 		return FALSE
 	return ..()
 
+/decl/flooring/mud/get_vehicle_transit_delay(obj/vehicle/vehicle)
+	return vehicle.vehicle_transit_type == vehicle::VEHICLE_SNOWMOBILE ? 1.4 : 1.5
+
 /decl/flooring/dry_mud
 	name            = "dry mud"
 	desc            = "This was once mud, but forgot to keep hydrated."
 	icon            = 'icons/turf/flooring/seafloor.dmi'
 	icon_base       = "seafloor"
 	icon_edge_layer = FLOOR_EDGE_MUD
+	has_corners     = FALSE
 	footstep_type   = /decl/footsteps/mud
 	turf_flags      = TURF_FLAG_BACKGROUND | TURF_IS_HOLOMAP_PATH | TURF_FLAG_ABSORB_LIQUID
 	color           = "#ae9e66"
 	dirt_color      = "#ae9e66"
 	force_material  = /decl/material/solid/soil
 	uid             = "floor_dry_mud"
+
+/decl/flooring/dry_mud/get_vehicle_transit_delay(obj/vehicle/vehicle)
+	return 1
 
 /decl/flooring/dry_mud/fluid_act(turf/floor/target, datum/reagents/fluids)
 	if(target.get_topmost_flooring() == src)
@@ -61,12 +69,14 @@
 	icon            = 'icons/turf/flooring/dirt.dmi'
 	icon_base       = "dirt"
 	icon_edge_layer = FLOOR_EDGE_DIRT
+	has_corners     = FALSE
 	color           = null // autoset from material
 	footstep_type   = /decl/footsteps/asteroid
 	turf_flags      = TURF_FLAG_BACKGROUND | TURF_IS_HOLOMAP_PATH | TURF_FLAG_ABSORB_LIQUID
 	force_material  = /decl/material/solid/soil
 	growth_value    = 1
 	uid             = "floor_dirt"
+	can_conceal_hazards = TRUE
 
 /decl/flooring/dirt/fluid_act(turf/floor/target, datum/reagents/fluids)
 	if(target.get_topmost_flooring() == src)
@@ -76,3 +86,6 @@
 		target.set_base_flooring(/decl/flooring/mud)
 		. = TRUE
 	return . || ..()
+
+/decl/flooring/dirt/get_vehicle_transit_delay(obj/vehicle/vehicle)
+	return 1
