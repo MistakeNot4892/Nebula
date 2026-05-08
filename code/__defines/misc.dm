@@ -100,6 +100,7 @@
 #define AREA_FLAG_SECURITY                BITFLAG(11) // Area is security for the purposes of newscaster init.
 #define AREA_FLAG_HIDE_FROM_HOLOMAP       BITFLAG(12) // if we shouldn't be drawn on station holomaps
 #define AREA_FLAG_ALLOW_LEVEL_PERSISTENCE BITFLAG(13) // Whether or not this area should pass changed turfs to SSpersistence.
+#define AREA_FLAG_CONSTRUCTED             BITFLAG(13) // Set base flooring above this area to plating.
 
 //Map template flags
 #define TEMPLATE_FLAG_ALLOW_DUPLICATES    BITFLAG(0)  // Lets multiple copies of the template to be spawned
@@ -182,8 +183,6 @@
 #define CELLSIZE (world.icon_size/CELLS)	//Size of a cell in pixels
 
 #define PIXEL_MULTIPLIER WORLD_ICON_SIZE/32
-
-#define MIDNIGHT_ROLLOVER		864000	//number of deciseconds in a day
 
 //Error handler defines
 #define ERROR_USEFUL_LEN 2
