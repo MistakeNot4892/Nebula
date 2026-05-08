@@ -68,9 +68,11 @@ var/global/const/MAP_HAS_RANK   = 2		//Rank system, also toggleable
 	var/shuttle_leaving_dock
 	var/shuttle_called_message
 	var/shuttle_recall_message
+	var/shuttle_arriving_at_dock_message
 	var/emergency_shuttle_docked_message
 	var/emergency_shuttle_leaving_dock
 	var/emergency_shuttle_recall_message
+	var/emergency_shuttle_arriving_at_dock_message
 
 	var/list/holodeck_programs = list() // map of string ids to /datum/holodeck_program instances
 	var/list/holodeck_supported_programs = list() // map of maps - first level maps from list-of-programs string id (e.g. "BarPrograms") to another map
@@ -197,6 +199,7 @@ var/global/const/MAP_HAS_RANK   = 2		//Rank system, also toggleable
 		"reinforced"
 	)
 	var/background_categories_generated = FALSE
+
 	// Hard defining this to avoid pulling in unimplemented citizenship decls for the time being.
 	var/list/_background_categories = list(
 		/decl/background_category/heritage,
@@ -552,7 +555,7 @@ var/global/const/MAP_HAS_RANK   = 2		//Rank system, also toggleable
 	var/obj/item/passport/pass = new passport_type(get_turf(H))
 	if(istype(pass))
 		pass.set_info(H)
-	if(!H.equip_to_slot(pass, slot_in_wallet_str) && !H.equip_to_slot(pass, slot_in_backpack_str))
+	if(!H.equip_to_slot_if_possible(pass, slot_in_wallet_str, del_on_fail=FALSE, disable_warning=TRUE) && !H.equip_to_slot_if_possible(pass, slot_in_backpack_str, del_on_fail=FALSE, disable_warning=TRUE))
 		H.put_in_hands(pass)
 
 /datum/map/proc/populate_overmap_events()

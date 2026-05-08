@@ -121,7 +121,8 @@
 	// we don't care about volume because turfs always create a maximum volume holder on reagent add.
 	FINALIZE_REAGENTS_SERDE(reagents)
 
-	AMBIENCE_QUEUE_TURF(src)
+	if(SSambience.initialized) // if not initialized, we'll loop over all turfs anyway
+		AMBIENCE_QUEUE_TURF(src)
 
 	if (opacity)
 		has_opaque_atom = TRUE
@@ -367,14 +368,14 @@
 				return 0
 
 	// Check if they need to climb out of a hole.
-	if(has_gravity() && !get_supporting_platform())
+	if(mover.z == z && !is_open() && has_gravity() && !get_supporting_platform())
 		var/mob/mover_mob = mover
 		if(!istype(mover_mob) || (!mover_mob.throwing && !mover_mob.can_overcome_gravity()))
 			var/turf/old_turf  = mover.loc
 			var/old_height     = old_turf.get_physical_height() + REAGENT_TOTAL_VOLUME(old_turf.reagents)
 			var/current_height = get_physical_height() + REAGENT_TOTAL_VOLUME(reagents)
 			if(abs(current_height - old_height) > FLUID_SHALLOW)
-				if(current_height > old_height)
+				if(current_height > old_height && !is_open() && !old_turf?.is_open()) // check is_open() due to open turf depth stuff.
 					return 0
 				if(istype(mover_mob) && MOVING_DELIBERATELY(mover_mob))
 					to_chat(mover_mob, SPAN_WARNING("You refrain from stepping over the edge; it looks like a steep drop down to \the [src]."))
@@ -636,7 +637,8 @@
 	state_was_modified()
 	is_outside = new_outside
 	update_external_atmos_participation()
-	AMBIENCE_QUEUE_TURF(src)
+	if(SSambience.initialized) // if not initialized, we'll loop over all turfs anyway
+		AMBIENCE_QUEUE_TURF(src)
 
 	if(!skip_weather_update)
 		update_weather()
