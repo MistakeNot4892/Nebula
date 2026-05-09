@@ -5,6 +5,7 @@
 	#include "../../mods/content/mouse_highlights/_mouse_highlight.dme"
 	#include "../../mods/content/scaling_descriptors.dm"
 	#include "../../mods/species/drakes/_drakes.dme" // include before _fantasy.dme so overrides work
+	#include "../../mods/species/neoavians/_neoavians.dme" // include before _fantasy.dme so overrides work
 	#include "../../mods/content/fantasy/_fantasy.dme"
 	#include "../../mods/content/undead/_undead.dme"
 	#include "../../mods/content/biomods/_biomods.dme"
