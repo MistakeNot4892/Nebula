@@ -42,3 +42,7 @@
 #ifdef CONTENT_PACK_EXPLORATION
 #include "patches/exploration.dm"
 #endif
+
+#ifdef CONTENT_PACK_NEOAVIANS
+#include "patches/neoavians.dm"
+#endif

@@ -53,18 +53,3 @@
 /decl/background_detail/religion/other
 	name = "Other Religion"
 	description = "You practice no religion, or a small or relatively unknown religion distinct from the major faiths."
-
-// Reskin to remove Icelandic, references to Sif, etc.
-/decl/background_detail/heritage/grafadreka
-	name = "Meredrake Culture"
-	description = "You are a meredrake. Widely assumed to be cousins to true dragons, drakes are intelligent, arguably sapient pack predators without anything in the way of technology or culture, but they can be trained to use tools, and have been known to work well alongside humans or hnoll as companions and working animals."
-
-/decl/background_detail/location/grafadreka
-	name = "Wilderness"
-	description = "You are from the unsettled tundras and steppe of the Grass Ocean, or the forested downlands, where you probably eked out a life hunting deer or chasing rabbits."
-
-/decl/background_detail/faction/grafadreka
-	name = "Meredrake Pack"
-
-/decl/background_detail/religion/grafadreka
-	name = "Meredrake Religion"

@@ -31,6 +31,10 @@
 		),
 	)
 	species_to_job_blacklist = list(
+		/decl/species/neoavian = list(
+			/datum/job/shaded_hills/inn/innkeeper,
+			/datum/job/shaded_hills/shrine/keeper
+		),
 		/decl/species/kobaloi = list(
 			/datum/job/shaded_hills/visitor/beggar_knight,
 			/datum/job/shaded_hills/inn/innkeeper,
