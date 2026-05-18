@@ -12,6 +12,7 @@
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/biomods/_biomods.dme"
 	#include "../../mods/content/blob/_blob.dme"
+	#include "../../mods/content/brain_interface/_brain_interface.dme"
 	#include "../../mods/content/breath_holding/_breath_holding.dme"
 	#include "../../mods/content/byond_membership/_byond_membership.dm"
 	#include "../../mods/content/corporate/_corporate.dme"
