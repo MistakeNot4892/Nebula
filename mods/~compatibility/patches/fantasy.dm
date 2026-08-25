@@ -10,3 +10,7 @@
 #ifdef MODPACK_UNDEAD
 #include "fantasy/undead_fantasy.dm"
 #endif
+
+#ifdef MODPACK_WYRD
+#include "fantasy/wyrd_fantasy.dm"
+#endif

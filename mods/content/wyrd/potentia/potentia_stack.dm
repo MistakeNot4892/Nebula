@@ -3,10 +3,10 @@
 	desc                = "A condensed, crystalline form of magical energy, cut into rough, unworked rounds and ready for etching."
 	singular_name       = "blank"
 	plural_name         = "blanks"
-	icon_state          = "anima"
-	icon                = 'mods/content/anima/icons/anima_blank.dmi'
-	plural_icon_state   = "anima-mult"
-	max_icon_state      = "anima-max"
+	icon_state          = "blank"
+	icon                = 'mods/content/wyrd/icons/blanks.dmi'
+	plural_icon_state   = "blank-mult"
+	max_icon_state      = "blank-max"
 	stack_merge_type    = /obj/item/stack/material/potentia
 	crafting_stack_type = /obj/item/stack/material/potentia
 	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC

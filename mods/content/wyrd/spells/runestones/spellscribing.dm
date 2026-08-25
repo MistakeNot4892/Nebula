@@ -15,7 +15,7 @@
 //
 // All uses have a long delay and a skill check, failing the skill check:
 // - stage 1 will just fail
-// - stage 2 will destroy the spell and produce anima shards for recycling or potions
+// - stage 2 will destroy the spell and produce potentia shards for recycling or potions
 // - stage 3 will set the blank off like an AOE spell and destroy it in the process (bad for dangerous spells)
 
 /obj/item/runestone/proc/can_scribe(mob/user, obj/item/implement)
@@ -42,11 +42,11 @@
 		return FALSE
 
 	. = TRUE // We mostly don't care after this point. Return type is only used for attackby() return.
-	var/decl/material/solid/potentia/anima_mat = material
+	var/decl/material/solid/potentia/potentia_mat = material
 
 	// Stage one: choose range.
 	if(!stored_spell)
-		var/effect_type = input(user, "What type of effect do you wish this runestone to evoke?", "Spellscribing") as null|anything in global._anima_spell_effect_types
+		var/effect_type = input(user, "What type of effect do you wish this runestone to evoke?", "Spellscribing") as null|anything in global._wyrd_spell_effect_types
 		if(QDELETED(src) || !effect_type || stored_spell)
 			return
 		if(!scribe_check(user, tool, RUNESCRIBE_DIFFICULTY_EASY))
@@ -54,32 +54,32 @@
 		// Recheck due to do_after
 		if(QDELETED(src) || stored_spell)
 			return
-		stored_spell = new(global._anima_spell_effect_types[effect_type])
+		stored_spell = new(global._wyrd_spell_effect_types[effect_type])
 		to_chat(user, SPAN_NOTICE("You carefully etch \the [src] with channels suitable for a [stored_spell.effect_type] evocation."))
 		update_strings()
 		return
 
 	// Stage two: choose specific spell.
 	if(!stored_spell.spell_master)
-		var/list/possible_spells = anima_mat.get_cantrips_by_effect_type(user, stored_spell.effect_type)
+		var/list/possible_spells = potentia_mat.get_cantrips_by_effect_type(user, stored_spell.effect_type)
 		if(!length(possible_spells))
 			to_chat(user, SPAN_WARNING("You do not know any suitable workings to etch into \the [src]."))
 			return
-		var/decl/runestone_spell_archetype/chosen_spell = input(user, "Which spell do you wish this runestone to evoke?", "Spellscribing") as null|anything in possible_spells
+		var/decl/wyrd_archetype/chosen_spell = input(user, "Which spell do you wish this runestone to evoke?", "Spellscribing") as null|anything in possible_spells
 		if(!chosen_spell)
 			return
 		if(!scribe_check(user, tool, RUNESCRIBE_DIFFICULTY_HARD))
 			if(can_scribe(user, tool)) // if it's just a tool failure then be nice, if it's a skill or do_after fail have a little bit of mercy
-				if(anima_density <= 1 || prob(15))
+				if(potentia_density <= 1 || prob(15))
 					to_chat(user, SPAN_DANGER("You slip up, and \the [src] cracks apart!"))
 					crack_runestone(user, FALSE) // whoopsie poopsie
 				else
 					to_chat(user, SPAN_DANGER("You fumble, and the existing runework is damaged."))
-					anima_density--
+					potentia_density--
 					update_strings()
 			return
 		// Refresh spell list for checking.
-		possible_spells = anima_mat.get_cantrips_by_effect_type(user, stored_spell.effect_type)
+		possible_spells = potentia_mat.get_cantrips_by_effect_type(user, stored_spell.effect_type)
 		if(!(chosen_spell in possible_spells) || QDELETED(src) || stored_spell.spell_master)
 			return
 		to_chat(user, SPAN_NOTICE("You painstakingly etch the runes required to evoke [chosen_spell] onto \the [src]."))
@@ -87,28 +87,28 @@
 		update_strings()
 		return
 
-	if(stored_spell.masterwork_effect)
+	if(stored_spell.variant)
 		to_chat(user, SPAN_WARNING("\The [src] is completely covered in runework, and cannot be further etched."))
 		return
 
 	// Stage three: choose masterwork rune effect.
-	var/list/masterwork_effects = stored_spell.spell_master.get_masterwork_effects(user, tool)
-	if(!length(masterwork_effects))
+	var/list/variants = stored_spell.spell_master.get_variants(user, tool)
+	if(!length(variants))
 		to_chat(user, SPAN_WARNING("You cannot see any way to refine the runes etched into \the [src]."))
 		return
 
-	var/decl/anima_spell_effect/chosen_effect = input(user, "Which masterwork effect do you wish this runestone to evoke?", "Spellscribing") as null|anything in masterwork_effects
-	if(!chosen_effect || !stored_spell || !stored_spell.spell_master || stored_spell.masterwork_effect || !(chosen_effect in stored_spell.spell_master.get_masterwork_effects(user, tool)))
+	var/decl/wyrd_effect/chosen_effect = input(user, "Which masterwork effect do you wish this runestone to evoke?", "Spellscribing") as null|anything in variants
+	if(!chosen_effect || !stored_spell || !stored_spell.spell_master || stored_spell.variant || !(chosen_effect in stored_spell.spell_master.get_variants(user, tool)))
 		return
 	if(!scribe_check(user, tool, RUNESCRIBE_DIFFICULTY_MASTER))
 		if(can_scribe(user, tool)) // if it's just a tool failure then be nice, if it's a skill or do_after fail have no mercy
 			to_chat(user, SPAN_DANGER("You slip up, and \the [src] cracks apart!"))
 			crack_runestone(user, FALSE) // whoopsie poopsie
 		return
-	if(!chosen_effect || !stored_spell || !stored_spell.spell_master || stored_spell.masterwork_effect || !(chosen_effect in stored_spell.spell_master.get_masterwork_effects(user, tool)))
+	if(!chosen_effect || !stored_spell || !stored_spell.spell_master || stored_spell.variant || !(chosen_effect in stored_spell.spell_master.get_variants(user, tool)))
 		return
 	to_chat(user, SPAN_NOTICE("You delicately etch cross-links and esoteric runes that translate [stored_spell.spell_master] into [chosen_effect]."))
-	stored_spell.masterwork_effect = chosen_effect
+	stored_spell.variant = chosen_effect
 	update_strings()
 
 #undef RUNESCRIBE_DIFFICULTY_EASY
