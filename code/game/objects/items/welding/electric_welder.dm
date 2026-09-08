@@ -47,8 +47,10 @@
 /obj/item/weldingtool/electric/insert_tank(var/obj/item/chems/welder_tank/T, var/mob/user, var/no_updates = FALSE, var/quiet = FALSE)
 	return FALSE // No tanks!
 
-/obj/item/weldingtool/electric/attempt_modify(var/obj/item/used_item, var/mob/user)
-	return FALSE // NO ELECTRIC FLAMETHROWER
+/obj/item/weldingtool/electric/attackby(var/obj/item/W, var/mob/user)
+	if(istype(W, /obj/item/chems/welder_tank))
+		return FALSE
+	return ..()
 
 /obj/item/weldingtool/electric/use_fuel(var/amount)
 	var/obj/item/cell/cell = get_cell()
