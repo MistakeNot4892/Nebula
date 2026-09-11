@@ -90,7 +90,7 @@
 		var/input_ending = copytext(w, length(w))
 		var/ends_sentence = findtext(".?!",input_ending)
 		if(!prob(understand_chance))
-			nword = scramble_word(w)
+			nword = scramble_word(w, ends_sentence, input_ending)
 			if(new_sentence)
 				nword = capitalize(nword)
 				new_sentence = FALSE
@@ -112,7 +112,7 @@
 		return pick(syllables)
 	return "..."
 
-/decl/language/proc/scramble_word(var/input)
+/decl/language/proc/scramble_word(input, ends_sentence, input_ending)
 	if(!syllables || !syllables.len)
 		return stars(input)
 
