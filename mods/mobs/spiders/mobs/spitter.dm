@@ -10,22 +10,7 @@
 	ranged_range = 6
 	flash_protection = FLASH_PROTECTION_REDUCED
 	natural_weapon = /obj/item/natural_weapon/bite/weak
-	var/venom_charge = 16
+	max_ranged_charge = 16
 
 /mob/living/simple_animal/hostile/giant_spider/spitter/get_door_pry_time()
 	return 7 SECONDS
-
-/mob/living/simple_animal/hostile/giant_spider/spitter/has_ranged_attack(atom/target)
-	return venom_charge > 0
-
-/mob/living/simple_animal/hostile/giant_spider/spitter/handle_regular_status_updates()
-	. = ..()
-	if(!.)
-		return FALSE
-	if(venom_charge <= 0 && prob(25))
-		venom_charge++
-
-/mob/living/simple_animal/hostile/giant_spider/spitter/shoot_at()
-	. = ..()
-	if(.)
-		venom_charge--

@@ -564,40 +564,6 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 	if(istype(ai))
 		ai.resume()
 
-/mob/living/simple_animal/has_ranged_attack(atom/target)
-	return !!projectiletype && get_ranged_attack_distance() > 0
-
-/mob/living/simple_animal/proc/shoot_wrapper(target, location, user)
-	if(shoot_at(target, location, user) && casingtype)
-		new casingtype(loc)
-
-/mob/living/simple_animal/proc/shoot_at(var/atom/target, var/atom/start)
-	if(!start)
-		start = get_turf(src)
-	if(!can_act() || !istype(target) || !istype(start) || target == start || !has_ranged_attack(target))
-		return FALSE
-	var/obj/item/projectile/A = new projectiletype(get_turf(start))
-	if(!A)
-		return FALSE
-	playsound(start, projectilesound, 100, 1)
-	A.launch(target, get_exposed_defense_zone(target), src)
-	return TRUE
-
-/mob/living/simple_animal/get_ranged_attack_distance()
-	return ranged_range
-
-/mob/living/simple_animal/handle_ranged_attack(atom/target)
-	if(!istype(target) || !has_ranged_attack())
-		return
-	visible_message(SPAN_DANGER("\The [src] [fire_desc] at \the [target]!"))
-	if(burst_projectile)
-		var/datum/callback/shoot_cb = CALLBACK(src, PROC_REF(shoot_wrapper), target, loc)
-		addtimer(shoot_cb, 1)
-		addtimer(shoot_cb, 4)
-		addtimer(shoot_cb, 6)
-	else
-		shoot_at(target, loc, src)
-
 /mob/living/simple_animal/can_eat_food_currently(obj/eating, mob/user, consumption_method)
 	return TRUE
 
