@@ -556,7 +556,7 @@ var/global/list/bodytypes_by_category = list()
 				. += "non-list default metadata for [acc_decl.type]: [accessories[accessory] || "NULL"]"
 
 	var/list/tail_data = has_limbs[BP_TAIL]
-	if(tail_data)
+	if(tail_data && !TYPE_IS_ABSTRACT(src))
 		var/obj/item/organ/external/tail/tail_organ = LAZYACCESS(tail_data, "path")
 		if(ispath(tail_organ, /obj/item/organ/external/tail))
 			var/decl/species/use_species = get_user_species_for_validation()

@@ -81,9 +81,6 @@
 	icon = 'icons/clothing/rigs/gloves/gloves.dmi'
 	siemens_coefficient = 0
 
-/obj/item/rig/industrial/unlocked
-	req_access = null
-
 /obj/item/rig/industrial/equipped
 
 	initial_modules = list(
@@ -94,6 +91,9 @@
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cooling_unit
 		)
+
+/obj/item/rig/industrial/unlocked
+	req_access = null
 
 /obj/item/rig/eva
 	name = "EVA hardsuit control module"
@@ -121,9 +121,6 @@
 
 	req_access = list(access_engine_equip)
 
-/obj/item/rig/eva/unlocked
-	req_access = null
-
 /obj/item/clothing/head/helmet/space/rig/eva
 	camera = /obj/machinery/camera/network/engineering
 	icon = 'icons/clothing/rigs/helmets/helmet_eva.dmi'
@@ -142,6 +139,9 @@
 		/obj/item/rig_module/vision/meson,
 		/obj/item/rig_module/cooling_unit
 		)
+
+/obj/item/rig/eva/unlocked
+	req_access = null
 
 /obj/item/rig/ce
 	name = "advanced engineering hardsuit control module"
@@ -344,9 +344,6 @@
 	allowed = list(/obj/item/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/handcuffs,/obj/item/flashlight,/obj/item/tank,/obj/item/suit_cooling_unit,/obj/item/baton)
 	anomaly_shielding = 1
 
-/obj/item/rig/hazard/unlocked
-	req_access = null
-
 /obj/item/clothing/head/helmet/space/rig/hazard
 	camera = /obj/machinery/camera/network/security
 	icon = 'icons/clothing/rigs/helmets/helmet_hazard.dmi'
@@ -356,6 +353,9 @@
 	icon = 'icons/clothing/rigs/boots/boots_hazard.dmi'
 /obj/item/clothing/gloves/rig/hazard
 	icon = 'icons/clothing/rigs/gloves/gloves_hazard.dmi'
+
+/obj/item/rig/hazard/unlocked
+	req_access = null
 
 /obj/item/rig/hazard/equipped
 	initial_modules = list(

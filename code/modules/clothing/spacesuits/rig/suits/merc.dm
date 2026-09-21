@@ -44,15 +44,15 @@
 /obj/item/clothing/suit/space/rig/merc
 	icon = 'icons/clothing/rigs/chests/chest_merc.dmi'
 
-/obj/item/rig/merc/empty/unlocked
-	req_access = null
-
 //Has most of the modules removed
 /obj/item/rig/merc/empty
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/electrowarfare_suite,
 		)
+
+/obj/item/rig/merc/empty/unlocked
+	req_access = null
 
 /obj/item/rig/merc/heavy
 	name = "crimson EOD hardsuit control module"
