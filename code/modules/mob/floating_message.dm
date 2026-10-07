@@ -29,7 +29,7 @@ var/global/list/floating_chat_colors = list()
 		limit = 60
 		style += "font-weight: bold;"
 	if(!global.floating_chat_colors[name])
-		global.floating_chat_colors[name] = get_random_colour(0, 160, 230)
+		global.floating_chat_colors[name] = get_random_color(0, 160, 230)
 	style += "color: [global.floating_chat_colors[name]];"
 
 	for(var/client/C in show_to)

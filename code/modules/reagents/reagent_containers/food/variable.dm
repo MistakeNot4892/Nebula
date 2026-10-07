@@ -15,6 +15,10 @@
 /obj/item/food/variable/update_food_appearance_from(var/obj/item/donor, var/food_color, var/copy_donor_appearance = TRUE)
 	..(donor, food_color, (type == /obj/item/food/variable)) // variable is used for generic foods (deep fried X), subtypes are used for specific foods
 
+/obj/item/food/variable/cereal
+	name = "box of cereal"
+	icon_state = "cereal_box"
+
 /obj/item/food/variable/pizza
 	name = "personal pizza"
 	desc = "A personalized pan pizza meant for only one person."

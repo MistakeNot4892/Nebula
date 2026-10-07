@@ -502,3 +502,7 @@
 		animate_heat_glow(temperature, scale_sub = round((my_material.melting_point - T20C) * 0.25) + T20C, scale_div = round(my_material.melting_point * 0.75), scale_max = my_material.melting_point, skip_filter = TRUE, anim_time = anim_time)
 	if(isatom(loc))
 		loc.update_icon()
+
+/obj/held_mob_escape_from(mob/living/held_mob, obj/item/holder/held_holder)
+	to_chat(held_mob, SPAN_NOTICE("You struggle free of \the [src]."))
+	held_holder.forceMove(get_turf(src))

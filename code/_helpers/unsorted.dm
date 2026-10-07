@@ -754,7 +754,7 @@ var/global/list/WALLITEMS = list(
 					return 1
 	return 0
 
-/proc/get_random_colour(var/simple = FALSE, var/lower = 0, var/upper = 255)
+/proc/get_random_color(var/simple = FALSE, var/lower = 0, var/upper = 255)
 	if(simple)
 		return pick(list("#ff0000","#ff7f00","#ffff00","#00ff00","#0000ff","#4b0082","#8f00ff"))
 	return rgb(rand(lower, upper), rand(lower, upper), rand(lower, upper))

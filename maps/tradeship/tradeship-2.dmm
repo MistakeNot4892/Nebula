@@ -4714,7 +4714,7 @@
 /area/ship/trade/cargo)
 "nW" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/cooker/fryer,
+/obj/machinery/fryer,
 /turf/floor/tiled,
 /area/ship/trade/crew/kitchen)
 "nZ" = (
@@ -6034,7 +6034,7 @@
 	icon_state = "bulb1"
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/cooker/oven,
+/obj/machinery/oven,
 /turf/floor/tiled,
 /area/ship/trade/crew/kitchen)
 "Dd" = (

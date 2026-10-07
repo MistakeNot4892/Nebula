@@ -268,7 +268,7 @@
 	return new_metadata
 
 /decl/sprite_accessory/proc/get_random_metadata()
-	return list(SAM_COLOR = get_random_colour())
+	return list(SAM_COLOR = get_random_color())
 
 /decl/sprite_accessory_category/proc/prepare_character(mob/living/character, list/accessories)
 	return

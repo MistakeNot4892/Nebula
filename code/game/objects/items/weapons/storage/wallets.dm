@@ -57,7 +57,7 @@
 
 /obj/item/wallet/poly/Initialize(ml, material_key)
 	. = ..()
-	set_color(get_random_colour())
+	set_color(get_random_color())
 	update_icon()
 
 /obj/item/wallet/poly/verb/change_color()

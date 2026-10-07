@@ -64,7 +64,7 @@
 /obj/item/light/alien/Initialize()
 	. = ..()
 	if(!random_light_color)
-		random_light_color = get_random_colour(FALSE, 100, 255)
+		random_light_color = get_random_color(FALSE, 100, 255)
 	set_color(random_light_color) // if stuff starts exploding due to too-early update_icon calls it's this thing's fault
 
 //Airlock
@@ -77,5 +77,5 @@
 	var/decl/material/A = GET_DECL(/decl/material/solid/metal/aliumium)
 	if(A)
 		door_color = A.color
-	stripe_color = get_random_colour(FALSE, 0, 255)
+	stripe_color = get_random_color(FALSE, 0, 255)
 	update_icon()

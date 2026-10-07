@@ -66,7 +66,7 @@
 /obj/item/glass_extra/stick/Initialize()
 	. = ..()
 	if(prob(50))
-		color = get_random_colour(0,50,150)
+		color = get_random_color(0,50,150)
 
 /obj/item/glass_extra/straw
 	name = "straw"

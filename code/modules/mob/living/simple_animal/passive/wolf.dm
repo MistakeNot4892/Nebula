@@ -36,9 +36,9 @@
 
 /mob/living/simple_animal/passive/wolf/sparkle/Initialize()
 	draw_visible_overlays ||= list(
-		"base"     = get_random_colour(),
-		"markings" = get_random_colour(TRUE),
-		"socks"    = get_random_colour()
+		"base"     = get_random_color(),
+		"markings" = get_random_color(TRUE),
+		"socks"    = get_random_color()
 	)
-	eye_color ||= get_random_colour(TRUE)
+	eye_color ||= get_random_color(TRUE)
 	. = ..()

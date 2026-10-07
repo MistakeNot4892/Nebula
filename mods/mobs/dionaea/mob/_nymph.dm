@@ -55,7 +55,7 @@
 	add_inventory_slot(new /datum/inventory_slot/head/simple)
 	add_held_item_slot(new /datum/inventory_slot/gripper/mouth/nymph)
 	if(prob(flower_chance))
-		flower_color = get_random_colour(1)
+		flower_color = get_random_color(1)
 	update_icon()
 
 	. = ..(mapload)

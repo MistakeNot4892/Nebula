@@ -34,7 +34,7 @@
 	if(ismob(.))
 		var/mob/M = .
 		M.SetName("xeno-[M.name]")
-		M.set_color(get_random_colour(simple = TRUE))
+		M.set_color(get_random_color(simple = TRUE))
 
 //Fishing results for the grass exoplanet surface
 /area/exoplanet/grass

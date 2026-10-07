@@ -100,9 +100,9 @@
 
 /obj/item/chems/drinks/juicebox/random/Initialize()
 	. = ..()
-	var/primary = get_random_colour()
-	var/secondary = pick(4;get_random_colour(), 1;null)
-	var/logo = pick(4;get_random_colour(), 1;null)
+	var/primary = get_random_color()
+	var/secondary = pick(4;get_random_color(), 1;null)
+	var/logo = pick(4;get_random_color(), 1;null)
 	set_colors(primary, secondary, logo, style=pick(list("basic", "stripe", "corner")))
 
 /obj/item/chems/drinks/juicebox/sensible_random
@@ -123,4 +123,4 @@
 	var/splash = pick("teasing", "splash", "hint", "measure", "nip", "slug", "depth", "dash", "sensation", "surge", "squirt", "spritz", "efflux", "gush", "swell")
 	desc = "[J.liquid_name]; [J.lore_text] This one comes with \an [splash] of [K.liquid_name] in a neat box."
 	name = "\improper [J.liquid_name] and [K.liquid_name] juicebox"
-	set_colors(J.color, K.color, get_random_colour(simple=TRUE), style=pick(list("stripe", "corner")))
+	set_colors(J.color, K.color, get_random_color(simple=TRUE), style=pick(list("stripe", "corner")))

@@ -82,7 +82,7 @@
 			to_chat(H, SPAN_NOTICE("\The [user] emits the [self_smell_descriptor ? "[self_smell_descriptor] " : ""]scent of [smell_message]."))
 
 	var/obj/effect/decal/cleanable/pheromone/pheromone = (locate() in T) || new(T)
-	pheromone.color = scent_color || get_random_colour()
+	pheromone.color = scent_color || get_random_color()
 	pheromone.alpha = min(pheromone.alpha+30, 120)
 	pheromone.cleanable_scent = smell_message
 	pheromone.desc = "It smells of [smell_message]."

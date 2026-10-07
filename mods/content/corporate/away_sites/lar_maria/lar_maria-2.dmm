@@ -2355,7 +2355,7 @@
 /turf/floor/tiled/white,
 /area/lar_maria/mess_hall)
 "hm" = (
-/obj/machinery/cooker/grill,
+/obj/machinery/grill,
 /turf/floor/tiled/white,
 /area/lar_maria/mess_hall)
 "hn" = (
@@ -2530,7 +2530,7 @@
 /turf/floor/tiled/white,
 /area/lar_maria/mess_hall)
 "hJ" = (
-/obj/machinery/cooker/fryer,
+/obj/machinery/fryer,
 /turf/floor/tiled/white,
 /area/lar_maria/mess_hall)
 "hK" = (
@@ -2655,7 +2655,7 @@
 /turf/floor/tiled/white,
 /area/lar_maria/mess_hall)
 "if" = (
-/obj/machinery/cooker/oven,
+/obj/machinery/oven,
 /turf/floor/tiled/white,
 /area/lar_maria/mess_hall)
 "ig" = (
@@ -2829,7 +2829,6 @@
 /area/lar_maria/mess_hall)
 "iE" = (
 /obj/structure/table/marble,
-/obj/machinery/cooker/cereal,
 /turf/floor/tiled/white,
 /area/lar_maria/mess_hall)
 "iF" = (

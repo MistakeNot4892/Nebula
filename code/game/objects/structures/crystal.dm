@@ -37,7 +37,7 @@
 	visible_message(SPAN_DANGER("\The [src] shatters!"))
 	. = ..()
 
-/obj/structure/crystal/proc/get_random_colours()
+/obj/structure/crystal/proc/get_random_colors()
 	return null
 
 /obj/structure/crystal/proc/get_random_states()
@@ -52,7 +52,7 @@
 	else
 		base_state = icon_state
 
-	var/list/possible_colors = get_random_colours()
+	var/list/possible_colors = get_random_colors()
 	if(length(possible_colors))
 		set_color(pick(possible_colors))
 
@@ -72,7 +72,7 @@
 	material = /decl/material/liquid/water
 	paint_color = "#c4ffff"
 
-/obj/structure/crystal/ice/get_random_colours()
+/obj/structure/crystal/ice/get_random_colors()
 	return null
 
 // Lava crystal!
@@ -83,12 +83,12 @@
 	material = /decl/material/solid/stone/basalt
 	material_alteration = MAT_FLAG_ALTERATION_COLOR
 
-/obj/structure/crystal/lava/get_random_colours()
+/obj/structure/crystal/lava/get_random_colors()
 	var/static/list/crystal_colors = list("#e03131", "#fccf64", "#fccf64")
 	return crystal_colors
 
 // Random colourful crystal!
-/obj/structure/crystal/random/get_random_colours()
+/obj/structure/crystal/random/get_random_colors()
 	var/static/list/crystal_colours = list(
 		"#ff0000",
 		"#ff7f00",

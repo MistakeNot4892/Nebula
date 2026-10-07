@@ -1096,3 +1096,6 @@
 // Helper for when destroyed by a chainsaw (for the purposes of overriding)
 /atom/proc/handle_chainsawed(mob/user, obj/item/chainsaw)
 	physically_destroyed()
+
+/atom/proc/held_mob_escape_from(mob/living/held_mob, obj/item/holder/held_holder)
+	return

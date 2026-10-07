@@ -155,7 +155,7 @@
 
 /obj/item/towel/random/Initialize()
 	. = ..()
-	set_color(get_random_colour())
+	set_color(get_random_color())
 
 /obj/item/towel/gold
 	paint_color = "#ffd700"

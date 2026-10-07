@@ -31,7 +31,7 @@
 	if(active)
 		var/image/I = emissive_overlay(icon,"[icon_state]decor")
 		I.appearance_flags = RESET_COLOR
-		I.color = get_random_colour(0, 150, 255)
+		I.color = get_random_color(0, 150, 255)
 		z_flags |= ZMM_MANGLE_PLANES
 		add_overlay(I)
 		set_light(2, 0.3, I.color)

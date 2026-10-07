@@ -13,7 +13,7 @@ var/global/list/reagent_names_to_colours
 /proc/get_medication_colour_from_reagent_name(var/reagent_name)
 	. = LAZYACCESS(global.reagent_names_to_colours, reagent_name)
 	if(!.)
-		LAZYSET(global.reagent_names_to_colours, reagent_name, get_random_colour())
+		LAZYSET(global.reagent_names_to_colours, reagent_name, get_random_color())
 		. = global.reagent_names_to_colours[reagent_name]
 
 var/global/list/reagent_names_to_icon_state

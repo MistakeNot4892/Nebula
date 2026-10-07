@@ -21376,7 +21376,7 @@
 /obj/effect/floor_decal/corner/brown/diagonal{
 	dir = 8
 	},
-/obj/machinery/cooker/fryer,
+/obj/machinery/fryer,
 /turf/floor/tiled/white,
 /area/exodus/crew_quarters/kitchen)
 "aTC" = (
@@ -21384,7 +21384,7 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/cooker/grill,
+/obj/machinery/grill,
 /turf/floor/tiled/white,
 /area/exodus/crew_quarters/kitchen)
 "aTD" = (
@@ -23065,7 +23065,7 @@
 /obj/effect/floor_decal/corner/brown/diagonal{
 	dir = 8
 	},
-/obj/machinery/cooker/oven,
+/obj/machinery/oven,
 /turf/floor/tiled/white,
 /area/exodus/crew_quarters/kitchen)
 "aXI" = (
@@ -23885,7 +23885,6 @@
 	pixel_x = 24
 	},
 /obj/structure/table/marble,
-/obj/machinery/cooker/cereal,
 /turf/floor/tiled/white,
 /area/exodus/crew_quarters/kitchen)
 "aZp" = (
@@ -51778,7 +51777,6 @@
 /obj/effect/floor_decal/corner/brown/diagonal{
 	dir = 8
 	},
-/obj/machinery/cooker/candy,
 /turf/floor/tiled/white,
 /area/exodus/crew_quarters/kitchen)
 "cdL" = (

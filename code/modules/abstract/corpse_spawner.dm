@@ -64,7 +64,7 @@
 		if(species_choice in hair_colors_per_species)
 			SET_HAIR_COLOR(M, pick(hair_colors_per_species[species_choice]), TRUE)
 		else
-			SET_HAIR_COLOR(M, get_random_colour(), TRUE)
+			SET_HAIR_COLOR(M, get_random_color(), TRUE)
 		SET_FACIAL_HAIR_COLOR(M, GET_HAIR_COLOR(M), TRUE)
 		update_hair = TRUE
 	if((spawn_flags & CORPSE_SPAWNER_RANDOM_HAIR_STYLE))

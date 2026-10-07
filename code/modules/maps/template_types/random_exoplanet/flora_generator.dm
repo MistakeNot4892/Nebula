@@ -134,7 +134,7 @@
 		var/color        = pick(plant_colors)
 		var/carnivorous  = prob(10)? 2 : (prob(20)? 1 : 0)
 		if(color == "RANDOM")
-			color = get_random_colour(0, 75, 190)
+			color = get_random_color(0, 75, 190)
 
 		S.randomize(atmos.temperature, atmos.return_pressure())
 		S.set_trait(TRAIT_PRODUCT_ICON, planticon)
@@ -153,7 +153,7 @@
 		var/datum/seed/S = new
 		var/color        = pick(plant_colors)
 		if(color == "RANDOM")
-			color = get_random_colour(0, 75, 190)
+			color = get_random_color(0, 75, 190)
 
 		S.randomize(atmos.temperature, atmos.return_pressure())
 		S.set_trait(TRAIT_PRODUCT_ICON,   "alien[rand(1,5)]")

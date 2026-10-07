@@ -17,7 +17,7 @@
 
 /obj/structure/fountain/Initialize(ml, _mat, _reinf_mat)
 	if(light_range && light_power)
-		light_color = get_random_colour(lower = 190)
+		light_color = get_random_color(lower = 190)
 	. = ..()
 
 /obj/structure/fountain/attack_hand(var/mob/user)

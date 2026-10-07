@@ -634,7 +634,7 @@
 		return pick(possible_surface_light_gen_colors)
 	else
 		//Otherwise generate it randomly
-		var/atmos_color = atmosphere?.get_overall_color() || get_random_colour()
+		var/atmos_color = atmosphere?.get_overall_color() || get_random_color()
 		var/list/HSV    = rgb2num(atmos_color, COLORSPACE_HSV)
 		var/sat_factor  = rand(50, 80) / 100 //Make the color less saturated to around 50% to 80%
 		var/val_factor  = 1 + (rand(10, 50) / 100) //Make the color brighter within a factor of 10%-50%

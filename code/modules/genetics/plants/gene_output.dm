@@ -11,7 +11,7 @@
 		if(seed.get_trait(TRAIT_BIOLUM))
 			location.visible_message(SPAN_NOTICE("\The [seed.display_name] begins to glow!"))
 			if(prob(50))
-				seed.set_trait(TRAIT_BIOLUM_COLOUR,get_random_colour(0,75,190))
+				seed.set_trait(TRAIT_BIOLUM_COLOUR,get_random_color(0,75,190))
 				location.visible_message(SPAN_NOTICE("\The [seed.display_name]'s glow <font color='[seed.get_trait(TRAIT_BIOLUM_COLOUR)]'>changes colour</font>!"))
 			else
 				location.visible_message(SPAN_NOTICE("\The [seed.display_name]'s glow dims..."))

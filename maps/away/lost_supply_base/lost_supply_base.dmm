@@ -898,7 +898,7 @@
 /area/lost_supply_base/common)
 "cz" = (
 /obj/structure/closet/secure_closet/freezer/meat,
-/obj/machinery/cooker/oven,
+/obj/machinery/oven,
 /turf/floor/tiled/airless,
 /area/lost_supply_base/common)
 "cA" = (

@@ -22,7 +22,7 @@
 	desc = "A simple cloak."
 
 /obj/item/clothing/suit/cloak/random/Initialize()
-	color = get_random_colour(TRUE)
+	color = get_random_color(TRUE)
 	. = ..()
 
 // Takes material colour. TODO: Crafting recipe for cloth, fur, leather, etc. cloaks.

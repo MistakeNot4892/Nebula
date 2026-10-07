@@ -8,7 +8,7 @@
 /datum/artifact_effect/forcefield/New()
 	..()
 	effect_range = rand(2, 14)
-	field_color = get_random_colour(1)
+	field_color = get_random_color(1)
 
 /datum/artifact_effect/forcefield/Destroy()
 	QDEL_NULL_LIST(created_field)
